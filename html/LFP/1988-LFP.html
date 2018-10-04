@@ -1,0 +1,2465 @@
+
+<!doctype html>
+<head><script type="text/javascript">/* <![CDATA[ */_cf_loadingtexthtml="<img alt=' ' src='/cf_scripts/scripts/ajax/resources/cf/images/loading.gif'/>";
+_cf_contextpath="";
+_cf_ajaxscriptsrc="/cf_scripts/scripts/ajax";
+_cf_jsonprefix='//';
+_cf_websocket_port=0;
+_cf_flash_policy_port=0;
+_cf_clientid='59C8948CB2958B17A433D55F2C76D3E9';/* ]]> */</script><script type="text/javascript" src="/cf_scripts/scripts/ajax/messages/cfmessage.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfajax.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfform.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/masks.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfformhistory.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfrichtexteditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/chart/cfchart-server.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/animation/animation-min.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ext/ext-all.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfwindow.js"></script>
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/ext/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/cf/cf.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/dl.css" />
+<title>Proceedings of the 1988 ACM conference on LISP and functional programming</title>
+<style type="text/css"><!--
+    body {margin-left: 0em; margin-top: 0}
+    a:link {text-decoration: underline; 	Color: #1d4d0f;}
+    a:visited  { color: #990033; text-decoration: underline;}
+    a:hover {color: red; text-decoration: none}
+    a.dLink1:link {color:#336699}
+    a.dLink1:visited {color:#666666}
+	a.isblack:link {text-decoration: underline; 	Color: #000000;}
+    a.isblack:visited  { color: #000000; text-decoration: underline;}
+    a.isblack:hover {color: #000000; text-decoration: none}
+    h1 {font-size: 140%; margin-bottom: 0}
+	ul {margin-top: .25em; list-style-type: disc}
+	ol {margin-top: .25em;}
+	li {padding-bottom: .25em;}
+    h2 {color: white; background-color: #069; 
+        font-size: 100%; padding-left: 1em;
+		margin: 0}
+	h3 {color: black; background-color: yellow; 
+    	font-size: 100%;
+		margin: 0}
+	 h4 {color: black; background-color: #99c5e8; 
+        font-size: 100%;
+		margin: 0}
+    hr {color: #39176d;}
+    form {margin-top: 10}
+    form.xrs {margin-top: 0}
+	
+	a {text-decoration: none; }
+	
+	input {font-size: 1em;}
+	.chevron {color: #ff0000;}
+	.light-blue {color:#336699;}
+	.black {color:#000000;}
+	
+	
+	.mono-text {font-size: 14px; font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;}
+	
+	/* ### standard text styles, smallest to largest ### */
+	
+	.footer-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .75em; line-height: 1.33em;
+		text-indent: -.75 em; margin-left: 2em; margin-right: .75em;}
+		
+	.footer-copy-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em; line-height: 1.3em;
+		margin-left: .75em; margin-right: .75em;}
+		
+	.small-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; padding-bottom : 2px;
+	  	padding-top : 2px;}
+		
+	.small-link-text2 {font-size: .83em !important; 
+	}
+
+	.smallerer-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .65em;}
+	.smaller-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em;}		
+	.small-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em;}
+	.small-textb {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; font-weight: bold;}
+	.medium-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em;}
+	.mediumb-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em; font-weight: bold;}
+	.large-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1.3em;}		
+	.instr-text {font-family: Arial, Helvetica, sans-serif;
+		color:#666666; font-size: .83em;}
+		
+	.list-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .83em; line-height: 1.3em;}
+	.list-link-btext {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; line-height: 1.3em;}
+	
+	.searchbox-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;}
+	.footer-header-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;
+		margin-left: .75em; margin-right: .75em;}
+	.medium-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold; line-height: 1em;
+		text-indent: -1.25em; margin-left: 2em; margin-right: .75em;}
+	
+	.text16 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 16px;}
+		
+	.text14 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 14px;}
+	
+	.text12 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 12px;}
+		
+	.text10 {font-family: Arial, Helvetica, sans-serif;
+	    color:#000000; font-size: 12px;}
+		
+	.text9 {font-family: Arial, Helvetica, sans-serif;
+	   color:#000000; font-size: 12px;}
+	
+	.error-text {color:red;}
+	
+	.small-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: .75em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+
+	.medium-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1.3em; line-height: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.medium-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+
+		#side {
+			width: 10px;
+			float: left;
+			margin-left: -1px;
+			padding: 2px;
+			}
+							
+		#content {
+			padding: 2px;
+			margin-left: 25px;
+			
+		        
+		        }
+	 .fulltext_lnk {border:0px;
+	 				 margin-right: 2px;
+					 vertical-align:baseline;
+	 				}
+	 
+	  .leftcoltab { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:530px;  /* for IE5/WIN */
+		  width:520px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	  .rightcoltab {
+    float: right;
+    margin: 0;
+    padding: 5px;
+    position: relative;
+    right: 50px;
+    top: 25px;
+    width: 350px;
+    z-index: 99;
+}
+	  .centercoltab {
+		  position:absolute;
+		  padding:0 0px;
+		  }
+	  .alt {
+		background: #ece9d8;
+		margin: 0;
+		padding: 1px;
+		}
+		.leftcolc { 
+	position:relative;
+	top:5px;
+	left:5px;
+	float:left;
+	width:420px;  /* for IE5/WIN */
+	width:400px; /* actual value */
+	margin:0 0 0px 0;
+	padding:5px;
+	z-index:100;
+	}
+.rightcolc {
+	position:relative;
+	top:0px;
+	right:0px;
+	float:right;
+	margin:0 0px;
+	padding:0px;
+	width:500px;
+	z-index:99;
+	}
+.centercolc {
+	position:absolute;
+	padding:0 0px;
+	}
+	
+	.leftcoltabv { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:460px;  /* for IE5/WIN */
+		  width:350px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	.rightcoltabv {
+		position:relative;
+		top:5px;
+		right:0px;
+		float:right;
+		margin:0 0px 0 0;
+		padding:15px;
+		width:480px;
+		z-index:99;
+		}
+		
+.x-tabs-strip-wrap {
+	overflow-y: hidden !important;
+}
+  --></style>
+<script src="js/tagcanvas.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function loadCloud() {
+	try {
+	  TagCanvas.Start('myCanvas','tags',{
+		textColour: '#000000',
+		outlineColour: '#ff00ff',
+		reverse: true,
+		shuffleTags:true,
+		depth: 0.8,
+		maxSpeed: 0.05,
+		textHeight: 12,
+		initial: [0.000, 0.050],
+		shape: "hring",
+		lock: "x"
+	  });
+	} catch(e) {
+	  // something went wrong, hide the canvas container
+	  // document.getElementById('myCanvasContainer').style.display = 'none';
+	}
+  };
+</script>
+<script type="text/javascript" src="cfformprotect/js/cffp.js"></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<style type="text/css"><!--
+.google-visualization-orgchart-node {
+    background-color: #FFFFFF !important;
+    border: 2px solid #AFCF40 !important;
+    cursor: default;
+    font-family: arial,helvetica;
+    text-align: center;
+    vertical-align: middle;
+}
+
+iframe {float:right; 
+		margin:10px;
+		border: 2px solid #1B4D0E;
+		
+		}
+
+a.boxed:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxed:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxed:hover {color: red !important; text-decoration: underline !important;}
+
+a.boxedh:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxedh:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxedh:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedm:link {text-decoration: none !important; 	Color: #606060 !important;}
+a.boxedm:visited  { color: #606060 !important; text-decoration: none !important;}
+a.boxedm:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedl:link {text-decoration: none !important; 	Color: #808080   !important;}
+a.boxedl:visited  { color: 	#808080 !important; text-decoration: none !important;}
+a.boxedl:hover {color: red !important; text-decoration: underline !important;}				
+
+.google-visualization-orgchart-linebottom {
+    border-bottom: 1px solid #006699 !important;
+}
+.google-visualization-orgchart-lineleft {
+    border-left: 1px solid #006699 !important;
+}
+
+.google-visualization-orgchart-lineright {
+    border-right: 1px solid #006699 !important;
+}
+
+--></style>
+<script type="text/javascript">
+
+
+function settab() {
+    var mytabs = ColdFusion.Layout.getTabLayout('citationdetails');
+   
+ 
+  mytabs.on('tabchange', function(tabpanel,activetab) { document.cookie = 'picked=' + '62678' + ',' + activetab.id; })
+ 
+}
+
+
+function letemknow(){
+  ColdFusion.Window.show('letemknow');
+}
+
+function letemknow2(){
+  ColdFusion.Window.show('letemknow2');
+}
+
+
+
+
+
+function testthis(){
+
+alert('test');
+}
+function loadalert(){ 
+ alert("I am in the load alert");
+ 
+}
+function loadalert2(){ 
+  alert("I am in the load alert2");
+ 
+}
+</script>
+<script type='text/javascript'>
+	  	google.load('visualization', '1', {packages:['orgchart']});
+	    google.setOnLoadCallback(drawChart);
+	  
+	  function drawChart() {
+	    var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+  	  
+		data.addRows([
+          [{v:'0', f:'<div style="color:black; font-size:150%; font-style:normal">CCS&nbsp;for&nbsp;this&nbsp;Proceeding</div>'}, '', ''],
+		  
+		  [{v:'10011007', f:'<div style=" font-size:150%; font-style:normal"><a class="boxedh" href="ccs/ccs.cfm?id=10011007&lid=0.10011007">Software and its engineering</a></div>'}, '0', ''], 
+		  [{v:'10011008', f:'<div style=" font-size:150%; font-style:normal"><a class="boxedh" href="ccs/ccs.cfm?id=10011008&lid=0.10011007.10011006.10011008">General programming languages</a></div>'}, '10011006', ''], 
+		  [{v:'10011006', f:'<div style=" font-size:150%; font-style:normal"><a class="boxedh" href="ccs/ccs.cfm?id=10011006&lid=0.10011007.10011006">Software notations and tools</a></div>'}, '10011007', ''], 
+		  [{v:'10011009', f:'<div style=" font-size:150%; font-style:normal"><a class="boxedh" href="ccs/ccs.cfm?id=10011009&lid=0.10011007.10011006.10011008.10011009">Language types</a></div>'}, '10011008', ''], 
+		  [{v:'10011012', f:'<div style=" font-size:150%; font-style:normal"><a class="boxedh" href="ccs/ccs.cfm?id=10011012&lid=0.10011007.10011006.10011008.10011009.10011012">Functional languages</a></div>'}, '10011009', ''] 
+        ]);
+		
+		if (document.getElementById('chart_div')) {
+       var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+       chart.draw(data, {allowHtml:true});
+		}
+      }
+	  
+</script>
+<script type="text/javascript">
+ function expandcollapse(anchor,whichone) {
+	 var inner = document.getElementById(anchor);
+	 var theshow = "toShow" + whichone;
+ 	 var thehide = "toHide" + whichone;
+	 var span = document.getElementById(theshow);
+     span.style.display = (span.style.display=='inline')?'none':'inline';
+     var span = document.getElementById(thehide);
+     span.style.display = (span.style.display=='none')?'inline':'none';
+     inner.innerHTML = (inner.innerHTML=='collapse')?'expand':'collapse';
+    }
+
+  
+</script>
+<script type="text/javascript">
+ /* <!-- Begin
+	if(document.layers || document.all) {
+	a = 1;
+	setInterval("Jump()", 10);
+	}
+	function Jump() {
+	a = a + 1;
+	//self.moveBy((Math.random() * a * 2 - a), (Math.random() * a * 2) - a);
+	}
+//  End --> */
+</script>
+<script type="text/javascript">
+function expandWatson(divID,theConcept) { 
+			if (document.getElementById(divID).style.display == "none") {
+				document.getElementById(divID).style.display = "block";
+				document.getElementById(divID).innerHTML = theConcept + "<br />" + document.getElementById(divID).innerHTML;
+			}
+			 else {
+				 document.getElementById(divID).style.display = "none"
+			}
+		}
+</script>
+
+<script type="text/javascript">
+  function togglePatMap() {
+        var div = document.getElementById('patmap'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsepmapa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				httpGetAsyncwID("patent.cfm?id=62678",'patmap');
+				httpGetAsyncwID("simmap_track.cfm?id=62678&how=live",'blackhole');
+			}
+			else {
+				httpGetAsyncwID("simmap_track.cfm?id=62678&how=cache",'blackhole');
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsepmapa").src = "images/expand.png";
+        }
+    }
+  
+  function toggleCO() {
+        var div = document.getElementById('codisp'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsecoa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				/* httpGetAsyncwID("coint.cfm?id=62678",'codisp'); */
+				/*httpGetAsyncwID("simmap_track.cfm?id=62678&how=live",'blackhole'); */
+			}
+			else {
+				/* httpGetAsyncwID("simmap_track.cfm?id=62678&how=cache",'blackhole'); */
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsecoa").src = "images/expand.png";
+        }
+    }
+	
+	function httpGetAsyncwID(theUrl,theID) {
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+				
+				document.getElementById(theID).innerHTML=xmlHttp.responseText;
+		}
+		xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		xmlHttp.send();
+	}
+</script>
+<meta name="citation_publisher" content="ACM"> <meta name="citation_authors" content="Chairman-Chailloux, Jerome"> <meta name="citation_conference_title" content="Proceedings of the 1988 ACM conference on LISP and functional programming"> <meta name="citation_date" content="01/01/1988"> <meta name="citation_isbn" content="0-89791-273-X"> <meta name="citation_abstract_html_url" content="http://dl.acm.org/citation.cfm?id=62678">
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFAJAXPROXY');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFFORM');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFDIV');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFTEXTAREA');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(drawChart,null,false,true);
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFWINDOW');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721639890344503=function()
+	{
+		_cf_bind_init_10721639890344504=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow-body','bindExpr':['letemknow.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10721639890344504);var _cf_window=ColdFusion.Window.create('letemknow','<div style=\'text-align:left; color:black;\'>Did you know the ACM DL App is now available?</div>','letemknow.cfm',{ modal:false, closable:true, divid:'cf_window10721639890344502', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:75, y:125});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721639890344503);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721639890344506=function()
+	{
+		_cf_bind_init_10721639890344507=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow2-body','bindExpr':['letemknow_recomm.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10721639890344507);var _cf_window=ColdFusion.Window.create('letemknow2','<div style=\'text-align:left; color:black;\'>Did you know your Organization can subscribe to the ACM Digital Library?</div>','letemknow_recomm.cfm',{ modal:false, closable:true, divid:'cf_window10721639890344505', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:70, y:175});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721639890344506);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721639890344509=function()
+	{
+		_cf_bind_init_10721639890344510=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'theguide-body','bindExpr':['whatisguide.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10721639890344510);var _cf_window=ColdFusion.Window.create('theguide','The ACM Guide to Computing Literature','whatisguide.cfm',{ modal:false, closable:true, divid:'cf_window10721639890344508', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721639890344509);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721639890344512=function()
+	{
+		_cf_bind_init_10721639890344513=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'thetags-body','bindExpr':['showthetags.cfm?id=62678']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10721639890344513);var _cf_window=ColdFusion.Window.create('thetags','All Tags','showthetags.cfm?id=62678',{ modal:false, closable:true, divid:'cf_window10721639890344511', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721639890344512);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721639890344515=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theformats','Export Formats','',{ modal:false, closable:true, divid:'cf_window10721639890344514', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:250, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721639890344515);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721639890344517=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theexplaination','','',{ modal:false, closable:true, divid:'cf_window10721639890344516', draggable:true, resizable:true, fixedcenter:false, width:600, height:600, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721639890344517);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721639890344519=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theservices','','',{ modal:false, closable:true, divid:'cf_window10721639890344518', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721639890344519);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721639890344521=function()
+	{
+		_cf_bind_init_10721639890344522=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'savetobinder-body','bindExpr':['savetobinder.cfm?id=62678']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10721639890344522);var _cf_window=ColdFusion.Window.create('savetobinder','Save to Binder','savetobinder.cfm?id=62678',{ modal:false, closable:true, divid:'cf_window10721639890344520', draggable:true, resizable:true, fixedcenter:true, width:600, height:600, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false, _cf_refreshOnShow:true});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721639890344521);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(settab,null,false,true);
+/* ]]> */</script>
+</head>
+
+<body style="text-align:center; font-size:100%"> 
+<script type="text/javascript">
+						addthis_pub             = 'acm'; 
+						//addthis_logo            = 'http://www.addthis.com/images/yourlogo.png';
+						addthis_logo            = 'https://dl.acm.org/images/ACM_transparent.png';
+						addthis_logo_background = 'c2d5fc';
+						addthis_logo_color      = '000000';
+						addthis_brand           = 'Citation Page';
+						addthis_options         = 'favorites, email, slashdot, citeulike, digg, delicious, twitter, myspace, facebook, google, more';
+						</script>
+<script src='AC_RunActiveContent.js' type="text/javascript"></script>
+<div style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<a id="CIT"></a>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFGCMX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFGCMX');</script>
+
+<div id="header">
+<table style="table-layout:fixed; margin-top: 5px; margin-bottom: 10px; border:0px; width:100%; border-collapse:collapse;">
+<tr style="vertical-align:top">
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; width:300px" class="small-link-text2"><img src="/images/ACMDL_Logo.jpg" alt="ACM DL" style="border:0px" usemap="#port" />
+</td>
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; vertical-align:middle;" class="small-link-text2">
+<table style="width:100%; border-collapse:collapse; padding:0px">
+<tr><td style="text-align:center">
+<table>
+<tr>
+<td style="text-align:center">
+<div style="margin:5px auto;color:#356b20;font-size:11pt;line-height:130%; height:63px;">
+Iowa State University
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding-top: 0px; padding-left: 0px; padding-bottom:0px; text-align:right;" class="small-link-text2">
+<p style="margin-top:0px; margin-bottom:10px;">
+<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign in to personalize your Digital Library experience">SIGN IN</a>
+&nbsp;&nbsp;<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign up to personalize your Digital Library experience">SIGN UP</a>
+</p>
+<table style="padding: 5px; border-collapse:collapse; float:right">
+<tr>
+<td class="small-link-text2" style="text-align:right">
+<script type="text/javascript">
+								function encodeInput(form){
+								    	var cleanQuery = form.elements['query'].value.replace(new RegExp( "\\+", "g" ),"%2B");
+										cleanQuery = cleanQuery.replace(/#/g, "%23");
+										cleanQuery = cleanQuery.replace(/(\n)/g, " ");
+										cleanQuery = cleanQuery.trim();
+										
+										
+										var ascii = /^[ -~]+$/;
+										if( !ascii.test( cleanQuery ) ) {
+											var fixedUseQuery = "";
+											for (var i = 0, len = cleanQuery.length; i < len; i++) {
+												var str = "";
+												if( !ascii.test(cleanQuery[i]) ) {
+										 			str = "%26%23" + cleanQuery[i].charCodeAt(0) + ";";
+												} else {
+										 			str = cleanQuery[i];
+												}
+												fixedUseQuery = fixedUseQuery + str;
+											}
+											cleanQuery = fixedUseQuery;
+										}
+										
+
+										form.elements['query'].value = cleanQuery;
+								}
+							</script>
+<form name="qiksearch" action="/results.cfm" onsubmit='encodeInput(this)'>
+<span style="margin-left:0px"><label><input type="text" name="query" size="30" value="" /></label>&nbsp;
+<input style="vertical-align:top;" type="image" alt="Search" name="Go" src="/images/search_small.jpg" />
+
+</span>
+</form>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td colspan="3" class="small-link-text2" style="padding-bottom:5px; padding-top:0px; text-align:center">
+<div style="margin:0px auto;color:#356b20;line-height:10%;"> </div>
+</td>
+</tr>
+</table>
+<div id="google_translate_element" style="text-align:right; padding-bottom:5px;"></div><script type="text/javascript">function googleTranslateElementInit() {new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<map name="port" id="port">
+<area shape="rect" coords="1,1,60,50" href="https://www.acm.org/" alt="ACM Home Page" />
+<area shape="rect" coords="65,1,275,68" href="https://dl.acm.org/dl.cfm" alt="ACM Digital Library Home Page" />
+</map>
+</div>
+<style>
+  .watsonCont {
+	  width:170px;
+	  
+	  color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	 /* background-color: lightgray;*/
+  }
+  #watsonInside {
+    border-radius: 25px;
+    border: 2px solid #649134;
+	margin-top: 12px;
+	padding: 5px;
+	height: 80px;
+  }
+
+</style>
+<table style="table-layout:fixed; padding-bottom:10px; width:100%; padding:0px;">
+<tr style="vertical-align:top">
+<td style="padding-right:10px; text-align:left" class="small-link-text">
+<div id="divmain" style="border:1px solid #356b20;">
+<div class="large-text" style="text-align:left; margin-left:2px;margin-bottom:5px;">
+<h1 class="mediumb-text" style="margin-top:0px; margin-bottom:0px;">Proceedings of the 1988 ACM conference on LISP and functional programming</h1>
+</div>
+<table class="medium-text" style="border-collapse:collapse; padding:0px; margin-left: 2px;">
+<colgroup>
+<col style="width:540px" />
+</colgroup>
+<tr style="vertical-align:top">
+<td>
+<table style="border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px;" />
+<col style="width:auto" />
+<tr style="vertical-align:top">
+</tr>
+</table>
+<table style="margin-top: 10px; border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px" />
+<tr>
+<td valign="top" nowrap="nowrap">
+Chairman:
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=81100622503&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">Jerome Chailloux</a>
+</td>
+<td valign="bottom">
+<a href="inst_page.cfm?id=60032401" title="Institutional Profile Page"><small>INRIA, Rocquencourt</small></a>
+</td>
+</tr>
+</table>
+<table style="margin-top: 10px" border="0" class="medium-text" cellpadding="2" cellspacing="0">
+<tr>
+<td><table border="0" class="medium-text" style="margin-left:5px;" cellpadding="1" cellspacing="0">
+<tr valign="top">
+<td nowrap="nowrap" style="padding-top:10px;">Publication of:</td>
+</tr>
+<tr valign="top">
+<td nowrap="nowrap" style="padding-bottom:0px">&middot;&nbsp;Conference</td>
+</tr>
+<tr valign="top">
+<td style="padding-left:10px;">
+LISP88 Lisp & Functional Programming 88
+</td>
+</tr>
+<tr valign="top">
+<td style="padding-left:10px; padding-bottom:10px"> Snowbird, UT, USA &mdash; July 25 - 27, 1988
+<br />
+<a href="https://www.acm.org/publications" class="small-link-text" title="ACM">ACM</a> <span class="small-link-text">New York, NY</span><span class="small-link-text">, USA</span> <span class="small-link-text"> &copy;1988</span>
+<br />
+</td>
+</tr>
+</table></td>
+</tr>
+</table>
+</td>
+<td rowspan="20">
+<table border="0" class="medium-text" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" style="padding-bottom: 5px;">
+</td>
+<td align="left" nowrap="nowrap">
+<img src="images/ACM_mini.jpg" style="vertical-align:middle" title="Published by ACM" alt="Published by ACM" /> 1988 Proceeding<br />
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="baseline" style="padding-bottom:5px; padding-top:5px;">
+<img src="img/stats.jpg" alt="Bibliometrics Data" />&nbsp;
+<a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a>
+</td>
+</tr>
+<tr>
+<td class="small-text" colspan="2" valign="top" style="padding-left:30px;">
+&middot;&nbsp;Citation Count: 454<br />
+&middot;&nbsp;Downloads (cumulative): 11,123<br />
+&middot;&nbsp;Downloads (12 Months): 316<br />
+&middot;&nbsp;Downloads (6 Weeks): 19<br />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br clear="all" />
+<br clear="all" />
+</div>
+</td>
+<td style="padding-left: 5px; vertical-align:top; text-align:left; width:170px" class="small-link-text">
+<div id="divtools" style="background-color:#ece9d8; text-align:left; padding-top:5px; padding-bottom:5px; ">
+<div class="medium-text" style="margin-left:3px; margin-top:10px;"><h1 class="mediumb-text" style="margin-top:-15px;">Tools and Resources</h1></div>
+<ul title="Tools and Resources" style="list-style: none; list-style-position:outside;
+margin-left: 25px;
+padding-left: 0em;
+text-indent: 0px;
+margin-bottom: 0px;">
+<li style="list-style-image:url(img/toc_small.gif);margin-top:10px;"><span style="margin-left:0px;">
+<span class="small-link-text">TOC Service:</span>
+<img src="images/blanks.gif" border="0" alt="Spacer Image reserves space for checkmark when TOC Service is updated" name="saved" />
+<ul style="margin-left: 0; padding-left: 0; display:inline;">
+<li style="list-style:none; display:inline"><br /><img src="img/email_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Email</a></li>
+<li style="list-style:none; display:inline"><img src="img/rss_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">RSS</a></li>
+</ul>
+</span>
+</li>
+<li style="list-style-image:url(img/binder.gif);margin-top:10px;"><span style="margin-left:0px;">
+<a href="citation.cfm?id=62678&preflayout=flat#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Save to Binder</a>
+</span></li>
+<li style="list-style-image:url(img/binder_green.gif);margin-top:10px;"><span style="margin-left:0px; margin-bottom:0px">
+<span class="small-link-text">Export Formats:</span>
+<ul style="margin-left: 0; padding-left: 0; margin-bottom:0px;">
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=62678&expformat=bibtex','theformats');" class="small-link-text">BibTeX</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=62678&expformat=endnotes','theformats');" class="small-link-text">EndNote</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=62678&expformat=acmref','theformats');" class="small-link-text">ACM&nbsp;Ref</a></li>
+</ul>
+</span>
+</li>
+</ul>
+
+
+<p class="small-link-text" style="padding-top: 0px; margin-left:6px; margin-bottom:0px">Share:</p>
+
+
+<div style="margin-left:5px;" class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_email"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_researchgate"></a>
+<a class="addthis_button_reddit"></a>
+<span class="addthis_separator">|</span>
+<a href="https://www.addthis.com/bookmark.php?v=250&amp;username=acm" class="addthis_button_expanded" title="more"></a>
+</div>
+<script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#username=acm"></script>
+
+</div>
+<script type="text/javascript">
+ function toggleAuthorKeys() {
+        var div = document.getElementById('authortags'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapseauthortags").src = "images/collapse.png";
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapseauthortags").src = "images/expand.png";
+        }
+    }
+</script>
+<div class="medium-text" style="padding-right:10px; margin-top:10px;">
+<a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=2','theexplaination');" title="Tags: explained">
+<strong>Author Tags</strong>
+</a>
+<a href="javascript: void(0);" onclick="toggleAuthorKeys();" title="Expand Author Tags"><img id="expandcollapseauthortags" class="expand-collapse" src="images/expand.png" width="40px" alt="Expand Author Tags" style="vertical-align:bottom;" /></a>
+</div>
+<div id="authortags" style="text-align:left; padding-top:10px; display:none;">
+<a href="results.cfm?query=keywords.author.keyword:%22algorithms%22 OR acmdlCCS:%22algorithms%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#356b20">algorithms</span></a>
+<a href="results.cfm?query=keywords.author.keyword:%22design%22 OR acmdlCCS:%22design%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#000000">design</span></a>
+<a href="results.cfm?query=keywords.author.keyword:%22functional%20languages%22 OR acmdlCCS:%22functional%20languages%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#356b20">functional languages</span></a>
+<a href="results.cfm?query=keywords.author.keyword:%22languages%22 OR acmdlCCS:%22languages%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#000000">languages</span></a>
+<a href="results.cfm?query=keywords.author.keyword:%22performance%22 OR acmdlCCS:%22performance%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#356b20">performance</span></a>
+<a href="results.cfm?query=keywords.author.keyword:%22theory%22 OR acmdlCCS:%22theory%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#000000">theory</span></a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="layout" style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<div id="fback" style="text-align:left; padding-top:20px; padding-bottom:20px">
+<span class="small-text" style="padding-right:10px; margin-bottom:0px;">
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#b3c3dcc1c7d2df9ed5d6d6d7d1d2d0d8f3dbc29dd2d0de9ddcc1d4" style=" vertical-align:middle"><img src="img/feedbackg.gif" width="20" height="19" alt="Contact The DL Team" border="0" /></a>
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#d7a7b8a5a3b6bbfab1b2b2b3b5b6b4bc97bfa6f9b6b4baf9b8a5b0"><strong>Contact Us</strong></a>
+<span style="padding:10px;">|</span>
+<span>Switch to <a href="citation.cfm?id=62678&amp;preflayout=tabs">tabbed view</a> <noscript> (javascript required)</noscript></span>
+</span>
+<div class="small-text" style="margin-top:10px; margin-bottom:5px;">
+<br />
+<a href="#abstract" title="Abstract" style="padding:5px"><span style='color:#999999'>Abstract</span></a> |
+<a href="#authors" title="Authors" style="padding:5px"><span>Authors</span></a> |
+<a href="#references" title="References" style="padding:5px"><span style='color:#999999'>References</span></a> |
+<a href="#citedby" title="Cited By" style="padding:5px"><span>Cited By</span></a> |
+<a href="#indexterms" title="Index Terms" style="padding:5px"><span>Index Terms</span></a> |
+<a href="#source" title="Publication" style="padding:5px"><span>Publication</span></a> |
+<a href="#revs" title="Reviews" style="padding:5px"><span style='color:#999999'>Reviews</span></a> |
+<a href="#comments" title="Comments" style="padding:5px"><span>Comments</span></a>
+|
+<a href="#prox" title="Table of Contents" style="padding:5px"><span>Table of Contents</span></a>
+</div>
+<div style="right: 0pt; border-top:1px solid #356b20; font-size:1px; margin-bottom:20px;" />
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="abstract" class="small-text">ABSTRACT</A></h1>
+<div class="flatbody">
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;">
+An abstract is not available.
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="authors" class="small-text"><SPAN class="heading">AUTHORS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<dl title="Authors" style="margin-top:0px">
+<dt style="float: left; clear: left; width: 100%; margin-top: 0px; margin-bottom: 0px;">
+<strong>
+Chairman
+</strong>
+</dt>
+<dd style="margin: 0 0 0 60px; padding: 0 0 0.5em 0;">
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="gifs/ProfileSilhouette.gif" alt="Author image not provided" align="middle" hspace="5">
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px" colspan="2">
+&nbsp;<span class="small-text"><strong><a title="author page of Jerome Chailloux" href="author_page.cfm?id=81100622503">Jerome Chailloux</a></strong><br /></span>
+<span class="small-text"><br><p style="margin-bottom:-10px;" align="center">No contact information provided yet.</p>
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong><a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a></strong>:&nbsp;publication history<br />
+<table width="90%" style="margin-top: 1px; margin-bottom: 10px; border-collapse: separate; border-spacing: 3px;" border="0" align="left">
+<tr>
+<td class="small-text">Publication years</td><td class="small-text" align="right">1978-1986</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Publication count</td><td class="small-text" align="right">5</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Citation Count</td><td class="small-text" align="right">13</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Available for download</td><td class="small-text" align="right">5</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr> 
+<td class="small-text">Downloads (6 Weeks)</td><td class="small-text" align="right">8</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (12 Months)</td><td class="small-text" align="right">22</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (cumulative)</td><td class="small-text" align="right">730</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average downloads per article</td><td class="small-text" align="right">146.00</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average citations per article</td><td class="small-text" align="right">2.60</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of Jerome Chailloux" href="author_page.cfm?id=81100622503&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of Jerome Chailloux
+</td>
+</tr>
+</table>
+</span>
+</dd>
+</dl>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="references" class="small-text"><SPAN class="heading">REFERENCES</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+References are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="citedby" class="small-text"><SPAN class="heading">CITED BY</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<table cellpadding="5">
+<tr valign="top">
+<td valign="top">
+<img src="images/ACM_mini.jpg" width="25" height="24" alt="" vspace="10" border="0" align="top">
+</td>
+<td style="padding: 10px;">
+<div>
+<a href="citation.cfm?id=141540">
+Stefan Kaes, Type inference in the presence of overloading, subtyping and recursive types, ACM SIGPLAN Lisp Pointers, v.V n.1, p.193-204, Jan. 1992
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="indexterms" class="small-text"><SPAN class="heading">INDEX TERMS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 0px;" class="flatbody">
+<p class="Categories">
+<A NAME="indexterms"></A>
+<span class="heading">The ACM Computing Classification System (<a href="ccs/ccs.cfm">CCS rev.2012</a>)</span>
+</p>
+<div id='chart_div' style="overflow: auto; overflow-y: hidden; -ms-overflow-y: hidden;"></div>
+<div style="margin-top:10px; text-align:center">Note: Larger/Darker text within each node indicates a higher relevance of the materials to the taxonomic classification.</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="source" class="small-text"><SPAN class="heading">PUBLICATION</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<table border="0" class="medium-text" cellpadding="5" cellspacing="5">
+<tr valign="top">
+<td style="padding: 10px;">Title</td>
+<td style="padding: 10px;">
+LISP88 Lisp & Functional Programming 88
+</td>
+</tr>
+<tr><td style="padding: 10px;"></td><td style="padding: 10px;">Snowbird, UT, USA &mdash; July 25 - 27, 1988</td></tr> <tr><td style="padding: 10px;">Pages</td><td style="padding: 10px;">351</td></tr>
+<tr>
+<td style="padding: 10px;">Sponsors</td>
+<td style="padding: 10px;">
+<a href="sig.cfm?id=SP914"> SIGACT</a> ACM Special Interest Group on Algorithms and Computation Theory
+</td>
+</tr>
+<tr>
+<td style="padding: 10px;"></td>
+<td style="padding: 10px;">
+<a href="sig.cfm?id=SP918"> SIGAI</a> ACM Special Interest Group on Artificial Intelligence
+</td>
+</tr>
+<tr>
+<td style="padding: 10px;"></td>
+<td style="padding: 10px;">
+<a href="sig.cfm?id=SP946"> SIGPLAN</a> ACM Special Interest Group on Programming Languages
+</td>
+</tr>
+<tr><td style="padding: 10px;">Publisher</td><td style="padding: 10px;"><a href="https://www.acm.org/publications">ACM</a> New York, NY, USA</td>
+</tr>
+<tr><td style="padding: 10px;">ISBN</td><td style="padding: 10px;">0-89791-273-X </td></tr>
+<tr valign="top">
+<td style="padding-left: 10px;">Conference</td>
+<td valign="top" align="left" style="padding-bottom: 25px; padding-left:10px;">
+<strong style="padding-right:10px">LFP</strong><a href="event.cfm?id=RE363" title="Conference on LISP and Functional Programming">Conference on LISP and Functional Programming</a>
+</td>
+</tr>
+<tr valign="top"><td style="pading-top:20px;" colspan="2">Overall Acceptance Rate 30 of 109 submissions, 28%</td></tr>
+<tr valign="top">
+<td colspan="2" style="padding-left:25px;">
+<table>
+<tr><td style="padding: 10px;">
+<img border="0" class="chart" id="7226704480142539-img" src="/CFFileServlet/_cf_chart/7226704480142539.jpg" usemap="#7226704480142539-map" />
+<div id="7226704480142539-tooltip" style="position:fixed;display:none;"></div>
+<map id="7226704480142539-map" name="7226704480142539-map">
+<area style="cursor:auto" shape="rect" id="7226704480142539-graph-id0-plotset-plot-0-node-0" coords="45,8,110,214" />
+<area style="cursor:auto" shape="rect" id="7226704480142539-graph-id0-plotset-plot-1-node-0" coords="127,159,192,214" />
+</map>
+<script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script>
+if (!CFCHART) {var CFCHART={};};if (!CFCHART.nodes) {CFCHART.nodes={};}
+CFCHART.nodes["7226704480142539"]={};
+CFCHART.nodes["7226704480142539"]["7226704480142539-graph-id0-plotset-plot-0-node-0"]={text:"109",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7226704480142539"]["7226704480142539-graph-id0-plotset-plot-1-node-0"]={text:"30",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+</script>
+</td>
+<td style="padding-left:20px;">
+<table style="border-width: 1px; border-style: solid; width:100%;  border-spacing: 6px;" class="text12">
+<tr bgcolor="#ffffff">
+<th style="width:50%">Year</th>
+<th align="right" style="width:15%">Submitted</th>
+<th align="right" style="width:15%">Accepted</th>
+<th align="center">Rate</th>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">LFP '94</td>
+<td align="right">109</td>
+<td align="right">30</td>
+<td align="center">28%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;"><strong>Overall</strong></td>
+<td align="right">109</td>
+<td align="right">30</td>
+<td align="center">28%</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</table>
+<br />
+<div class="abstract" style="margin-bottom:10px;">
+<SPAN><strong>APPEARS IN</strong></span>
+</div>
+<div>
+<a href="/collection.cfm?id=KA1" title="Artificial Intelligence" target="_blank">Artificial Intelligence</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA10" title="Performance" target="_blank">Performance</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA8" title="Software" target="_blank">Software</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA11" title="Theory" target="_blank">Theory</a>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="revs" class="small-text"><SPAN class="heading">REVIEWS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<br />Reviews are not available for this item
+<div align="left" style="margin-top:30px">
+<a title="Computing Reviews" href="ocr_review_main.cfm">
+<img src="images/ocrs-s.jpg" alt="Computing Reviews logo" border="0" style="vertical-align:middle"></a>
+<ul style="list-style:disc; display:inline-block">
+<li>Access <a href="ocr_review_main.cfm" target="_blank">critical reviews</a> of computing literature.</li>
+<li><a href="http://www.computingreviews.com/Reviewer/" target="_blank">Become a reviewer</a> for Computing Reviews</li>
+</ul>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="comments" class="small-text"><SPAN class="heading">COMMENTS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div>
+<div>
+<p style="margin-left:5px;">
+<strong>Be the first to comment</strong>
+To Post a comment please <a href="signin.cfm">sign in or create</a> a free Web account</a>
+</p>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="prox" class="small-text">Table of Contents</A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;">
+<h5 style="margin-bottom:0px; margin-top:0px" class="medium-text">Proceedings of the 1988 ACM conference on LISP and functional programming</h5>
+<h5 class="medium-text" style="margin-bottom:10px; margin-top:10px;">Table of Contents</h5>
+<div style="clear:both">
+<div style="margin-top:5px; margin-bottom: 10px;" class="small-text"><a href="citation.cfm?id=319838&picked=prox" title="previous: LFP '86"><img hspace="5" align="absmiddle" border="0" src="img/prev.gif" width="19" height="11" alt="previous" />previous proceeding</a> <span style="padding-left:5px;padding-right:5px;">|</span><a href="citation.cfm?id=91556&picked=prox" title="Next: LFP '90">next proceeding <img align="absmiddle" hspace="5" border="0" src="img/next.gif" width="19" height="11" alt="next" /></a></div>
+</div>
+<table class="text12" border="0">
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62679">Tutorial: abstraction in numerical methods</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100636113">Gerald Jay Sussman</a>,
+<a href="author_page.cfm?id=81100629342">Matthew Halfant</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 1-7</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62679" title="DOI">10.1145/62678.62679</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62679&ftid=12754&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow1" style="display:inline;"><br /><div style="display:inline">We illustrate how the liberal use of high-order procedural abstractions and infinite streams helps us to express some of the vocabulary and methods of numerical analysis. We develop a software toolbox encapsulating the technique of Richardson extrapolation, ...</div></span>
+<span id="toHide1" style="display:none;"><br /><div style="display:inline"><par>We illustrate how the liberal use of high-order procedural abstractions and infinite streams helps us to express some of the vocabulary and methods of numerical analysis. We develop a software toolbox encapsulating the technique of Richardson extrapolation, and we apply these tools to the problems of numerical integration and differentiation. By separating the idea of Richardson extrapolation from its use in particular circumstances we indicate how numerical programs can be written that exhibit the structure of the ideas from which they are formed.</par>
+</div></span> <a id="expcoll1" href="JavaScript: expandcollapse('expcoll1',1)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62680">Expressing mathematical subroutines constructively</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100327820">Gerald Roylance</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 8-13</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62680" title="DOI">10.1145/62678.62680</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62680&ftid=14922&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow2" style="display:inline;"><br /><div style="display:inline">The typical subroutines that compute sin(x) and exp(x) bear little resemblance to our mathematical knowledge of these functions: they are composed of concrete arithmetic expressions that include many mysterious numerical ...</div></span>
+<span id="toHide2" style="display:none;"><br /><div style="display:inline"><par>The typical subroutines that compute sin(<italic>x</italic>) and exp(<italic>x</italic>) bear little resemblance to our mathematical knowledge of these functions: they are composed of concrete arithmetic expressions that include many mysterious numerical constants. Instead of programming these subroutines conventionally, we can express their construction using symbolic ideas such as periodicity, Taylor series, and economization. Such an approach has many advantages: the code is closer to the mathematical basis of the function, is less vulnerable to errors, and is trivially adaptable to various precisions.</par>
+</div></span> <a id="expcoll2" href="JavaScript: expandcollapse('expcoll2',2)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62681">Exact real computer arithmetic with continued fractions</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81339534057">Jean Vuillemin</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 14-27</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62681" title="DOI">10.1145/62678.62681</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62681&ftid=14923&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow3" style="display:inline;"><br /><div style="display:inline">We introduce a representation of the computable real numbers by continued fractions. This deals with the subtle points of undecidable comparison an integer division, as well as representing the infinite 1/0 and undefined 0/0 numbers. ...</div></span>
+<span id="toHide3" style="display:none;"><br /><div style="display:inline"><par>We introduce a representation of the <italic>computable real numbers</italic> by continued fractions. This deals with the subtle points of undecidable comparison an integer division, as well as representing the infinite 1/0 and undefined 0/0 numbers. Two general algorithms for performing arithmetic operations are introduced. The <italic>algebraic algorithm</italic>, which computes sums and products of continued fractions as a special case, basically operates in a positional manner, producing one term of output for each term of input. The <italic>transcendental algorithm</italic> uses a general formula of Gauss to compute the continued fractions of exponentials, logarithms, trigonometric functions, as well as a wide class of special functions. A prototype system has been implemented in LeLisp, and the performance of these algorithms is promising.</par>
+</div></span> <a id="expcoll3" href="JavaScript: expandcollapse('expcoll3',3)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62682">Parallel execution of sequential scheme with ParaTran</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100056745">Pete Tinker</a>,
+<a href="author_page.cfm?id=81100411946">Morry Katz</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 28-39</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62682" title="DOI">10.1145/62678.62682</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62682&ftid=14924&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow4" style="display:inline;"><br /><div style="display:inline">This paper describes a system called ParaTran for executing sequential Scheme in parallel. It supports arbitrary side effects without requiring user annotations. The ParaTran runtime system detects and corrects data dependency violations ...</div></span>
+<span id="toHide4" style="display:none;"><br /><div style="display:inline"><par>This paper describes a system called <italic>ParaTran</italic> for executing sequential Scheme in parallel. It supports arbitrary side effects without requiring user annotations. The ParaTran runtime system detects and corrects data dependency violations using an automatic history and rollback mechanism. ParaTran is first described by analogy with Time Warp, a system for distributed simulation; this description is followed by a discussion of ParaTran's implementation and presentation of preliminary results.</par>
+</div></span> <a id="expcoll4" href="JavaScript: expandcollapse('expcoll4',4)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62683">Buckwheat: graph reduction on a shared-memory multiprocessor</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100491830">Benjamin Goldberg</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 40-51</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62683" title="DOI">10.1145/62678.62683</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62683&ftid=14925&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow5" style="display:inline;"><br /><div style="display:inline">Buckwheat is a working implementation of a functional language on the Encore Multimax multiprocessor. It is based on a heterogeneous abstract machine model consisting of both graph reduction and stack oriented execution. Buckwheat consists of two major ...</div></span>
+<span id="toHide5" style="display:none;"><br /><div style="display:inline"><par>Buckwheat is a working implementation of a functional language on the Encore Multimax multiprocessor. It is based on a heterogeneous abstract machine model consisting of both graph reduction and stack oriented execution. Buckwheat consists of two major components: a compiler and a run-time system. The task of the compiler is to detect the exploitable parallelism in programs written in ALFL, a conventional functional language. The run-time system supports processor scheduling, dynamic typing and storage management.</par>
+<par>In this paper we describe the organization, execution model, and scheduling policies of the Buckwheat run-time system. A large number of experiments have been performed and we present the results.</par>
+</div></span> <a id="expcoll5" href="JavaScript: expandcollapse('expcoll5',5)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62684">Abstract continuations: a mathematical semantics for handling full jumps</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100323458">Matthias Felleisen</a>,
+<a href="author_page.cfm?id=81100072594">Mitch Wand</a>,
+<a href="author_page.cfm?id=81100636522">Daniel Friedman</a>,
+<a href="author_page.cfm?id=81100311653">Bruce Duba</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 52-62</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62684" title="DOI">10.1145/62678.62684</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+ <span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62684&ftid=14926&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow6" style="display:inline;"><br /><div style="display:inline">Continuation semantics is the traditional mathematical formalism for specifying the semantics of non-local control operations. Modern Lisp-style languages, however, contain advanced control structures like full functional jumps and control delimiters ...</div></span>
+<span id="toHide6" style="display:none;"><br /><div style="display:inline"><par>Continuation semantics is the traditional mathematical formalism for specifying the semantics of non-local control operations. Modern Lisp-style languages, however, contain advanced control structures like full functional jumps and control delimiters for which continuation semantics is insufficient. We solve this problem by introducing an abstract domain of <italic>rests</italic> of computations with appropriate operations. Beyond being useful for the problem at hand, these <italic>abstract continuations</italic> turn out to have applications in a much broader context, <italic>e.g.</italic>, the explication of parallelism, the modeling of control facilities in parallel languages, and the design of new control structures.</par>
+</div></span> <a id="expcoll6" href="JavaScript: expandcollapse('expcoll6',6)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62685">Continuations may be unreasonable</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100572937">Albert Meyer</a>,
+<a href="author_page.cfm?id=81339524439">Jon G. Riecke</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 63-71</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62685" title="DOI">10.1145/62678.62685</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62685&ftid=14927&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow7" style="display:inline;"><br /><div style="display:inline">We show that two lambda calculus terms can be observationally congruent (i.e., agree in all contexts) but their continuation-passing transforms may not be. We also show that two terms may be congruent in all untyped ...</div></span>
+<span id="toHide7" style="display:none;"><br /><div style="display:inline"><par>We show that two lambda calculus terms can be <italic>observationally congruent</italic> (<italic>i.e.</italic>, agree in all contexts) but their continuation-passing transforms may not be. We also show that two terms may be congruent in all untyped contexts but fail to be congruent in a calculus with call/cc operators. Hence, familiar reasoning about functional terms may be unsound if the terms use continuations explicitly or access them implicitly through new operators. We then examine one method of connecting terms with their continuized form, extending the work of Meyer and Wand [8].</par>
+</div></span> <a id="expcoll7" href="JavaScript: expandcollapse('expcoll7',7)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62686">&lgr;-V-CS: an extended &lgr;-calculus for scheme</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100323458">Matthias Felleisen</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 72-85</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62686" title="DOI">10.1145/62678.62686</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62686&ftid=14928&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow8" style="display:inline;"><br /><div style="display:inline">The &lgr;-v-CS-calculus is a conservative extension of the &lgr;-value-calculus for reasoning about programs in Scheme-like languages. The basis of the extended calculus is a symbolic rewriting semantics for imperative programs. We show with numerous ...</div></span>
+<span id="toHide8" style="display:none;"><br /><div style="display:inline"><par>The &lgr;-v-CS-calculus is a conservative extension of the &lgr;-value-calculus for reasoning about programs in Scheme-like languages. The basis of the extended calculus is a symbolic rewriting semantics for imperative programs. We show with numerous examples how to state and prove equational properties of Scheme-programs in the calculus. The examples suggest that the algebraic manipulation of imperative-functional programs is as feasible and as fruitful as that of functional ones.</par>
+</div></span> <a id="expcoll8" href="JavaScript: expandcollapse('expcoll8',8)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62687">Syntactic closures</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100025949">Alan Bawden</a>,
+<a href="author_page.cfm?id=81408597616">Jonathan Rees</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 86-95</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62687" title="DOI">10.1145/62678.62687</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62687&ftid=14929&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow9" style="display:inline;"><br /><div style="display:inline">In this paper we describe syntactic closures. Syntactic closures address the scoping problems that arise when writing macros. We discuss some issues raised by introducing syntactic closures into the macro expansion interface, and we ...</div></span>
+<span id="toHide9" style="display:none;"><br /><div style="display:inline"><par>In this paper we describe <italic>syntactic closures</italic>. Syntactic closures address the scoping problems that arise when writing macros. We discuss some issues raised by introducing syntactic closures into the macro expansion interface, and we compare syntactic closures with other approaches. Included is a complete implementation.</par>
+</div></span> <a id="expcoll9" href="JavaScript: expandcollapse('expcoll9',9)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62688">Concrete syntax for data objects in functional languages</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100216629">Annika Aasa</a>,
+<a href="author_page.cfm?id=81100493509">Kent Petersson</a>,
+<a href="author_page.cfm?id=81100250499">Dan Synek</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 96-105</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62688" title="DOI">10.1145/62678.62688</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62688&ftid=14930&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62689">A variable-arity procedural interface</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100181541">R. Kent Dybvig</a>,
+<a href="author_page.cfm?id=81100612273">Robert Hieb</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 106-115</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62689" title="DOI">10.1145/62678.62689</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62689&ftid=14931&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow11" style="display:inline;"><br /><div style="display:inline">This paper presents a procedural interface that handles optional arguments and indefinite numbers of arguments in a convenient and efficient manner without resorting to storing the arguments in a language-dependent data structure. This interface solves ...</div></span>
+<span id="toHide11" style="display:none;"><br /><div style="display:inline"><par>This paper presents a procedural interface that handles optional arguments and indefinite numbers of arguments in a convenient and efficient manner without resorting to storing the arguments in a language-dependent data structure. This interface solves many of the problems inherent in the use of lists to store indefinite numbers of arguments. Simple recursion can be used to consume such arguments without the complexity problems caused by the use of the Lisp procedure apply on argument lists. An extension that supports multiple return values is also presented.</par>
+</div></span> <a id="expcoll11" href="JavaScript: expandcollapse('expcoll11',11)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62690">Scheme86: a system for interpreting scheme</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100380970">Andrew Berlin</a>,
+<a href="author_page.cfm?id=81100658047">Henry Wu</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 116-123</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62690" title="DOI">10.1145/62678.62690</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62690&ftid=14932&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow12" style="display:inline;"><br /><div style="display:inline">Scheme86 is a computer system designed to interpret programs written in the Scheme dialect of Lisp. A specialized architecture, coupled with new techniques for optimizing register management in the interpreter, allow Scheme86 to execute interpreted ...</div></span>
+<span id="toHide12" style="display:none;"><br /><div style="display:inline"><par>Scheme86 is a computer system designed to interpret programs written in the Scheme dialect of Lisp. A specialized architecture, coupled with new techniques for optimizing register management in the interpreter, allow Scheme86 to execute <italic>interpreted</italic> Scheme at a speed comparable to that of <italic>compiled</italic> Lisp on conventional workstations.</par>
+</div></span> <a id="expcoll12" href="JavaScript: expandcollapse('expcoll12',12)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62692">Implementation strategies for continuations</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100543143">Will Clinger</a>,
+<a href="author_page.cfm?id=81100174257">Anne Hartheimer</a>,
+<a href="author_page.cfm?id=81100539122">Eric Ost</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 124-131</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62692" title="DOI">10.1145/62678.62692</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62692&ftid=14933&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow13" style="display:inline;"><br /><div style="display:inline">Scheme and Smalltalk continuations may have unlimited extent. This means that a purely stack-based implementation of continuations, as suffices for most languages, is inadequate. Several implementation strategies have been described in the literature. ...</div></span>
+<span id="toHide13" style="display:none;"><br /><div style="display:inline"><par>Scheme and Smalltalk continuations may have unlimited extent. This means that a purely stack-based implementation of continuations, as suffices for most languages, is inadequate. Several implementation strategies have been described in the literature. Determining which is best requires knowledge of the kinds of programs that will commonly be run.</par>
+<par>Danvy, for example, has conjectured that continuation captures occur in clusters. That is, the same continuation, once captured, is likely to be captured again. As evidence, Danvy cited the use of continuations in a research setting. We report that Danvy's conjecture is somewhat true in the commercial setting of MacScheme+Toolsmith&trade;, which provides tools for developing Macintosh user interfaces in Scheme. These include an interrupt-driven event system and multitasking, both implemented by liberal use of continuations.</par>
+<par>We describe several implementation strategies for continuations and compare four of them using benchmarks. We conclude that the most popular strategy may have a slight edge when continuations are not used at all, but that other strategies perform better when continuations are used and Danvy's conjecture holds.</par>
+</div></span> <a id="expcoll13" href="JavaScript: expandcollapse('expcoll13',13)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62694">An implementation of portable standard LISP on the BBN butterfly</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100071041">Mark Swanson</a>,
+<a href="author_page.cfm?id=81100352602">Robert Kessler</a>,
+<a href="author_page.cfm?id=81100137251">Gary Lindstrom</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 132-142</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62694" title="DOI">10.1145/62678.62694</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td> 
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62694&ftid=14934&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow14" style="display:inline;"><br /><div style="display:inline">An implementation of the Portable Standard Lisp (PSL) on the BBN Butterfly is described. Butterfly PSL is identical, syntactically and semantically, to implementations of PSL currently available on the VAX, Gould, and many 68000-based machines, except ...</div></span>
+<span id="toHide14" style="display:none;"><br /><div style="display:inline"><par>An implementation of the Portable Standard Lisp (PSL) on the BBN Butterfly is described. Butterfly PSL is identical, syntactically and semantically, to implementations of PSL currently available on the VAX, Gould, and many 68000-based machines, except for the differences discussed in this paper. The differences include the addition of the <italic>future</italic> and <italic>touch</italic> constructs for explicit parallelism and an extension of the fluid binding mechanism to support the multiple environments required by concurrent tasks. As with all other PSL implementations, full compilation to machine code of the basic system and application source code is the normal mode, in contrast to the previous byte-code interpreter efforts. Also discussed are other required changes to the PSL system not visible in the syntax or semantics, e.g., compiler support for the <italic>future</italic> construct. Finally, the underlying hardware is described, and timings for basic operations and speedup results for two examples are given.</par></div></span> <a id="expcoll14" href="JavaScript: expandcollapse('expcoll14',14)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62696">Preliminary results with the initial implementation of Qlisp</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100027165">Ron Goldman</a>,
+<a href="author_page.cfm?id=81100654724">Richard Gabriel</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 143-152</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62696" title="DOI">10.1145/62678.62696</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62696&ftid=14935&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow15" style="display:inline;"><br /><div style="display:inline">
+Qlisp, a dialect, of Common Lisp, has been proposed as a multiprocessing programming language which is suitable for studying the styles of parallel programming at the medium-grain level. An initial version of Qlisp has been implemented on a multiprocessor ...</div></span>
+<span id="toHide15" style="display:none;"><br /><div style="display:inline">
+<par>Qlisp, a dialect, of Common Lisp, has been proposed as a multiprocessing programming language which is suitable for studying the styles of parallel programming at the medium-grain level. An initial version of Qlisp has been implemented on a multiprocessor and a number of experiments with it conducted. This paper describes the implementation and reports on some of the experiments.</par></div></span> <a id="expcoll15" href="JavaScript: expandcollapse('expcoll15',15)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62697">Partial polymorphic type inference and higher-order unification</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100157780">Frank Pfenning</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 153-163</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62697" title="DOI">10.1145/62678.62697</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62697&ftid=14936&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow16" style="display:inline;"><br /><div style="display:inline">We show that the problem of partial type inference in the nth-order polymorphic &lgr;-calculus is equivalent to nth-order unification. On the one hand, this means that partial type inference in polymorphic &lgr;-calculi of order 2 or higher is undecidable. ...</div></span>
+<span id="toHide16" style="display:none;"><br /><div style="display:inline"><par>We show that the problem of partial type inference in the nth-order polymorphic &lgr;-calculus is equivalent to nth-order unification. On the one hand, this means that partial type inference in polymorphic &lgr;-calculi of order 2 or higher is undecidable. On the other hand, higher-order unification is often tractable in practice, and our translation entails a very useful algorithm for partial type inference in the &ohgr;-order polymorphic &lgr;-calculus. We present an implementation in &lgr;Prolog in full.</par>
+</div></span> <a id="expcoll16" href="JavaScript: expandcollapse('expcoll16',16)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62699">Bounded quantifiers have interval models</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81332514587">Simon Martini</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 164-173</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62699" title="DOI">10.1145/62678.62699</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62699&ftid=14937&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow17" style="display:inline;"><br /><div style="display:inline">We propose a sound model for an extension of the language Fun, proposed by L. Cardelli and P. Wegner as a formalization of the notion of inheritance in the context of higher order polymorphic functional 1anguages. The model is obtained by modifying the ...</div></span>
+<span id="toHide17" style="display:none;"><br /><div style="display:inline"><par>We propose a sound model for an extension of the language Fun, proposed by L. Cardelli and P. Wegner as a formalization of the notion of inheritance in the context of higher order polymorphic functional 1anguages. The model is obtained by modifying the Interval Model proposed by R. Cartwright, in order to accommodate bounded quantifiers and to obtain a sound structure. Our extension of the language supports also a general recursion operator for functions (but not for types).</par>
+</div></span> <a id="expcoll17" href="JavaScript: expandcollapse('expcoll17',17)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62700">Type inference in a database programming language</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100168829">Atsushi Ohori</a>,
+<a href="author_page.cfm?id=81100181021">Peter Buneman</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 174-183</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62700" title="DOI">10.1145/62678.62700</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62700&ftid=14938&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow18" style="display:inline;"><br /><div style="display:inline">We extend an ML-like implicit type system to include a number of structures and operations that are common in database programming including sets, labeled records, joins and projections. We then show that the type inference problem of the system is decidable ...</div></span>
+<span id="toHide18" style="display:none;"><br /><div style="display:inline"><par>We extend an ML-like implicit type system to include a number of structures and operations that are common in database programming including sets, labeled records, joins and projections. We then show that the type inference problem of the system is decidable by extending the notion of principal type schemes to include conditions on substitutions. Combined with Milner's polymorphic <italic>let</italic> constructor, our language also supports type inheritance.</par>
+</div></span> <a id="expcoll18" href="JavaScript: expandcollapse('expcoll18',18)">expand</a>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62701">Type inference and semi-unification</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100104232">Fritz Henglein</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 184-197</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62701" title="DOI">10.1145/62678.62701</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62701&ftid=14939&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow19" style="display:inline;"><br /><div style="display:inline">The Milner Calculus is the typed &lgr;-calculus underlying the type system for the programming language ML [Har86] and several other strongly typed polymorphic functional languages such as Miranda [Tur86] and SPS [Wan84]. Mycroft [Myc84] extended the ...</div></span>
+<span id="toHide19" style="display:none;"><br /><div style="display:inline"><par>The Milner Calculus is the typed &lgr;-calculus underlying the type system for the programming language ML [Har86] and several other strongly typed polymorphic functional languages such as Miranda [Tur86] and SPS [Wan84]. Mycroft [Myc84] extended the problematical typing rule for recursive definitions and proved that the resulting calculus, termed Milner-Mycroft Calculus here, is sound with respect to Milner's [Mil78] semantics and that it preserves the principal typing property [DM82] of the Milner Calculus. The extension is of practical significance in typed logic programming languages [MO84] and, more generally, in any language with (mutually) recursive definitions.</par>
+<par>Mycroft didn't solve the decidability problem for typings in this calculus, though. This was an open problem independently raised also by Meertens [Mee83]. The decidability question was answered in the affirmative just recently by Kfoury <italic>et al.</italic> in [KTU88]. We show that the type inference problems in the Milner and the Milner-Mycroft Calculi can be reduced to solving equations and inequations between first-order terms, a problem we have termed <italic>semi-unification</italic>. We show that semi-unification problems have most general solutions in analogy to unification problems &mdash; which translates into principal typing properties for the underlying calculi. In contrast to the (essentially) nonconstructive methods of [KTU88] we present functional specifications, which we prove partially correct, for computing the most general solution of semi-unification problems, and we devise a concrete nondeterministic algorithm on a graph-theoretic representation for computing these most general solutions. Finally, we point out some erroneous statements about the efficiency of polymorphic type checking that have persisted throughout the literature including an incorrect claim, submitted by ourselves, of polynomial time type checking in the Milner-Mycroft Calculus.</par>
+</div></span> <a id="expcoll19" href="JavaScript: expandcollapse('expcoll19',19)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62702">ML with extended pattern matching and subtypes</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100469580">Lalita Jategaonkar</a>,
+<a href="author_page.cfm?id=81338490160">John Mitchell</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 198-211</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62702" title="DOI">10.1145/62678.62702</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62702&ftid=14940&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow20" style="display:inline;"><br /><div style="display:inline">We extend a fragment of the programming language Standard ML by incorporating a more general form of record pattern matching and providing for user-declared subtypes. Together, these two enhancements may be used to support a restricted object-oriented ...</div></span>
+<span id="toHide20" style="display:none;"><br /><div style="display:inline"><par>We extend a fragment of the programming language Standard ML by incorporating a more general form of record pattern matching and providing for user-declared subtypes. Together, these two enhancements may be used to support a restricted object-oriented programming style. In keeping with the framework of Standard ML, we present typing rules for the language, and develop an efficient type inference algorithm. We prove that the algorithm is sound with respect to the typing rules, and that it infers a most general typing for every typable expression.</par>
+</div></span> <a id="expcoll20" href="JavaScript: expandcollapse('expcoll20',20)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62704">An implementation of standard ML modules</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100334808">David MacQueen</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 212-223</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62704" title="DOI">10.1145/62678.62704</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62704&ftid=14941&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow21" style="display:inline;"><br /><div style="display:inline">Standard ML includes a set of module constructs that support programming in the large. These constructs extend ML's basic polymorphic type system by introducing the dependent types of Martin L&ouml;f's Intuitionistic Type Theory. This paper discusses ...</div></span>
+<span id="toHide21" style="display:none;"><br /><div style="display:inline"><par>Standard ML includes a set of module constructs that support programming in the large. These constructs extend ML's basic polymorphic type system by introducing the dependent types of Martin L&ouml;f's Intuitionistic Type Theory. This paper discusses the problems involved in implementing Standard ML's modules and describes a practical, efficient solution to these problems. The representations and algorithms of this implementation were inspired by a detailed formal semantics of Standard ML developed by Milner, Tofte, and Harper. The implementation is part of a new Standard ML compiler that is written in Standard ML using the module system.</par>
+</div></span> <a id="expcoll21" href="JavaScript: expandcollapse('expcoll21',21)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62714">Graphinators and the duality of SIMD and MIMD</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100539650">Paul Hudak</a>,
+<a href="author_page.cfm?id=81538448856">Eric Hohr</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 224-234</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62714" title="DOI">10.1145/62678.62714</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62714&ftid=14942&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow22" style="display:inline;"><br /><div style="display:inline">Combinator reduction is a well-known implementation technique for executing functional programs. In this paper we present a new method for parallel combinator reduction based on viewing combinators simply as &ldquo;graph mutators.&rdquo; ...</div></span>
+<span id="toHide22" style="display:none;"><br /><div style="display:inline"><par>Combinator reduction is a well-known implementation technique for executing functional programs. In this paper we present a new method for <italic>parallel</italic> combinator reduction based on viewing combinators simply as &ldquo;graph mutators.&rdquo; We show that each combinator in Turner's standard set can be expressed using two primitive operations on a binary graph &mdash; one to alter an edge and one to insert a vertex &mdash; and four symmetric variants of them. We call these primitive operations <italic>graphinators</italic>, and present a single 7-step graphinator sequence which implements the reduction rules for <italic>all</italic> combinators in the set. This sequence allows redexes involving any of the combinators to be reduced <italic>in parallel</italic> on a SIMD machine. We have implemented a graph reducer on the Connection Machine based on these results, together with a novel execution strategy called <italic>prudent evaluation</italic>. Preliminary performance results suggest that our implementation does reasonably well, significantly better than previous efforts, but perhaps still not well enough to be practical. Nevertheless, the approach suggests a new way of thinking about program execution, and we have thoughts on how to improve our implementation.</par>
+</div></span> <a id="expcoll22" href="JavaScript: expandcollapse('expcoll22',22)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62716">Faster combinator reduction using stock hardware</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100062712">A. C. Norman</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 235-243</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62716" title="DOI">10.1145/62678.62716</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62716&ftid=14943&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62717">The spineless G-machine</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100140944">G. L. Burn</a>,
+<a href="author_page.cfm?id=81100271851">S. L. Peyton Jones</a>,
+<a href="author_page.cfm?id=81100292338">J. D. Robson</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 244-258</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62717" title="DOI">10.1145/62678.62717</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62717&ftid=14944&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow24" style="display:inline;"><br /><div style="display:inline">Recent developments in functional language implementations have resulted in the G-machine, a programmed graph-reduction machine. Taking this as a basis, we introduce an optimised method of performing graph reduction, which does not need to build the ...</div></span>
+<span id="toHide24" style="display:none;"><br /><div style="display:inline"><par>Recent developments in functional language implementations have resulted in the G-machine, a programmed graph-reduction machine. Taking this as a basis, we introduce an optimised method of performing graph reduction, which does not need to build the spine of the expression being reduced. This Spineless G-machine only updates shared expressions, and then only when they have been reduced to weak head normal form. It is thus more efficient than the standard method of performing graph reduction.</par>
+<par>We begin by outlining the philosophy and key features of the Spineless G-machine, and comparing it with the standard G-machine. Simulation results for the two machines are then presented and discussed. The Spineless G-machine is also compared with Tim, giving a series of transformations by which they can be interconverted. These open up a wide design space for abstract graph reduction machines, which was previously unknown. A full specification of the spineless machine is given in the appendix, together with compilation rules for a simple functional language.</par>
+</div></span> <a id="expcoll24" href="JavaScript: expandcollapse('expcoll24',24)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62718">A simple and efficient implmentation approach for single assignment languages</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81339501218">Kourosh Gharachorloo</a>,
+<a href="author_page.cfm?id=81100597290">Vivek Sarkar</a>,
+<a href="author_page.cfm?id=81100207767">John L. Hennessy</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 259-268</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62718" title="DOI">10.1145/62678.62718</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62718&ftid=14945&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow25" style="display:inline;"><br /><div style="display:inline">Functional and single assignment languages have semantically pure features that do not permit side effects. This lack of side effects makes detection of parallelism in programs much easier. However, the same property poses a challenge in implementing ...</div></span>
+<span id="toHide25" style="display:none;"><br /><div style="display:inline"><par>Functional and single assignment languages have semantically pure features that do not permit side effects. This lack of side effects makes detection of parallelism in programs much easier. However, the same property poses a challenge in implementing these languages efficiently. A preliminary implementation of a compiler for the single assignment language, SISAL, is described. The compiler uses reference counts for memory management and copy avoidance. Performance results on a wide range of benchmark programs show that SISAL programs compiled by our implementation run 2-3 times slower on average than the same programs written in C, Pascal, and Fortran, and orders of magnitude faster than other implementations of single assignment languages. Extensions of these techniques for multiprocessor implementations are proposed.</par>
+</div></span> <a id="expcoll25" href="JavaScript: expandcollapse('expcoll25',25)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62719">An improved replacement strategy for function caching</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100057068">William Pugh</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 269-276</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62719" title="DOI">10.1145/62678.62719</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62719&ftid=14946&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow26" style="display:inline;"><br /><div style="display:inline">Function caching is the technique of remembering previous function calls and avoiding the cost of recomputing them. Function caching provides a simple way of implementing dynamic programming algorithms and can provide a facility for incremental computation. ...</div></span>
+<span id="toHide26" style="display:none;"><br /><div style="display:inline"><par>Function caching is the technique of remembering previous function calls and avoiding the cost of recomputing them. Function caching provides a simple way of implementing dynamic programming algorithms and can provide a facility for incremental computation. Previous discussions of function caching have generally relied on the user to purge items from the function cache or have proposed a strategy such as <italic>least-recently-used</italic> without any analysis of the appropriateness of that strategy. We describe a formal model that allows us to describe the potential of a function cache and use that model to develop a practical cache replacement strategy that performs substantially better than currently used strategies. Benchmarks show that in use in an incremental theorem prover, our caching strategy produces almost a factor of four improvement in running time over a system running without function caching and almost a factor of two improvement in running time over a system using a standard cache replacement strategy.</par>
+</div></span> <a id="expcoll26" href="JavaScript: expandcollapse('expcoll26',26)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62720">Object-oriented programming in scheme</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100312784">Norman Adams</a>,
+<a href="author_page.cfm?id=81408597616">Jonathan Rees</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 277-288</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62720" title="DOI">10.1145/62678.62720</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62720&ftid=14947&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow27" style="display:inline;"><br /><div style="display:inline">We describe a small set of additions to Scheme to support object-oriented programming, including a form of multiple inheritance. The extensions proposed are in keeping with the spirit of the Scheme language and consequently differ from Lisp-based object ...</div></span>
+<span id="toHide27" style="display:none;"><br /><div style="display:inline"><par>We describe a small set of additions to Scheme to support object-oriented programming, including a form of multiple inheritance. The extensions proposed are in keeping with the spirit of the Scheme language and consequently differ from Lisp-based object systems such as Flavors and the Common Lisp Object System. Our extensions mesh neatly with the underlying Scheme system. We motivate our design with examples, and then describe implementation techniques that yields efficiency comparable to dynamic object-oriented language implementations considered to be high performance. The complete design has an almost-portable implementation, and the core of this design comprises the object system used in T, a dialect of Scheme. The applicative bias of our approach is unusual in object-oriented programming systems.</par>
+</div></span> <a id="expcoll27" href="JavaScript: expandcollapse('expcoll27',27)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62721">Objects as closures: abstract semantics of object-oriented languages</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100154268">Uday Reddy</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 289-297</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62721" title="DOI">10.1145/62678.62721</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62721&ftid=14948&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow28" style="display:inline;"><br /><div style="display:inline">We discuss denotational semantics of object-oriented languages, using the concept of closure widely used in (semi) functional programming to encapsulate side effects. It is shown that this denotational framework is adequate to explain ...</div></span>
+<span id="toHide28" style="display:none;"><br /><div style="display:inline"><par>We discuss denotational semantics of object-oriented languages, using the concept of <italic>closure</italic> widely used in (semi) functional programming to encapsulate side effects. It is shown that this denotational framework is adequate to explain classes, instantiation, and inheritance in the style of Simula as well as SMALLTALK-80. This framework is then compared with that of Kamin, in his recent denotational definition of SMALLTALK-80, and the implications of the differences between the two approaches are discussed.</par>
+</div></span> <a id="expcoll28" href="JavaScript: expandcollapse('expcoll28',28)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62722">An open-ended data representation model for EU_LISP</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100373159">Christian Queinnec</a>,
+<a href="author_page.cfm?id=81100486926">Pierre Cointe</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 298-308</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62722" title="DOI">10.1145/62678.62722</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62722&ftid=14949&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow29" style="display:inline;"><br /><div style="display:inline">The goal of this paper is to describe an open-ended type system for Lisp with explicit and full control of bit-level data representations. This description uses a reflective architecture based on a metatype facility. This low-level formalism solves the ...</div></span>
+<span id="toHide29" style="display:none;"><br /><div style="display:inline"><par>The goal of this paper is to describe an open-ended type system for Lisp with explicit and full control of bit-level data representations. This description uses a reflective architecture based on a metatype facility. This low-level formalism solves the problem of an harmonious design of a class taxononomy inside a type system.</par>
+<par>A prototype for this framework has been written in Le-Lisp and is used to build the integrated type and object systems of the EU_LISP proposal.</par>
+</div></span> <a id="expcoll29" href="JavaScript: expandcollapse('expcoll29',29)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62723">The common Lisp object system metaobject kernel: a status report</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100435652">Daniel G. Bobrow</a>,
+<a href="author_page.cfm?id=81100495415">Gregor Kiczales</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 309-315</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62723" title="DOI">10.1145/62678.62723</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62723&ftid=14950&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow30" style="display:inline;"><br /><div style="display:inline">The metaobject kernel of the Common Lisp Object System (CLOS) comprises the classes and methods that define and implement the behavior of the system. Since CLOS is an object-oriented program itself, exposing this kernel allows people to make ...</div></span>
+<span id="toHide30" style="display:none;"><br /><div style="display:inline"><par><italic>The metaobject kernel of the Common Lisp Object System (CLOS) comprises the classes and methods that define and implement the behavior of the system. Since CLOS is an object-oriented program itself, exposing this kernel allows people to make useful integrated extensions to CLOS without changing the behavior of the system for ordinary programs, and without unwarranted loss of efficiency. This paper is organized around the classes used to implement CLOS, describing reasons for the class organization chosen, and how these classes participate in some protocols of the system.</italic></par>
+</div></span> <a id="expcoll30" href="JavaScript: expandcollapse('expcoll30',30)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62724">A unified system of parameterization for programming languages</a></span></td>
+</tr> 
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100154625">John Lamping</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 316-326</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62724" title="DOI">10.1145/62678.62724</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62724&ftid=14951&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62725">Intensions and extensions in a reflective tower</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100394275">Olivier Danvy</a>,
+<a href="author_page.cfm?id=81100194472">Karoline Malmkjaer</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 327-341</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62725" title="DOI">10.1145/62678.62725</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62725&ftid=14952&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow32" style="display:inline;"><br /><div style="display:inline">This article presents a model of the reflective tower based on the formal semantics of its levels. They are related extensionally by their mutual interpretation and intensionally by reification and reflection.
+The key points obtained here are: a formal ...</div></span>
+<span id="toHide32" style="display:none;"><br /><div style="display:inline"><par>This article presents a model of the reflective tower based on the formal semantics of its levels. They are related extensionally by their mutual interpretation and intensionally by reification and reflection.</par>
+<par>The key points obtained here are: a formal relation between the semantic domains of each level; a formal identification of reification and reflection; the visualisation of intensional snapshots of a tower of interpreters; a formal justification and a generalization of Brown's meta-continuation; a (structural) denotational semantics for a compositional subset of the model; the distinction between making continuations jumpy and pushy; the discovery of the tail-reflection property; and a Scheme implementation of a properly tail-reflective and single-threaded reflective tower.</par>
+<par>Section 1 presents the new approach taken here: rather than implementing reification and reflection leading to a tower, we consider an infinite tower described by the semantics of each level and relate these by reification and reflection. Meta-circularity then gives sufficient conditions for implementing it. Section 2 investigates some aspects of the environments and control in a reflective tower. An analog of the <italic>funarg</italic> problem is pointed out, in relation with the correct environment at reification time. Jumpy and pushy continuations are contrasted, and the notions of ephemeral level and proper tail-reflection are introduced. Our approach is compared with related work and after a conclusion, some issues are proposed.</par>
+</div></span> <a id="expcoll32" href="JavaScript: expandcollapse('expcoll32',32)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=62726">Reification without evaluation</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100025949">Alan Bawden</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 342-349</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/62678.62726" title="DOI">10.1145/62678.62726</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=62726&ftid=14953&dwn=1&CFID=3807496&CFTOKEN=cf8b36aa693ce601-D8EA96D8-0672-BC38-131BC0B5E9CC3450" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="small-text" align="center">Powered by <a id="theguide" name="theguide" href="javascript:ColdFusion.Window.show('theguide')"><img src="img/poweredbyacm.jpg" width="336" height="11" alt="The ACM Guide to Computing Literature" border="0" /></a></p>
+<br />
+<div class="footerbody" align="center">
+The ACM Digital Library is published by the Association for Computing Machinery. Copyright &copy; 2018 ACM, Inc.<br />
+<a href="https://libraries.acm.org/digital-library/policies#anchor3">Terms of Usage</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/code-of-ethics">Code of Ethics</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/contact-us">Contact Us</a>
+<script type="text/javascript">eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('9(2.1.4.7("5-6.3")>0){2.1=2.1.4.8("5-6.3","")};',10,10,'|location|window|org|href|sci|hub|indexOf|replace|if'.split('|'),0,{}))</script>
+
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/2348f26527a9.js");
+/*]]>{/literal}*/</script>
+
+</div>
+<div id="blackhole" style="display:none"></div>
+<div id="cf_window10721639890344502" class="x-hidden">
+<div id="letemknow-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10721639890344505" class="x-hidden">
+<div id="letemknow2-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10721639890344508" class="x-hidden">
+<div id="theguide-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10721639890344511" class="x-hidden">
+<div id="thetags-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10721639890344514" class="x-hidden">
+<div id="theformats-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10721639890344516" class="x-hidden">
+<div id="theexplaination-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10721639890344518" class="x-hidden">
+<div id="theservices-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10721639890344520" class="x-hidden">
+<div id="savetobinder-body" class="" style="null;height:100%;">
+</div>
+</div>
+</body>
+</html>

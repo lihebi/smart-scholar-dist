@@ -1,0 +1,3602 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Proceedings of Machine Learning Research</title>
+  <meta name="description" content="Proceedings of the Seventeenth International Conference on Artificial Intelligence and Statistics
+  Held in Reykjavik, Iceland on 22-25 April 2014
+
+Published as Volume 33 by the Proceedings of Machine Learning Research on 02 April 2014.
+
+Volume Edited by:
+  Samuel Kaski
+  Jukka Corander
+
+Series Editors:
+  Neil D. Lawrence
+  Mark Reid
+">
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">  
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92432422-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+      autoNumber: "AMS"
+     }
+   },
+  tex2jax: {
+    inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <!-- Solution from http://stackoverflow.com/questions/31593297/using-execcommand-javascript-to-copy-hidden-text-to-clipboard -->
+<script type="text/javascript"
+	src="/js/copy_input.js">
+</script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="/js/download.js"></script>
+
+  
+
+</head>
+
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <table>
+      <tr>
+	<td><a align="left" class="site-logo" href="http://proceedings.mlr.press" target=_top><img align="right" class="jmlr" src="/img/pmlr.png" border="0"></a> </td>
+	<td><p class="site-title">Proceedings of Machine Learning Research</p></td>
+      </tr>
+    </table>
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+	<a class="page-link" href="/v33/">Volume 33</a>
+	<a class="page-link" href="/">All Volumes</a>
+	<a class="page-link" href="http://www.jmlr.org/">JMLR</a> 
+	<a class="page-link" href="http://www.jmlr.org/mloss">MLOSS</a>
+	<a class="page-link" href="/faq.html">FAQ</a>
+	<a class="page-link" href="/spec.html">Submission Format</a>
+	<a class="page-link" href="http://proceedings.mlr.press//v33/feed.xml">
+	<img src="/img/RSS.gif" class="rss" alt="RSS Feed">
+	</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content" id="content">
+      <div class="wrapper">
+        
+
+
+<h2>Volume 33: Artificial Intelligence and Statistics, 22-25 April 2014, Reykjavik, Iceland</h2>
+
+
+<p align="right">[<a href="https://github.com/mlresearch/v33/edit/gh-pages/_config.yml" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/mlresearch/v33/edit/gh-pages/_config.yml', 13);">edit</a>]</p>
+
+
+  
+<p><strong>Editors:
+    
+    
+    Samuel Kaski, 
+
+    
+    Jukka Corander
+
+    
+</strong></p>
+<p>[<a href="./bibliography.bib" target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v33/bibliography.bib', 14);">bib</a>][<a href="./citeproc.yaml"  target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v33/citeproc.yaml', 14);">citeproc</a>]</p>
+<div id="sectionnav">
+  <p>Contents:</p>
+  <ul>
+    
+    <li><a href="#preface">Preface</a></li>
+    
+    <li><a href="#notable">Notable Papers</a></li>
+    
+    <li><a href="#default">Regular Papers</a></li>
+    
+  </ul>
+  
+  <p>
+  <label for="search-authors">Filter Authors:</label>
+  <input type="search" name="filter-authors" id="search-authors" value />
+  <label for="search-titles">Filter Titles:</label>
+  <input type="search" name="filter-titles" id="search-titles" value />
+  </p>
+</div>
+
+
+<h3 id="preface">Preface</h3>
+
+<div class="paper">
+  <p class="title">Preface</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Samuel Kaski, 
+
+      
+      Jukka Corander
+
+      
+    </span>;
+    <span class="info">PMLR 33:i-iv</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kaski14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kaski14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kaski14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="notable">Notable Papers</h3>
+
+
+<div class="paper">
+  <p class="title">Decontamination of Mutually Contaminated Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Gilles Blanchard, 
+
+      
+      Clayton Scott
+
+      
+    </span>;
+    <span class="info">PMLR 33:1-9</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/blanchard14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/blanchard14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/blanchard14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/blanchard14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/blanchard14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Distributed optimization of deeply nested systems</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Miguel Carreira-Perpinan, 
+
+      
+      Weiran Wang
+
+      
+    </span>;
+    <span class="info">PMLR 33:10-19</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/carreira-perpinan14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/carreira-perpinan14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/carreira-perpinan14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/carreira-perpinan14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/carreira-perpinan14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Analysis of Empirical MAP and Empirical Partially Bayes: Can They be Alternatives to Variational Bayes?</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Shinichi Nakajima, 
+
+      
+      Masashi Sugiyama
+
+      
+    </span>;
+    <span class="info">PMLR 33:20-28</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/nakajima14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/nakajima14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/nakajima14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="default">Regular Papers</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="paper">
+  <p class="title">Improved Bounds for Online Learning Over the Permutahedron and Other Ranking Polytopes</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Nir Ailon
+
+      
+    </span>;
+    <span class="info">PMLR 33:29-37</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/ailon14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/ailon14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/ailon14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Information-Theoretic Characterization of Sparse Recovery</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Cem Aksoylar, 
+
+      
+      Venkatesh Saligrama
+
+      
+    </span>;
+    <span class="info">PMLR 33:38-46</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/aksoylar14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/aksoylar14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/aksoylar14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/aksoylar14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/aksoylar14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Hybrid Discriminative-Generative Approach with Gaussian Processes</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ricardo Andrade Pacheco, 
+
+      
+      James Hensman, 
+
+      
+      Max Zwiessele, 
+
+      
+      Neil Lawrence
+
+      
+    </span>;
+    <span class="info">PMLR 33:47-56</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/andradepacheco14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/andradepacheco14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/andradepacheco14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/andradepacheco14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/andradepacheco14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Average Case Analysis of High-Dimensional Block-Sparse Recovery and Regression for Arbitrary Designs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Waheed Bajwa, 
+
+      
+      Marco Duarte, 
+
+      
+      Robert Calderbank
+
+      
+    </span>;
+    <span class="info">PMLR 33:57-67</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/bajwa14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/bajwa14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/bajwa14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A New Perspective on Learning Linear Separators with Large L_qL_p Margins</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Maria-Florina Balcan, 
+
+      
+      Christopher Berlind
+
+      
+    </span>;
+    <span class="info">PMLR 33:68-76</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/balcan14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/balcan14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/balcan14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/balcan14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/balcan14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Non-parametric Conditional Factor Regression Model for Multi-Dimensional Input and Response</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ava Bargi, 
+
+      
+      Richard Yi Xu, 
+
+      
+      Zoubin Ghahramani, 
+
+      
+      Massimo Piccardi
+
+      
+    </span>;
+    <span class="info">PMLR 33:77-85</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/bargi14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/bargi14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/bargi14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning Optimal Bounded Treewidth Bayesian Networks via Maximum Satisfiability</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jeremias Berg, 
+
+      
+      Matti Järvisalo, 
+
+      
+      Brandon Malone
+
+      
+    </span>;
+    <span class="info">PMLR 33:86-95</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/berg14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/berg14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/berg14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Online Passive-Aggressive Algorithms for Non-Negative Matrix Factorization and Completion</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Mathieu Blondel, 
+
+      
+      Yotaro Kubo, 
+
+      
+      Ueda Naonori
+
+      
+    </span>;
+    <span class="info">PMLR 33:96-104</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/blondel14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/blondel14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/blondel14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/blondel14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/blondel14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">PAC-Bayesian Theory for Transductive Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Luc Bégin, 
+
+      
+      Pascal Germain, 
+
+      
+      François Laviolette, 
+
+      
+      Jean-Francis Roy
+
+      
+    </span>;
+    <span class="info">PMLR 33:105-113</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/begin14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/begin14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/begin14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/begin14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/begin14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Random Bayesian networks with bounded indegree</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Eunice Yuh-Jie Chen, 
+
+      
+      Judea Pearl
+
+      
+    </span>;
+    <span class="info">PMLR 33:114-121</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/chen14a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/chen14a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/chen14a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficient Low-Rank Stochastic Gradient Descent Methods for Solving Semidefinite Programs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jianhui Chen, 
+
+      
+      Tianbao Yang, 
+
+      
+      Shenghuo Zhu
+
+      
+    </span>;
+    <span class="info">PMLR 33:122-130</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/chen14b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/chen14b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/chen14b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Characterizing EVOI-Sufficient k-Response Query Sets in Decision Problems</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Robert Cohn, 
+
+      
+      Satinder Singh, 
+
+      
+      Edmund Durfee
+
+      
+    </span>;
+    <span class="info">PMLR 33:131-139</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/cohn14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/cohn14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/cohn14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Doubly Aggressive Selective Sampling Algorithms for Classification</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Koby Crammer
+
+      
+    </span>;
+    <span class="info">PMLR 33:140-148</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/crammer14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/crammer14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/crammer14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/crammer14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/crammer14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Sparse Bayesian Variable Selection for the Identification of Antigenic Variability in the Foot-and-Mouth Disease Virus</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Vinny Davies, 
+
+      
+      Richard Reeve, 
+
+      
+      William Harvey, 
+
+      
+      Francois Maree, 
+
+      
+      Dirk Husmeier
+
+      
+    </span>;
+    <span class="info">PMLR 33:149-158</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/davies14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/davies14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/davies14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Sparsity and the truncated l^2-norm</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Lee Dicker
+
+      
+    </span>;
+    <span class="info">PMLR 33:159-166</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/dicker14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/dicker14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/dicker14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/dicker14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/dicker14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficient Distributed Topic Modeling with Provable Guarantees</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Weicong Ding, 
+
+      
+      Mohammad Rohban, 
+
+      
+      Prakash Ishwar, 
+
+      
+      Venkatesh Saligrama
+
+      
+    </span>;
+    <span class="info">PMLR 33:167-175</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/ding14a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/ding14a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/ding14a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/ding14a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/ding14a-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Pan-sharpening with a Bayesian nonparametric dictionary learning model</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Xinghao Ding, 
+
+      
+      Yiyong Jiang, 
+
+      
+      Yue Huang, 
+
+      
+      John Paisley
+
+      
+    </span>;
+    <span class="info">PMLR 33:176-184</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/ding14b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/ding14b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/ding14b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Approximate Slice Sampling for Bayesian Posterior Inference</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Christopher DuBois, 
+
+      
+      Anoop Korattikara, 
+
+      
+      Max Welling, 
+
+      
+      Padhraic Smyth
+
+      
+    </span>;
+    <span class="info">PMLR 33:185-193</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/dubois14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/dubois14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/dubois14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Bayesian Logistic Gaussian Process Models for Dynamic Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Daniele Durante, 
+
+      
+      David Dunson
+
+      
+    </span>;
+    <span class="info">PMLR 33:194-201</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/durante14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/durante14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/durante14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Avoiding pathologies in very deep networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      David Duvenaud, 
+
+      
+      Oren Rippel, 
+
+      
+      Ryan Adams, 
+
+      
+      Zoubin Ghahramani
+
+      
+    </span>;
+    <span class="info">PMLR 33:202-210</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/duvenaud14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/duvenaud14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/duvenaud14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficient Inference for Complex Queries on Complex Distributions</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Lili Dworkin, 
+
+      
+      Michael Kearns, 
+
+      
+      Lirong Xia
+
+      
+    </span>;
+    <span class="info">PMLR 33:211-219</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/dworkin14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/dworkin14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/dworkin14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/dworkin14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/dworkin14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Bayesian Switching Interaction Analysis Under Uncertainty</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Zoran Dzunic, 
+
+      
+      John Fisher III
+
+      
+    </span>;
+    <span class="info">PMLR 33:220-228</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/dzunic14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/dzunic14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/dzunic14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Robust learning of inhomogeneous PMMs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ralf Eggeling, 
+
+      
+      Teemu Roos, 
+
+      
+      Petri Myllymäki, 
+
+      
+      Ivo Grosse
+
+      
+    </span>;
+    <span class="info">PMLR 33:229-237</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/eggeling14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/eggeling14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/eggeling14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Fully-Automatic Bayesian Piecewise Sparse Linear Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Riki Eto, 
+
+      
+      Ryohei Fujimaki, 
+
+      
+      Satoshi Morinaga, 
+
+      
+      Hiroshi Tamano
+
+      
+    </span>;
+    <span class="info">PMLR 33:238-246</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/eto14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/eto14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/eto14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning with Maximum A-Posteriori Perturbation Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Andreea Gane, 
+
+      
+      Tamir Hazan, 
+
+      
+      Tommi Jaakkola
+
+      
+    </span>;
+    <span class="info">PMLR 33:247-256</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/gane14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/gane14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/gane14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Sketching the Support of a Probability Measure</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Joachim Giesen, 
+
+      
+      Soeren Laue, 
+
+      
+      Lars Kuehne
+
+      
+    </span>;
+    <span class="info">PMLR 33:257-265</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/giesen14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/giesen14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/giesen14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Robust Stochastic Principal Component Analysis</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      John Goes, 
+
+      
+      Teng Zhang, 
+
+      
+      Raman Arora, 
+
+      
+      Gilad Lerman
+
+      
+    </span>;
+    <span class="info">PMLR 33:266-274</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/goes14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/goes14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/goes14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Bayesian Nonparametric Poisson Factorization for Recommendation Systems</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Prem Gopalan, 
+
+      
+      Francisco J. Ruiz, 
+
+      
+      Rajesh Ranganath, 
+
+      
+      David Blei
+
+      
+    </span>;
+    <span class="info">PMLR 33:275-283</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/gopalan14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/gopalan14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/gopalan14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/gopalan14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/gopalan14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficiently Enforcing Diversity in Multi-Output Structured Prediction</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Abner Guzman-Rivera, 
+
+      
+      Pushmeet Kohli, 
+
+      
+      Dhruv Batra, 
+
+      
+      Rob Rutenbar
+
+      
+    </span>;
+    <span class="info">PMLR 33:284-292</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/guzman-rivera14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/guzman-rivera14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/guzman-rivera14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning and Evaluation in Presence of Non-i.i.d. Label Noise</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Nico Görnitz, 
+
+      
+      Anne Porbadnigk, 
+
+      
+      Alexander Binder, 
+
+      
+      Claudia Sannelli, 
+
+      
+      Mikio Braun, 
+
+      
+      Klaus-Robert Mueller, 
+
+      
+      Marius Kloft
+
+      
+    </span>;
+    <span class="info">PMLR 33:293-302</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/gornitz14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/gornitz14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/gornitz14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/gornitz14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/gornitz14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Analytic Long-Term Forecasting with Periodic Gaussian Processes</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Nooshin HajiGhassemi, 
+
+      
+      Marc Deisenroth
+
+      
+    </span>;
+    <span class="info">PMLR 33:303-311</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/hajighassemi14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/hajighassemi14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/hajighassemi14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">On Estimating Causal Effects based on Supplemental Variables</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Takahiro Hayashi, 
+
+      
+      Manabu Kuroki
+
+      
+    </span>;
+    <span class="info">PMLR 33:312-319</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/hayashi14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/hayashi14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/hayashi14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Non-Asymptotic Analysis of Relational Learning with One Network</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Peng He, 
+
+      
+      Changshui Zhang
+
+      
+    </span>;
+    <span class="info">PMLR 33:320-327</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/he14a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/he14a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/he14a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Exploiting the Limits of Structure Learning via Inherent Symmetry</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Peng He, 
+
+      
+      Changshui Zhang
+
+      
+    </span>;
+    <span class="info">PMLR 33:328-337</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/he14b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/he14b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/he14b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Statistical Model for Event Sequence Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Kevin Heins, 
+
+      
+      Hal Stern
+
+      
+    </span>;
+    <span class="info">PMLR 33:338-346</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/heins14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/heins14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/heins14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Probabilistic Solutions to Differential Equations and their Application to Riemannian Statistics</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Philipp Hennig, 
+
+      
+      Søren Hauberg
+
+      
+    </span>;
+    <span class="info">PMLR 33:347-355</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/hennig14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/hennig14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/hennig14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/henning14-supp.zip" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/henning14-supp.zip, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Tilted Variational Bayes</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      James Hensman, 
+
+      
+      Max Zwiessele, 
+
+      
+      Neil Lawrence
+
+      
+    </span>;
+    <span class="info">PMLR 33:356-364</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/hensman14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/hensman14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/hensman14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/hensman14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/hensman14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">On correlation and budget constraints in model-based bandit optimization with application to automatic machine learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Matthew Hoffman, 
+
+      
+      Bobak Shahriari, 
+
+      
+      Nando Freitas
+
+      
+    </span>;
+    <span class="info">PMLR 33:365-374</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/hoffman14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/hoffman14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/hoffman14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/hoffman14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/hoffman14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Optimality of Thompson Sampling for Gaussian Bandits Depends on Priors</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Junya Honda, 
+
+      
+      Akimichi Takemura
+
+      
+    </span>;
+    <span class="info">PMLR 33:375-383</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/honda14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/honda14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/honda14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/honda14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/honda14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Tight Bounds for the Expected Risk of Linear Classifiers and PAC-Bayes Finite-Sample Guarantees</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jean Honorio, 
+
+      
+      Tommi Jaakkola
+
+      
+    </span>;
+    <span class="info">PMLR 33:384-392</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/honorio14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/honorio14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/honorio14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/honorio14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/honorio14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Latent Gaussian Models for Topic Modeling</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Changwei Hu, 
+
+      
+      Eunsu Ryu, 
+
+      
+      David Carlson, 
+
+      
+      Yingjian Wang, 
+
+      
+      Lawrence Carin
+
+      
+    </span>;
+    <span class="info">PMLR 33:393-401</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/hu14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/hu14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/hu14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Finite-Sample Generalization Bound for Semiparametric Regression: Partially Linear Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ruitong Huang, 
+
+      
+      Csaba Szepesvari
+
+      
+    </span>;
+    <span class="info">PMLR 33:402-410</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/huang14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/huang14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/huang14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/huang14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/huang14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Global Optimization Methods for Extended Fisher Discriminant Analysis</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Satoru Iwata, 
+
+      
+      Yuji Nakatsukasa, 
+
+      
+      Akiko Takeda
+
+      
+    </span>;
+    <span class="info">PMLR 33:411-419</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/iwata14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/iwata14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/iwata14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/iwata14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/iwata14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">High-Dimensional Density Ratio Estimation with Extensions to Approximate Likelihood Computation</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Rafael Izbicki, 
+
+      
+      Ann Lee, 
+
+      
+      Chad Schafer
+
+      
+    </span>;
+    <span class="info">PMLR 33:420-429</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/izbicki14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/izbicki14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/izbicki14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/izbicki14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/izbicki14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Near Optimal Bayesian Active Learning for Decision Making</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Shervin Javdani, 
+
+      
+      Yuxin Chen, 
+
+      
+      Amin Karbasi, 
+
+      
+      Andreas Krause, 
+
+      
+      Drew Bagnell, 
+
+      
+      Siddhartha Srinivasa
+
+      
+    </span>;
+    <span class="info">PMLR 33:430-438</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/javdani14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/javdani14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/javdani14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/javdani14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/javdani14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Level-set Hit-and-run Sampler for Quasi-Concave Distributions</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Shane Jensen, 
+
+      
+      Dean Foster
+
+      
+    </span>;
+    <span class="info">PMLR 33:439-447</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/jensen14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/jensen14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/jensen14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/jensen14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/jensen14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">New Bounds on Compressive Linear Least Squares Regression</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ata Kaban
+
+      
+    </span>;
+    <span class="info">PMLR 33:448-456</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kaban14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kaban14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kaban14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Recovering Distributions from Gaussian RKHS Embeddings</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Motonobu Kanagawa, 
+
+      
+      Kenji Fukumizu
+
+      
+    </span>;
+    <span class="info">PMLR 33:457-465</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kanagawa14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kanagawa14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kanagawa14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/kanagawa14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kanagawa14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Collaborative Ranking for Local Preferences</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Berk Kapicioglu, 
+
+      
+      David Rosenberg, 
+
+      
+      Robert Schapire, 
+
+      
+      Tony Jebara
+
+      
+    </span>;
+    <span class="info">PMLR 33:466-474</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kapicioglu14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kapicioglu14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kapicioglu14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/kapicioglu14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kapicioglu14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Scalable Collaborative Bayesian Preference Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Mohammad Emtiyaz Khan, 
+
+      
+      Young Jun Ko, 
+
+      
+      Matthias Seeger
+
+      
+    </span>;
+    <span class="info">PMLR 33:475-483</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/khan14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/khan14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/khan14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/khan14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/khan14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Gaussian Latent Variable Model for Large Margin Classification of Labeled and Unlabeled Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Do-kyum Kim, 
+
+      
+      Matthew Der, 
+
+      
+      Lawrence Saul
+
+      
+    </span>;
+    <span class="info">PMLR 33:484-492</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kim14a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kim14a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kim14a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/kim14a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kim14a-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Scalable Variational Bayesian Matrix Factorization with Side Information</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yong-Deok Kim, 
+
+      
+      Seungjin Choi
+
+      
+    </span>;
+    <span class="info">PMLR 33:493-502</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kim14b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kim14b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kim14b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Algebraic Reconstruction Bounds and Explicit Inversion for Phase Retrieval at the Identifiability Threshold</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Franz Király, 
+
+      
+      Martin Ehler
+
+      
+    </span>;
+    <span class="info">PMLR 33:503-511</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kiraly14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kiraly14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kiraly14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/kiraly14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kiraly14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Visual Boundary Prediction:  A Deep Neural Prediction Network and Quality Dissection</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jyri Kivinen, 
+
+      
+      Chris Williams, 
+
+      
+      Nicolas Heess
+
+      
+    </span>;
+    <span class="info">PMLR 33:512-521</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kivinen14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kivinen14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kivinen14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/kivinen14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kivinen14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Low-Rank Spectral Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Alex Kulesza, 
+
+      
+      N. Raj Rao, 
+
+      
+      Satinder Singh
+
+      
+    </span>;
+    <span class="info">PMLR 33:522-530</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kulesza14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kulesza14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kulesza14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Fugue: Slow-Worker-Agnostic Distributed Learning for Big Models on Big Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Abhimanu Kumar, 
+
+      
+      Alex Beutel, 
+
+      
+      Qirong Ho, 
+
+      
+      Eric Xing
+
+      
+    </span>;
+    <span class="info">PMLR 33:531-539</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kumar14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kumar14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kumar14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/kumar14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kumar14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Computational Education using Latent Structured Prediction</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Tanja Käser, 
+
+      
+      Alexander Schwing, 
+
+      
+      Tamir Hazan, 
+
+      
+      Markus Gross
+
+      
+    </span>;
+    <span class="info">PMLR 33:540-548</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/kaser14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/kaser14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/kaser14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Towards building a Crowd-Sourced Sky Map</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Dustin Lang, 
+
+      
+      David Hogg, 
+
+      
+      Bernhard Schölkopf
+
+      
+    </span>;
+    <span class="info">PMLR 33:549-557</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/lang14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/lang14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/lang14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Incremental Tree-Based Inference with Dependent Normalized Random Measures</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Juho Lee, 
+
+      
+      Seungjin Choi
+
+      
+    </span>;
+    <span class="info">PMLR 33:558-566</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/lee14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/lee14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/lee14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/lee14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/lee14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Jointly Informative Feature Selection</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Leonidas Lefakis, 
+
+      
+      Francois Fleuret
+
+      
+    </span>;
+    <span class="info">PMLR 33:567-575</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/lefakis14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/lefakis14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/lefakis14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning Heterogeneous Hidden Markov Random Fields</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jie Liu, 
+
+      
+      Chunming Zhang, 
+
+      
+      Elizabeth Burnside, 
+
+      
+      David Page
+
+      
+    </span>;
+    <span class="info">PMLR 33:576-584</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/liu14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/liu14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/liu14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">PAC-Bayesian Collective Stability</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ben London, 
+
+      
+      Bert Huang, 
+
+      
+      Ben Taskar, 
+
+      
+      Lise Getoor
+
+      
+    </span>;
+    <span class="info">PMLR 33:585-594</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/london14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/london14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/london14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/london14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/london14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Active Area Search via Bayesian Quadrature</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yifei Ma, 
+
+      
+      Roman Garnett, 
+
+      
+      Jeff Schneider
+
+      
+    </span>;
+    <span class="info">PMLR 33:595-603</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/ma14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/ma14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/ma14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Active Boundary Annotation using Random MAP Perturbations</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Subhransu Maji, 
+
+      
+      Tamir Hazan, 
+
+      
+      Tommi Jaakkola
+
+      
+    </span>;
+    <span class="info">PMLR 33:604-613</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/maji14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/maji14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/maji14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Interpretable Sparse High-Order Boltzmann Machines</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Martin Renqiang Min, 
+
+      
+      Xia Ning, 
+
+      
+      Chao Cheng, 
+
+      
+      Mark Gerstein
+
+      
+    </span>;
+    <span class="info">PMLR 33:614-622</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/min14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/min14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/min14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/min14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/min14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficient Lifting of MAP LP Relaxations Using k-Locality</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Martin Mladenov, 
+
+      
+      Kristian Kersting, 
+
+      
+      Amir Globerson
+
+      
+    </span>;
+    <span class="info">PMLR 33:623-632</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/mladenov14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/mladenov14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/mladenov14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Geometric Algorithm for Scalable Multiple Kernel Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      John Moeller, 
+
+      
+      Parasaran Raman, 
+
+      
+      Suresh Venkatasubramanian, 
+
+      
+      Avishek Saha
+
+      
+    </span>;
+    <span class="info">PMLR 33:633-642</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/moeller14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/moeller14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/moeller14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/moeller14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/moeller14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">On the Testability of Models with Missing Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Karthika Mohan, 
+
+      
+      Judea Pearl
+
+      
+    </span>;
+    <span class="info">PMLR 33:643-650</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/mohan14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/mohan14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/mohan14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Selective Sampling with Drift</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Edward Moroshko, 
+
+      
+      Koby Crammer
+
+      
+    </span>;
+    <span class="info">PMLR 33:651-659</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/moroshko14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/moroshko14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/moroshko14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/moroshko14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/moroshko14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">The Dependent Dirichlet Process Mixture of Objects for Detection-free Tracking and Object Modeling</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Willie Neiswanger, 
+
+      
+      Frank Wood, 
+
+      
+      Eric Xing
+
+      
+    </span>;
+    <span class="info">PMLR 33:660-668</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/neiswanger14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/neiswanger14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/neiswanger14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Bias Reduction and Metric Learning for Nearest-Neighbor Estimation of Kullback-Leibler Divergence</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yung-Kyun Noh, 
+
+      
+      Masashi Sugiyama, 
+
+      
+      Song Liu, 
+
+      
+      Marthinus C. Plessis, 
+
+      
+      Frank Chongwoo Park, 
+
+      
+      Daniel D. Lee
+
+      
+    </span>;
+    <span class="info">PMLR 33:669-677</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/noh14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/noh14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/noh14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/noh14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/noh14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Robust Forward Algorithms via PAC-Bayes and Laplace Distributions</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Asaf Noy, 
+
+      
+      Koby Crammer
+
+      
+    </span>;
+    <span class="info">PMLR 33:678-686</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/noy14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/noy14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/noy14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/noy14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/noy14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Joint Structure Learning of Multiple Non-Exchangeable Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Chris Oates, 
+
+      
+      Sach Mukherjee
+
+      
+    </span>;
+    <span class="info">PMLR 33:687-695</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/oates14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/oates14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/oates14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/oates14-supp.zip" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/oates14-supp.zip, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Scaling Nonparametric Bayesian Inference via Subsample-Annealing</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Fritz Obermeyer, 
+
+      
+      Jonathan Glidden, 
+
+      
+      Eric Jonas
+
+      
+    </span>;
+    <span class="info">PMLR 33:696-705</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/obermeyer14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/obermeyer14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/obermeyer14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/obermeyer14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/obermeyer14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Fast Distribution To Real Regression</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Junier Oliva, 
+
+      
+      Willie Neiswanger, 
+
+      
+      Barnabas Poczos, 
+
+      
+      Jeff Schneider, 
+
+      
+      Eric Xing
+
+      
+    </span>;
+    <span class="info">PMLR 33:706-714</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/oliva14a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/oliva14a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/oliva14a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/oliva14a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/oliva14a-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">FuSSO: Functional Shrinkage and Selection Operator</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Junier Oliva, 
+
+      
+      Barnabas Poczos, 
+
+      
+      Timothy Verstynen, 
+
+      
+      Aarti Singh, 
+
+      
+      Jeff Schneider, 
+
+      
+      Fang-Cheng Yeh, 
+
+      
+      Wen-Yih Tseng
+
+      
+    </span>;
+    <span class="info">PMLR 33:715-723</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/oliva14b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/oliva14b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/oliva14b.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/oliva14b-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/oliva14b-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">To go deep or wide in learning?</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Gaurav Pandey, 
+
+      
+      Ambedkar Dukkipati
+
+      
+    </span>;
+    <span class="info">PMLR 33:724-732</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/pandey14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/pandey14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/pandey14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">LAMORE: A Stable, Scalable Approach to Latent Vector Autoregressive Modeling of Categorical Time Series</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yubin Park, 
+
+      
+      Carlos Carvalho, 
+
+      
+      Joydeep Ghosh
+
+      
+    </span>;
+    <span class="info">PMLR 33:733-742</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/park14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/park14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/park14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Spoofing Large Probability Mass Functions to Improve Sampling Times and Reduce Memory Costs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jon Parker, 
+
+      
+      Hans Engler
+
+      
+    </span>;
+    <span class="info">PMLR 33:743-750</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/parker14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/parker14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/parker14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning Bounded Tree-width Bayesian Networks using Integer Linear Programming</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Pekka Parviainen, 
+
+      
+      Hossein Shahrabi Farahani, 
+
+      
+      Jens Lagergren
+
+      
+    </span>;
+    <span class="info">PMLR 33:751-759</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/parviainen14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/parviainen14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/parviainen14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">An Efficient Algorithm for Large Scale Compressive Feature Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Hristo Paskov, 
+
+      
+      John Mitchell, 
+
+      
+      Trevor Hastie
+
+      
+    </span>;
+    <span class="info">PMLR 33:760-768</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/paskov14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/paskov14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/paskov14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/paskov14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/paskov14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Expectation Propagation for Likelihoods Depending on an Inner Product of Two Multivariate Random Variables</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Tomi Peltola, 
+
+      
+      Pasi Jylänki, 
+
+      
+      Aki Vehtari
+
+      
+    </span>;
+    <span class="info">PMLR 33:769-777</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/peltola14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/peltola14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/peltola14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/peltola14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/peltola14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">An inclusion optimal algorithm for chain graph structure learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jose Peña, 
+
+      
+      Dag Sonntag, 
+
+      
+      Jens Nielsen
+
+      
+    </span>;
+    <span class="info">PMLR 33:778-786</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/pena14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/pena14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/pena14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/pena14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/pena14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Stepwise uncertainty reduction approach to constrained global optimization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Victor Picheny
+
+      
+    </span>;
+    <span class="info">PMLR 33:787-795</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/picheny14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/picheny14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/picheny14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Connected Sub-graph Detection</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jing Qian, 
+
+      
+      Venkatesh Saligrama, 
+
+      
+      Yuting Chen
+
+      
+    </span>;
+    <span class="info">PMLR 33:796-804</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/qian14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/qian14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/qian14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/qian14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/qian14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">An Analysis of Active Learning with Uniform Feature Noise</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Aaditya Ramdas, 
+
+      
+      Barnabas Poczos, 
+
+      
+      Aarti Singh, 
+
+      
+      Larry Wasserman
+
+      
+    </span>;
+    <span class="info">PMLR 33:805-813</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/ramdas14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/ramdas14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/ramdas14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/ramdas14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/ramdas14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Black Box Variational Inference</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Rajesh Ranganath, 
+
+      
+      Sean Gerrish, 
+
+      
+      David Blei
+
+      
+    </span>;
+    <span class="info">PMLR 33:814-822</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/ranganath14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/ranganath14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/ranganath14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/ranganath14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/ranganath14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Cluster Canonical Correlation Analysis</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Nikhil Rasiwasia, 
+
+      
+      Dhruv Mahajan, 
+
+      
+      Vijay Mahadevan, 
+
+      
+      Gaurav Aggarwal
+
+      
+    </span>;
+    <span class="info">PMLR 33:823-831</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/rasiwasia14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/rasiwasia14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/rasiwasia14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Sequential crowdsourced labeling as an epsilon-greedy exploration in a Markov Decision Process</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Vikas Raykar, 
+
+      
+      Priyanka Agrawal
+
+      
+    </span>;
+    <span class="info">PMLR 33:832-840</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/raykar14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/raykar14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/raykar14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/raykar14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/raykar14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning Structured Models with the AUC Loss and Its Generalizations</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Nir Rosenfeld, 
+
+      
+      Ofer Meshi, 
+
+      
+      Danny Tarlow, 
+
+      
+      Amir Globerson
+
+      
+    </span>;
+    <span class="info">PMLR 33:841-849</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/rosenfeld14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/rosenfeld14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/rosenfeld14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/rosenfeld14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/rosenfeld14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Class Proportion Estimation with Application to Multiclass Anomaly Rejection</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Tyler Sanderson, 
+
+      
+      Clayton Scott
+
+      
+    </span>;
+    <span class="info">PMLR 33:850-858</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/sanderson14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/sanderson14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/sanderson14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/sanderson14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/sanderson14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Lifted MAP Inference for Markov Logic Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Somdeb Sarkhel, 
+
+      
+      Deepak Venugopal, 
+
+      
+      Parag Singla, 
+
+      
+      Vibhav Gogate
+
+      
+    </span>;
+    <span class="info">PMLR 33:859-867</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/sarkhel14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/sarkhel14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/sarkhel14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Estimating Dependency Structures for non-Gaussian Components with Linear and Energy Correlations</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Hiroaki Sasaki, 
+
+      
+      Michael Gutmann, 
+
+      
+      Hayaru Shouno, 
+
+      
+      Aapo Hyvarinen
+
+      
+    </span>;
+    <span class="info">PMLR 33:868-876</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/sasaki14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/sasaki14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/sasaki14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/sasaki14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/sasaki14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Student-t Processes as Alternatives to Gaussian Processes</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Amar Shah, 
+
+      
+      Andrew Wilson, 
+
+      
+      Zoubin Ghahramani
+
+      
+    </span>;
+    <span class="info">PMLR 33:877-885</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/shah14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/shah14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/shah14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/shah14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/shah14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">In Defense of Minhash over Simhash</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Anshumali Shrivastava, 
+
+      
+      Ping Li
+
+      
+    </span>;
+    <span class="info">PMLR 33:886-894</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/shrivastava14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/shrivastava14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/shrivastava14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Loopy Belief Propagation in the Presence of Determinism</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      David Smith, 
+
+      
+      Vibhav Gogate
+
+      
+    </span>;
+    <span class="info">PMLR 33:895-903</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/smith14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/smith14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/smith14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Explicit Link Between Periodic Covariance Functions and State Space Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Arno Solin, 
+
+      
+      Simo Särkkä
+
+      
+    </span>;
+    <span class="info">PMLR 33:904-912</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/solin14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/solin14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/solin14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Bat Call Identification with Gaussian Process Multinomial Probit Regression and a Dynamic Time Warping Kernel</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Vassilios Stathopoulos, 
+
+      
+      Veronica Zamora-Gutierrez, 
+
+      
+      Kate Jones, 
+
+      
+      Mark Girolami
+
+      
+    </span>;
+    <span class="info">PMLR 33:913-921</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/stathopoulos14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/stathopoulos14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/stathopoulos14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">SMERED: A Bayesian Approach to Graphical Record Linkage and De-duplication</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Rebecca Steorts, 
+
+      
+      Rob Hall, 
+
+      
+      Stephen Fienberg
+
+      
+    </span>;
+    <span class="info">PMLR 33:922-930</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/steorts14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/steorts14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/steorts14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/steorts14-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/steorts14-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title"> Adaptive Variable Clustering in Gaussian Graphical Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Siqi Sun, 
+
+      
+      Yuancheng Zhu, 
+
+      
+      Jinbo Xu
+
+      
+    </span>;
+    <span class="info">PMLR 33:931-939</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/sun14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/sun14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/sun14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Scaling Graph-based Semi Supervised Learning to Large Number of Labels Using Count-Min Sketch</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Partha Talukdar, 
+
+      
+      William Cohen
+
+      
+    </span>;
+    <span class="info">PMLR 33:940-947</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/talukdar14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/talukdar14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/talukdar14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Path Thresholding: Asymptotically Tuning-Free High-Dimensional Sparse Regression</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Divyanshu Vats, 
+
+      
+      Richard Baraniuk
+
+      
+    </span>;
+    <span class="info">PMLR 33:948-957</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/vats14a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/vats14a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/vats14a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Active Learning for Undirected Graphical Model Selection</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Divyanshu Vats, 
+
+      
+      Robert Nowak, 
+
+      
+      Richard Baraniuk
+
+      
+    </span>;
+    <span class="info">PMLR 33:958-967</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/vats14b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/vats14b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/vats14b.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/vats14b-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/vats14b-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Linear-time training of nonlinear low-dimensional embeddings</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Max Vladymyrov, 
+
+      
+      Miguel Carreira-Perpinan
+
+      
+    </span>;
+    <span class="info">PMLR 33:968-977</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/vladymyrov14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/vladymyrov14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/vladymyrov14.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/vladymyrov14-supp.tgz" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/vladymyrov14-supp.tgz, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Gaussian Copula Precision Estimation with Missing Values</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Huahua Wang, 
+
+      
+      Farideh Fazayeli, 
+
+      
+      Soumyadeep Chatterjee, 
+
+      
+      Arindam Banerjee
+
+      
+    </span>;
+    <span class="info">PMLR 33:978-986</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/wang14a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/wang14a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/wang14a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">An LP for Sequential Learning Under Budgets</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Joseph Wang, 
+
+      
+      Kirill Trapeznikov, 
+
+      
+      Venkatesh Saligrama
+
+      
+    </span>;
+    <span class="info">PMLR 33:987-995</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/wang14b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/wang14b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/wang14b.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/wang14b-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/wang14b-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficient Algorithms and Error Analysis for the Modified Nystrom Method</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Shusen Wang, 
+
+      
+      Zhihua Zhang
+
+      
+    </span>;
+    <span class="info">PMLR 33:996-1004</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/wang14c.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/wang14c.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/wang14c.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/wang14c-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/wang14c-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Bayesian Multi-Scale Optimistic Optimization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ziyu Wang, 
+
+      
+      Babak Shakibi, 
+
+      
+      Lin Jin, 
+
+      
+      Nando Freitas
+
+      
+    </span>;
+    <span class="info">PMLR 33:1005-1014</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/wang14d.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/wang14d.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/wang14d.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/wang14d-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/wang14d-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Accelerating ABC methods using Gaussian processes</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Richard Wilkinson
+
+      
+    </span>;
+    <span class="info">PMLR 33:1015-1023</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/wilkinson14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/wilkinson14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/wilkinson14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A New Approach to Probabilistic Programming Inference</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Frank Wood, 
+
+      
+      Jan Willem Meent, 
+
+      
+      Vikash Mansinghka
+
+      
+    </span>;
+    <span class="info">PMLR 33:1024-1032</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/wood14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/wood14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/wood14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Dynamic Resource Allocation for Optimizing Population Diffusion</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Shan Xue, 
+
+      
+      Alan Fern, 
+
+      
+      Daniel Sheldon
+
+      
+    </span>;
+    <span class="info">PMLR 33:1033-1041</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/xue14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/xue14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/xue14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Mixed Graphical Models via Exponential Families</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Eunho Yang, 
+
+      
+      Yulia Baker, 
+
+      
+      Pradeep Ravikumar, 
+
+      
+      Genevera Allen, 
+
+      
+      Zhandong Liu
+
+      
+    </span>;
+    <span class="info">PMLR 33:1042-1050</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/yang14a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/yang14a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/yang14a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/yang14a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/yang14a-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Context Aware Group Nearest Shrunken Centroids in Large-Scale Genomic Studies</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Juemin Yang, 
+
+      
+      Fang Han, 
+
+      
+      Rafael Irizarry, 
+
+      
+      Han Liu
+
+      
+    </span>;
+    <span class="info">PMLR 33:1051-1059</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/yang14b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/yang14b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/yang14b.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v33/yang14b-supp.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/yang14b-supp.pdf, 11);">Supplementary Material</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Nonparametric estimation and testing of exchangeable graph models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Justin Yang, 
+
+      
+      Christina Han, 
+
+      
+      Edoardo Airoldi
+
+      
+    </span>;
+    <span class="info">PMLR 33:1060-1067</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/yang14c.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/yang14c.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/yang14c.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Generating Efficient MCMC Kernels from Probabilistic Programs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Lingfeng Yang, 
+
+      
+      Patrick Hanrahan, 
+
+      
+      Noah Goodman
+
+      
+    </span>;
+    <span class="info">PMLR 33:1068-1076</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/yang14d.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/yang14d.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/yang14d.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficient Transfer Learning Method for Automatic Hyperparameter Tuning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Dani Yogatama, 
+
+      
+      Gideon Mann
+
+      
+    </span>;
+    <span class="info">PMLR 33:1077-1085</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/yogatama14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/yogatama14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/yogatama14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Accelerated Stochastic Gradient Method for Composite Regularization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Wenliang Zhong, 
+
+      
+      James Kwok
+
+      
+    </span>;
+    <span class="info">PMLR 33:1086-1094</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/zhong14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/zhong14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/zhong14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Heterogeneous Domain Adaptation for Multiple Classes</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Joey Tianyi Zhou, 
+
+      
+      Ivor W.Tsang, 
+
+      
+      Sinno Jialin Pan, 
+
+      
+      Mingkui Tan
+
+      
+    </span>;
+    <span class="info">PMLR 33:1095-1103</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v33/zhou14.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v33/zhou14.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v33/zhou14.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+<p class="rss-subscribe">subscribe <a href="/v33/feed.xml">via RSS</a></p>
+
+<!-- Search Widget -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../js/search.js"></script>
+
+      </div>
+    </div>   
+  </body>
+
+    <body>
+  <div id="content">
+    <center>This site last compiled Mon, 29 May 2017 07:26:38 +0000</center>
+
+    <table width="100%">
+      <tr>
+	<td align="left"><font size="-1">
+	    <i><a href="https://github.com/mlresearch/v33">Github Account</a></i></font></td>
+	<td align="right"><font size="-1">
+	    Copyright &copy <a href="http://proceedings.mlr.press">PMLR</a> 2017. All rights reserved.</font></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+
+</html>

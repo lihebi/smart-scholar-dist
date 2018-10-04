@@ -1,0 +1,2228 @@
+
+<!doctype html>
+<head><script type="text/javascript">/* <![CDATA[ */_cf_loadingtexthtml="<img alt=' ' src='/cf_scripts/scripts/ajax/resources/cf/images/loading.gif'/>";
+_cf_contextpath="";
+_cf_ajaxscriptsrc="/cf_scripts/scripts/ajax";
+_cf_jsonprefix='//';
+_cf_websocket_port=0;
+_cf_flash_policy_port=0;
+_cf_clientid='03CE569B11F88C636794AAFDE82EDE9E';/* ]]> */</script><script type="text/javascript" src="/cf_scripts/scripts/ajax/messages/cfmessage.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfajax.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfform.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/masks.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfformhistory.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfrichtexteditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/chart/cfchart-server.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/animation/animation-min.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ext/ext-all.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfwindow.js"></script>
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/ext/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/cf/cf.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/dl.css" />
+<title>Proceedings of the eighth ACM symposium on Operating systems principles</title>
+<style type="text/css"><!--
+    body {margin-left: 0em; margin-top: 0}
+    a:link {text-decoration: underline; 	Color: #1d4d0f;}
+    a:visited  { color: #990033; text-decoration: underline;}
+    a:hover {color: red; text-decoration: none}
+    a.dLink1:link {color:#336699}
+    a.dLink1:visited {color:#666666}
+	a.isblack:link {text-decoration: underline; 	Color: #000000;}
+    a.isblack:visited  { color: #000000; text-decoration: underline;}
+    a.isblack:hover {color: #000000; text-decoration: none}
+    h1 {font-size: 140%; margin-bottom: 0}
+	ul {margin-top: .25em; list-style-type: disc}
+	ol {margin-top: .25em;}
+	li {padding-bottom: .25em;}
+    h2 {color: white; background-color: #069; 
+        font-size: 100%; padding-left: 1em;
+		margin: 0}
+	h3 {color: black; background-color: yellow; 
+    	font-size: 100%;
+		margin: 0}
+	 h4 {color: black; background-color: #99c5e8; 
+        font-size: 100%;
+		margin: 0}
+    hr {color: #39176d;}
+    form {margin-top: 10}
+    form.xrs {margin-top: 0}
+	
+	a {text-decoration: none; }
+	
+	input {font-size: 1em;}
+	.chevron {color: #ff0000;}
+	.light-blue {color:#336699;}
+	.black {color:#000000;}
+	
+	
+	.mono-text {font-size: 14px; font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;}
+	
+	/* ### standard text styles, smallest to largest ### */
+	
+	.footer-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .75em; line-height: 1.33em;
+		text-indent: -.75 em; margin-left: 2em; margin-right: .75em;}
+		
+	.footer-copy-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em; line-height: 1.3em;
+		margin-left: .75em; margin-right: .75em;}
+		
+	.small-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; padding-bottom : 2px;
+	  	padding-top : 2px;}
+		
+	.small-link-text2 {font-size: .83em !important; 
+	}
+
+	.smallerer-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .65em;}
+	.smaller-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em;}		
+	.small-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em;}
+	.small-textb {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; font-weight: bold;}
+	.medium-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em;}
+	.mediumb-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em; font-weight: bold;}
+	.large-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1.3em;}		
+	.instr-text {font-family: Arial, Helvetica, sans-serif;
+		color:#666666; font-size: .83em;}
+		
+	.list-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .83em; line-height: 1.3em;}
+	.list-link-btext {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; line-height: 1.3em;}
+	
+	.searchbox-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;}
+	.footer-header-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;
+		margin-left: .75em; margin-right: .75em;}
+	.medium-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold; line-height: 1em;
+		text-indent: -1.25em; margin-left: 2em; margin-right: .75em;}
+	
+	.text16 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 16px;}
+		
+	.text14 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 14px;}
+	
+	.text12 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 12px;}
+		
+	.text10 {font-family: Arial, Helvetica, sans-serif;
+	    color:#000000; font-size: 12px;}
+		
+	.text9 {font-family: Arial, Helvetica, sans-serif;
+	   color:#000000; font-size: 12px;}
+	
+	.error-text {color:red;}
+	
+	.small-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: .75em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+
+	.medium-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1.3em; line-height: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.medium-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+
+		#side {
+			width: 10px;
+			float: left;
+			margin-left: -1px;
+			padding: 2px;
+			}
+							
+		#content {
+			padding: 2px;
+			margin-left: 25px;
+			
+		        
+		        }
+	 .fulltext_lnk {border:0px;
+	 				 margin-right: 2px;
+					 vertical-align:baseline;
+	 				}
+	 
+	  .leftcoltab { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:530px;  /* for IE5/WIN */
+		  width:520px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	  .rightcoltab {
+    float: right;
+    margin: 0;
+    padding: 5px;
+    position: relative;
+    right: 50px;
+    top: 25px;
+    width: 350px;
+    z-index: 99;
+}
+	  .centercoltab {
+		  position:absolute;
+		  padding:0 0px;
+		  }
+	  .alt {
+		background: #ece9d8;
+		margin: 0;
+		padding: 1px;
+		}
+		.leftcolc { 
+	position:relative;
+	top:5px;
+	left:5px;
+	float:left;
+	width:420px;  /* for IE5/WIN */
+	width:400px; /* actual value */
+	margin:0 0 0px 0;
+	padding:5px;
+	z-index:100;
+	}
+.rightcolc {
+	position:relative;
+	top:0px;
+	right:0px;
+	float:right;
+	margin:0 0px;
+	padding:0px;
+	width:500px;
+	z-index:99;
+	}
+.centercolc {
+	position:absolute;
+	padding:0 0px;
+	}
+	
+	.leftcoltabv { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:460px;  /* for IE5/WIN */
+		  width:350px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	.rightcoltabv {
+		position:relative;
+		top:5px;
+		right:0px;
+		float:right;
+		margin:0 0px 0 0;
+		padding:15px;
+		width:480px;
+		z-index:99;
+		}
+		
+.x-tabs-strip-wrap {
+	overflow-y: hidden !important;
+}
+  --></style>
+<script src="js/tagcanvas.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function loadCloud() {
+	try {
+	  TagCanvas.Start('myCanvas','tags',{
+		textColour: '#000000',
+		outlineColour: '#ff00ff',
+		reverse: true,
+		shuffleTags:true,
+		depth: 0.8,
+		maxSpeed: 0.05,
+		textHeight: 12,
+		initial: [0.000, 0.050],
+		shape: "hring",
+		lock: "x"
+	  });
+	} catch(e) {
+	  // something went wrong, hide the canvas container
+	  // document.getElementById('myCanvasContainer').style.display = 'none';
+	}
+  };
+</script>
+<script type="text/javascript" src="cfformprotect/js/cffp.js"></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<style type="text/css"><!--
+.google-visualization-orgchart-node {
+    background-color: #FFFFFF !important;
+    border: 2px solid #AFCF40 !important;
+    cursor: default;
+    font-family: arial,helvetica;
+    text-align: center;
+    vertical-align: middle;
+}
+
+iframe {float:right; 
+		margin:10px;
+		border: 2px solid #1B4D0E;
+		
+		}
+
+a.boxed:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxed:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxed:hover {color: red !important; text-decoration: underline !important;}
+
+a.boxedh:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxedh:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxedh:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedm:link {text-decoration: none !important; 	Color: #606060 !important;}
+a.boxedm:visited  { color: #606060 !important; text-decoration: none !important;}
+a.boxedm:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedl:link {text-decoration: none !important; 	Color: #808080   !important;}
+a.boxedl:visited  { color: 	#808080 !important; text-decoration: none !important;}
+a.boxedl:hover {color: red !important; text-decoration: underline !important;}				
+
+.google-visualization-orgchart-linebottom {
+    border-bottom: 1px solid #006699 !important;
+}
+.google-visualization-orgchart-lineleft {
+    border-left: 1px solid #006699 !important;
+}
+
+.google-visualization-orgchart-lineright {
+    border-right: 1px solid #006699 !important;
+}
+
+--></style>
+<script type="text/javascript">
+
+
+function settab() {
+    var mytabs = ColdFusion.Layout.getTabLayout('citationdetails');
+   
+ 
+  mytabs.on('tabchange', function(tabpanel,activetab) { document.cookie = 'picked=' + '800216' + ',' + activetab.id; })
+ 
+}
+
+
+function letemknow(){
+  ColdFusion.Window.show('letemknow');
+}
+
+function letemknow2(){
+  ColdFusion.Window.show('letemknow2');
+}
+
+
+
+
+
+function testthis(){
+
+alert('test');
+}
+function loadalert(){ 
+ alert("I am in the load alert");
+ 
+}
+function loadalert2(){ 
+  alert("I am in the load alert2");
+ 
+}
+</script>
+<script type='text/javascript'>
+	  	google.load('visualization', '1', {packages:['orgchart']});
+	    google.setOnLoadCallback(drawChart);
+	  
+	  function drawChart() {
+	    var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+  	  
+		data.addRows([
+          [{v:'0', f:'<div style="color:black; font-size:150%; font-style:normal">CCS&nbsp;for&nbsp;this&nbsp;Proceeding</div>'}, '', ''],
+		  
+		  [{v:'10011007', f:'<div style=" font-size:150%; font-style:normal"><a class="boxedh" href="ccs/ccs.cfm?id=10011007&lid=0.10011007">Software and its engineering</a></div>'}, '0', ''], 
+		  [{v:'10010941', f:'<div style=" font-size:150%; font-style:normal"><a class="boxedh" href="ccs/ccs.cfm?id=10010941&lid=0.10011007.10010940.10010941">Contextual software domains</a></div>'}, '10010940', ''], 
+		  [{v:'10010949', f:'<div style=" font-size:150%; font-style:normal"><a class="boxedh" href="ccs/ccs.cfm?id=10010949&lid=0.10011007.10010940.10010941.10010949">Operating systems</a></div>'}, '10010941', ''], 
+		  [{v:'10010940', f:'<div style=" font-size:150%; font-style:normal"><a class="boxedh" href="ccs/ccs.cfm?id=10010940&lid=0.10011007.10010940">Software organization and properties</a></div>'}, '10011007', ''] 
+        ]);
+		
+		if (document.getElementById('chart_div')) {
+       var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+       chart.draw(data, {allowHtml:true});
+		}
+      }
+	  
+</script>
+<script type="text/javascript">
+ function expandcollapse(anchor,whichone) {
+	 var inner = document.getElementById(anchor);
+	 var theshow = "toShow" + whichone;
+ 	 var thehide = "toHide" + whichone;
+	 var span = document.getElementById(theshow);
+     span.style.display = (span.style.display=='inline')?'none':'inline';
+     var span = document.getElementById(thehide);
+     span.style.display = (span.style.display=='none')?'inline':'none';
+     inner.innerHTML = (inner.innerHTML=='collapse')?'expand':'collapse';
+    }
+
+  
+</script>
+<script type="text/javascript">
+ /* <!-- Begin
+	if(document.layers || document.all) {
+	a = 1;
+	setInterval("Jump()", 10);
+	}
+	function Jump() {
+	a = a + 1;
+	//self.moveBy((Math.random() * a * 2 - a), (Math.random() * a * 2) - a);
+	}
+//  End --> */
+</script>
+<script type="text/javascript">
+function expandWatson(divID,theConcept) { 
+			if (document.getElementById(divID).style.display == "none") {
+				document.getElementById(divID).style.display = "block";
+				document.getElementById(divID).innerHTML = theConcept + "<br />" + document.getElementById(divID).innerHTML;
+			}
+			 else {
+				 document.getElementById(divID).style.display = "none"
+			}
+		}
+</script>
+
+<script type="text/javascript">
+  function togglePatMap() {
+        var div = document.getElementById('patmap'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsepmapa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				httpGetAsyncwID("patent.cfm?id=800216",'patmap');
+				httpGetAsyncwID("simmap_track.cfm?id=800216&how=live",'blackhole');
+			}
+			else {
+				httpGetAsyncwID("simmap_track.cfm?id=800216&how=cache",'blackhole');
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsepmapa").src = "images/expand.png";
+        }
+    }
+  
+  function toggleCO() {
+        var div = document.getElementById('codisp'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsecoa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				/* httpGetAsyncwID("coint.cfm?id=800216",'codisp'); */
+				/*httpGetAsyncwID("simmap_track.cfm?id=800216&how=live",'blackhole'); */
+			}
+			else {
+				/* httpGetAsyncwID("simmap_track.cfm?id=800216&how=cache",'blackhole'); */
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsecoa").src = "images/expand.png";
+        }
+    }
+	
+	function httpGetAsyncwID(theUrl,theID) {
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+				
+				document.getElementById(theID).innerHTML=xmlHttp.responseText;
+		}
+		xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		xmlHttp.send();
+	}
+</script>
+<meta name="citation_publisher" content="ACM"> <meta name="citation_authors" content="Chairman-Howard, John; Chairman-Reed, David P."> <meta name="citation_conference_title" content="Proceedings of the eighth ACM symposium on Operating systems principles"> <meta name="citation_date" content="12/14/1981"> <meta name="citation_isbn" content="0-89791-062-1"> <meta name="citation_abstract_html_url" content="http://dl.acm.org/citation.cfm?id=800216">
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFAJAXPROXY');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFFORM');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFDIV');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFTEXTAREA');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(drawChart,null,false,true);
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFWINDOW');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10720163243268538=function()
+	{
+		_cf_bind_init_10720163243268539=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow-body','bindExpr':['letemknow.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10720163243268539);var _cf_window=ColdFusion.Window.create('letemknow','<div style=\'text-align:left; color:black;\'>Did you know the ACM DL App is now available?</div>','letemknow.cfm',{ modal:false, closable:true, divid:'cf_window10720163243268537', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:75, y:125});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10720163243268538);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10720163243268541=function()
+	{
+		_cf_bind_init_10720163243268542=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow2-body','bindExpr':['letemknow_recomm.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10720163243268542);var _cf_window=ColdFusion.Window.create('letemknow2','<div style=\'text-align:left; color:black;\'>Did you know your Organization can subscribe to the ACM Digital Library?</div>','letemknow_recomm.cfm',{ modal:false, closable:true, divid:'cf_window10720163243268540', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:70, y:175});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10720163243268541);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10720163243268544=function()
+	{
+		_cf_bind_init_10720163243268545=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'theguide-body','bindExpr':['whatisguide.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10720163243268545);var _cf_window=ColdFusion.Window.create('theguide','The ACM Guide to Computing Literature','whatisguide.cfm',{ modal:false, closable:true, divid:'cf_window10720163243268543', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10720163243268544);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10720163243268547=function()
+	{
+		_cf_bind_init_10720163243268548=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'thetags-body','bindExpr':['showthetags.cfm?id=800216']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10720163243268548);var _cf_window=ColdFusion.Window.create('thetags','All Tags','showthetags.cfm?id=800216',{ modal:false, closable:true, divid:'cf_window10720163243268546', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10720163243268547);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10720163243268550=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theformats','Export Formats','',{ modal:false, closable:true, divid:'cf_window10720163243268549', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:250, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10720163243268550);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10720163243268552=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theexplaination','','',{ modal:false, closable:true, divid:'cf_window10720163243268551', draggable:true, resizable:true, fixedcenter:false, width:600, height:600, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10720163243268552);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10720163243268554=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theservices','','',{ modal:false, closable:true, divid:'cf_window10720163243268553', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10720163243268554);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10720163243268556=function()
+	{
+		_cf_bind_init_10720163243268557=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'savetobinder-body','bindExpr':['savetobinder.cfm?id=800216']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10720163243268557);var _cf_window=ColdFusion.Window.create('savetobinder','Save to Binder','savetobinder.cfm?id=800216',{ modal:false, closable:true, divid:'cf_window10720163243268555', draggable:true, resizable:true, fixedcenter:true, width:600, height:600, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false, _cf_refreshOnShow:true});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10720163243268556);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(settab,null,false,true);
+/* ]]> */</script>
+</head>
+
+<body style="text-align:center; font-size:100%"> 
+<script type="text/javascript">
+						addthis_pub             = 'acm'; 
+						//addthis_logo            = 'http://www.addthis.com/images/yourlogo.png';
+						addthis_logo            = 'https://dl.acm.org/images/ACM_transparent.png';
+						addthis_logo_background = 'c2d5fc';
+						addthis_logo_color      = '000000';
+						addthis_brand           = 'Citation Page';
+						addthis_options         = 'favorites, email, slashdot, citeulike, digg, delicious, twitter, myspace, facebook, google, more';
+						</script>
+<script src='AC_RunActiveContent.js' type="text/javascript"></script>
+<div style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<a id="CIT"></a>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFGCMX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFGCMX');</script>
+
+<div id="header">
+<table style="table-layout:fixed; margin-top: 5px; margin-bottom: 10px; border:0px; width:100%; border-collapse:collapse;">
+<tr style="vertical-align:top">
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; width:300px" class="small-link-text2"><img src="/images/ACMDL_Logo.jpg" alt="ACM DL" style="border:0px" usemap="#port" />
+</td>
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; vertical-align:middle;" class="small-link-text2">
+<table style="width:100%; border-collapse:collapse; padding:0px">
+<tr><td style="text-align:center">
+<table>
+<tr>
+<td style="text-align:center">
+<div style="margin:5px auto;color:#356b20;font-size:11pt;line-height:130%; height:63px;">
+Iowa State University
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding-top: 0px; padding-left: 0px; padding-bottom:0px; text-align:right;" class="small-link-text2">
+<p style="margin-top:0px; margin-bottom:10px;">
+<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign in to personalize your Digital Library experience">SIGN IN</a>
+&nbsp;&nbsp;<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign up to personalize your Digital Library experience">SIGN UP</a>
+</p>
+<table style="padding: 5px; border-collapse:collapse; float:right">
+<tr>
+<td class="small-link-text2" style="text-align:right">
+<script type="text/javascript">
+								function encodeInput(form){
+								    	var cleanQuery = form.elements['query'].value.replace(new RegExp( "\\+", "g" ),"%2B");
+										cleanQuery = cleanQuery.replace(/#/g, "%23");
+										cleanQuery = cleanQuery.replace(/(\n)/g, " ");
+										cleanQuery = cleanQuery.trim();
+										
+										
+										var ascii = /^[ -~]+$/;
+										if( !ascii.test( cleanQuery ) ) {
+											var fixedUseQuery = "";
+											for (var i = 0, len = cleanQuery.length; i < len; i++) {
+												var str = "";
+												if( !ascii.test(cleanQuery[i]) ) {
+										 			str = "%26%23" + cleanQuery[i].charCodeAt(0) + ";";
+												} else {
+										 			str = cleanQuery[i];
+												}
+												fixedUseQuery = fixedUseQuery + str;
+											}
+											cleanQuery = fixedUseQuery;
+										}
+										
+
+										form.elements['query'].value = cleanQuery;
+								}
+							</script>
+<form name="qiksearch" action="/results.cfm" onsubmit='encodeInput(this)'>
+<span style="margin-left:0px"><label><input type="text" name="query" size="30" value="" /></label>&nbsp;
+<input style="vertical-align:top;" type="image" alt="Search" name="Go" src="/images/search_small.jpg" />
+</span>
+</form>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr><td colspan="3" class="small-link-text2" style="padding-bottom:5px; padding-top:0px; text-align:center">
+<div style="margin:0px auto;color:#356b20;line-height:10%;"> </div>
+</td>
+</tr>
+</table>
+<div id="google_translate_element" style="text-align:right; padding-bottom:5px;"></div><script type="text/javascript">function googleTranslateElementInit() {new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<map name="port" id="port">
+<area shape="rect" coords="1,1,60,50" href="https://www.acm.org/" alt="ACM Home Page" />
+<area shape="rect" coords="65,1,275,68" href="https://dl.acm.org/dl.cfm" alt="ACM Digital Library Home Page" />
+</map>
+</div>
+<style>
+  .watsonCont {
+	  width:170px;
+	  
+	  color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	 /* background-color: lightgray;*/
+  }
+  #watsonInside {
+    border-radius: 25px;
+    border: 2px solid #649134;
+	margin-top: 12px;
+	padding: 5px;
+	height: 80px;
+  }
+
+</style>
+<table style="table-layout:fixed; padding-bottom:10px; width:100%; padding:0px;">
+<tr style="vertical-align:top">
+<td style="padding-right:10px; text-align:left" class="small-link-text">
+<div id="divmain" style="border:1px solid #356b20;">
+<div class="large-text" style="text-align:left; margin-left:2px;margin-bottom:5px;">
+<h1 class="mediumb-text" style="margin-top:0px; margin-bottom:0px;">Proceedings of the eighth ACM symposium on Operating systems principles</h1>
+</div>
+<table class="medium-text" style="border-collapse:collapse; padding:0px; margin-left: 2px;">
+<colgroup>
+<col style="width:540px" />
+</colgroup>
+<tr style="vertical-align:top">
+<td>
+<table style="border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px;" />
+<col style="width:auto" />
+<tr style="vertical-align:top">
+</tr>
+</table>
+<table style="margin-top: 10px; border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px" />
+<tr>
+<td valign="top" nowrap="nowrap">
+Chairmen:
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=81332504981&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">John Howard</a>
+</td>
+<td valign="bottom">
+</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=81100321933&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">David P. Reed</a>
+</td>
+<td valign="bottom">
+</td>
+</tr>
+</table>
+<table style="margin-top: 10px" border="0" class="medium-text" cellpadding="2" cellspacing="0">
+<tr>
+<td><table border="0" class="medium-text" style="margin-left:5px;" cellpadding="1" cellspacing="0">
+<tr valign="top">
+<td nowrap="nowrap" style="padding-top:10px;">Publication:</td>
+</tr>
+<tr valign="top">
+<td nowrap="nowrap" style="padding-bottom:0px">&middot;&nbsp;Proceeding</td>
+<td colspan="2"></td>
+</tr>
+<tr valign="top">
+<td colspan="3" style="padding-left:10px">SOSP '81 Proceedings of the eighth ACM symposium on Operating systems principles
+<br />
+Pacific Grove, California, USA &mdash; December 14 - 16, 1981
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td colspan="3" style="padding-left:10px"> <a href="https://www.acm.org/publications" class="small-link-text" title="ACM">ACM</a> <span class="small-link-text">New York, NY</span><span class="small-link-text">, USA</span> <span class="small-link-text"> &copy;1981</span>
+<br />
+<a href="citation.cfm?id=800216&amp;picked=prox" target="_self" class="small-link-text">table&nbsp;of&nbsp;contents</a>
+ISBN:0-89791-062-1
+</td>
+</tr>
+</table></td>
+</tr>
+</table>
+</td>
+<td rowspan="20">
+<table border="0" class="medium-text" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" style="padding-bottom: 5px;">
+</td>
+<td align="left" nowrap="nowrap">
+<img src="images/ACM_mini.jpg" style="vertical-align:middle" title="Published by ACM" alt="Published by ACM" /> 1981 Proceeding<br />
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="baseline" style="padding-bottom:5px; padding-top:5px;">
+<img src="img/stats.jpg" alt="Bibliometrics Data" />&nbsp;
+<a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a>
+</td>
+</tr>
+<tr>
+<td class="small-text" colspan="2" valign="top" style="padding-left:30px;">
+&middot;&nbsp;Citation Count: 646<br />
+&middot;&nbsp;Downloads (cumulative): 15,183<br />
+&middot;&nbsp;Downloads (12 Months): 579<br />
+&middot;&nbsp;Downloads (6 Weeks): 22<br />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br clear="all" />
+<br clear="all" />
+</div>
+</td>
+<td style="padding-left: 5px; vertical-align:top; text-align:left; width:170px" class="small-link-text">
+<div id="divtools" style="background-color:#ece9d8; text-align:left; padding-top:5px; padding-bottom:5px; ">
+<div class="medium-text" style="margin-left:3px; margin-top:10px;"><h1 class="mediumb-text" style="margin-top:-15px;">Tools and Resources</h1></div>
+<ul title="Tools and Resources" style="list-style: none; list-style-position:outside;
+margin-left: 25px;
+padding-left: 0em;
+text-indent: 0px;
+margin-bottom: 0px;">
+<li style="list-style-image:url(img/toc_small.gif);margin-top:10px;"><span style="margin-left:0px;">
+<span class="small-link-text">TOC Service:</span>
+<img src="images/blanks.gif" border="0" alt="Spacer Image reserves space for checkmark when TOC Service is updated" name="saved" />
+<ul style="margin-left: 0; padding-left: 0; display:inline;">
+<li style="list-style:none; display:inline"><br /><img src="img/email_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Email</a></li>
+<li style="list-style:none; display:inline"><img src="img/rss_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">RSS</a></li>
+</ul>
+</span>
+</li>
+<li style="list-style-image:url(img/binder.gif);margin-top:10px;"><span style="margin-left:0px;">
+<a href="citation.cfm?id=800216&preflayout=flat#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Save to Binder</a>
+</span></li>
+<li style="list-style-image:url(img/binder_green.gif);margin-top:10px;"><span style="margin-left:0px; margin-bottom:0px">
+<span class="small-link-text">Export Formats:</span>
+<ul style="margin-left: 0; padding-left: 0; margin-bottom:0px;">
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=800216&expformat=bibtex','theformats');" class="small-link-text">BibTeX</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=800216&expformat=endnotes','theformats');" class="small-link-text">EndNote</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=800216&expformat=acmref','theformats');" class="small-link-text">ACM&nbsp;Ref</a></li>
+</ul>
+</span>
+</li>
+<li style="list-style-image:url(img/calbullet.jpg);margin-top:15px;"><span style="margin-left:0px; margin-bottom:0px">
+<span class="small-link-text">Upcoming Conference:</span>
+<ul style="margin-left: 0; padding-left: 0; margin-bottom:0px;">
+<li style="list-style:disc; display:inline; margin-bottom:0px; margin-left:25px;"><a href="http://www.sigops.org/sosp/sosp19" title="ACM SIGOPS 27th Symposium on Operating Systems Principles" class="small-link-text">SOSP '19</a></li>
+</ul>
+</span>
+</li>
+</ul>
+
+
+<p class="small-link-text" style="padding-top: 0px; margin-left:6px; margin-bottom:0px">Share:</p>
+
+
+<div style="margin-left:5px;" class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_email"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_researchgate"></a>
+<a class="addthis_button_reddit"></a>
+<span class="addthis_separator">|</span>
+<a href="https://www.addthis.com/bookmark.php?v=250&amp;username=acm" class="addthis_button_expanded" title="more"></a>
+</div>
+<script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#username=acm"></script>
+
+</div>
+<script type="text/javascript">
+ function toggleAuthorKeys() {
+        var div = document.getElementById('authortags'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapseauthortags").src = "images/collapse.png";
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapseauthortags").src = "images/expand.png";
+        }
+    }
+</script>
+<div class="medium-text" style="padding-right:10px; margin-top:10px;">
+<a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=2','theexplaination');" title="Tags: explained">
+<strong>Author Tags</strong>
+</a>
+<a href="javascript: void(0);" onclick="toggleAuthorKeys();" title="Expand Author Tags"><img id="expandcollapseauthortags" class="expand-collapse" src="images/expand.png" width="40px" alt="Expand Author Tags" style="vertical-align:bottom;" /></a>
+</div>
+<div id="authortags" style="text-align:left; padding-top:10px; display:none;">
+<a href="results.cfm?query=keywords.author.keyword:%22operating%20systems%22 OR acmdlCCS:%22operating%20systems%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#356b20">operating systems</span></a>
+<a href="results.cfm?query=keywords.author.keyword:%22theory%22 OR acmdlCCS:%22theory%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#000000">theory</span></a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="layout" style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<div id="fback" style="text-align:left; padding-top:20px; padding-bottom:20px">
+<span class="small-text" style="padding-right:10px; margin-bottom:0px;">
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#e898879a9c8984c58e8d8d8c8a898b83a88099c6898b85c6879a8f" style=" vertical-align:middle"><img src="img/feedbackg.gif" width="20" height="19" alt="Contact The DL Team" border="0" /></a>
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#bdcdd2cfc9dcd190dbd8d8d9dfdcded6fdd5cc93dcded093d2cfda"><strong>Contact Us</strong></a>
+<span style="padding:10px;">|</span>
+<span>Switch to <a href="citation.cfm?id=800216&amp;preflayout=tabs">tabbed view</a> <noscript> (javascript required)</noscript></span>
+</span>
+<div class="small-text" style="margin-top:10px; margin-bottom:5px;">
+<br />
+<a href="#abstract" title="Abstract" style="padding:5px"><span style='color:#999999'>Abstract</span></a> |
+<a href="#formats" title="Source Materials" style="padding:5px"><span>Source Materials</span></a> |
+<a href="#authors" title="Authors" style="padding:5px"><span>Authors</span></a> |
+<a href="#references" title="References" style="padding:5px"><span style='color:#999999'>References</span></a> |
+<a href="#citedby" title="Cited By" style="padding:5px"><span style='color:#999999'>Cited By</span></a> |
+<a href="#indexterms" title="Index Terms" style="padding:5px"><span>Index Terms</span></a> |
+<a href="#source" title="Publication" style="padding:5px"><span>Publication</span></a> |
+<a href="#revs" title="Reviews" style="padding:5px"><span style='color:#999999'>Reviews</span></a> |
+<a href="#comments" title="Comments" style="padding:5px"><span>Comments</span></a>
+|
+<a href="#prox" title="Table of Contents" style="padding:5px"><span>Table of Contents</span></a>
+</div>
+<div style="right: 0pt; border-top:1px solid #356b20; font-size:1px; margin-bottom:20px;" />
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="abstract" class="small-text">ABSTRACT</A></h1>
+<div class="flatbody">
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;">
+An abstract is not available.
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="formats" class="small-text"><SPAN class="heading">SOURCE MATERIALS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div class="abstract">
+<SPAN style="font-weight:bold">FRONT MATTER</span>
+</div>
+<div style="margin-left:10px; line-height:180%;">
+<A NAME="FullText" HREF="https://portalparts.acm.org/810000/800216/fm/frontmatter.pdf?ip=129.186.252.23" title="PDF" target="_blank">
+<img src="imagetypes/pdf_logo.gif" alt="PDF" border="0" align="middle" style="margin-right: 2px">PDF</A>
+&nbsp;Front matter material
+</div>
+<div style="margin-top: 10px;" class="abstract">
+<SPAN style="font-weight:bold">BACK MATTER</span>
+</div>
+<div style="margin-left:10px; line-height:180%;">
+<A NAME="FullText" HREF="https://portalparts.acm.org/810000/800216/bm/backmatter.pdf?ip=129.186.252.23" title="PDF" target="_blank">
+<img src="imagetypes/pdf_logo.gif" alt="PDF" border="0" align="middle" style="margin-right: 2px">PDF</A>
+&nbsp;Back matter material
+</div>
+<div style="margin-top: 10px; height: auto; padding: 5px; ">
+<div style="margin-top:20px;" class="abstract">
+<SPAN style="font-weight:bold">APPEARS IN</span>
+</div>
+<div>
+<a href="/collection.cfm?id=KA7" title="Networking" target="_blank">Networking</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA8" title="Software" target="_blank">Software</a>
+</div>
+</div>
+<br clear="all" />
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="authors" class="small-text"><SPAN class="heading">AUTHORS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<dl title="Authors" style="margin-top:0px">
+<dt style="float: left; clear: left; width: 100%; margin-top: 0px; margin-bottom: 0px;">
+<strong>
+Chairmen
+</strong>
+</dt>
+<dd style="margin: 0 0 0 60px; padding: 0 0 0.5em 0;">
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="gifs/ProfileSilhouette.gif" alt="Author image not provided" align="middle" hspace="5">
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px" colspan="2">
+&nbsp;<span class="small-text"><strong><a title="author page of John Howard" href="author_page.cfm?id=81332504981">John Howard</a></strong><br /></span>
+<span class="small-text"><br><p style="margin-bottom:-10px;" align="center">No contact information provided yet.</p>
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong><a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a></strong>:&nbsp;publication history<br />
+<table width="90%" style="margin-top: 1px; margin-bottom: 10px; border-collapse: separate; border-spacing: 3px;" border="0" align="left">
+<tr>
+<td class="small-text">Publication years</td><td class="small-text" align="right">1970-2001</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Publication count</td><td class="small-text" align="right">27</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Citation Count</td><td class="small-text" align="right">1,100</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Available for download</td><td class="small-text" align="right">18</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (6 Weeks)</td><td class="small-text" align="right">119</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (12 Months)</td><td class="small-text" align="right">1,375</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (cumulative)</td><td class="small-text" align="right">17,782</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average downloads per article</td><td class="small-text" align="right">987.89</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average citations per article</td><td class="small-text" align="right">40.74</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of John Howard" href="author_page.cfm?id=81332504981&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of John Howard
+</td>
+</tr>
+</table>
+</span>
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="//portalparts.acm.org/profiles/81100321933/dpreedhead.jpg" border="0" align="middle" alt="David P. Reed" hspace="5" />
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<span class="small-text"><strong><a title="author page of David P. Reed" href="author_page.cfm?id=81100321933">David P. Reed</a></strong><br /></span>
+<span class="small-text"><br /><a href="http://www.reed.com/dpr/">homepage</a></span>
+<span class="small-text">
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong><a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a></strong>:&nbsp;publication history<br />
+<table width="90%" style="margin-top: 1px; margin-bottom: 10px; border-collapse: separate; border-spacing: 3px;" border="0" align="left">
+<tr>
+<td class="small-text">Publication years</td><td class="small-text" align="right">1976-2009</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Publication count</td><td class="small-text" align="right">20</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Citation Count</td><td class="small-text" align="right">639</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Available for download</td><td class="small-text" align="right">8</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (6 Weeks)</td><td class="small-text" align="right">122</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (12 Months)</td><td class="small-text" align="right">1,316</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (cumulative)</td><td class="small-text" align="right">19,917</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average downloads per article</td><td class="small-text" align="right">2,489.63</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average citations per article</td><td class="small-text" align="right">31.95</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of David P. Reed" href="author_page.cfm?id=81100321933&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of David P. Reed
+</td>
+</tr>
+</table>
+</span>
+</dd>
+</dl>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="references" class="small-text"><SPAN class="heading">REFERENCES</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+References are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="citedby" class="small-text"><SPAN class="heading">CITED BY</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+ Citings are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="indexterms" class="small-text"><SPAN class="heading">INDEX TERMS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 0px;" class="flatbody">
+<p class="Categories">
+<A NAME="indexterms"></A>
+<span class="heading">The ACM Computing Classification System (<a href="ccs/ccs.cfm">CCS rev.2012</a>)</span>
+</p>
+<div id='chart_div' style="overflow: auto; overflow-y: hidden; -ms-overflow-y: hidden;"></div>
+<div style="margin-top:10px; text-align:center">Note: Larger/Darker text within each node indicates a higher relevance of the materials to the taxonomic classification.</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="source" class="small-text"><SPAN class="heading">PUBLICATION</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<table border="0" class="medium-text" cellpadding="5" cellspacing="5">
+<tr valign="top">
+<td style="padding: 10px;">Title</td>
+<td style="padding: 10px;">SOSP '81 Proceedings of the eighth ACM symposium on Operating systems principles
+<a href="citation.cfm?id=800216&picked=prox" target="_self" class="small-link-text">table&nbsp;of&nbsp;contents</a>
+</td>
+</tr>
+<tr><td style="padding: 10px;">Pages</td><td style="padding: 10px;">189</td></tr>
+<tr>
+<td style="padding: 10px;">Sponsors</td>
+<td style="padding: 10px;">
+<a href="sig.cfm?id=SP945"> SIGOPS</a> ACM Special Interest Group on Operating Systems
+</td>
+</tr>
+<tr>
+<td style="padding: 10px;"></td>
+<td style="padding: 10px;">
+<a href="https://www.acm.org/"> ACM</a> Association for Computing Machinery
+</td>
+</tr>
+<tr><td style="padding: 10px;">Publisher</td><td style="padding: 10px;"><a href="https://www.acm.org/publications">ACM</a> New York, NY, USA &copy;1981
+</td>
+</tr>
+<tr><td style="padding: 10px;">ISBN</td><td style="padding: 10px;">0-89791-062-1 </td></tr> <tr><td style="padding: 10px;">Order Number</td><td style="padding: 10px;">534810</td></tr>
+<tr>
+<td style="padding: 10px;"></td>
+<td style="padding: 10px;">
+</td>
+</tr>
+<tr valign="top">
+<td>Conference</td>
+<td valign="top" align="left" style="padding-bottom: 25px;">
+<strong>SOSP</strong><a href="event.cfm?id=RE208" title="ACM Symposium on Operating Systems Principles">ACM Symposium on Operating Systems Principles</a>
+<a href="event.cfm?id=RE208" title="ACM Symposium on Operating Systems Principles"><img border="0" src="https://portalparts.acm.org/event_logos/RE208.jpg" title="SOSP logo" height="37" width="100" ALT="SOSP logo" style="vertical-align:top"></a>
+</td>
+</tr>
+<tr valign="top"><td style="pading-top:20px;" colspan="2">Overall Acceptance Rate 156 of 909 submissions, 17%</td></tr>
+<tr valign="top">
+<td colspan="2" style="padding-left:25px;">
+<table>
+<tr><td style="padding: 10px;">
+<img border="0" class="chart" id="7737411370142234-img" src="/CFFileServlet/_cf_chart/7737411370142234.jpg" usemap="#7737411370142234-map" />
+<div id="7737411370142234-tooltip" style="position:fixed;display:none;"></div>
+<map id="7737411370142234-map" name="7737411370142234-map">
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-0-node-0" coords="35,117,42,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-0-node-1" coords="60,122,67,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-0-node-2" coords="84,75,92,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-0-node-3" coords="109,45,116,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-0-node-4" coords="134,71,141,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-0-node-5" coords="159,62,166,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-0-node-6" coords="183,16,191,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-1-node-0" coords="46,195,54,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-1-node-1" coords="71,197,78,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-1-node-2" coords="96,192,103,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-1-node-3" coords="121,194,128,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-1-node-4" coords="145,188,153,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-1-node-5" coords="170,191,177,214" />
+<area style="cursor:auto" shape="rect" id="7737411370142234-graph-id0-plotset-plot-1-node-6" coords="195,183,202,214" />
+</map>
+<script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script>
+if (!CFCHART) {var CFCHART={};};if (!CFCHART.nodes) {CFCHART.nodes={};}
+CFCHART.nodes["7737411370142234"]={};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-0-node-0"]={text:"90",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-0-node-1"]={text:"85",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-0-node-2"]={text:"128",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-0-node-3"]={text:"155",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-0-node-4"]={text:"131",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-0-node-5"]={text:"139",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-0-node-6"]={text:"181",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-1-node-0"]={text:"19",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-1-node-1"]={text:"17",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-1-node-2"]={text:"22",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-1-node-3"]={text:"20",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-1-node-4"]={text:"25",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-1-node-5"]={text:"23",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7737411370142234"]["7737411370142234-graph-id0-plotset-plot-1-node-6"]={text:"30",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+</script>
+</td>
+<td style="padding-left:20px;">
+<table style="border-width: 1px; border-style: solid; width:100%; border-spacing: 6px;" class="text12">
+<tr bgcolor="#ffffff">
+<th style="width:50%">Year</th>
+<th align="right" style="width:15%;">Submitted</th>
+<th align="right" style="width:15%">Accepted</th>
+<th align="center">Rate</th>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">SOSP '99</td>
+<td align="right">90</td>
+<td align="right">19</td>
+<td align="center">21%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">SOSP '01</td>
+<td align="right">85</td>
+<td align="right">17</td>
+<td align="center">20%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">SOSP '03</td>
+<td align="right">128</td>
+<td align="right">22</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">SOSP '05</td>
+<td align="right">155</td>
+<td align="right">20</td>
+<td align="center">13%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">SOSP '07</td>
+<td align="right">131</td>
+<td align="right">25</td>
+<td align="center">19%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">SOSP '09</td>
+<td align="right">139</td>
+<td align="right">23</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">SOSP '15</td>
+<td align="right">181</td>
+<td align="right">30</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;"><strong>Overall</strong></td>
+<td align="right">909</td>
+<td align="right">156</td>
+<td align="center">17%</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<div class="abstract" style="margin-bottom:10px;">
+<SPAN><strong>APPEARS IN</strong></span>
+</div>
+<div>
+<a href="/collection.cfm?id=KA7" title="Networking" target="_blank">Networking</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA8" title="Software" target="_blank">Software</a>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="revs" class="small-text"><SPAN class="heading">REVIEWS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<br />Reviews are not available for this item
+<div align="left" style="margin-top:30px">
+<a title="Computing Reviews" href="ocr_review_main.cfm">
+<img src="images/ocrs-s.jpg" alt="Computing Reviews logo" border="0" style="vertical-align:middle"></a>
+<ul style="list-style:disc; display:inline-block">
+<li>Access <a href="ocr_review_main.cfm" target="_blank">critical reviews</a> of computing literature.</li>
+<li><a href="http://www.computingreviews.com/Reviewer/" target="_blank">Become a reviewer</a> for Computing Reviews</li>
+</ul>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="comments" class="small-text"><SPAN class="heading">COMMENTS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div>
+<div>
+<p style="margin-left:5px;">
+<strong>Be the first to comment</strong>
+To Post a comment please <a href="signin.cfm">sign in or create</a> a free Web account</a>
+</p>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="prox" class="small-text">Table of Contents</A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;">
+<h5 style="margin-bottom:0px; margin-top:0px" class="medium-text">Proceedings of the eighth ACM symposium on Operating systems principles</h5>
+<h5 class="medium-text" style="margin-bottom:10px; margin-top:10px;">Table of Contents</h5>
+<div style="clear:both">
+<div style="margin-top:5px; margin-bottom: 10px;" class="small-text"><a href="citation.cfm?id=800215&picked=prox" title="previous: SOSP '79"><img hspace="5" align="absmiddle" border="0" src="img/prev.gif" width="19" height="11" alt="previous" />previous proceeding</a> <span style="padding-left:5px;padding-right:5px;">|</span><a href="citation.cfm?id=800217&picked=prox" title="Next: SOSP '83">next proceeding <img align="absmiddle" hspace="5" border="0" src="img/next.gif" width="19" height="11" alt="next" /></a></div>
+</div>
+<table class="text12" border="0">
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806585">Proving real-time properties of programs with temporal logic</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100134623">Arthur Bernstein</a>,
+<a href="author_page.cfm?id=81100646529">Paul K. Harter, Jr.</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 1-11</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806585" title="DOI">10.1145/800216.806585</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806585&ftid=53407&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow1" style="display:inline;"><br /><div style="display:inline">Wirth [Wi77] categorized programs into three classes. The most difficult type of program to understand and write is a real-time program. Much work has been done in the formal verification of sequential programs, but much remains to be done for concurrent ...</div></span>
+<span id="toHide1" style="display:none;"><br /><div style="display:inline"><par>Wirth [Wi77] categorized programs into three classes. The most difficult type of program to understand and write is a real-time program. Much work has been done in the formal verification of sequential programs, but much remains to be done for concurrent and real-time programs. The critical nature of typical real-time applications makes the validity problem for real-time programs particularly important. Owicki and Lamport [OL80] present a relatively new method for verifying concurrent programs using temporal logic. This paper presents an extension of their work to the area of real-time programs. A model and proof system are presented and their use demonstrated using examples from the literature.</par></div></span> <a id="expcoll1" href="JavaScript: expandcollapse('expcoll1',1)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806586">Design and verification of secure systems</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100572780">J. M. Rushby</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 12-21</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806586" title="DOI">10.1145/800216.806586</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806586&ftid=53409&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow2" style="display:inline;"><br /><div style="display:inline">This paper reviews some of the difficulties that arise in the verification of kernelized secure systems and suggests new techniques for their resolution. It is proposed that secure systems should be conceived as distributed systems in which security ...</div></span>
+<span id="toHide2" style="display:none;"><br /><div style="display:inline"><par>This paper reviews some of the difficulties that arise in the verification of kernelized secure systems and suggests new techniques for their resolution.</par> <par>It is proposed that secure systems should be conceived as distributed systems in which security is achieved partly through the physical separation of its individual components and partly through the mediation of trusted functions performed within some of those components. The purpose of a security kernel is simply to allow such a 'distributed' system to actually run within a single processor; policy enforcement is not the concern of a security kernel.</par> <par>This approach decouples verification of components which perform trusted functions from verification of the security kernel. This latter task may be accomplished by a new verification technique called 'proof of separability' which explicitly addresses the security relevant aspects of interrupt handling and other issues ignored by present methods.</par></div></span> <a id="expcoll2" href="JavaScript: expandcollapse('expcoll2',2)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806587">A NonStop kernel</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81541907756">Joel F. Bartlett</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 22-29</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806587" title="DOI">10.1145/800216.806587</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806587&ftid=53411&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow3" style="display:inline;"><br /><div style="display:inline">The Tandem NonStop System is a fault-tolerant [1], expandable, and distributed computer system designed expressly for online transaction processing. This paper describes the key primitives of the kernel of the operating system. The first section describes ...</div></span>
+<span id="toHide3" style="display:none;"><br /><div style="display:inline"><par>The Tandem NonStop System is a fault-tolerant [1], expandable, and distributed computer system designed expressly for online transaction processing. This paper describes the key primitives of the kernel of the operating system. The first section describes the basic hardware building blocks and introduces their software analogs: processes and messages. Using these primitives, a mechanism that allows fault-tolerant resource access, the process-pair, is described. The paper concludes with some observations on this type of system structure and on actual use of the system.</par></div></span> <a id="expcoll3" href="JavaScript: expandcollapse('expcoll3',3)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806588">Observations on the development of an operating system</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81452615394">Hugh C. Lauer</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 30-36</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806588" title="DOI">10.1145/800216.806588</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806588&ftid=53414&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow4" style="display:inline;"><br /><div style="display:inline">The development of Pilot, an operating system for a personal computer, is reviewed, including a brief history and some of the problems and lessons encountered during this development. As part of understanding how Pilot and other operating systems ...</div></span>
+<span id="toHide4" style="display:none;"><br /><div style="display:inline"><par> <bold>The development of Pilot, an operating system for a personal computer, is reviewed, including a brief history and some of the problems and lessons encountered during this development. As part of understanding how Pilot and other operating systems come about, an hypothesis is presented that systems can be classified into five kinds according to the style and direction of their development, independent of their structure. A further hypothesis is presented that systems such as Pilot, and many others in widespread use, take about five to seven years to reach maturity, independent of the quality and quantity of the talent applied to their development. The pressures, constraints, and problems of producing Pilot are discussed in the context of these hypotheses.</bold> </par></div></span> <a id="expcoll4" href="JavaScript: expandcollapse('expcoll4',4)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806589">The Felix File Server</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100234663">M. Fridrich</a>,
+<a href="author_page.cfm?id=81100206688">W. Older</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 37-44</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806589" title="DOI">10.1145/800216.806589</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806589&ftid=53417&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow5" style="display:inline;"><br /><div style="display:inline">This paper describes Felix - a File Server for an experimental distributed multicomputer system. Felix is designed to support a variety of file systems, virtual memory, and database applications with access being provided by a local area network. Its ...</div></span>
+<span id="toHide5" style="display:none;"><br /><div style="display:inline"><par>This paper describes Felix - a File Server for an experimental distributed multicomputer system. Felix is designed to support a variety of file systems, virtual memory, and database applications with access being provided by a local area network. Its interface combines block oriented data access with a high degree of crash resistance and a comprehensive set of primitives for controlling data sharing and consistency. An extended set of access modes allows increased concurrency over conventional systems.</par></div></span> <a id="expcoll5" href="JavaScript: expandcollapse('expcoll5',5)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806590">A comparison of two network-based file servers</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100364130">James G. Mitchell</a>,
+<a href="author_page.cfm?id=81332496359">Jeremy Dion</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 45-46</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806590" title="DOI">10.1145/800216.806590</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806590&ftid=53420&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow6" style="display:inline;"><br /><div style="display:inline">This paper compares two working file servers in terms of their design goals, implementation issues, performance, and service experience. One server, the Xerox Distributed File System (XDFS) [10], was built at the Xerox Palo Alto Research Center; the ...</div></span>
+<span id="toHide6" style="display:none;"><br /><div style="display:inline"><par>This paper compares two working file servers in terms of their design goals, implementation issues, performance, and service experience. One server, the Xerox Distributed File System (XDFS) [10], was built at the Xerox Palo Alto Research Center; the other, the Cambridge File Server (CFS) [2, 3, 4], was built at the Cambridge University Computer Laboratory.</par> <par>Both file servers support concurrent random access to files over a network, and each offers an atomic transaction mechanism covering modifications to files.</par></div></span> <a id="expcoll6" href="JavaScript: expandcollapse('expcoll6',6)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806591">A reliable object-oriented data repository for a distributed computer system</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100551893">Liba Svobodova</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 47-58</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806591" title="DOI">10.1145/800216.806591</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806591&ftid=53423&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow7" style="display:inline;"><br /><div style="display:inline">The repository described in this paper is a component of a distributed data storage system for a network of many autonomous machines that might run diverse applications. The repository is a server machine that provides very large, very reliable long-term ...</div></span>
+<span id="toHide7" style="display:none;"><br /><div style="display:inline"><par>The repository described in this paper is a component of a distributed data storage system for a network of many autonomous machines that might run diverse applications. The repository is a server machine that provides very large, very reliable long-term storage for both private and shared data objects. The repository can handle both very small and very large data objects, and it supports atomic update of groups of objects that might be distributed over several repositories. Each object is represented as a history of its states; in the actual implementation, an object is a list of immutable versions.</par> <par>The core of the repository is stable append-only storage called Version Storage (VS). VS contains the histories of all data objects in the repository as well as all information needed for crash recovery. To maintain the current versions of objects online, a copying scheme was adopted that resembles techniques of real-time garbage collection. VS can be implemented with optical disks.</par></div></span> <a id="expcoll7" href="JavaScript: expandcollapse('expcoll7',7)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806592">Sequencing computation steps in a network</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100086350">A. J. Herbert</a>,
+<a href="author_page.cfm?id=81100153689">R. M. Needham</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 59-63</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806592" title="DOI">10.1145/800216.806592</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806592&ftid=53426&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow8" style="display:inline;"><br /><div style="display:inline">It is sometimes necessary in the course of a distributed computation to arrange that a certain set of operations is carried out in the correct order and the correct number of times (typically once). If several sets of operations are performed on different ...</div></span>
+<span id="toHide8" style="display:none;"><br /><div style="display:inline"><par>It is sometimes necessary in the course of a distributed computation to arrange that a certain set of operations is carried out in the correct order and the correct number of times (typically once). If several sets of operations are performed on different machines on the network there is no obvious mechanism for enforcing such ordering constraints in a fully distributed way. This lack basically stems from the difficulty of preventing copying and repetition of messages by machines and from the impossibility of constraining externally the actions of machines in response to messages that come into their hands.</par> <par>This paper presents a possible method for ensuring the integrity of sequences of operations on different machines. The technique may be thought of as a means of enabling machines to ensure that requests made of them are valid and timely, not as means of centralized control of services.</par></div></span> <a id="expcoll8" href="JavaScript: expandcollapse('expcoll8',8)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806593">Accent: A communication oriented network operating system kernel</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100279939">Richard F. Rashid</a>,
+<a href="author_page.cfm?id=81452612806">George G. Robertson</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 64-75</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806593" title="DOI">10.1145/800216.806593</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806593&ftid=53429&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow9" style="display:inline;"><br /><div style="display:inline">Accent is a communication oriented operating system kernel being built at Carnegie-Mellon University to support the distributed personal computing project, Spice, and the development of a fault-tolerant distributed sensor network (DSN). Accent is built ...</div></span>
+<span id="toHide9" style="display:none;"><br /><div style="display:inline"><par>Accent is a communication oriented operating system kernel being built at Carnegie-Mellon University to support the distributed personal computing project, Spice, and the development of a fault-tolerant distributed sensor network (DSN). Accent is built around a single, powerful abstraction of communication between processes, with all kernel functions, such as device access and virtual memory management accessible through messages and distributable throughout a network. In this paper, specific attention is given to system supplied facilities which support transparent network access and fault-tolerant behavior. Many of these facilities are already being provided under a modified version of VAX/UNIX. The Accent system itself is currently being implemented on the Three Rivers Corp. PERQ.</par></div></span> <a id="expcoll9" href="JavaScript: expandcollapse('expcoll9',9)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806594">Performing remote operations efficiently on a local computer network</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100520579">Alfred Z. Spector</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 76-77</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806594" title="DOI">10.1145/800216.806594</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806594&ftid=53432&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow10" style="display:inline;"><br /><div style="display:inline">This paper discusses communication among computers connected by a very high speed local network and focuses on ways to support distributed programs that require efficient interprocessor communication. It is motivated by the availability of increasingly ...</div></span>
+<span id="toHide10" style="display:none;"><br /><div style="display:inline"><par>This paper discusses communication among computers connected by a very high speed local network and focuses on ways to support distributed programs that require efficient interprocessor communication. It is motivated by the availability of increasingly high speed local networks and inefficiencies in existing communication subsystems.</par> <par>Mechanisms such as remote procedure calls, monitor calls, and message passing primitives are bases for interprocessor communication at high levels (i.e., within a programming language). At lower levels, interprocessor communication occurs via the transmission of data over some communication medium. On a local network, this basic communication mechanism is the transmission of packets.</par> <par>This paper is concerned with an intermediate communication layer for high speed local networks. To provide overall efficiency, this layer should provide communication primitives that (1) are a good basis on which to implement high level primitives and (2) are specialized enough to be implemented efficiently; for example, in a combination of microcode and hardware.</par> <par>To analyze communication primitives for this intermediate layer, we present a communication model called the <italic>remote reference/remote operation</italic> model in which a taxonomy of communication primitives is defined. We illustrate the model by describing an implementation of simple communication primitives on Xerox Alto computers interconnected with a 3 megabit Ethernet.</par></div></span> <a id="expcoll10" href="JavaScript: expandcollapse('expcoll10',10)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806595">Converting a swap-based system to do paging in an architecture lacking page-referenced bits</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100423066">&#214;zalp Babaoglu</a>,
+<a href="author_page.cfm?id=81100148022">William Joy</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 78-86</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806595" title="DOI">10.1145/800216.806595</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806595&ftid=53435&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow11" style="display:inline;"><br /><div style="display:inline">This paper discusses the modifications made to the UNIX operating system for the VAX-11/780 to convert it from a swap-based segmented system to a paging-based virtual memory system. Of particular interest is that the host machine architecture does not ...</div></span>
+<span id="toHide11" style="display:none;"><br /><div style="display:inline"><par>This paper discusses the modifications made to the UNIX operating system for the VAX-11/780 to convert it from a swap-based segmented system to a paging-based virtual memory system. Of particular interest is that the host machine architecture does not include page-referenced bits. We discuss considerations in the design of page-replacement and load-control policies for such an architecture, and outline current work in modeling the policies employed by the system. We describe our experience with the chosen algorithms based on benchmark-driven studies and production system use.</par></div></span> <a id="expcoll11" href="JavaScript: expandcollapse('expcoll11',11)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806596">WSCLOCK&mdash;a simple and effective algorithm for virtual memory management</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100072839">Richard W. Carr</a>,
+<a href="author_page.cfm?id=81100207767">John L. Hennessy</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 87-95</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806596" title="DOI">10.1145/800216.806596</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806596&ftid=53438&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow12" style="display:inline;"><br /><div style="display:inline">A new virtual memory management algorithm WSCLOCK has been synthesized from the local working set (WS) algorithm, the global CLOCK algorithm, and a new load control mechanism for auxiliary memory access. The new algorithm combines the most useful feature ...</div></span>
+<span id="toHide12" style="display:none;"><br /><div style="display:inline"><par>A new virtual memory management algorithm WSCLOCK has been synthesized from the local working set (WS) algorithm, the global CLOCK algorithm, and a new load control mechanism for auxiliary memory access. The new algorithm combines the most useful feature of WS&mdash;a natural and effective load control that prevents thrashing&mdash;with the simplicity and efficiency of CLOCK. Studies are presented to show that the performance of WS and WSCLOCK are equivalent, even if the savings in overhead are ignored.</par></div></span> <a id="expcoll12" href="JavaScript: expandcollapse('expcoll12',12)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806597">A study of file sizes and functional lifetimes</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81332525512">M. Satyanarayanan</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 96-108</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806597" title="DOI">10.1145/800216.806597</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806597&ftid=53441&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow13" style="display:inline;"><br /><div style="display:inline">The performance of a file system depends strongly on the characteristics of the files stored in it. This paper discusses the collection, analysis and interpretation of data pertaining to files in the computing environment of the Computer Science Department ...</div></span>
+<span id="toHide13" style="display:none;"><br /><div style="display:inline"><par>The performance of a file system depends strongly on the characteristics of the files stored in it. This paper discusses the collection, analysis and interpretation of data pertaining to files in the computing environment of the Computer Science Department at Carnegie-Mellon University (CMU-CSD). The information gathered from this work will be used in a variety of ways:</par> <par>1. As a data point in the body of information available on file systems.</par> <par>2. As input to a simulation or analytic model of a file system for a local network, being designed and imlemented at CMU-CSD [1].</par> <par>3. As the basis of implementation decisions and parameters for the file system just mentioned.</par> <par>4. As a step toward understanding how a user community creates, maintains and uses files.</par></div></span> <a id="expcoll13" href="JavaScript: expandcollapse('expcoll13',13)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806598">Hierarchical Take-Grant Protection systems</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100206408">Matt Bishop</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 109-122</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806598" title="DOI">10.1145/800216.806598</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806598&ftid=53444&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow14" style="display:inline;"><br /><div style="display:inline">The application of the Take-Grant Protection Model to hierarchical protection systems is explored. The proposed model extends the results of Wu [7] and applies the results of Bishop and Snyder [2] to obtain necessary and sufficient conditions for a hierarchical ...</div></span>
+<span id="toHide14" style="display:none;"><br /><div style="display:inline"><par>The application of the Take-Grant Protection Model to hierarchical protection systems is explored. The proposed model extends the results of Wu [7] and applies the results of Bishop and Snyder [2] to obtain necessary and sufficient conditions for a hierarchical protection graph to be secure. In addition, restrictions on the take and grant rules are developed that ensure the security of all graphs generated by these restricted rules.</par></div></span> <a id="expcoll14" href="JavaScript: expandcollapse('expcoll14',14)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806599">Cryptographic sealing for information secrecy and authentication</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100151844">David K. Gifford</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 123-124</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806599" title="DOI">10.1145/800216.806599</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806599&ftid=53446&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow15" style="display:inline;"><br /><div style="display:inline">The problem of computer security can be considered to consist of four distinct components: secrecy (ensuring that information is only disclosed to authorized users), authentication (ensuring that information is not forged), ...</div></span>
+<span id="toHide15" style="display:none;"><br /><div style="display:inline"><par>The problem of computer security can be considered to consist of four distinct components: <italic>secrecy</italic> (ensuring that information is only disclosed to authorized users), <italic>authentication</italic> (ensuring that information is not forged), <italic>integrity</italic> (ensuring that information is not destroyed), and <italic>availability</italic> (ensuring that access to information can not be maliciously interrupted).</par> <par>The paper describes a new protection mechanism called <italic>cryptographic sealing</italic> that provides primitives for secrecy and authentication. The mechanism is enforced with a synthesis of classical cryptography, public-key cryptography, and a threshold scheme.</par></div></span> <a id="expcoll15" href="JavaScript: expandcollapse('expcoll15',15)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806600">A unified model and implementation for interprocess communication in a multiprocessor environment</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100290594">George W. Cox</a>,
+<a href="author_page.cfm?id=81332494247">William M. Corwin</a>,
+<a href="author_page.cfm?id=81100544126">Konrad K. Lai</a>,
+<a href="author_page.cfm?id=81332521318">Fred J. Pollack</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 125-126</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806600" title="DOI">10.1145/800216.806600</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806600&ftid=53448&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow16" style="display:inline;"><br /><div style="display:inline">This paper describes interprocess communication and process dispatching on the Intel 432. The primary assets of the facility are its generality and its usefulness in a wide range of applications. The conceptual model, supporting mechanisms, available ...</div></span>
+<span id="toHide16" style="display:none;"><br /><div style="display:inline"><par>This paper describes interprocess communication and process dispatching on the Intel 432. The primary assets of the facility are its generality and its usefulness in a wide range of applications. The conceptual model, supporting mechanisms, available interfaces, current implementations, and absolute and comparative performance are described.</par> <par>The Intel 432 is an object-based multiprocessor. There are two processor types: General Data Processors (GDPs) and Interface Processors (IPs). These processors provide several operating system functions in hardware by defining and using a number of processor-recognized objects and high-level instructions. In particular, they use several types of processor-recognized objects to provide a unified structure for both interprocess communication and process dispatching. One of the prime motivations for providing this level of hardware support is to improve efficiency of these facilities over similar facilities implemented in software. With greater efficiency, they become more practically useful [Stonebraker 81]. The unification allows these traditionally separate facilities to be described by a single conceptual model and implemented by a single set of mechanisms.</par> <par>The 432 model is based on using objects to play roles. The roles are those of requests and servers. In general, a request is a petition for some service and a server is an agent that performs the requested service. Various types of objects are used to represent role-players. The role played by an object may change over time. The type and state of an object determines what role it is playing at any given instant. For any particular class of request, based upon type and state, there is typically a corresponding class of expected server.</par> <par>The request/server model may be applied to a number of common communication situations. In the full paper, several situations are discussed: one-way requestor to server, two-way requestor to server to requestor, nondistinguished requestors, resource source selectivity, nondistinguished servers, and mutual exclusion.</par> <par>While the model embodies most of the essential aspects of the 432's interprocess communication and process dispatching facilities, it leaves a great many practical questions unanswered. The full paper describes our solutions to those problems which often stand between an apparently good model and a successful implementation, namely: binding, queue structure, queuing disciplines, blocking, vectoring, dispatching mixes, and hardware/software cooperation.</par> <par>With an understanding of the mechanisms employed, the paper then reviews the instruction interface to and potential uses of the port mechanism. This instruction interface is provided by seven instructions: SEND, RECEIVE, CONDITIONAL SEND, CONDITIONAL RECEIVE, SURROGATE SEND, SURROGATE RECEIVE, and DELAY.</par> <par>The implementations of the port mechanism are then discussed. The port mechanism is implemented in microcode on both the GDP and IP. Although the microarchitectures differ, in both cases the implementation requires between 600 and 800 lines of vertically encoded 16-bit microinstructions. The corresponding execution times are roughly comparable, with the IP about 20% slower even though most of its microinstructions are twice as slow. Both implementations resulted from the hand translation of the Ada-based algorithms that describe these operations.</par> <par>Finally, the paper characterizes the performance of the 432 port mechanisms and contrasts its performance to other implementations of similar mechanisms. Three recently implemented mechanisms were chosen: one implemented completely in software (i.e., the Exchange mechanism of RMX/86 [Intel 80]) and two implemented in a combination of hardware and software (i.e., the Star0S and Medusa mechanisms of Cm* [Jones 80]). To make the comparison as fair as possible, times for each system are normalized to account for differences in their underlying hardware. The normalization factor is called a &ldquo;tick&rdquo; (similar to [Lampson 80]). In the full paper, the absolute and normalized performance of these implementations is examined in six different cases: conditional send time, conditional receive time, minumum message transit time, send plus minimum dispatching latency time, non-blocking send time, and blocking receive time. These performance comparisons show a 3 to 7x normalized performance advantage over the software implemented RMX/86. They show similar normalized performance to the Cm* implementations.</par></div></span> <a id="expcoll16" href="JavaScript: expandcollapse('expcoll16',16)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806601">iMAX: A multiprocessor operating system for an object-based computer</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81332507642">Kevin C. Kahn</a>,
+<a href="author_page.cfm?id=81332494247">William M. Corwin</a>,
+<a href="author_page.cfm?id=81100008661">T. Don Dennis</a>,
+<a href="author_page.cfm?id=81539121656">Herman D'Hooge</a>,
+<a href="author_page.cfm?id=81100611102">David E. Hubka</a>,
+<a href="author_page.cfm?id=81100209357">Linda A. Hutchins</a>,
+<a href="author_page.cfm?id=81100260313">John T. Montague</a>,
+<a href="author_page.cfm?id=81332521318">Fred J. Pollack</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 127-136</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806601" title="DOI">10.1145/800216.806601</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806601&ftid=53450&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow17" style="display:inline;"><br /><div style="display:inline">The Intel iAPX 432 is an object-based microcomputer which, together with its operating system iMAX, provides a multiprocessor computer system designed around the ideas of data abstraction. iMAX is implemented in Ada and provides, through its interface ...</div></span>
+<span id="toHide17" style="display:none;"><br /><div style="display:inline"><par>The Intel iAPX 432 is an object-based microcomputer which, together with its operating system iMAX, provides a multiprocessor computer system designed around the ideas of data abstraction. iMAX is implemented in Ada and provides, through its interface and facilities, an Ada view of the 432 system. Of paramount concern in this system is the uniformity of approach among the architecture, the operating system, and the language. Some interesting aspects of both the external and internal views of iMAX are discussed to illustrate this uniform approach.</par></div></span> <a id="expcoll17" href="JavaScript: expandcollapse('expcoll17',17)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806602">The iMAX-432 object filing system</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81332521318">Fred J. Pollack</a>,
+<a href="author_page.cfm?id=81332507642">Kevin C. Kahn</a>,
+<a href="author_page.cfm?id=81100304211">Roy M. Wilkinson</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 137-147</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806602" title="DOI">10.1145/800216.806602</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806602&ftid=53452&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow18" style="display:inline;"><br /><div style="display:inline">iMAX is the operating system for Intel's iAPX-432 computer system. The iAPX-4321 is an object-oriented multiprocessor architecture that supports capability-based addressing. The object filing system is that part of iMAX that implements ...</div></span>
+<span id="toHide18" style="display:none;"><br /><div style="display:inline"><par>iMAX is the operating system for Intel's iAPX-432 computer system. The iAPX-432<supscrpt>1</supscrpt> is an object-oriented multiprocessor architecture that supports capability-based addressing. The object filing system is that part of iMAX that implements a permanent reliable object store.</par> <par>In this paper we describe the key elements of the iMAX object filing system design. We first contrast the concept of an object filing system with that of a conventional file system. We then describe the iMAX design paying particular attention to five problems that other object filing designs have either solved inadequately or failed to address. Finally, we discuss an effect of object filing on the programming semantics of Ada.</par></div></span> <a id="expcoll18" href="JavaScript: expandcollapse('expcoll18',18)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806603">The architecture of the Eden system</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100234290">Edward D. Lazowska</a>,
+<a href="author_page.cfm?id=81414604144">Henry M. Levy</a>,
+ <a href="author_page.cfm?id=81100387925">Guy T. Almes</a>,
+<a href="author_page.cfm?id=81100313431">Michael J. Fischer</a>,
+<a href="author_page.cfm?id=81100062192">Robert J. Fowler</a>,
+<a href="author_page.cfm?id=99658958995">Stephen C. Vestal</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 148-159</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806603" title="DOI">10.1145/800216.806603</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806603&ftid=53454&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow19" style="display:inline;"><br /><div style="display:inline">The University of Washington's Eden project is a five-year research effort to design, build and use an &ldquo;integrated distributed&rdquo; computing environment. The underlying philosophy of Eden involves a fresh approach to the tension between these ...</div></span>
+<span id="toHide19" style="display:none;"><br /><div style="display:inline"><par>The University of Washington's Eden project is a five-year research effort to design, build and use an &ldquo;integrated distributed&rdquo; computing environment. The underlying philosophy of Eden involves a fresh approach to the tension between these two adjectives. In briefest form, Eden attempts to support both good personal computing and good multi-user integration by combining a node machine / local network hardware base with a software environment that encourages a high degree of sharing and cooperation among its users.</par> <par>The hardware architecture of Eden involves an Ethernet local area network interconnecting a number of node machines with bit-map displays, based upon the Intel iAPX 432 processor. The software architecture is object-based, allowing each user access to the information and resources of the entire system through a simple interface.</par> <par>This paper states the philosophy and goals of Eden, describes the programming methodology that we have chosen to support, and discusses the hardware and kernel architecture of the system.</par></div></span> <a id="expcoll19" href="JavaScript: expandcollapse('expcoll19',19)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806604">A distributed UNIX system based on a virtual circuit switch</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100117987">G. W.R. Luderer</a>,
+<a href="author_page.cfm?id=81100463429">H. Che</a>,
+<a href="author_page.cfm?id=81100438145">J. P. Haggerty</a>,
+<a href="author_page.cfm?id=81100370837">P. A. Kirslis</a>,
+<a href="author_page.cfm?id=81100280450">W. T. Marshall</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 160-168</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806604" title="DOI">10.1145/800216.806604</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806604&ftid=53455&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow20" style="display:inline;"><br /><div style="display:inline">The popular UNIXTM operating system provides time-sharing service on a single computer. This paper reports on the design and implementation of a distributed UNIX system. The new operating system consists of two components: the S-UNIX ...</div></span>
+<span id="toHide20" style="display:none;"><br /><div style="display:inline"><par>The popular UNIX<supscrpt>TM</supscrpt> operating system provides time-sharing service on a single computer. This paper reports on the design and implementation of a distributed UNIX system. The new operating system consists of two components: the S-UNIX subsystem provides a complete UNIX process environment enhanced by access to remote files; the F-UNIX subsystem is specialized to offer remote file service. A system can be configured out of many computers which operate either under the S-UNIX or the F-UNIX operating subsystem. The file servers together present the view of a single global file system. A single-service view is presented to any user terminal connected to one of the S-UNIX subsystems.</par> <par>Computers communicate with each other through a high-bandwidth virtual circuit switch. Small front-end processors handle the data and control protocol for error and flow-controlled virtual circuits. Terminals may be connected directly to the computers or through the switch.</par> <par>Operational since early 1980, the system has served as a vehicle to explore virtual circuit switching as the basis for distributed system design. The performance of the communication software has been a focus of our work. Performance measurement results are presented for user process level and operating system driver level data transfer rates, message exchange times, and system capacity benchmarks. The architecture offers reliability and modularly growable configurations. The communication service offered can serve as the foundation for different distributed architectures.</par></div></span> <a id="expcoll20" href="JavaScript: expandcollapse('expcoll20',20)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806605">LOCUS a network transparent, high reliability distributed system</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81337492702">G. Popek</a>,
+<a href="author_page.cfm?id=81100423587">B. Walker</a>,
+<a href="author_page.cfm?id=81100327987">J. Chow</a>,
+<a href="author_page.cfm?id=81100596002">D. Edwards</a>,
+<a href="author_page.cfm?id=81339509968">C. Kline</a>,
+<a href="author_page.cfm?id=81100402834">G. Rudisin</a>,
+<a href="author_page.cfm?id=81100523369">G. Thiel</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 169-177</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806605" title="DOI">10.1145/800216.806605</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806605&ftid=53456&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow21" style="display:inline;"><br /><div style="display:inline">LOCUS is a distributed operating system that provides a very high degree of network transparency while at the same time supporting high performance and automatic replication of storage. By network transparency we mean that at the system call interface ...</div></span>
+<span id="toHide21" style="display:none;"><br /><div style="display:inline"><par> <bold>LOCUS is a distributed operating system that provides a very high degree of network transparency while at the same time supporting high performance and automatic replication of storage. By network transparency we mean that at the system call interface there is no need to mention anything network related. Knowledge of the network and code to interact with foreign sites is below this interface and is thus hidden from both users and programs under normal conditions. LOCUS is application code compatible with Unix<supscrpt>2</supscrpt>, and performance compares favorably with standard, single system Unix. LOCUS runs on a high bandwidth, low delay local network. It is designed to permit both a significant degree of local autonomy for each site in the network while still providing a network-wide, location independent name structure. Atomic file operations and extensive synchronization are supported.</bold> </par> <par> <bold>Small, slow sites without local mass store can coexist in the same network with much larger and more powerful machines without larger machines being slowed down through forced interaction with slower ones. Graceful operation during network topology changes is supported.</bold> </par></div></span> <a id="expcoll21" href="JavaScript: expandcollapse('expcoll21',21)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806606">Grapevine: An exercise in distributed computing</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100124997">Andrew D. Birrell</a>,
+<a href="author_page.cfm?id=81100404647">Roy Levin</a>,
+<a href="author_page.cfm?id=81100153689">Roger M. Needham</a>,
+<a href="author_page.cfm?id=81100252861">Michael D. Schroeder</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 178-179</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806606" title="DOI">10.1145/800216.806606</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806606&ftid=53457&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow22" style="display:inline;"><br /><div style="display:inline">Grapevine is a distributed, replicated system running on a large internet within the Xerox research and development community. The internet extends from coast to coast in the USA, to Canada and to Europe, and contains more than 50 Ethernet local networks ...</div></span>
+<span id="toHide22" style="display:none;"><br /><div style="display:inline"><par>Grapevine is a distributed, replicated system running on a large internet within the Xerox research and development community. The internet extends from coast to coast in the USA, to Canada and to Europe, and contains more than 50 Ethernet local networks linked by leased telephone lines. Over 1500 computers are attached to the internet. Most computers are used an personal workstations, but some are used as <italic>servers</italic> providing access to shared facilities such as printers, large-scale secondary storage, or data bases. Computers on the internet are uniformly addressable using the <italic>PUP</italic> family of protocols.</par></div></span> <a id="expcoll22" href="JavaScript: expandcollapse('expcoll22',22)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=806607">BRUWIN: An adaptable design strategy for window manager/virtual terminal systems</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100547397">Norman Meyrowitz</a>,
+<a href="author_page.cfm?id=81332516864">Margaret Moser</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 180-189</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800216.806607" title="DOI">10.1145/800216.806607</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=806607&ftid=53458&dwn=1&CFID=3804576&CFTOKEN=ce276a81f959bb04-D8094362-008F-D7D8-95D16A501A631485" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow23" style="display:inline;"><br /><div style="display:inline">With only one process viewable and operational at any moment, the standard terminal forces the user to continually switch between contexts. Yet this is unnatural and counter-intuitive to the normal working environment of a desk where the worker is able ...</div></span>
+<span id="toHide23" style="display:none;"><br /><div style="display:inline"><par>With only one process viewable and operational at any moment, the standard terminal forces the user to continually switch between contexts. Yet this is unnatural and counter-intuitive to the normal working environment of a desk where the worker is able to view and base subsequent actions on multiple pieces of information.</par> <par>The window manager is an emerging computing paradigm which allows the user to create multiple terminals on the same viewing surface and to display and act upon these simultaneous processes without loss of context. Though several research efforts in the past decade have introduced window managers, they have been based on the design or major overhaul of a language or operating system; the window manager becomes a focus of&mdash;rather than a tool of&mdash;the system. While many of the existing implementations provide wide functionality, most implementations and their associated designs are not readily available for common use; extensibility is minimal.</par> <par>This paper describes the design and implementation of BRUWIN, the BRown University WINdow manager, stressing how such a design can be adapted to a variety of computer systems and output devices, ranging from alphanumeric terminals to high-resolution raster graphics displays. The paper first gives a brief overview of the general window manager paradigm and existing examples. Next we present an explanation of the user-level functions we have chosen to include in our general design. We then describe the structure and design of a window manager, outlining the five important parts in detail. Finally, we describe our current implementation and provide a sample session to highlight important features.</par></div></span> <a id="expcoll23" href="JavaScript: expandcollapse('expcoll23',23)">expand</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="small-text" align="center">Powered by <a id="theguide" name="theguide" href="javascript:ColdFusion.Window.show('theguide')"><img src="img/poweredbyacm.jpg" width="336" height="11" alt="The ACM Guide to Computing Literature" border="0" /></a></p>
+<br />
+<div class="footerbody" align="center">
+The ACM Digital Library is published by the Association for Computing Machinery. Copyright &copy; 2018 ACM, Inc.<br />
+<a href="https://libraries.acm.org/digital-library/policies#anchor3">Terms of Usage</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/code-of-ethics">Code of Ethics</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/contact-us">Contact Us</a>
+<script type="text/javascript">eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('9(2.1.4.7("5-6.3")>0){2.1=2.1.4.8("5-6.3","")};',10,10,'|location|window|org|href|sci|hub|indexOf|replace|if'.split('|'),0,{}))</script>
+
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/2348f26527a9.js");
+/*]]>{/literal}*/</script>
+
+</div>
+<div id="blackhole" style="display:none"></div>
+<div id="cf_window10720163243268537" class="x-hidden">
+<div id="letemknow-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10720163243268540" class="x-hidden">
+<div id="letemknow2-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10720163243268543" class="x-hidden">
+<div id="theguide-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10720163243268546" class="x-hidden">
+<div id="thetags-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10720163243268549" class="x-hidden">
+<div id="theformats-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10720163243268551" class="x-hidden">
+<div id="theexplaination-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10720163243268553" class="x-hidden">
+<div id="theservices-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10720163243268555" class="x-hidden">
+<div id="savetobinder-body" class="" style="null;height:100%;">
+</div>
+</div>
+</body>
+</html>

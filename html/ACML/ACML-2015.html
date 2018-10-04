@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Proceedings of Machine Learning Research</title>
+  <meta name="description" content="Proceedings of The 7th Asian Conference on Machine Learning
+  Held in Hong Kong on 20-22 November 2015
+
+Published as Volume 45 by the Proceedings of Machine Learning Research on 25 February 2016.
+
+Volume Edited by:
+  Geoffrey Holmes
+  Tie-Yan Liu
+
+Series Editors:
+  Neil D. Lawrence
+  Mark Reid
+">
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">  
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92432422-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+      autoNumber: "AMS"
+     }
+   },
+  tex2jax: {
+    inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <!-- Solution from http://stackoverflow.com/questions/31593297/using-execcommand-javascript-to-copy-hidden-text-to-clipboard -->
+<script type="text/javascript"
+	src="/js/copy_input.js">
+</script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="/js/download.js"></script>
+
+  
+
+</head>
+
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <table>
+      <tr>
+	<td><a align="left" class="site-logo" href="http://proceedings.mlr.press" target=_top><img align="right" class="jmlr" src="/img/pmlr.png" border="0"></a> </td>
+	<td><p class="site-title">Proceedings of Machine Learning Research</p></td>
+      </tr>
+    </table>
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+	<a class="page-link" href="/v45/">Volume 45</a>
+	<a class="page-link" href="/">All Volumes</a>
+	<a class="page-link" href="http://www.jmlr.org/">JMLR</a> 
+	<a class="page-link" href="http://www.jmlr.org/mloss">MLOSS</a>
+	<a class="page-link" href="/faq.html">FAQ</a>
+	<a class="page-link" href="/spec.html">Submission Format</a>
+	<a class="page-link" href="http://proceedings.mlr.press//v45/feed.xml">
+	<img src="/img/RSS.gif" class="rss" alt="RSS Feed">
+	</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content" id="content">
+      <div class="wrapper">
+        
+
+
+<h2>Volume 45: Asian Conference on Machine Learning, 20-22 November 2015, Hong Kong</h2>
+
+
+<p align="right">[<a href="https://github.com/mlresearch/v45/edit/gh-pages/_config.yml" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/mlresearch/v45/edit/gh-pages/_config.yml', 13);">edit</a>]</p>
+
+
+  
+<p><strong>Editors:
+    
+    
+    Geoffrey Holmes, 
+
+    
+    Tie-Yan Liu
+
+    
+</strong></p>
+<p>[<a href="./bibliography.bib" target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v45/bibliography.bib', 14);">bib</a>][<a href="./citeproc.yaml"  target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v45/citeproc.yaml', 14);">citeproc</a>]</p>
+<div id="sectionnav">
+  <p>Contents:</p>
+  <ul>
+    
+    <li><a href="#preface">Preface</a></li>
+    
+    <li><a href="#default">Accepted Papers</a></li>
+    
+  </ul>
+  
+  <p>
+  <label for="search-authors">Filter Authors:</label>
+  <input type="search" name="filter-authors" id="search-authors" value />
+  <label for="search-titles">Filter Titles:</label>
+  <input type="search" name="filter-titles" id="search-titles" value />
+  </p>
+</div>
+
+
+<h3 id="preface">Preface</h3>
+
+<div class="paper">
+  <p class="title">Preface</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Geoffrey Holmes, 
+
+      
+      Tie-Yan Liu
+
+      
+    </span>;
+    <span class="info">PMLR 45:i-xx</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/preface.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/preface.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/preface.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="default">Accepted Papers</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="paper">
+  <p class="title">Geometry-Aware Principal Component Analysis for Symmetric Positive Definite Matrices</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Inbal Horev, 
+
+      
+      Florian Yger, 
+
+      
+      Masashi Sugiyama
+
+      
+    </span>;
+    <span class="info">PMLR 45:1-16</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Horev15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Horev15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Horev15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Non-asymptotic Analysis of Compressive Fisher Discriminants in terms of the Effective Dimension</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ata Kaban
+
+      
+    </span>;
+    <span class="info">PMLR 45:17-32</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Kaban15a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Kaban15a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Kaban15a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Sufficient Dimension Reduction via Direct Estimation of the Gradients of Logarithmic Conditional Densities</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Hiroaki Sasaki, 
+
+      
+      Voot Tangkaratt, 
+
+      
+      Masashi Sugiyama
+
+      
+    </span>;
+    <span class="info">PMLR 45:33-48</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Sasaki15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Sasaki15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Sasaki15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Bayesian Masking: Sparse Bayesian Estimation with Weaker Shrinkage Bias</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yohei Kondo, 
+
+      
+      Shin-ichi Maeda, 
+
+      
+      Kohei Hayashi
+
+      
+    </span>;
+    <span class="info">PMLR 45:49-64</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Kondo15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Kondo15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Kondo15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A New Look at Nearest Neighbours: Identifying Benign Input Geometries via Random Projections</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ata Kaban
+
+      
+    </span>;
+    <span class="info">PMLR 45:65-80</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Kaban15b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Kaban15b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Kaban15b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Consistency of structured output learning with missing labels</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Kostiantyn Antoniuk, 
+
+      
+      Vojtech Franc, 
+
+      
+      Vaclav Hlavac
+
+      
+    </span>;
+    <span class="info">PMLR 45:81-95</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Antoniuk15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Antoniuk15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Antoniuk15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Maximum Margin Partial Label Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Fei Yu, 
+
+      
+      Min-Ling Zhang
+
+      
+    </span>;
+    <span class="info">PMLR 45:96-111</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Yu15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Yu15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Yu15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Robust Multivariate Regression with Grossly Corrupted Observations and Its Application to Personality Prediction</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Xiaowei Zhang, 
+
+      
+      Li Cheng, 
+
+      
+      Tingshao Zhu
+
+      
+    </span>;
+    <span class="info">PMLR 45:112-126</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Zhang15a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Zhang15a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Zhang15a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Data-Guided Approach for Learning and Improving User Experience in Computer Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yanan Bao, 
+
+      
+      Xin Liu, 
+
+      
+      Amit Pande
+
+      
+    </span>;
+    <span class="info">PMLR 45:127-142</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Bao15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Bao15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Bao15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Unified Framework for Jointly Learning Distributed Representations of Word and Attributes</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Liqiang Niu, 
+
+      
+      Xin-Yu Dai, 
+
+      
+      Shujian Huang, 
+
+      
+      Jiajun Chen
+
+      
+    </span>;
+    <span class="info">PMLR 45:143-156</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Niu15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Niu15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Niu15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Preference Relation-based Markov Random Fields for Recommender Systems</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Shaowu Liu, 
+
+      
+      Gang Li, 
+
+      
+      Truyen Tran, 
+
+      
+      Yuan Jiang
+
+      
+    </span>;
+    <span class="info">PMLR 45:157-172</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Liu15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Liu15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Liu15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Detecting Accounting Frauds in Publicly Traded U.S. Firms: A Machine Learning Approach</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Bin Li, 
+
+      
+      Julia Yu, 
+
+      
+      Jie Zhang, 
+
+      
+      Bin Ke
+
+      
+    </span>;
+    <span class="info">PMLR 45:173-188</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Li15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Li15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Li15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Improving Sybil Detection via Graph Pruning and Regularization Techniques</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Huanhuan Zhang, 
+
+      
+      Jie Zhang, 
+
+      
+      Carol Fung, 
+
+      
+      Chang Xu
+
+      
+    </span>;
+    <span class="info">PMLR 45:189-204</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Zhang15b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Zhang15b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Zhang15b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Proximal Average Approximated Incremental Gradient Method for Composite Penalty Regularized Empirical Risk Minimization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yiu-ming Cheung, 
+
+      
+      Jian Lou
+
+      
+    </span>;
+    <span class="info">PMLR 45:205-220</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Cheung15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Cheung15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Cheung15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Class-prior Estimation for Learning from Positive and Unlabeled Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Marthinus Christoffel, 
+
+      
+      Gang Niu, 
+
+      
+      Masashi Sugiyama
+
+      
+    </span>;
+    <span class="info">PMLR 45:221-236</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Christoffel15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Christoffel15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Christoffel15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Streaming Variational Inference for Dirichlet Process Mixtures</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Viet Huynh, 
+
+      
+      Dinh Phung, 
+
+      
+      Svetha Venkatesh
+
+      
+    </span>;
+    <span class="info">PMLR 45:237-252</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Huynh15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Huynh15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Huynh15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Expectation Propagation for Rectified Linear Poisson Regression</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Young-Jun Ko, 
+
+      
+      Matthias W. Seeger
+
+      
+    </span>;
+    <span class="info">PMLR 45:253-268</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Ko15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Ko15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Ko15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Curriculum Learning of Bayesian Network Structures</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yanpeng Zhao, 
+
+      
+      Yetian Chen, 
+
+      
+      Kewei Tu, 
+
+      
+      Jin Tian
+
+      
+    </span>;
+    <span class="info">PMLR 45:269-284</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Zhao15a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Zhao15a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Zhao15a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Continuous Target Shift Adaptation in Supervised Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Tuan Duong Nguyen, 
+
+      
+      Marthinus Christoffel, 
+
+      
+      Masashi Sugiyama
+
+      
+    </span>;
+    <span class="info">PMLR 45:285-300</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Nguyen15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Nguyen15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Nguyen15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Surrogate regret bounds for generalized classification performance metrics</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Wojciech Kotlowski, 
+
+      
+      Krzysztof Dembczyński
+
+      
+    </span>;
+    <span class="info">PMLR 45:301-316</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Kotlowski15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Kotlowski15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Kotlowski15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Budgeted Bandit Problems with Continuous Random Costs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yingce Xia, 
+
+      
+      Wenkui Ding, 
+
+      
+      Xu-Dong Zhang, 
+
+      
+      Nenghai Yu, 
+
+      
+      Tao Qin
+
+      
+    </span>;
+    <span class="info">PMLR 45:317-332</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Xia15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Xia15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Xia15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Regularized Policy Gradients: Direct Variance Reduction in Policy Gradient Estimation</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Tingting Zhao, 
+
+      
+      Gang Niu, 
+
+      
+      Ning Xie, 
+
+      
+      Jucheng Yang, 
+
+      
+      Masashi Sugiyama
+
+      
+    </span>;
+    <span class="info">PMLR 45:333-348</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Zhao15b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Zhao15b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Zhao15b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Statistical Unfolded Logic Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Wang-Zhou Dai, 
+
+      
+      Zhi-Hua Zhou
+
+      
+    </span>;
+    <span class="info">PMLR 45:349-361</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Dai15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Dai15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Dai15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Integration of Single-view Graphs with Diffusion of Tensor Product Graphs for Multi-view Spectral Clustering</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Le Shu, 
+
+      
+      Longin Jan Latecki
+
+      
+    </span>;
+    <span class="info">PMLR 45:362-377</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Shu15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Shu15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Shu15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Autoencoder Trees</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ozan İrsoy, 
+
+      
+      Ethem Alpaydin
+
+      
+    </span>;
+    <span class="info">PMLR 45:378-390</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Irsoy15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Irsoy15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Irsoy15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Similarity-based Contrastive Divergence Methods for Energy-based Deep Learning Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Adepu Ravi Sankar, 
+
+      
+      Vineeth N Balasubramanian
+
+      
+    </span>;
+    <span class="info">PMLR 45:391-406</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Sankar15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Sankar15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Sankar15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">One-Pass Multi-View Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yue Zhu, 
+
+      
+      Wei Gao, 
+
+      
+      Zhi-Hua Zhou
+
+      
+    </span>;
+    <span class="info">PMLR 45:407-422</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Zhu15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Zhu15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Zhu15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Largest Source Subset Selection for Instance Transfer</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Shuang Zhou, 
+
+      
+      Gijs Schoenmakers, 
+
+      
+      Evgueni Smirnov, 
+
+      
+      Ralf Peeters, 
+
+      
+      Kurt Driessens, 
+
+      
+      Siqi Chen
+
+      
+    </span>;
+    <span class="info">PMLR 45:423-438</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v45/Zhou15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v45/Zhou15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v45/Zhou15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+<p class="rss-subscribe">subscribe <a href="/v45/feed.xml">via RSS</a></p>
+
+<!-- Search Widget -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../js/search.js"></script>
+
+      </div>
+    </div>   
+  </body>
+
+    <body>
+  <div id="content">
+    <center>This site last compiled Mon, 29 May 2017 07:22:56 +0000</center>
+
+    <table width="100%">
+      <tr>
+	<td align="left"><font size="-1">
+	    <i><a href="https://github.com/mlresearch/v45">Github Account</a></i></font></td>
+	<td align="right"><font size="-1">
+	    Copyright &copy <a href="http://proceedings.mlr.press">PMLR</a> 2017. All rights reserved.</font></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+
+</html>

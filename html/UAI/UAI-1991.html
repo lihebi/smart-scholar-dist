@@ -1,0 +1,819 @@
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 2.0//EN" "http://www.w3.org/TR/xhtml2/DTD/xhtml2.dtd">
+
+<html xmlns="http://www.w3.org/2002/06/xhtml2">
+
+<head>
+	<title>UAI - Uncertainty in Artificial Intelligence</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="css/general.css" type="text/css"/>
+	<link rel="stylesheet" href="css/classes.css" type="text/css"/>
+	<link rel="stylesheet" href="classes.css" type="text/css"/>
+</head>
+
+<script language="JavaScript" tyle="text/javascript">
+<!--
+	function imgSwap(oImg, sImgPath) {
+		oImg.src = sImgPath;
+	}
+//-->
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+	function processLogin(type) {
+		bError = false;
+		
+		// First Name:
+		if(type < 2)
+                {
+                    if (document.formQuickLogin.first_name.value == "") 
+                    {
+                            alert("Please enter First Name");
+                            bError = true;
+                    }
+
+                    // Last Name:
+                    if (document.formQuickLogin.last_name.value == "") 
+                    {
+                            alert("Please enter Last Name");
+                            bError = true;
+                    }
+                    
+                    if(type == 0)
+                    {
+                        document.formQuickLogin.type.value = "login";
+                        // Password:
+                        if (document.formQuickLogin.password.value == "") {
+                            alert("Please enter Password");
+                            bError = true;
+                        }
+                    }    
+                    else
+                    {
+                        document.formQuickLogin.type.value = "password";
+                    }
+        
+                    if (!bError) document.formQuickLogin.submit();
+                }
+                else
+                {
+                    if (document.formSlowLogin.first_name.value == "") 
+                    {
+                            alert("Please enter First Name");
+                            bError = true;
+                    }
+
+                    // Last Name:
+                    if (document.formSlowLogin.last_name.value == "") 
+                    {
+                            alert("Please enter Last Name");
+                            bError = true;
+                    }
+                    if(type == 2) 
+                    {
+                        document.formSlowLogin.type.value = "login";
+                        // Password:
+                        if (document.formSlowLogin.password.value == "") 
+                        {
+                                alert("Please enter Password");
+                                bError = true;
+                        }
+                    }
+                    else
+                    {
+                        document.formSlowLogin.type.value = "password";
+                    }    
+                    if (!bError) document.formSlowLogin.submit();
+                }
+	}
+// -->
+</script>
+
+
+<body class="cBodyIndex">
+
+<div align="center">
+<table width="760" cellspacing="0" cellpadding="0" border="0" class="cMainFrame">
+
+<!-- Title belt -->
+<tr>
+	<td>
+		<table width="100%" height="73" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td width="282"><img src="gfx/title_belt_01.jpg" width="282" height="73" border="0" usemap="#mapLogo" alt="Uncertainty in Artificial Intelligence"/></td>
+			<td width="478" height="73" align="right" valign="top" background="gfx/title_belt_02.jpg">
+				<table cellspacing="0" cellpadding="4" border="0">
+				<tr>
+					<!-- User name -->
+					<td>
+             <div align="right">
+
+						<form name="formQuickLogin" id="formQuickLogin" action="loginUser.jsp?mmnu=0&smnu=0" method="post">
+							<input type="hidden" name="type" id="type" value="login"/>
+              <span class="cQuickLogin">First Name</span>
+							<input type="text" name="first_name" id="first_name" value="" class="cQuickLogin cFormS"/>&nbsp;
+							<span class="cQuickLogin">Last Name</span>
+							<input type="text" name="last_name" id="last_name" value="" class="cQuickLogin cFormS"/>&nbsp;
+							<span class="cQuickLogin">Password</span>
+							<input type="password" name="password" id="password" maxlength="12" class="cQuickLogin cFormS"/>&nbsp;
+							<a href="#top" class="cQuickLogin" onclick="processLogin(1); return true;">Forgot Password</a>&nbsp;&nbsp;
+              <a href="#top" class="cQuickLogin" onclick="processLogin(0); return true;">Log in!</a>
+						</form>
+
+            </div>            
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Main menu -->
+<tr>
+	<td>
+		<table width="100%" cellspacing="0" cellpadding="2" border="0" class="cMainMenu">
+		<tr>
+
+			<td width="1" class="cMenu1">
+				<nobr>
+					&nbsp;&nbsp;
+					&nbsp;<a href="proceedings.jsp?mmnu=1&smnu=0" class="cMenu_0">Proceedings</a>&nbsp;
+					<span class="cMenuBullet">&bull;</span>
+					&nbsp;<a href="displayArticles.jsp?mmnu=1&smnu=1&proceeding_id=7" class="cMenu_1">Proceeding details</a>&nbsp;
+					&nbsp;&nbsp;
+				</nobr>
+			</td>
+
+
+        <!-- Authors -->
+        <td width="1" class="cMenu2">
+                <nobr>
+                        &nbsp;&nbsp;
+                        &nbsp;<a href="authors.jsp?mmnu=2&smnu=0" class="cMenu_0">Authors</a>&nbsp;
+                        &nbsp;&nbsp;
+                </nobr>
+        </td>
+
+        <!-- Search -->
+        <td width="1" class="cMenu3">
+                <nobr>
+                        &nbsp;&nbsp;
+                        &nbsp;<a href="search.jsp?mmnu=3&smnu=0" class="cMenu_0">Search</a>&nbsp;
+                        &nbsp;&nbsp;
+                </nobr>
+        </td>
+
+			<!-- Distancer -->
+			<td width="*" class="cMenu4">
+			</td>
+
+
+		</tr>
+		</table>
+	</td>
+</tr>
+<!-- Work area -->
+<tr>
+	<td>
+		<table width="100%" cellspacing="0" cellpadding="8" border="0">
+		<tr>
+			<td>
+
+
+
+
+
+
+        <span class="cPageTitle">Proceedings of the Seventh Conference Conference on Uncertainty in Artificial Intelligence ( 1991 )</span><br/>
+        <span class="cPageSubtitle">Jul 13-15 1991, Los Angeles, CA 
+        <br /><br />
+        Edited By:</span>
+<a class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=252&proceeding_id=7">Bruce D'Ambrosio</a>, <a class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=309&proceeding_id=7">Philippe Smets</a>, <a class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=532&proceeding_id=7">Piero Bonissone</a>
+        <br />
+        <span class="cPageSubtitle">Published By:</span>&nbsp;Morgan Kaufmann, San Mateo, CA<br />
+        <span class="cPageSubtitle">ISBN:</span>&nbsp;1-55860-203-8<br />
+        <hr/>
+
+	<table width="100%" cellpadding="4" cellspacing="0" class="cLstTable">
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=674&proceeding_id=7">"Conditional Inter-Causally Independent" Node Distributions, a Property of "Noisy-Or" Models</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=338&proceeding_id=7">John Agosta</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=684&proceeding_id=7">A Bayesian Method for Constructing Bayesian Belief Networks from Databases</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=25&proceeding_id=7">Gregory Cooper</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=670&proceeding_id=7">Edward Herskovits</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=720&proceeding_id=7">A Fusion Algorithm for Solving Bayesian Decision Problems</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=44&proceeding_id=7">Prakash Shenoy</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=719&proceeding_id=7">A Graph-Based Inference Method for Conditional Independence</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=304&proceeding_id=7">Ross Shachter</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=701&proceeding_id=7">A Language for Planning with Statistics</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=742&proceeding_id=7">Nathaniel Martin</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=743&proceeding_id=7">James Allen</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=697&proceeding_id=7">A Logic of Graded Possibility and Certainty Coping with Partial Inconsistency</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=168&proceeding_id=7">Jerome Lang</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=61&proceeding_id=7">Didier Dubois</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=62&proceeding_id=7">Henri Prade</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=725&proceeding_id=7">A Method for Integrating Utility Analysis into an Expert System for Design Evaluation</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=35&proceeding_id=7">Deborah Thurston</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=190&proceeding_id=7">Yun Tian</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=702&proceeding_id=7">A Modification to Evidential Probability</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=744&proceeding_id=7">Bülent Murtezaoglu</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=282&proceeding_id=7">Henry Kyburg Jr.</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=727&proceeding_id=7">A Monte-Carlo Algorithm for Dempster-Shafer Belief</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=538&proceeding_id=7">Nic Wilson</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=730&proceeding_id=7">A Non-Numeric Approach to Multi-Criteria/Multi-Expert Aggregation Based on Approximate Reasoning</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=729&proceeding_id=7">Ronald Yager</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=681&proceeding_id=7">A Probabilistic Analysis of Marker-Passing Techniques for Plan-Recognition</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=734&proceeding_id=7">Glenn Carroll</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=533&proceeding_id=7">Eugene Charniak</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=687&proceeding_id=7">A Reason Maintenace System Dealing with Vague Data</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=735&proceeding_id=7">B. Fringuelli</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=736&proceeding_id=7">S. Marcugini</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=737&proceeding_id=7">A. Milani</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=738&proceeding_id=7">S. Rivoira</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=704&proceeding_id=7">A Sensitivity Analysis of Pathfinder: A Follow-up Study</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=370&proceeding_id=7">Keung-Chi Ng</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=637&proceeding_id=7">Bruce Abramson</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=722&proceeding_id=7">About Updating</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=309&proceeding_id=7">Philippe Smets</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=688&proceeding_id=7">Advances in Probabilistic Reasoning</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=7&proceeding_id=7">Dan Geiger</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=21&proceeding_id=7">David Heckerman</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=721&proceeding_id=7">Algorithms for Irrelevance-Based Partial MAPs</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=376&proceeding_id=7">Solomon Shimony</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=690&proceeding_id=7">An Approximate Nonmyopic Computation for Value of Information</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=21&proceeding_id=7">David Heckerman</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=91&proceeding_id=7">Eric Horvitz</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=603&proceeding_id=7">Blackford Middleton</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=729&proceeding_id=7">An Efficient Implementation of Belief Function Propagation</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=539&proceeding_id=7">Hong Xu</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=673&proceeding_id=7">ARCO1: An Application of Belief Networks to the Oil Market</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=637&proceeding_id=7">Bruce Abramson</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=677&proceeding_id=7">Bayesian Networks Aplied to Therapy Monitoring</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=428&proceeding_id=7">Carlo Berzuini</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=537&proceeding_id=7">David Spiegelhalter</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=485&proceeding_id=7">Riccardo Bellazzi</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=694&proceeding_id=7">Belief and Surprise - A Belief-Function Formulation</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=433&proceeding_id=7">Yen-Teh Hsia</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=680&proceeding_id=7">Combination of Upper and Lower Probabilities</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=732&proceeding_id=7">Jose Cano</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=367&proceeding_id=7">Serafin Moral</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=733&proceeding_id=7">Juan Verdegay-Lopez</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=675&proceeding_id=7">Combining Multiple-Valued Logics in Modular Expert Systems</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=730&proceeding_id=7">Jaume Agustí-Cullell</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=349&proceeding_id=7">Francesc Esteva</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=595&proceeding_id=7">Pere Garcia</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=2&proceeding_id=7">Lluis Godo</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=479&proceeding_id=7">Carles Sierra</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=728&proceeding_id=7">Compatibility of Quantitative and Qualitative Representations of Belief</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=329&proceeding_id=7">Michael Wong</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=709&proceeding_id=7">Y. Yao</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=752&proceeding_id=7">P. Lingras</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=718&proceeding_id=7">Completing Knowledge by Competing Hierarchies</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=720&proceeding_id=7">Kerstin Schill</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=750&proceeding_id=7">Ernst Poppel</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=34&proceeding_id=7">Christoph Zetzsche</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=723&proceeding_id=7">Compressed Constraints in Probabilistic Logic and Their Revision</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=619&proceeding_id=7">Paul Snow</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=698&proceeding_id=7">Conflict and Surprise: Heuristics for Model Revision</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=170&proceeding_id=7">Kathryn Laskey</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=676&proceeding_id=7">Constraint Propagation with Imprecise Conditional Probabilities</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=731&proceeding_id=7">Stephane Amarger</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=61&proceeding_id=7">Didier Dubois</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=62&proceeding_id=7">Henri Prade</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=712&proceeding_id=7">Deliberation and its Role in the Formation of Intentions</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=746&proceeding_id=7">Anand Rao</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=747&proceeding_id=7">Michael Georgeff</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=724&proceeding_id=7">Detecting Causal Relations in the Presence of Unmeasured Variables</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=210&proceeding_id=7">Peter Spirtes</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=709&proceeding_id=7">Dynamic Network Updating Techniques For Diagnostic Reasoning</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=473&proceeding_id=7">Gregory Provan</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=695&proceeding_id=7">Evidential Reasoning in a Categorial Perspective: Conjunction and Disjunction of Belief Functions</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=741&proceeding_id=7">Robert Kennes</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=711&proceeding_id=7">Formal Model of Uncertainty for Possibilistic Rules</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=748&proceeding_id=7">Arthur Ramer</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=726&proceeding_id=7">From Relational Databases to Belief Networks</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=751&proceeding_id=7">Wilson Wen</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=713&proceeding_id=7">Handling Uncertainty during Plan Recognition in Task-Oriented Consultation Systems</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=474&proceeding_id=7">Bhavani Raskutti</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=484&proceeding_id=7">Ingrid Zukerman</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=710&proceeding_id=7">High Level Path Planning with Uncertainty</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=614&proceeding_id=7">Runping Qi</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=46&proceeding_id=7">David Poole</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=707&proceeding_id=7">Integrating Probabilistic Rules into Neural Networks: A Stochastic EM Learning Algorithm</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=577&proceeding_id=7">Gerhard Paa�?</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=703&proceeding_id=7">Investigation of Variances in Belief Networks</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=438&proceeding_id=7">Richard Neapolitan</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=646&proceeding_id=7">James Kenevan</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=685&proceeding_id=7">Local Expression Languages for Probabilistic Dependence: a Preliminary Report</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=252&proceeding_id=7">Bruce D'Ambrosio</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=706&proceeding_id=7">Management of Uncertainty in the Multi-Level Monitoring and Diagnosis of the Time of Flight Scintillation Array</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=745&proceeding_id=7">Robert Paasch</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=490&proceeding_id=7">Alice Agogino</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=705&proceeding_id=7">Non-monotonic Negation in Probabilistic Deductive Databases</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=694&proceeding_id=7">Raymond Ng</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=314&proceeding_id=7">V. Subrahmanian</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=693&proceeding_id=7">Non-monotonic Reasoning and the Reversibility of Belief Change</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=740&proceeding_id=7">Daniel Hunter</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=717&proceeding_id=7">On the Generation of Alternative Explanations with Implications for Belief Revision</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=476&proceeding_id=7">Eugene Santos Jr.</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=689&proceeding_id=7">Probability Estimation in Face of Irrelevant Information</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=354&proceeding_id=7">Adam Grove</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=17&proceeding_id=7">Daphne Koller</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=715&proceeding_id=7">Pulcinella: A General Tool for Propagating Uncertainty in Valuation Networks</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=569&proceeding_id=7">Alessandro Saffiotti</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=749&proceeding_id=7">Elisabeth Umkehrer</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=699&proceeding_id=7">Reasoning under Uncertainty: Some Monte Carlo Results</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=363&proceeding_id=7">Paul Lehner</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=649&proceeding_id=7">Azar Sadigh</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=696&proceeding_id=7">Reasoning with Mass Distributions</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=362&proceeding_id=7">Rudolf Kruse</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=368&proceeding_id=7">Detlef Nauck</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=686&proceeding_id=7">Frank Klawonn</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=700&proceeding_id=7">Representation Requirements for Supporting Decision Model Formulation</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=75&proceeding_id=7">Tze-Yun Leong</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=708&proceeding_id=7">Representing Bayesian Networks within Probabilistic Horn Abduction</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=46&proceeding_id=7">David Poole</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=691&proceeding_id=7">Search-based Methods to Bound Diagnostic Probabilities in Very Large Belief Nets</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=508&proceeding_id=7">Max Henrion</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=678&proceeding_id=7">Some Properties of Plausible Reasoning</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=342&proceeding_id=7">Wray Buntine</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=716&proceeding_id=7">Structuring Bodies of Evidence</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=301&proceeding_id=7">Sandra Sandri</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=686&proceeding_id=7">Symbolic Decision Theory and Autonomous Systems</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=550&proceeding_id=7">John Fox</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=361&proceeding_id=7">Paul Krause</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=682&proceeding_id=7">Symbolic Probabilistic Inference with Continuous Variables</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=669&proceeding_id=7">Kuo-Chu Chang</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=350&proceeding_id=7">Robert Fung</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=683&proceeding_id=7">Symbolic Probabilistic Inference with Evidence Potential</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=669&proceeding_id=7">Kuo-Chu Chang</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=350&proceeding_id=7">Robert Fung</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=679&proceeding_id=7">Theory Refinement on Bayesian Networks</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=342&proceeding_id=7">Wray Buntine</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=692&proceeding_id=7">Time-Dependent Utility and Action Under Uncertainty</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=91&proceeding_id=7">Eric Horvitz</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=739&proceeding_id=7">Geoffrey Rutledge</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=714&proceeding_id=7">Truth as Utility: A Conceptual Synthesis</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=375&proceeding_id=7">Enrique Ruspini</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=731&proceeding_id=7">Why Do We Need Foundations for Modelling Uncertainties?</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=282&proceeding_id=7">Henry Kyburg Jr.</A>
+</td>
+</tr>
+</table>
+
+                            </td>
+                        </tr>         
+		</table>
+	</td>
+</tr>
+<tr>
+	<td class="cFooter">
+		<br/>
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" class="cFooterBelt">
+		<tr>
+			<td>
+				<!-- ... -->
+			</td>
+			
+			<td>
+				<td align="right" class="cCopyrights">
+                                hosted by <a href="https://dslpitt.org/dsl/" class="cCopyrights">DSL</a>
+				&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+				<a href="siteInfo.jsp?mmnu=0&smnu=0" class="cCopyrights">site info</a>
+				&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+				<a href="help.jsp?mmnu=0&smnu=0" class="cCopyrights">help</a>
+				&nbsp;&nbsp;
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+</div>
+
+<map name="mapLogo" id="mapLogo">
+	<area shape="rect" coords="6,4,270,64" href="home.jsp?mmnu=0&smnu=0"/>
+</map>
+
+</body>
+
+</html>
+

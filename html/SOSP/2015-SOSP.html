@@ -1,0 +1,2959 @@
+
+<!doctype html>
+<head><script type="text/javascript">/* <![CDATA[ */_cf_loadingtexthtml="<img alt=' ' src='/cf_scripts/scripts/ajax/resources/cf/images/loading.gif'/>";
+_cf_contextpath="";
+_cf_ajaxscriptsrc="/cf_scripts/scripts/ajax";
+_cf_jsonprefix='//';
+_cf_websocket_port=0;
+_cf_flash_policy_port=0;
+_cf_clientid='A16ED53D975AE2D48E235F2508574DD5';/* ]]> */</script><script type="text/javascript" src="/cf_scripts/scripts/ajax/messages/cfmessage.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfajax.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfform.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/masks.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfformhistory.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfrichtexteditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/chart/cfchart-server.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/animation/animation-min.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ext/ext-all.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfwindow.js"></script>
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/ext/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/cf/cf.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/dl.css" />
+<title>Proceedings of the 25th Symposium on Operating Systems Principles</title>
+<style type="text/css"><!--
+    body {margin-left: 0em; margin-top: 0}
+    a:link {text-decoration: underline; 	Color: #1d4d0f;}
+    a:visited  { color: #990033; text-decoration: underline;}
+    a:hover {color: red; text-decoration: none}
+    a.dLink1:link {color:#336699}
+    a.dLink1:visited {color:#666666}
+	a.isblack:link {text-decoration: underline; 	Color: #000000;}
+    a.isblack:visited  { color: #000000; text-decoration: underline;}
+    a.isblack:hover {color: #000000; text-decoration: none}
+    h1 {font-size: 140%; margin-bottom: 0}
+	ul {margin-top: .25em; list-style-type: disc}
+	ol {margin-top: .25em;}
+	li {padding-bottom: .25em;}
+    h2 {color: white; background-color: #069; 
+        font-size: 100%; padding-left: 1em;
+		margin: 0}
+	h3 {color: black; background-color: yellow; 
+    	font-size: 100%;
+		margin: 0}
+	 h4 {color: black; background-color: #99c5e8; 
+        font-size: 100%;
+		margin: 0}
+    hr {color: #39176d;}
+    form {margin-top: 10}
+    form.xrs {margin-top: 0}
+	
+	a {text-decoration: none; }
+	
+	input {font-size: 1em;}
+	.chevron {color: #ff0000;}
+	.light-blue {color:#336699;}
+	.black {color:#000000;}
+	
+	
+	.mono-text {font-size: 14px; font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;}
+	
+	/* ### standard text styles, smallest to largest ### */
+	
+	.footer-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .75em; line-height: 1.33em;
+		text-indent: -.75 em; margin-left: 2em; margin-right: .75em;}
+		
+	.footer-copy-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em; line-height: 1.3em;
+		margin-left: .75em; margin-right: .75em;}
+		
+	.small-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; padding-bottom : 2px;
+	  	padding-top : 2px;}
+		
+	.small-link-text2 {font-size: .83em !important; 
+	}
+
+	.smallerer-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .65em;}
+	.smaller-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em;}		
+	.small-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em;}
+	.small-textb {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; font-weight: bold;}
+	.medium-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em;}
+	.mediumb-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em; font-weight: bold;}
+	.large-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1.3em;}		
+	.instr-text {font-family: Arial, Helvetica, sans-serif;
+		color:#666666; font-size: .83em;}
+		
+	.list-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .83em; line-height: 1.3em;}
+	.list-link-btext {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; line-height: 1.3em;}
+	
+	.searchbox-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;}
+	.footer-header-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;
+		margin-left: .75em; margin-right: .75em;}
+	.medium-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold; line-height: 1em;
+		text-indent: -1.25em; margin-left: 2em; margin-right: .75em;}
+	
+	.text16 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 16px;}
+		
+	.text14 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 14px;}
+	
+	.text12 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 12px;}
+		
+	.text10 {font-family: Arial, Helvetica, sans-serif;
+	    color:#000000; font-size: 12px;}
+		
+	.text9 {font-family: Arial, Helvetica, sans-serif;
+	   color:#000000; font-size: 12px;}
+	
+	.error-text {color:red;}
+	
+	.small-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: .75em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+
+	.medium-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1.3em; line-height: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.medium-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+
+		#side {
+			width: 10px;
+			float: left;
+			margin-left: -1px;
+			padding: 2px;
+			}
+							
+		#content {
+			padding: 2px;
+			margin-left: 25px;
+			
+		        
+		        }
+	 .fulltext_lnk {border:0px;
+	 				 margin-right: 2px;
+					 vertical-align:baseline;
+	 				}
+	 
+	  .leftcoltab { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:530px;  /* for IE5/WIN */
+		  width:520px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	  .rightcoltab {
+    float: right;
+    margin: 0;
+    padding: 5px;
+    position: relative;
+    right: 50px;
+    top: 25px;
+    width: 350px;
+    z-index: 99;
+}
+	  .centercoltab {
+		  position:absolute;
+		  padding:0 0px;
+		  }
+	  .alt {
+		background: #ece9d8;
+		margin: 0;
+		padding: 1px;
+		}
+		.leftcolc { 
+	position:relative;
+	top:5px;
+	left:5px;
+	float:left;
+	width:420px;  /* for IE5/WIN */
+	width:400px; /* actual value */
+	margin:0 0 0px 0;
+	padding:5px;
+	z-index:100;
+	}
+.rightcolc {
+	position:relative;
+	top:0px;
+	right:0px;
+	float:right;
+	margin:0 0px;
+	padding:0px;
+	width:500px;
+	z-index:99;
+	}
+.centercolc {
+	position:absolute;
+	padding:0 0px;
+	}
+	
+	.leftcoltabv { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:460px;  /* for IE5/WIN */
+		  width:350px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	.rightcoltabv {
+		position:relative;
+		top:5px;
+		right:0px;
+		float:right;
+		margin:0 0px 0 0;
+		padding:15px;
+		width:480px;
+		z-index:99;
+		}
+		
+.x-tabs-strip-wrap {
+	overflow-y: hidden !important;
+}
+  --></style>
+<script src="js/tagcanvas.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function loadCloud() {
+	try {
+	  TagCanvas.Start('myCanvas','tags',{
+		textColour: '#000000',
+		outlineColour: '#ff00ff',
+		reverse: true,
+		shuffleTags:true,
+		depth: 0.8,
+		maxSpeed: 0.05,
+		textHeight: 12,
+		initial: [0.000, 0.050],
+		shape: "hring",
+		lock: "x"
+	  });
+	} catch(e) {
+	  // something went wrong, hide the canvas container
+	  // document.getElementById('myCanvasContainer').style.display = 'none';
+	}
+  };
+</script>
+<script type="text/javascript" src="cfformprotect/js/cffp.js"></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<style type="text/css"><!--
+.google-visualization-orgchart-node {
+    background-color: #FFFFFF !important;
+    border: 2px solid #AFCF40 !important;
+    cursor: default;
+    font-family: arial,helvetica;
+    text-align: center;
+    vertical-align: middle;
+}
+
+iframe {float:right; 
+		margin:10px;
+		border: 2px solid #1B4D0E;
+		
+		}
+
+a.boxed:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxed:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxed:hover {color: red !important; text-decoration: underline !important;}
+
+a.boxedh:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxedh:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxedh:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedm:link {text-decoration: none !important; 	Color: #606060 !important;}
+a.boxedm:visited  { color: #606060 !important; text-decoration: none !important;}
+a.boxedm:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedl:link {text-decoration: none !important; 	Color: #808080   !important;}
+a.boxedl:visited  { color: 	#808080 !important; text-decoration: none !important;}
+a.boxedl:hover {color: red !important; text-decoration: underline !important;}				
+
+.google-visualization-orgchart-linebottom {
+    border-bottom: 1px solid #006699 !important;
+}
+.google-visualization-orgchart-lineleft {
+    border-left: 1px solid #006699 !important;
+}
+
+.google-visualization-orgchart-lineright {
+    border-right: 1px solid #006699 !important;
+}
+
+--></style>
+<script type="text/javascript">
+
+
+function settab() {
+    var mytabs = ColdFusion.Layout.getTabLayout('citationdetails');
+   
+ 
+  mytabs.on('tabchange', function(tabpanel,activetab) { document.cookie = 'picked=' + '2815400' + ',' + activetab.id; })
+ 
+}
+
+
+function letemknow(){
+  ColdFusion.Window.show('letemknow');
+}
+
+function letemknow2(){
+  ColdFusion.Window.show('letemknow2');
+}
+
+
+
+
+
+function testthis(){
+
+alert('test');
+}
+function loadalert(){ 
+ alert("I am in the load alert");
+ 
+}
+function loadalert2(){ 
+  alert("I am in the load alert2");
+ 
+}
+</script>
+<script type='text/javascript'>
+	  	google.load('visualization', '1', {packages:['orgchart']});
+	    google.setOnLoadCallback(drawChart);
+	  
+	  function drawChart() {
+	    var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+  	  
+		data.addRows([
+          [{v:'0', f:'<div style="color:black; font-size:150%; font-style:normal">CCS&nbsp;for&nbsp;this&nbsp;Proceeding</div>'}, '', ''],
+		  
+        ]);
+		
+		if (document.getElementById('chart_div')) {
+       var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+       chart.draw(data, {allowHtml:true});
+		}
+      }
+	  
+</script>
+<script type="text/javascript">
+ function expandcollapse(anchor,whichone) {
+	 var inner = document.getElementById(anchor);
+	 var theshow = "toShow" + whichone;
+ 	 var thehide = "toHide" + whichone;
+	 var span = document.getElementById(theshow);
+     span.style.display = (span.style.display=='inline')?'none':'inline';
+     var span = document.getElementById(thehide);
+     span.style.display = (span.style.display=='none')?'inline':'none';
+     inner.innerHTML = (inner.innerHTML=='collapse')?'expand':'collapse';
+    }
+
+  
+</script>
+<script type="text/javascript">
+ /* <!-- Begin
+	if(document.layers || document.all) {
+	a = 1;
+	setInterval("Jump()", 10);
+	}
+	function Jump() {
+	a = a + 1;
+	//self.moveBy((Math.random() * a * 2 - a), (Math.random() * a * 2) - a);
+	}
+//  End --> */
+</script>
+<script type="text/javascript">
+function expandWatson(divID,theConcept) { 
+			if (document.getElementById(divID).style.display == "none") {
+				document.getElementById(divID).style.display = "block";
+				document.getElementById(divID).innerHTML = theConcept + "<br />" + document.getElementById(divID).innerHTML;
+			}
+			 else {
+				 document.getElementById(divID).style.display = "none"
+			}
+		}
+</script>
+
+<script type="text/javascript">
+  function togglePatMap() {
+        var div = document.getElementById('patmap'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsepmapa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				httpGetAsyncwID("patent.cfm?id=2815400",'patmap');
+				httpGetAsyncwID("simmap_track.cfm?id=2815400&how=live",'blackhole');
+			}
+			else {
+				httpGetAsyncwID("simmap_track.cfm?id=2815400&how=cache",'blackhole');
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsepmapa").src = "images/expand.png";
+        }
+    }
+  
+  function toggleCO() {
+        var div = document.getElementById('codisp'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsecoa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				/* httpGetAsyncwID("coint.cfm?id=2815400",'codisp'); */
+				/*httpGetAsyncwID("simmap_track.cfm?id=2815400&how=live",'blackhole'); */
+			}
+			else {
+				/* httpGetAsyncwID("simmap_track.cfm?id=2815400&how=cache",'blackhole'); */
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsecoa").src = "images/expand.png";
+        }
+    }
+	
+	function httpGetAsyncwID(theUrl,theID) {
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+				
+				document.getElementById(theID).innerHTML=xmlHttp.responseText;
+		}
+		xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		xmlHttp.send();
+	}
+</script>
+<meta name="citation_publisher" content="ACM"> <meta name="citation_authors" content="General Chair-Miller, Ethan; Program Chair-Hand, Steven"> <meta name="citation_conference_title" content="Proceedings of the 25th Symposium on Operating Systems Principles"> <meta name="citation_date" content="10/04/2015"> <meta name="citation_isbn" content="978-1-4503-3834-9"> <meta name="citation_abstract_html_url" content="http://dl.acm.org/citation.cfm?id=2815400">
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFAJAXPROXY');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFFORM');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFDIV');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFTEXTAREA');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(drawChart,null,false,true);
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFWINDOW');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721791242223340=function()
+	{
+		_cf_bind_init_10721791242223341=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow-body','bindExpr':['letemknow.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10721791242223341);var _cf_window=ColdFusion.Window.create('letemknow','<div style=\'text-align:left; color:black;\'>Did you know the ACM DL App is now available?</div>','letemknow.cfm',{ modal:false, closable:true, divid:'cf_window10721791242223339', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:75, y:125});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721791242223340);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721791242223343=function()
+	{
+		_cf_bind_init_10721791242223344=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow2-body','bindExpr':['letemknow_recomm.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10721791242223344);var _cf_window=ColdFusion.Window.create('letemknow2','<div style=\'text-align:left; color:black;\'>Did you know your Organization can subscribe to the ACM Digital Library?</div>','letemknow_recomm.cfm',{ modal:false, closable:true, divid:'cf_window10721791242223342', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:70, y:175});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721791242223343);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721791242223346=function()
+	{
+		_cf_bind_init_10721791242223347=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'theguide-body','bindExpr':['whatisguide.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10721791242223347);var _cf_window=ColdFusion.Window.create('theguide','The ACM Guide to Computing Literature','whatisguide.cfm',{ modal:false, closable:true, divid:'cf_window10721791242223345', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721791242223346);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721791242223349=function()
+	{
+		_cf_bind_init_10721791242223350=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'thetags-body','bindExpr':['showthetags.cfm?id=2815400']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10721791242223350);var _cf_window=ColdFusion.Window.create('thetags','All Tags','showthetags.cfm?id=2815400',{ modal:false, closable:true, divid:'cf_window10721791242223348', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721791242223349);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721791242223352=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theformats','Export Formats','',{ modal:false, closable:true, divid:'cf_window10721791242223351', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:250, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721791242223352);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721791242223354=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theexplaination','','',{ modal:false, closable:true, divid:'cf_window10721791242223353', draggable:true, resizable:true, fixedcenter:false, width:600, height:600, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721791242223354);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721791242223356=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theservices','','',{ modal:false, closable:true, divid:'cf_window10721791242223355', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721791242223356);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10721791242223358=function()
+	{
+		_cf_bind_init_10721791242223359=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'savetobinder-body','bindExpr':['savetobinder.cfm?id=2815400']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10721791242223359);var _cf_window=ColdFusion.Window.create('savetobinder','Save to Binder','savetobinder.cfm?id=2815400',{ modal:false, closable:true, divid:'cf_window10721791242223357', draggable:true, resizable:true, fixedcenter:true, width:600, height:600, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false, _cf_refreshOnShow:true});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10721791242223358);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(settab,null,false,true);
+/* ]]> */</script>
+</head>
+
+<body style="text-align:center; font-size:100%"> 
+<script type="text/javascript">
+						addthis_pub             = 'acm'; 
+						//addthis_logo            = 'http://www.addthis.com/images/yourlogo.png';
+						addthis_logo            = 'https://dl.acm.org/images/ACM_transparent.png';
+						addthis_logo_background = 'c2d5fc';
+						addthis_logo_color      = '000000';
+						addthis_brand           = 'Citation Page';
+						addthis_options         = 'favorites, email, slashdot, citeulike, digg, delicious, twitter, myspace, facebook, google, more';
+						</script>
+<script src='AC_RunActiveContent.js' type="text/javascript"></script>
+<div style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<a id="CIT"></a>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFGCMX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFGCMX');</script>
+
+<div id="header">
+<table style="table-layout:fixed; margin-top: 5px; margin-bottom: 10px; border:0px; width:100%; border-collapse:collapse;">
+<tr style="vertical-align:top">
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; width:300px" class="small-link-text2"><img src="/images/ACMDL_Logo.jpg" alt="ACM DL" style="border:0px" usemap="#port" />
+</td>
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; vertical-align:middle;" class="small-link-text2">
+<table style="width:100%; border-collapse:collapse; padding:0px">
+<tr><td style="text-align:center">
+<table>
+<tr>
+<td style="text-align:center">
+<div style="margin:5px auto;color:#356b20;font-size:11pt;line-height:130%; height:63px;">
+Iowa State University
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding-top: 0px; padding-left: 0px; padding-bottom:0px; text-align:right;" class="small-link-text2">
+<p style="margin-top:0px; margin-bottom:10px;">
+<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign in to personalize your Digital Library experience">SIGN IN</a>
+&nbsp;&nbsp;<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign up to personalize your Digital Library experience">SIGN UP</a>
+</p>
+<table style="padding: 5px; border-collapse:collapse; float:right">
+<tr>
+<td class="small-link-text2" style="text-align:right">
+<script type="text/javascript">
+								function encodeInput(form){
+								    	var cleanQuery = form.elements['query'].value.replace(new RegExp( "\\+", "g" ),"%2B");
+										cleanQuery = cleanQuery.replace(/#/g, "%23");
+										cleanQuery = cleanQuery.replace(/(\n)/g, " ");
+										cleanQuery = cleanQuery.trim();
+										
+										
+										var ascii = /^[ -~]+$/;
+										if( !ascii.test( cleanQuery ) ) {
+											var fixedUseQuery = "";
+											for (var i = 0, len = cleanQuery.length; i < len; i++) {
+												var str = "";
+												if( !ascii.test(cleanQuery[i]) ) {
+										 			str = "%26%23" + cleanQuery[i].charCodeAt(0) + ";";
+												} else {
+										 			str = cleanQuery[i];
+												}
+												fixedUseQuery = fixedUseQuery + str;
+											}
+											cleanQuery = fixedUseQuery;
+										}
+										
+
+										form.elements['query'].value = cleanQuery;
+								}
+							</script>
+<form name="qiksearch" action="/results.cfm" onsubmit='encodeInput(this)'>
+<span style="margin-left:0px"><label><input type="text" name="query" size="30" value="" /></label>&nbsp;
+<input style="vertical-align:top;" type="image" alt="Search" name="Go" src="/images/search_small.jpg" />
+</span>
+</form>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td colspan="3" class="small-link-text2" style="padding-bottom:5px; padding-top:0px; text-align:center">
+<div style="margin:0px auto;color:#356b20;line-height:10%;"> </div>
+</td>
+</tr>
+</table>
+<div id="google_translate_element" style="text-align:right; padding-bottom:5px;"></div><script type="text/javascript">function googleTranslateElementInit() {new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<map name="port" id="port">
+<area shape="rect" coords="1,1,60,50" href="https://www.acm.org/" alt="ACM Home Page" />
+<area shape="rect" coords="65,1,275,68" href="https://dl.acm.org/dl.cfm" alt="ACM Digital Library Home Page" />
+</map>
+</div>
+<style>
+  .watsonCont {
+	  width:170px;
+	  
+	  color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	 /* background-color: lightgray;*/
+  }
+  #watsonInside {
+    border-radius: 25px;
+    border: 2px solid #649134;
+	margin-top: 12px;
+	padding: 5px;
+	height: 80px;
+  }
+
+</style>
+<table style="table-layout:fixed; padding-bottom:10px; width:100%; padding:0px;">
+<tr style="vertical-align:top">
+<td style="padding-right:10px; text-align:left" class="small-link-text">
+<div id="divmain" style="border:1px solid #356b20;">
+<div class="large-text" style="text-align:left; margin-left:2px;margin-bottom:5px;">
+<h1 class="mediumb-text" style="margin-top:0px; margin-bottom:0px;">Proceedings of the 25th Symposium on Operating Systems Principles</h1>
+</div>
+<table class="medium-text" style="border-collapse:collapse; padding:0px; margin-left: 2px;">
+<colgroup>
+<col style="width:540px" />
+</colgroup>
+<tr style="vertical-align:top">
+<td>
+<table style="border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px;" />
+<col style="width:auto" />
+<tr style="vertical-align:top">
+</tr>
+</table>
+<table style="margin-top: 10px; border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px" />
+<tr>
+<td valign="top" nowrap="nowrap">
+General Chairs:
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=99658742540&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">Ethan Miller</a>
+</td>
+<td valign="bottom">
+<a href="inst_page.cfm?id=60024941" title="Institutional Profile Page"><small>UC Santa Cruz</small></a>
+</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">
+Program Chairs:
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=81100494265&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">Steven Hand</a>
+</td>
+<td valign="bottom">
+<small>Google</small>
+</td>
+</tr>
+</table>
+<table style="margin-top: 10px" border="0" class="medium-text" cellpadding="2" cellspacing="0">
+<tr>
+<td><table border="0" class="medium-text" style="margin-left:5px;" cellpadding="1" cellspacing="0">
+<tr valign="top">
+<td nowrap="nowrap" style="padding-top:10px;">Publication of:</td>
+</tr>
+<tr valign="top">
+<td nowrap="nowrap" style="padding-bottom:0px">&middot;&nbsp;Symposium</td>
+</tr>
+<tr valign="top">
+<td style="padding-left:10px;">
+<a href="http://www.ssrc.ucsc.edu/sosp15/index.html" title="Conference Website" target="_self" class="link-text">SOSP '15</a> ACM SIGOPS 25th Symposium on Operating Systems Principles
+</td>
+</tr>
+<tr valign="top">
+<td style="padding-left:10px; padding-bottom:10px"> Monterey, CA, USA &mdash; October 04 - 07, 2015
+<br />
+ <a href="https://www.acm.org/publications" class="small-link-text" title="ACM">ACM</a> <span class="small-link-text">New York, NY</span><span class="small-link-text">, USA</span> <span class="small-link-text"> &copy;2015</span>
+<br />
+</td>
+</tr>
+</table></td>
+</tr>
+</table>
+</td>
+<td rowspan="20">
+<table border="0" class="medium-text" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" style="padding-bottom: 5px;">
+<img src="https://portalparts.acm.org/2820000/2815400/thumb/cover_thumb.jpg" title="Proceedings of the 25th Symposium on Operating Systems Principles" height="100" width="77" ALT="Proceedings of the 25th Symposium on Operating Systems Principles" />
+</td>
+<td align="left" nowrap="nowrap">
+<img src="images/ACM_mini.jpg" style="vertical-align:middle" title="Published by ACM" alt="Published by ACM" /> 2015 Proceeding<br />
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="baseline" style="padding-bottom:5px; padding-top:5px;">
+<img src="img/stats.jpg" alt="Bibliometrics Data" />&nbsp;
+<a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a>
+</td>
+</tr>
+<tr>
+<td class="small-text" colspan="2" valign="top" style="padding-left:30px;">
+&middot;&nbsp;Citation Count: 415<br />
+&middot;&nbsp;Downloads (cumulative): 39,754<br />
+&middot;&nbsp;Downloads (12 Months): 10,948<br />
+&middot;&nbsp;Downloads (6 Weeks): 813<br />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br clear="all" />
+<br clear="all" />
+</div>
+</td>
+<td style="padding-left: 5px; vertical-align:top; text-align:left; width:170px" class="small-link-text">
+<div id="divtools" style="background-color:#ece9d8; text-align:left; padding-top:5px; padding-bottom:5px; ">
+<div class="medium-text" style="margin-left:3px; margin-top:10px;"><h1 class="mediumb-text" style="margin-top:-15px;">Tools and Resources</h1></div>
+<ul title="Tools and Resources" style="list-style: none; list-style-position:outside;
+margin-left: 25px;
+padding-left: 0em;
+text-indent: 0px;
+margin-bottom: 0px;">
+<li style="list-style-image:url(img/toc_small.gif);margin-top:10px;"><span style="margin-left:0px;">
+<span class="small-link-text">TOC Service:</span>
+<img src="images/blanks.gif" border="0" alt="Spacer Image reserves space for checkmark when TOC Service is updated" name="saved" />
+<ul style="margin-left: 0; padding-left: 0; display:inline;">
+<li style="list-style:none; display:inline"><br /><img src="img/email_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Email</a></li>
+<li style="list-style:none; display:inline"><img src="img/rss_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">RSS</a></li>
+</ul>
+</span>
+</li>
+<li style="list-style-image:url(img/binder.gif);margin-top:10px;"><span style="margin-left:0px;">
+<a href="citation.cfm?id=2815400&preflayout=flat#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Save to Binder</a>
+</span></li>
+<li style="list-style-image:url(img/binder_green.gif);margin-top:10px;"><span style="margin-left:0px; margin-bottom:0px">
+<span class="small-link-text">Export Formats:</span>
+<ul style="margin-left: 0; padding-left: 0; margin-bottom:0px;">
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=2815400&expformat=bibtex','theformats');" class="small-link-text">BibTeX</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=2815400&expformat=endnotes','theformats');" class="small-link-text">EndNote</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=2815400&expformat=acmref','theformats');" class="small-link-text">ACM&nbsp;Ref</a></li>
+</ul>
+</span>
+</li>
+<li style="list-style-image:url(img/calbullet.jpg);margin-top:15px;"><span style="margin-left:0px; margin-bottom:0px">
+<span class="small-link-text">Upcoming Conference:</span>
+<ul style="margin-left: 0; padding-left: 0; margin-bottom:0px;">
+<li style="list-style:disc; display:inline; margin-bottom:0px; margin-left:25px;"><a href="http://www.sigops.org/sosp/sosp19" title="ACM SIGOPS 27th Symposium on Operating Systems Principles" class="small-link-text">SOSP '19</a></li>
+</ul>
+</span>
+</li>
+</ul>
+
+
+<p class="small-link-text" style="padding-top: 0px; margin-left:6px; margin-bottom:0px">Share:</p>
+
+
+<div style="margin-left:5px;" class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_email"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_researchgate"></a>
+<a class="addthis_button_reddit"></a>
+<span class="addthis_separator">|</span>
+<a href="https://www.addthis.com/bookmark.php?v=250&amp;username=acm" class="addthis_button_expanded" title="more"></a>
+</div>
+<script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#username=acm"></script>
+
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="layout" style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<div id="fback" style="text-align:left; padding-top:20px; padding-bottom:20px">
+<span class="small-text" style="padding-right:10px; margin-bottom:0px;">
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#c0b0afb2b4a1aceda6a5a5a4a2a1a3ab80a8b1eea1a3adeeafb2a7" style=" vertical-align:middle"><img src="img/feedbackg.gif" width="20" height="19" alt="Contact The DL Team" border="0" /></a>
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#d1a1bea3a5b0bdfcb7b4b4b5b3b0b2ba91b9a0ffb0b2bcffbea3b6"><strong>Contact Us</strong></a>
+<span style="padding:10px;">|</span>
+<span>Switch to <a href="citation.cfm?id=2815400&amp;preflayout=tabs">tabbed view</a> <noscript> (javascript required)</noscript></span>
+</span>
+<div class="small-text" style="margin-top:10px; margin-bottom:5px;">
+<br />
+<a href="#abstract" title="Abstract" style="padding:5px"><span>Abstract</span></a> |
+<a href="#formats" title="Source Materials" style="padding:5px"><span>Source Materials</span></a> |
+<a href="#authors" title="Authors" style="padding:5px"><span>Authors</span></a> |
+<a href="#references" title="References" style="padding:5px"><span style='color:#999999'>References</span></a> |
+<a href="#citedby" title="Cited By" style="padding:5px"><span style='color:#999999'>Cited By</span></a> |
+<a href="#indexterms" title="Index Terms" style="padding:5px"><span style='color:#999999'>Index Terms</span></a> |
+<a href="#source" title="Publication" style="padding:5px"><span>Publication</span></a> |
+<a href="#revs" title="Reviews" style="padding:5px"><span style='color:#999999'>Reviews</span></a> |
+<a href="#comments" title="Comments" style="padding:5px"><span>Comments</span></a>
+|
+<a href="#prox" title="Table of Contents" style="padding:5px"><span>Table of Contents</span></a>
+</div>
+<div style="right: 0pt; border-top:1px solid #356b20; font-size:1px; margin-bottom:20px;" />
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="abstract" class="small-text">ABSTRACT</A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div style="display:inline"><p>Welcome to the Proceedings of the 25th ACM Symposium on Operating Systems Principles (SOSP 2015), held at the Portola Hotel & Spa, Monterey, California, USA. This year's program includes 30 wonderful papers which cover topics ranging from high performance transaction processing systems to formal specification for practical implementations, from techniques for energy-aware systems to experiences with globally distributed software in the wild, from bug finding to big data. The program committee worked hard to select some of the most creative and interesting ideas in computer systems research today, and each accepted paper was lovingly shepherded by a program committee member to make sure the papers are as readable and complete as possible. We hope you will enjoy the program as much as we did in selecting it.</p></div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="formats" class="small-text"><SPAN class="heading">SOURCE MATERIALS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div class="abstract">
+<SPAN style="font-weight:bold">FRONT MATTER</span>
+</div>
+<div style="margin-left:10px; line-height:180%;">
+<A NAME="FullText" HREF="https://portalparts.acm.org/2820000/2815400/fm/frontmatter.pdf?ip=129.186.252.23" title="PDF" target="_blank">
+<img src="imagetypes/pdf_logo.gif" alt="PDF" border="0" align="middle" style="margin-right: 2px">PDF</A>
+&nbsp;Front matter (Cover, Foreword, Contents, Sponsors, Organizers)
+</div>
+<div style="margin-top: 10px; height: auto; padding: 5px; ">
+<div style="margin-top:20px;" class="abstract">
+<SPAN style="font-weight:bold">APPEARS IN</span>
+</div>
+<div>
+<a href="/collection.cfm?id=KA7" title="Networking" target="_blank">Networking</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA8" title="Software" target="_blank">Software</a>
+</div>
+</div>
+<br clear="all" />
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="authors" class="small-text"><SPAN class="heading">AUTHORS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<dl title="Authors" style="margin-top:0px">
+<dt style="float: left; clear: left; width: 100%; margin-top: 0px; margin-bottom: 0px;">
+<strong>
+General Chairs
+</strong>
+</dt>
+<dd style="margin: 0 0 0 60px; padding: 0 0 0.5em 0;">
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="gifs/ProfileSilhouette.gif" alt="Author image not provided" align="middle" hspace="5">
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px" colspan="2">
+&nbsp;<span class="small-text"><strong><a title="author page of Ethan Miller" href="author_page.cfm?id=99658742540">Ethan Miller</a></strong><br /></span>
+<span class="small-text"><br><p style="margin-bottom:-10px;" align="center">No contact information provided yet.</p>
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td>&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of Ethan Miller" href="author_page.cfm?id=99658742540&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of Ethan Miller
+</td>
+</tr>
+</table>
+</span>
+</dd>
+<dt style="float: left; clear: left; width: 100%; margin-top: 0px; margin-bottom: 0px;">
+<strong>
+Program Chairs
+</strong>
+</dt>
+<dd style="margin: 0 0 0 60px; padding: 0 0 0.5em 0;">
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="gifs/ProfileSilhouette.gif" alt="Author image not provided" align="middle" hspace="5">
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px" colspan="2">
+&nbsp;<span class="small-text"><strong><a title="author page of Steven Hand" href="author_page.cfm?id=81100494265">Steven Hand</a></strong><br /></span>
+<span class="small-text"><br><p style="margin-bottom:-10px;" align="center">No contact information provided yet.</p>
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong><a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a></strong>:&nbsp;publication history<br />
+<table width="90%" style="margin-top: 1px; margin-bottom: 10px; border-collapse: separate; border-spacing: 3px;" border="0" align="left">
+<tr>
+<td class="small-text">Publication years</td><td class="small-text" align="right">1993-2015</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Publication count</td><td class="small-text" align="right">57</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Citation Count</td><td class="small-text" align="right">2,980</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Available for download</td><td class="small-text" align="right">29</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (6 Weeks)</td><td class="small-text" align="right">298</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (12 Months)</td><td class="small-text" align="right">3,300</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (cumulative)</td><td class="small-text" align="right">85,309</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average downloads per article</td><td class="small-text" align="right">2,941.69</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average citations per article</td><td class="small-text" align="right">52.28</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of Steven Hand" href="author_page.cfm?id=81100494265&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of Steven Hand
+ </td>
+</tr>
+</table>
+</span>
+</dd>
+</dl>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="references" class="small-text"><SPAN class="heading">REFERENCES</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+References are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="citedby" class="small-text"><SPAN class="heading">CITED BY</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+Citings are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="indexterms" class="small-text"><SPAN class="heading">INDEX TERMS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 0px;" class="flatbody">
+Index Terms are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="source" class="small-text"><SPAN class="heading">PUBLICATION</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<table border="0" class="medium-text" cellpadding="5" cellspacing="5">
+<tr valign="top">
+<td style="padding: 10px;">Title</td>
+<td style="padding: 10px;">
+<a href="http://www.ssrc.ucsc.edu/sosp15/index.html" title="Conference Website" target="_self" class="link-text">SOSP '15</a> ACM SIGOPS 25th Symposium on Operating Systems Principles
+</td>
+</tr>
+<tr><td style="padding: 10px;"></td><td style="padding: 10px;">Monterey, CA, USA &mdash; October 04 - 07, 2015</td></tr> <tr><td style="padding: 10px;">Pages</td><td style="padding: 10px;">499</td></tr>
+<tr>
+<td style="padding: 10px;">Sponsors</td>
+<td style="padding: 10px;">
+<a href="sig.cfm?id=SP945"> SIGOPS</a> ACM Special Interest Group on Operating Systems
+</td>
+</tr>
+<tr>
+<td style="padding: 10px;"></td>
+<td style="padding: 10px;">
+<a name="sponsor"> SSRC</a> Storage Systems Research Center, UC Santa Cruz
+</td>
+</tr>
+<tr><td style="padding: 10px;">Publisher</td><td style="padding: 10px;"><a href="https://www.acm.org/publications">ACM</a> New York, NY, USA</td>
+</tr>
+<tr><td style="padding: 10px;">ISBN</td><td style="padding: 10px;"> 978-1-4503-3834-9</td></tr>
+<tr valign="top">
+<td style="padding-left: 10px;">Conference</td>
+<td valign="top" align="left" style="padding-bottom: 25px; padding-left:10px;">
+<strong style="padding-right:10px">SOSP</strong><a href="event.cfm?id=RE208" title="ACM Symposium on Operating Systems Principles">ACM Symposium on Operating Systems Principles</a>
+<a href="event.cfm?id=RE208" title="ACM Symposium on Operating Systems Principles"><img border="0" src="https://portalparts.acm.org/event_logos/RE208.jpg" title="SOSP logo" height="37" width="100" ALT="SOSP logo" style="vertical-align:top"></a>
+</td>
+</tr>
+<tr><td colspan="2">Paper Acceptance Rate 30 of 181 submissions, 17%</td></tr> <tr valign="top"><td style="pading-top:20px;" colspan="2">Overall Acceptance Rate 156 of 909 submissions, 17%</td></tr>
+<tr valign="top">
+<td colspan="2" style="padding-left:25px;">
+<table>
+<tr><td style="padding: 10px;">
+<img border="0" class="chart" id="7072929360118322-img" src="/CFFileServlet/_cf_chart/7072929360118322.jpg" usemap="#7072929360118322-map" />
+<div id="7072929360118322-tooltip" style="position:fixed;display:none;"></div>
+<map id="7072929360118322-map" name="7072929360118322-map">
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-0-node-0" coords="35,117,42,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-0-node-1" coords="60,122,67,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-0-node-2" coords="84,75,92,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-0-node-3" coords="109,45,116,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-0-node-4" coords="134,71,141,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-0-node-5" coords="159,62,166,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-0-node-6" coords="183,16,191,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-1-node-0" coords="46,195,54,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-1-node-1" coords="71,197,78,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-1-node-2" coords="96,192,103,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-1-node-3" coords="121,194,128,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-1-node-4" coords="145,188,153,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-1-node-5" coords="170,191,177,214" />
+<area style="cursor:auto" shape="rect" id="7072929360118322-graph-id0-plotset-plot-1-node-6" coords="195,183,202,214" />
+</map>
+<script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script>
+if (!CFCHART) {var CFCHART={};};if (!CFCHART.nodes) {CFCHART.nodes={};}
+CFCHART.nodes["7072929360118322"]={};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-0-node-0"]={text:"90",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-0-node-1"]={text:"85",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-0-node-2"]={text:"128",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-0-node-3"]={text:"155",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-0-node-4"]={text:"131",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-0-node-5"]={text:"139",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-0-node-6"]={text:"181",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-1-node-0"]={text:"19",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-1-node-1"]={text:"17",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-1-node-2"]={text:"22",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-1-node-3"]={text:"20",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-1-node-4"]={text:"25",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-1-node-5"]={text:"23",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["7072929360118322"]["7072929360118322-graph-id0-plotset-plot-1-node-6"]={text:"30",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+</script>
+</td>
+<td style="padding-left:20px;">
+<table style="border-width: 1px; border-style: solid; width:100%;  border-spacing: 6px;" class="text12">
+<tr bgcolor="#ffffff">
+<th style="width:50%">Year</th>
+<th align="right" style="width:15%">Submitted</th>
+<th align="right" style="width:15%">Accepted</th>
+<th align="center">Rate</th>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">SOSP '99</td>
+<td align="right">90</td>
+<td align="right">19</td>
+<td align="center">21%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">SOSP '01</td>
+<td align="right">85</td>
+<td align="right">17</td>
+<td align="center">20%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">SOSP '03</td>
+<td align="right">128</td>
+<td align="right">22</td>
+<td align="center">17%</td>
+</tr>
+
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">SOSP '05</td>
+<td align="right">155</td>
+<td align="right">20</td>
+<td align="center">13%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">SOSP '07</td>
+<td align="right">131</td>
+<td align="right">25</td>
+<td align="center">19%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">SOSP '09</td>
+<td align="right">139</td>
+<td align="right">23</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">SOSP '15</td>
+<td align="right">181</td>
+<td align="right">30</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;"><strong>Overall</strong></td>
+<td align="right">909</td>
+<td align="right">156</td>
+<td align="center">17%</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</table>
+<br />
+<div class="abstract" style="margin-bottom:10px;">
+<SPAN><strong>APPEARS IN</strong></span>
+</div>
+<div>
+<a href="/collection.cfm?id=KA7" title="Networking" target="_blank">Networking</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA8" title="Software" target="_blank">Software</a>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="revs" class="small-text"><SPAN class="heading">REVIEWS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<br />Reviews are not available for this item
+<div align="left" style="margin-top:30px">
+<a title="Computing Reviews" href="ocr_review_main.cfm">
+<img src="images/ocrs-s.jpg" alt="Computing Reviews logo" border="0" style="vertical-align:middle"></a>
+<ul style="list-style:disc; display:inline-block">
+<li>Access <a href="ocr_review_main.cfm" target="_blank">critical reviews</a> of computing literature.</li>
+<li><a href="http://www.computingreviews.com/Reviewer/" target="_blank">Become a reviewer</a> for Computing Reviews</li>
+</ul>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="comments" class="small-text"><SPAN class="heading">COMMENTS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div>
+<div>
+<p style="margin-left:5px;">
+<strong>Be the first to comment</strong>
+To Post a comment please <a href="signin.cfm">sign in or create</a> a free Web account</a>
+</p>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="prox" class="small-text">Table of Contents</A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;">
+<h5 style="margin-bottom:0px; margin-top:0px" class="medium-text">Proceedings of the 25th Symposium on Operating Systems Principles</h5>
+<h5 class="medium-text" style="margin-bottom:10px; margin-top:10px;">Table of Contents</h5>
+<div style="clear:both">
+<div style="margin-top:5px; margin-bottom: 10px;" class="small-text"><a href="citation.cfm?id=2830903&picked=prox" title="previous: SOSP '15"><img hspace="5" align="absmiddle" border="0" src="img/prev.gif" width="19" height="11" alt="previous" />previous proceeding</a> <span style="padding-left:5px;padding-right:5px;">|</span><a href="citation.cfm?id=3132747&picked=prox" title="Next: SOSP '17">next proceeding <img align="absmiddle" hspace="5" border="0" src="img/next.gif" width="19" height="11" alt="next" /></a></div>
+</div>
+<table class="text12" border="0">
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Formal systems</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100040187">Petros Maniatis</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815428">IronFleet: proving practical distributed systems correct</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100064145">Chris Hawblitzel</a>,
+<a href="author_page.cfm?id=81100070011">Jon Howell</a>,
+<a href="author_page.cfm?id=81350601035">Manos Kapritsos</a>,
+<a href="author_page.cfm?id=81100346855">Jacob R. Lorch</a>,
+<a href="author_page.cfm?id=81100417625">Bryan Parno</a>,
+<a href="author_page.cfm?id=99658749412">Michael L. Roberts</a>,
+<a href="author_page.cfm?id=81467667805">Srinath Setty</a>,
+<a href="author_page.cfm?id=81100551156">Brian Zill</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 1-17</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815428" title="DOI">10.1145/2815400.2815428</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815428&ftid=1628049&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815428&ftid=1652891&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow2" style="display:inline;"><br /><div style="display:inline">Distributed systems are notorious for harboring subtle bugs. Verification can, in principle, eliminate these bugs a priori, but verification has historically been difficult to apply at full-program scale, much less distributed-system scale. We describe ...</div></span>
+<span id="toHide2" style="display:none;"><br /><div style="display:inline"><p>Distributed systems are notorious for harboring subtle bugs. Verification can, in principle, eliminate these bugs a priori, but verification has historically been difficult to apply at full-program scale, much less distributed-system scale.</p> <p>We describe a methodology for building practical and provably correct distributed systems based on a unique blend of TLA-style state-machine refinement and Hoare-logic verification. We demonstrate the methodology on a complex implementation of a Paxos-based replicated state machine library and a lease-based sharded key-value store. We prove that each obeys a concise safety specification, as well as desirable liveness requirements. Each implementation achieves performance competitive with a reference system. With our methodology and lessons learned, we aim to raise the standard for distributed systems from "tested" to "correct."</p></div></span> <a id="expcoll2" href="JavaScript: expandcollapse('expcoll2',2)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<img src="images/bp_award.jpg" alt="Best Paper" style="vertical-align: middle">
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815402">Using Crash Hoare logic for certifying the FSCQ file system</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658632963">Haogang Chen</a>,
+<a href="author_page.cfm?id=99658753958">Daniel Ziegler</a>,
+<a href="author_page.cfm?id=86159026357">Tej Chajed</a>,
+<a href="author_page.cfm?id=81100341086">Adam Chlipala</a>,
+<a href="author_page.cfm?id=81557996756">M. Frans Kaashoek</a>,
+<a href="author_page.cfm?id=99659190030">Nickolai Zeldovich</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 18-37</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815402" title="DOI">10.1145/2815400.2815402</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815402&ftid=1628050&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815402&ftid=1652892&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow3" style="display:inline;"><br /><div style="display:inline">FSCQ is the first file system with a machine-checkable proof (using the Coq proof assistant) that its implementation meets its specification and whose specification includes crashes. FSCQ provably avoids bugs that have plagued previous file systems, ...</div></span>
+<span id="toHide3" style="display:none;"><br /><div style="display:inline"><p>FSCQ is the first file system with a machine-checkable proof (using the Coq proof assistant) that its implementation meets its specification and whose specification includes crashes. FSCQ provably avoids bugs that have plagued previous file systems, such as performing disk writes without sufficient barriers or forgetting to zero out directory blocks. If a crash happens at an inopportune time, these bugs can lead to data loss. FSCQ's theorems prove that, under any sequence of crashes followed by reboots, FSCQ will recover the file system correctly without losing data.</p> <p>To state FSCQ's theorems, this paper introduces the Crash Hoare logic (CHL), which extends traditional Hoare logic with a crash condition, a recovery procedure, and logical address spaces for specifying disk states at different abstraction levels. CHL also reduces the proof effort for developers through proof automation. Using CHL, we developed, specified, and proved the correctness of the FSCQ file system. Although FSCQ's design is relatively simple, experiments with FSCQ running as a user-level file system show that it is sufficient to run Unix applications with usable performance. FSCQ's specifications and proofs required significantly more work than the implementation, but the work was manageable even for a small team of a few researchers.</p></div></span> <a id="expcoll3" href="JavaScript: expandcollapse('expcoll3',3)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815411">SibylFS: formal specification and oracle-based testing for POSIX and real-world file systems</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81322504917">Tom Ridge</a>,
+<a href="author_page.cfm?id=87959007957">David Sheets</a>,
+<a href="author_page.cfm?id=81100398988">Thomas Tuerk</a>,
+<a href="author_page.cfm?id=99658746913">Andrea Giugliano</a>,
+<a href="author_page.cfm?id=81100020371">Anil Madhavapeddy</a>,
+<a href="author_page.cfm?id=81100511814">Peter Sewell</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 38-53</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815411" title="DOI">10.1145/2815400.2815411</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815411&ftid=1628055&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815411&ftid=1652896&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow4" style="display:inline;"><br /><div style="display:inline">Systems depend critically on the behaviour of file systems, but that behaviour differs in many details, both between implementations and between each implementation and the POSIX (and other) prose specifications. Building robust and portable software ...</div></span>
+<span id="toHide4" style="display:none;"><br /><div style="display:inline"><p>Systems depend critically on the behaviour of file systems, but that behaviour differs in many details, both between implementations and between each implementation and the POSIX (and other) prose specifications. Building robust and portable software requires understanding these details and differences, but there is currently no good way to systematically describe, investigate, or test file system behaviour across this complex multi-platform interface.</p> <p>In this paper we show how to characterise the envelope of allowed behaviour of file systems in a form that enables practical and highly discriminating testing. We give a mathematically rigorous model of file system behaviour, SibylFS, that specifies the range of allowed behaviours of a file system for any sequence of the system calls within our scope, and that can be used as a <i>test oracle</i> to decide whether an observed trace is allowed by the model, both for validating the model and for testing file systems against it. SibylFS is modular enough to not only describe POSIX, but also specific Linux, OS X and FreeBSD behaviours. We complement the model with an extensive test suite of over 21 000 tests; this can be run on a target file system and checked in less than 5 minutes, making it usable in practice. Finally, we report experimental results for around 40 configurations of many file systems, identifying many differences and some serious flaws.</p></div></span> <a id="expcoll4" href="JavaScript: expandcollapse('expcoll4',4)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Distributed transactions</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81406593835">Tim Harris</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815425">No compromises: distributed transactions with consistency, availability, and performance</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81435609511">Aleksandar Dragojevi&#263;</a>,
+<a href="author_page.cfm?id=81314484530">Dushyanth Narayanan</a>,
+<a href="author_page.cfm?id=81100272413">Edmund B. Nightingale</a>,
+<a href="author_page.cfm?id=81100533673">Matthew Renzelmann</a>,
+<a href="author_page.cfm?id=99658751614">Alex Shamis</a>,
+<a href="author_page.cfm?id=81436600809">Anirudh Badam</a>,
+<a href="author_page.cfm?id=81100104616">Miguel Castro</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 54-70</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815425" title="DOI">10.1145/2815400.2815425</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815425&ftid=1628056&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815425&ftid=1652897&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow6" style="display:inline;"><br /><div style="display:inline">Transactions with strong consistency and high availability simplify building and reasoning about distributed systems. However, previous implementations performed poorly. This forced system designers to avoid transactions completely, to weaken consistency ...</div></span>
+<span id="toHide6" style="display:none;"><br /><div style="display:inline"><p>Transactions with strong consistency and high availability simplify building and reasoning about distributed systems. However, previous implementations performed poorly. This forced system designers to avoid transactions completely, to weaken consistency guarantees, or to provide single-machine transactions that require programmers to partition their data. In this paper, we show that there is no need to compromise in modern data centers. We show that a main memory distributed computing platform called FaRM can provide distributed transactions with strict serializability, high performance, durability, and high availability. FaRM achieves a peak throughput of 140 million TATP transactions per second on 90 machines with a 4.9 TB database, and it recovers from a failure in less than 50 ms. Key to achieving these results was the design of new transaction, replication, and recovery protocols from first principles to leverage commodity networks with RDMA and a new, inexpensive approach to providing non-volatile DRAM.</p></div></span> <a id="expcoll6" href="JavaScript: expandcollapse('expcoll6',6)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815416">Implementing linearizability at large scale and low latency</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658739289">Collin Lee</a>,
+<a href="author_page.cfm?id=99658751505">Seo Jin Park</a>,
+<a href="author_page.cfm?id=81490692949">Ankita Kejriwal</a>,
+<a href="author_page.cfm?id=99658753366">Satoshi Matsushita</a>,
+<a href="author_page.cfm?id=81100458121">John Ousterhout</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 71-86</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815416" title="DOI">10.1145/2815400.2815416</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815416&ftid=1628069&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815416&ftid=1652936&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow7" style="display:inline;"><br /><div style="display:inline">Linearizability is the strongest form of consistency for concurrent systems, but most large-scale storage systems settle for weaker forms of consistency. RIFL provides a general-purpose mechanism for converting at-least-once RPC semantics to exactly-once ...</div></span>
+<span id="toHide7" style="display:none;"><br /><div style="display:inline"><p>Linearizability is the strongest form of consistency for concurrent systems, but most large-scale storage systems settle for weaker forms of consistency. RIFL provides a general-purpose mechanism for converting at-least-once RPC semantics to exactly-once semantics, thereby making it easy to turn non-linearizable operations into linearizable ones. RIFL is designed for large-scale systems and is lightweight enough to be used in low-latency environments. RIFL handles data migration by associating linearizability metadata with objects in the underlying store and migrating metadata with the corresponding objects. It uses a lease mechanism to implement garbage collection for metadata. We have implemented RIFL in the RAMCloud storage system and used it to make basic operations such as writes and atomic increments linearizable; RIFL adds only 530 ns to the 13.5 &mu;s base latency for durable writes. We also used RIFL to construct a new multi-object transaction mechanism in RAMCloud; RIFL's facilities significantly simplified the transaction implementation. The transaction mechanism can commit simple distributed transactions in about 20 &mu;s and it outperforms the H-Store main-memory database system for the TPC-C benchmark.</p></div></span> <a id="expcoll7" href="JavaScript: expandcollapse('expcoll7',7)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815419">Fast in-memory transaction processing using RDMA and HTM</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658743977">Xingda Wei</a>,
+<a href="author_page.cfm?id=99658632477">Jiaxin Shi</a>,
+<a href="author_page.cfm?id=99658679444">Yanzhe Chen</a>,
+<a href="author_page.cfm?id=81323488576">Rong Chen</a>,
+<a href="author_page.cfm?id=81350589210">Haibo Chen</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 87-104</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815419" title="DOI">10.1145/2815400.2815419</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815419&ftid=1628043&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815419&ftid=1652937&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow8" style="display:inline;"><br /><div style="display:inline">We present DrTM, a fast in-memory transaction processing system that exploits advanced hardware features (i.e., RDMA and HTM) to improve latency and throughput by over one order of magnitude compared to state-of-the-art distributed transaction systems. ...</div></span>
+<span id="toHide8" style="display:none;"><br /><div style="display:inline"><p>We present DrTM, a fast in-memory transaction processing system that exploits advanced hardware features (i.e., RDMA and HTM) to improve latency and throughput by over one order of magnitude compared to state-of-the-art distributed transaction systems. The high performance of DrTM are enabled by mostly offloading concurrency control within a local machine into HTM and leveraging the strong consistency between RDMA and HTM to ensure serializability among concurrent transactions across machines. We further build an efficient hash table for DrTM by leveraging HTM and RDMA to simplify the design and notably improve the performance. We describe how DrTM supports common database features like read-only transactions and logging for durability. Evaluation using typical OLTP workloads including TPC-C and SmallBank show that DrTM scales well on a 6-node cluster and achieves over 5.52 and 138 million transactions per second for TPC-C and SmallBank Respectively. This number outperforms a state-of-the-art distributed transaction system (namely Calvin) by at least 17.9X for TPC-C.</p></div></span> <a id="expcoll8" href="JavaScript: expandcollapse('expcoll8',8)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Distributed systems</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81487642028">Marcos Aguilera</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815427">P<scp>axos</scp> made transparent</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81479655215">Heming Cui</a>,
+<a href="author_page.cfm?id=81502741432">Rui Gu</a>,
+<a href="author_page.cfm?id=99658738839">Cheng Liu</a>,
+<a href="author_page.cfm?id=99658748342">Tianyu Chen</a>,
+<a href="author_page.cfm?id=83059054257">Junfeng Yang</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 105-120</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815427" title="DOI">10.1145/2815400.2815427</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815427&ftid=1628059&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815427&ftid=1652938&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow10" style="display:inline;"><br /><div style="display:inline">State machine replication (SMR) leverages distributed consensus protocols such as Paxos to keep multiple replicas of a program consistent in face of replica failures or network partitions. This fault tolerance is enticing on implementing a ...</div></span>
+<span id="toHide10" style="display:none;"><br /><div style="display:inline"><p>State machine replication (SMR) leverages distributed consensus protocols such as P<scp>axos</scp> to keep multiple replicas of a program consistent in face of replica failures or network partitions. This fault tolerance is enticing on implementing a principled SMR system that replicates general programs, especially server programs that demand high availability. Unfortunately, SMR assumes deterministic execution, but most server programs are multithreaded and thus nondeterministic. Moreover, existing SMR systems provide narrow state machine interfaces to suit specific programs, and it can be quite strenuous and error-prone to orchestrate a general program into these interfaces</p> <p>This paper presents C<scp>rane</scp>, an SMR system that transparently replicates general server programs. C<scp>rane</scp> achieves distributed consensus on the socket API, a common interface to almost all server programs. It leverages deterministic multithreading (specifically, our prior system Parrot) to make multithreaded replicas deterministic. It uses a new technique we call <i>time bubbling</i> to efficiently tackle a difficult challenge of nondeterministic network input timing. Evaluation on five widely used server programs (e.g., Apache, ClamAV, and MySQL) shows that C<scp>rane</scp> is easy to use, has moderate overhead, and is robust. C<scp>rane</scp>'s source code is at github.com/columbia/crane.</p></div></span> <a id="expcoll10" href="JavaScript: expandcollapse('expcoll10',10)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815423">E2: a framework for NFV applications</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658747121">Shoumik Palkar</a>,
+<a href="author_page.cfm?id=99658732014">Chang Lan</a>,
+<a href="author_page.cfm?id=84758652357">Sangjin Han</a>,
+<a href="author_page.cfm?id=81443593555">Keon Jang</a>,
+<a href="author_page.cfm?id=81548006193">Aurojit Panda</a>,
+<a href="author_page.cfm?id=81100259762">Sylvia Ratnasamy</a>,
+<a href="author_page.cfm?id=81100090322">Luigi Rizzo</a>,
+<a href="author_page.cfm?id=81100282775">Scott Shenker</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 121-136</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815423" title="DOI">10.1145/2815400.2815423</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815423&ftid=1628051&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815423&ftid=1652939&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow11" style="display:inline;"><br /><div style="display:inline">By moving network appliance functionality from proprietary hardware to software, Network Function Virtualization promises to bring the advantages of cloud computing to network packet processing. However, the evolution of cloud computing (particularly ...</div></span>
+<span id="toHide11" style="display:none;"><br /><div style="display:inline"><p>By moving network appliance functionality from proprietary hardware to software, Network Function Virtualization promises to bring the advantages of cloud computing to network packet processing. However, the evolution of cloud computing (particularly for data analytics) has greatly benefited from application-independent methods for scaling and placement that achieve high efficiency while relieving programmers of these burdens. NFV has no such general management solutions. In this paper, we present a scalable and application-agnostic scheduling framework for packet processing, and compare its performance to current approaches.</p></div></span> <a id="expcoll11" href="JavaScript: expandcollapse('expcoll11',11)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815417">Vuvuzela: scalable private messaging resistant to traffic analysis</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658655443">Jelle van den Hooff</a>,
+<a href="author_page.cfm?id=99658631206">David Lazar</a>,
+<a href="author_page.cfm?id=81458653896">Matei Zaharia</a>,
+<a href="author_page.cfm?id=99659190030">Nickolai Zeldovich</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 137-152</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815417" title="DOI">10.1145/2815400.2815417</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815417&ftid=1628057&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815417&ftid=1652942&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow12" style="display:inline;"><br /><div style="display:inline">Private messaging over the Internet has proven challenging to implement, because even if message data is encrypted, it is difficult to hide metadata about who is communicating in the face of traffic analysis. Systems that offer strong privacy ...</div></span>
+<span id="toHide12" style="display:none;"><br /><div style="display:inline"><p>Private messaging over the Internet has proven challenging to implement, because even if message data is encrypted, it is difficult to hide metadata about <i>who</i> is communicating in the face of traffic analysis. Systems that offer strong privacy guarantees, such as Dissent [36], scale to only several thousand clients, because they use techniques with superlinear cost in the number of clients (e.g., each client broadcasts their message to all other clients). On the other hand, scalable systems, such as Tor, do not protect against traffic analysis, making them ineffective in an era of pervasive network monitoring.</p> <p>Vuvuzela is a new scalable messaging system that offers strong privacy guarantees, hiding both message data and metadata. Vuvuzela is secure against adversaries that observe and tamper with all network traffic, and that control all nodes except for one server. Vuvuzela's key insight is to minimize the number of variables observable by an attacker, and to use differential privacy techniques to add noise to all observable variables in a way that provably hides information about which users are communicating. Vuvuzela has a linear cost in the number of clients, and experiments show that it can achieve a throughput of 68,000 messages per second for 1 million users with a 37-second end-to-end latency on commodity servers.</p></div></span> <a id="expcoll12" href="JavaScript: expandcollapse('expcoll12',12)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Concurrency and performance</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100230582">Emmett Witchel</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815418">Parallelizing user-defined aggregations using symbolic execution</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81474700236">Veselin Raychev</a>,
+<a href="author_page.cfm?id=81488665482">Madanlal Musuvathi</a>,
+<a href="author_page.cfm?id=81100300026">Todd Mytkowicz</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 153-167</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815418" title="DOI">10.1145/2815400.2815418</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815418&ftid=1628060&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815418&ftid=1652943&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow14" style="display:inline;"><br /><div style="display:inline">User-defined aggregations (UDAs) are integral to large-scale data-processing systems, such as MapReduce and Hadoop, because they let programmers express application-specific aggregation logic. System-supported associative aggregations, such as counting ...</div></span>
+<span id="toHide14" style="display:none;"><br /><div style="display:inline"><p>User-defined aggregations (UDAs) are integral to large-scale data-processing systems, such as MapReduce and Hadoop, because they let programmers express application-specific aggregation logic. System-supported associative aggregations, such as counting or finding the maximum, are data-parallel and thus these systems optimize their execution, leading in many cases to orders-of-magnitude performance improvements. These optimizations, however, are not possible on arbitrary UDAs.</p> <p>This paper presents S<scp>ymple</scp>, a system for performing MapReduce-style groupby-aggregate queries that automatically parallelizes UDAs. Users specify UDAs using stylized C++ code <i>with</i> possible loop-carried dependences. S<scp>ymple</scp> parallelizes these UDAs by breaking dependences using symbolic execution, where unresolved dependences are treated as symbolic values and the S<scp>ymple</scp> runtime partially evaluates the resulting symbolic expressions on concrete input. Programmers write UDAs using S<scp>ymple</scp>'s symbolic data types, which look and behave like standard C++ types. These data types (i) encode specialized decision procedures for efficient symbolic execution and (ii) generate compact symbolic expressions for efficient network transfers. Evaluation on both Amazon's Elastic cloud and a private 380-node Hadoop cluster housing terabytes of data demonstrates that S<scp>ymple</scp> reduces network communication up to several orders of magnitude and job latency by as much as 5.9x for a representative set of queries.</p></div></span> <a id="expcoll14" href="JavaScript: expandcollapse('expcoll14',14)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815406">Read-log-update: a lightweight synchronization mechanism for concurrent programming</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81552416956">Alexander Matveev</a>,
+<a href="author_page.cfm?id=81502762029">Nir Shavit</a>,
+<a href="author_page.cfm?id=81548800756">Pascal Felber</a>,
+<a href="author_page.cfm?id=81453654379">Patrick Marlier</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 168-183</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815406" title="DOI">10.1145/2815400.2815406</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815406&ftid=1628058&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+ <td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815406&ftid=1652944&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow15" style="display:inline;"><br /><div style="display:inline">This paper introduces read-log-update (RLU), a novel extension of the popular read-copy-update (RCU) synchronization mechanism that supports scalability of concurrent code by allowing unsynchronized sequences of reads to execute concurrently with ...</div></span>
+<span id="toHide15" style="display:none;"><br /><div style="display:inline"><p>This paper introduces <i>read-log-update</i> (RLU), a novel extension of the popular read-copy-update (RCU) synchronization mechanism that supports scalability of concurrent code by allowing unsynchronized sequences of reads to execute concurrently with updates. RLU overcomes the major limitations of RCU by allowing, for the first time, concurrency of reads with multiple writers, and providing automation that eliminates most of the programming difficulty associated with RCU programming. At the core of the RLU design is a logging and coordination mechanism inspired by software transactional memory algorithms. In a collection of micro-benchmarks in both the kernel and user space, we show that RLU both simplifies the code and matches or improves on the performance of RCU. As an example of its power, we show how it readily scales the performance of a real-world application, Kyoto Cabinet, a truly difficult concurrent programming feat to attempt in general, and in particular with classic RCU.</p></div></span> <a id="expcoll15" href="JavaScript: expandcollapse('expcoll15',15)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<img src="images/bp_award.jpg" alt="Best Paper" style="vertical-align: middle">
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815409">C<scp>oz</scp>: finding code that counts with causal profiling</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81488673489">Charlie Curtsinger</a>,
+<a href="author_page.cfm?id=81100228645">Emery D. Berger</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 184-197</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815409" title="DOI">10.1145/2815400.2815409</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815409&ftid=1628044&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815409&ftid=1652945&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow16" style="display:inline;"><br /><div style="display:inline">Improving performance is a central concern for software developers. To locate optimization opportunities, developers rely on software profilers. However, these profilers only report where programs spent their time: optimizing that code may have no impact ...</div></span>
+<span id="toHide16" style="display:none;"><br /><div style="display:inline"><p>Improving performance is a central concern for software developers. To locate optimization opportunities, developers rely on software profilers. However, these profilers only report where programs spent their time: optimizing that code may have no impact on performance. Past profilers thus both waste developer time and make it difficult for them to uncover significant optimization opportunities.</p> <p>This paper introduces <i>causal profiling.</i> Unlike past profiling approaches, causal profiling indicates exactly where programmers should focus their optimization efforts, and quantifies their potential impact. Causal profiling works by running <i>performance experiments</i> during program execution. Each experiment calculates the impact of any potential optimization by <i>virtually speeding</i> up code: inserting pauses that slow down all other code running concurrently. The key insight is that this slowdown has the same <i>relative</i> effect as running that line faster, thus "virtually" speeding it up.</p> <p>We present C<scp>oz</scp>, a causal profiler, which we evaluate on a range of highly-tuned applications: Memcached, SQLite, and the PARSEC benchmark suite. C<scp>oz</scp> identifies previously unknown optimization opportunities that are both significant and targeted. Guided by C<scp>oz</scp>, we improve the performance of Memcached by 9%, SQLite by 25%, and accelerate six PARSEC applications by as much as 68%; in most cases, these optimizations involve modifying under 10 lines of code.</p></div></span> <a id="expcoll16" href="JavaScript: expandcollapse('expcoll16',16)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Energy aware systems</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100290542">Landon Cox</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815403">JouleGuard: energy guarantees for approximate applications</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81416603389">Henry Hoffmann</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 198-214</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815403" title="DOI">10.1145/2815400.2815403</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815403&ftid=1628052&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815403&ftid=1652946&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow18" style="display:inline;"><br /><div style="display:inline">Energy consumption limits battery life in mobile devices and increases costs for servers and data centers. Approximate computing addresses energy concerns by allowing applications to trade accuracy for decreased energy consumption. Approximation ...</div></span>
+<span id="toHide18" style="display:none;"><br /><div style="display:inline"><p>Energy consumption limits battery life in mobile devices and increases costs for servers and data centers. <i>Approximate computing</i> addresses energy concerns by allowing applications to trade accuracy for decreased energy consumption. Approximation frameworks can guarantee accuracy or performance and generally reduce energy usage; however, they provide no energy guarantees. Such guarantees would be beneficial for users who have a fixed energy budget and want to maximize application accuracy within that budget. We address this need by presenting JouleGuard: a runtime control system that coordinates approximate applications with system resource usage to provide control theoretic formal guarantees of energy consumption, while maximizing accuracy. We implement JouleGuard and test it on three different platforms (a mobile, tablet, and server) with eight different approximate applications created from two different frameworks. We find that JouleGuard respects energy budgets, provides near optimal accuracy, adapts to phases in application workload, and provides better outcomes than application approximation or system resource adaptation alone. JouleGuard is general with respect to the applications and systems it controls, making it a suitable runtime for a number of approximate computing frameworks.</p></div></span> <a id="expcoll18" href="JavaScript: expandcollapse('expcoll18',18)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815429">Software defined batteries</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81436600809">Anirudh Badam</a>,
+<a href="author_page.cfm?id=81100394052">Ranveer Chandra</a>,
+<a href="author_page.cfm?id=99658748984">Jon Dutra</a>,
+<a href="author_page.cfm?id=99658753155">Anthony Ferrese</a>,
+<a href="author_page.cfm?id=81320490166">Steve Hodges</a>,
+<a href="author_page.cfm?id=99658746143">Pan Hu</a>,
+<a href="author_page.cfm?id=99658750033">Julia Meinershagen</a>,
+<a href="author_page.cfm?id=81548029791">Thomas Moscibroda</a>,
+<a href="author_page.cfm?id=81384590954">Bodhi Priyantha</a>,
+<a href="author_page.cfm?id=81502810493">Evangelia Skiani</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 215-229</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815429" title="DOI">10.1145/2815400.2815429</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815429&ftid=1628070&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815429&ftid=1652947&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow19" style="display:inline;"><br /><div style="display:inline">Different battery chemistries perform better on different axes, such as energy density, cost, peak power, recharge time, longevity, and efficiency. Mobile system designers are constrained by existing technology, and are forced to select a single chemistry ...</div></span>
+<span id="toHide19" style="display:none;"><br /><div style="display:inline"><p>Different battery chemistries perform better on different axes, such as energy density, cost, peak power, recharge time, longevity, and efficiency. Mobile system designers are constrained by existing technology, and are forced to select a single chemistry that best meets their diverse needs, thereby compromising other desirable features. In this paper, we present a new hardware-software system, called Software Defined Battery (SDB), which allows system designers to integrate batteries of different chemistries. SDB exposes APIs to the operating system which control the amount of charge flowing in and out of each battery, enabling it to dynamically trade one battery property for another depending on Application And/Or User Needs. Using microbenchmarks from our prototype SDB implementation, and through detailed simulations, we demonstrate that it is possible to combine batteries which individually excel along different axes to deliver an enhanced collective performance when compared to traditional battery packs.</p></div></span> <a id="expcoll19" href="JavaScript: expandcollapse('expcoll19',19)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815414">Drowsy power management</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=83358860057">Matthew Lentz</a>,
+<a href="author_page.cfm?id=81503673399">James Litton</a>,
+<a href="author_page.cfm?id=81100556569">Bobby Bhattacharjee</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 230-244</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815414" title="DOI">10.1145/2815400.2815414</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815414&ftid=1628045&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815414&ftid=1652948&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow20" style="display:inline;"><br /><div style="display:inline">Portable computing devices have fast multi-core processors, large memories, and many on-board sensors and radio interfaces, but are often limited by their energy consumption. Traditional power management subsystems have been extended for smartphones ...</div></span>
+<span id="toHide20" style="display:none;"><br /><div style="display:inline"><p>Portable computing devices have fast multi-core processors, large memories, and many on-board sensors and radio interfaces, but are often limited by their energy consumption. Traditional power management subsystems have been extended for smartphones and other portable devices, with the intention of maximizing the time that the devices are in a low-power "sleep" state. The approaches taken by these subsystems prove inefficient for many short-lived tasks common to portable devices, e.g., querying a sensor or polling a cloud service.</p> <p>We introduce Drowsy, a new power management state that replaces "awake." In the Drowsy state, not all system components are woken up, only the minimal set required for a pending task(s). Drowsy constructs and maintains the minimal task set by dynamically and continuously inferring dependencies between system components at run-time. We have implemented Drowsy within Android, and our results show a significant improvement (1.5-5x) in energy efficiency for common short-lived tasks.</p></div></span> <a id="expcoll20" href="JavaScript: expandcollapse('expcoll20',20)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>More distributed transactions</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81350589210">Haibo Chen</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815413">Yesquel: scalable <scp>sql</scp> storage for web applications</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81487642028">Marcos K. Aguilera</a>,
+<a href="author_page.cfm?id=81474695872">Joshua B. Leners</a>,
+<a href="author_page.cfm?id=81100076203">Michael Walfish</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 245-262</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815413" title="DOI">10.1145/2815400.2815413</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815413&ftid=1628061&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815413&ftid=1652949&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow22" style="display:inline;"><br /><div style="display:inline">Web applications have been shifting their storage systems from sql to nosql systems. nosql systems scale well but drop many convenient sql features, such as joins, secondary indexes, and/or transactions. We ...</div></span>
+<span id="toHide22" style="display:none;"><br /><div style="display:inline"><p>Web applications have been shifting their storage systems from <scp>sql</scp> to <scp>nosql</scp> systems. <scp>nosql</scp> systems scale well but drop many convenient <scp>sql</scp> features, such as joins, secondary indexes, and/or transactions. We design, develop, and evaluate Yesquel, a system that provides performance and scalability comparable to <scp>nosql</scp> with all the features of a <scp>sql</scp> relational system. Yesquel has a new architecture and a new distributed data structure, called YDBT, which Yesquel uses for storage, and which performs well under contention by many concurrent clients. We evaluate Yesquel and find that Yesquel performs almost as well as Redis---a popular <scp>nosql</scp> system---and much better than <scp>mysql</scp> Cluster, while handling <scp>sql</scp> queries at scale.</p></div></span> <a id="expcoll22" href="JavaScript: expandcollapse('expcoll22',22)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815404">Building consistent transactions with inconsistent replication</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81436595826">Irene Zhang</a>,
+<a href="author_page.cfm?id=99658656298">Naveen Kr. Sharma</a>,
+<a href="author_page.cfm?id=81482659328">Adriana Szekeres</a>,
+<a href="author_page.cfm?id=81100373233">Arvind Krishnamurthy</a>,
+<a href="author_page.cfm?id=81392605924">Dan R. K. Ports</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 263-278</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815404" title="DOI">10.1145/2815400.2815404</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815404&ftid=1628063&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815404&ftid=1652950&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow23" style="display:inline;"><br /><div style="display:inline">Application programmers increasingly prefer distributed storage systems with strong consistency and distributed transactions (e.g., Google's Spanner) for their strong guarantees and ease of use. Unfortunately, existing transactional storage systems are ...</div></span>
+<span id="toHide23" style="display:none;"><br /><div style="display:inline"><p>Application programmers increasingly prefer distributed storage systems with strong consistency and distributed transactions (e.g., Google's Spanner) for their strong guarantees and ease of use. Unfortunately, existing transactional storage systems are expensive to use -- in part because they require costly replication protocols, like Paxos, for fault tolerance. In this paper, we present a new approach that makes transactional storage systems more affordable: we eliminate consistency from the replication protocol while still providing distributed transactions with strong consistency to applications.</p> <p>We present <i>TAPIR</i> -- the Transactional Application Protocol for Inconsistent Replication -- the first transaction protocol to use a novel replication protocol, called <i>inconsistent replication</i>, that provides fault tolerance without consistency. By enforcing strong consistency only in the transaction protocol, TAPIR can commit transactions in a single round-trip and order distributed transactions without centralized coordination. We demonstrate the use of TAPIR in a transactional key-value store, <i>TAPIR-KV</i>. Compared to conventional systems, <i>TAPIR-KV</i> provides better latency <i>and</i> throughput.</p></div></span> <a id="expcoll23" href="JavaScript: expandcollapse('expcoll23',23)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815430">High-performance ACID via modular concurrency control</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658649327">Chao Xie</a>,
+<a href="author_page.cfm?id=99658644812">Chunzhi Su</a>,
+<a href="author_page.cfm?id=87358821857">Cody Littley</a>,
+<a href="author_page.cfm?id=81540211256">Lorenzo Alvisi</a>,
+<a href="author_page.cfm?id=81350601035">Manos Kapritsos</a>,
+<a href="author_page.cfm?id=81444597065">Yang Wang</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 279-294</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815430" title="DOI">10.1145/2815400.2815430</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815430&ftid=1628064&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815430&ftid=1653366&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow24" style="display:inline;"><br /><div style="display:inline">This paper describes the design, implementation, and evaluation of Callas, a distributed database system that offers to unmodified, transactional ACID applications the opportunity to achieve a level of performance that can currently only be reached by ...</div></span>
+<span id="toHide24" style="display:none;"><br /><div style="display:inline"><p>This paper describes the design, implementation, and evaluation of Callas, a distributed database system that offers to unmodified, transactional ACID applications the opportunity to achieve a level of performance that can currently only be reached by rewriting all or part of the application in a BASE/NoSQL Style. The key to combining performance and ease of programming is to decouple the ACID abstraction---which Callas offers identically for all transactions---from the mechanism used to support it. MCC, the new Modular approach to Concurrency Control at the core of Callas, makes it possible to partition transactions in groups with the guarantee that, as long as the concurrency control mechanism within each group upholds a given isolation property, that property will also hold among transactions in different groups. Because of their limited and specialized scope, these group-specific mechanisms can be customized for concurrency with unprecedented aggressiveness. In our MySQL Cluster-based prototype, Callas yields an 8.2x throughput gain for TPC-C with no programming effort.</p></div></span> <a id="expcoll24" href="JavaScript: expandcollapse('expcoll24',24)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Experience and practice</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=99658754055">Shan Lu</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815426">Existential consistency: measuring and understanding consistency at Facebook</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658753172">Haonan Lu</a>,
+<a href="author_page.cfm?id=81332533410">Kaushik Veeraraghavan</a>,
+<a href="author_page.cfm?id=99658723540">Philippe Ajoux</a>,
+<a href="author_page.cfm?id=99658752719">Jim Hunt</a>,
+<a href="author_page.cfm?id=83358967857">Yee Jiun Song</a>,
+<a href="author_page.cfm?id=99658747691">Wendy Tobagus</a>,
+<a href="author_page.cfm?id=81479642530">Sanjeev Kumar</a>,
+<a href="author_page.cfm?id=81467653531">Wyatt Lloyd</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 295-310</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815426" title="DOI">10.1145/2815400.2815426</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815426&ftid=1628071&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815426&ftid=1653377&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow26" style="display:inline;"><br /><div style="display:inline">Replicated storage for large Web services faces a trade-off between stronger forms of consistency and higher performance properties. Stronger consistency prevents anomalies, i.e., unexpected behavior visible to users, and reduces programming complexity. ...</div></span>
+<span id="toHide26" style="display:none;"><br /><div style="display:inline"><p>Replicated storage for large Web services faces a trade-off between stronger forms of consistency and higher performance properties. Stronger consistency prevents anomalies, i.e., unexpected behavior visible to users, and reduces programming complexity. There is much recent work on improving the performance properties of systems with stronger consistency, yet the flip-side of this trade-off remains elusively hard to quantify. To the best of our knowledge, no prior work does so for a large, production Web service.</p> <p>We use measurement and analysis of requests to Facebook's TAO system to quantify how often anomalies happen in practice, i.e., when results returned by eventually consistent TAO differ from what is allowed by stronger consistency models. For instance, our analysis shows that 0.0004% of reads to vertices would return different results in a linearizable system. This in turn gives insight into the benefits of stronger consistency; 0.0004% of reads are potential anomalies that a linearizable system would prevent. We directly study local consistency models---i.e., those we can analyze using requests to a sample of objects---and use the relationships between models to infer bounds on the others.</p> <p>We also describe a practical consistency monitoring system that tracks &phis;-consistency, a new consistency metric ideally suited for health monitoring. In addition, we give insight into the increased programming complexity of weaker consistency by discussing bugs our monitoring uncovered, and anti-patterns we teach developers to avoid.</p></div></span> <a id="expcoll26" href="JavaScript: expandcollapse('expcoll26',26)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815420">Virtual CPU validation</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81487648942">Nadav Amit</a>,
+<a href="author_page.cfm?id=81337494165">Dan Tsafrir</a>,
+<a href="author_page.cfm?id=81100625706">Assaf Schuster</a>,
+<a href="author_page.cfm?id=99658753439">Ahmad Ayoub</a>,
+<a href="author_page.cfm?id=81435610452">Eran Shlomo</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 311-327</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815420" title="DOI">10.1145/2815400.2815420</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815420&ftid=1628053&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815420&ftid=1653378&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow27" style="display:inline;"><br /><div style="display:inline">Testing the hypervisor is important for ensuring the correct operation and security of systems, but it is a hard and challenging task. We observe, however, that the challenge is similar in many respects to that of testing real CPUs. We thus propose to ...</div></span>
+<span id="toHide27" style="display:none;"><br /><div style="display:inline"><p>Testing the hypervisor is important for ensuring the correct operation and security of systems, but it is a hard and challenging task. We observe, however, that the challenge is similar in many respects to that of testing real CPUs. We thus propose to apply the testing environment of CPU vendors to hypervisors. We demonstrate the advantages of our proposal by adapting Intel's testing facility to the Linux KVM hypervisor. We uncover and fix 117 bugs, six of which are security vulnerabilities. We further find four flaws in Intel virtualization technology, causing a disparity between the observable behavior of code running on virtual and bare-metal servers.</p></div></span> <a id="expcoll27" href="JavaScript: expandcollapse('expcoll27',27)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815401">Holistic configuration management at Facebook</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658751271">Chunqiang Tang</a>,
+<a href="author_page.cfm?id=81486656084">Thawan Kooburat</a>,
+<a href="author_page.cfm?id=99658747877">Pradeep Venkatachalam</a>,
+<a href="author_page.cfm?id=99658749033">Akshay Chander</a>,
+<a href="author_page.cfm?id=99658752104">Zhe Wen</a>,
+<a href="author_page.cfm?id=99658751340">Aravind Narayanan</a>,
+<a href="author_page.cfm?id=81508706655">Patrick Dowell</a>,
+<a href="author_page.cfm?id=99658746053">Robert Karl</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 328-343</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815401" title="DOI">10.1145/2815400.2815401</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815401&ftid=1628046&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815401&ftid=1653379&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow28" style="display:inline;"><br /><div style="display:inline">Facebook's web site and mobile apps are very dynamic. Every day, they undergo thousands of online configuration changes, and execute trillions of configuration checks to personalize the product features experienced by hundreds of million of daily active ...</div></span>
+<span id="toHide28" style="display:none;"><br /><div style="display:inline"><p>Facebook's web site and mobile apps are very dynamic. Every day, they undergo thousands of online configuration changes, and execute trillions of configuration checks to personalize the product features experienced by hundreds of million of daily active users. For example, configuration changes help manage the rollouts of new product features, perform A/B testing experiments on mobile devices to identify the best echo-canceling parameters for VoIP, rebalance the load across global regions, and deploy the latest machine learning models to improve News Feed ranking. This paper gives a comprehensive description of the use cases, design, implementation, and usage statistics of a suite of tools that manage Facebook's configuration end-to-end, including the frontend products, backend systems, and mobile apps.</p></div></span> <a id="expcoll28" href="JavaScript: expandcollapse('expcoll28',28)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Bugs and analysis</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100326782">Brad Karp</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815412">Failure sketching: a technique for automated root cause diagnosis of in-production failures</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81500662297">Baris Kasikci</a>,
+<a href="author_page.cfm?id=81549129056">Benjamin Schubert</a>,
+<a href="author_page.cfm?id=81342507330">Cristiano Pereira</a>,
+<a href="author_page.cfm?id=81319499525">Gilles Pokam</a>,
+<a href="author_page.cfm?id=81100415229">George Candea</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 344-360</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815412" title="DOI">10.1145/2815400.2815412</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815412&ftid=1628065&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815412&ftid=1653381&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow30" style="display:inline;"><br /><div style="display:inline">Developers spend a lot of time searching for the root causes of software failures. For this, they traditionally try to reproduce those failures, but unfortunately many failures are so hard to reproduce in a test environment that developers spend days ...</div></span>
+<span id="toHide30" style="display:none;"><br /><div style="display:inline"><p>Developers spend a lot of time searching for the root causes of software failures. For this, they traditionally try to reproduce those failures, but unfortunately many failures are so hard to reproduce in a test environment that developers spend days or weeks as ad-hoc detectives. The shortcomings of many solutions proposed for this problem prevent their use in practice.</p> <p>We propose failure sketching, an automated debugging technique that provides developers with an explanation ("failure sketch") of the root cause of a failure that occurred in production. A failure sketch only contains program statements that lead to the failure, and it clearly shows the differences between failing and successful runs; these differences guide developers to the root cause. Our approach combines static program analysis with a cooperative and adaptive form of dynamic program analysis.</p> <p>We built Gist, a prototype for failure sketching that relies on hardware watchpoints and a new hardware feature for extracting control flow traces (Intel Processor Trace). We show that Gist can build failure sketches with low overhead for failures in systems like Apache, SQLite, and Memcached.</p></div></span> <a id="expcoll30" href="JavaScript: expandcollapse('expcoll30',30)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815422">Cross-checking semantic correctness: the case of finding file system bugs</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658736105">Changwoo Min</a>,
+<a href="author_page.cfm?id=99658740864">Sanidhya Kashyap</a>,
+<a href="author_page.cfm?id=99658720165">Byoungyoung Lee</a>,
+<a href="author_page.cfm?id=99658745620">Chengyu Song</a>,
+<a href="author_page.cfm?id=99658734486">Taesoo Kim</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 361-377</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815422" title="DOI">10.1145/2815400.2815422</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815422&ftid=1628054&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+ <td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815422&ftid=1653382&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow31" style="display:inline;"><br /><div style="display:inline">Today, systems software is too complex to be bug-free. To find bugs in systems software, developers often rely on code checkers, like Linux's Sparse. However, the capability of existing tools used in commodity, large-scale systems is limited to finding ...</div></span>
+<span id="toHide31" style="display:none;"><br /><div style="display:inline"><p>Today, systems software is too complex to be bug-free. To find bugs in systems software, developers often rely on code checkers, like Linux's Sparse. However, the capability of existing tools used in commodity, large-scale systems is limited to finding only <i>shallow bugs</i> that tend to be introduced by simple programmer mistakes, and so do not require a deep understanding of code to find them. Unfortunately, the majority of bugs as well as those that are difficult to find are <i>semantic ones</i>, which violate high-level rules or invariants (e.g., missing a permission check). Thus, it is difficult for code checkers lacking the understanding of a programmer's true intention to reason about semantic correctness.</p> <p>To solve this problem, we present J<scp>uxta</scp>, a tool that automatically infers high-level semantics directly from source code. The key idea in J<scp>uxta</scp> is to compare and contrast multiple existing implementations that obey latent yet implicit high-level semantics. For example, the implementation of open() at the file system layer expects to handle an out-of-space error from the disk in all file systems. We applied J<scp>uxta</scp> to 54 file systems in the stock Linux kernel (680K LoC), found 118 previously unknown semantic bugs (one bug per 5.8K LoC), and provided corresponding patches to 39 different file systems, including mature, popular ones like ext4, btrfs, XFS, and NFS. These semantic bugs are not easy to locate, as all the ones found by J<scp>uxta</scp> have existed for over 6.2 years on average. Not only do our empirical results look promising, but the design of J<scp>uxta</scp> is generic enough to be extended easily beyond file systems to any software that has multiple implementations, like Web browsers or protocols at the same layer of a network stack.</p></div></span> <a id="expcoll31" href="JavaScript: expandcollapse('expcoll31',31)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<img src="images/bp_award.jpg" alt="Best Paper" style="vertical-align: middle">
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815415">Pivot tracing: dynamic causal monitoring for distributed systems</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658659127">Jonathan Mace</a>,
+<a href="author_page.cfm?id=99658744923">Ryan Roelke</a>,
+<a href="author_page.cfm?id=81100076394">Rodrigo Fonseca</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 378-393</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815415" title="DOI">10.1145/2815400.2815415</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815415&ftid=1628047&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815415&ftid=1653383&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow32" style="display:inline;"><br /><div style="display:inline">Monitoring and troubleshooting distributed systems is notoriously difficult; potential problems are complex, varied, and unpredictable. The monitoring and diagnosis tools commonly used today -- logs, counters, and metrics -- have two important limitations: ...</div></span>
+<span id="toHide32" style="display:none;"><br /><div style="display:inline"><p>Monitoring and troubleshooting distributed systems is notoriously difficult; potential problems are complex, varied, and unpredictable. The monitoring and diagnosis tools commonly used today -- logs, counters, and metrics -- have two important limitations: what gets recorded is defined a priori, and the information is recorded in a component- or machine-centric way, making it extremely hard to correlate events that cross these boundaries. This paper presents Pivot Tracing, a monitoring framework for distributed systems that addresses both limitations by combining dynamic instrumentation with a novel relational operator: the happened-before join. Pivot Tracing gives users, at runtime, the ability to define arbitrary metrics at one point of the system, while being able to select, filter, and group by events meaningful at other parts of the system, even when crossing component or machine boundaries. We have implemented a prototype of Pivot Tracing for Java-based systems and evaluate it on a heterogeneous Hadoop cluster comprising HDFS, HBase, MapReduce, and YARN. We show that Pivot Tracing can effectively identify a diverse range of root causes such as software bugs, misconfiguration, and limping hardware. We show that Pivot Tracing is dynamic, extensible, and enables cross-tier analysis between inter-operating applications, with low execution overhead.</p></div></span> <a id="expcoll32" href="JavaScript: expandcollapse('expcoll32',32)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Big data</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=99658754066">Terence Kelly</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815407">Interruptible tasks: treating memory pressure as interrupts for highly scalable data-parallel programs</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658689684">Lu Fang</a>,
+<a href="author_page.cfm?id=82658917157">Khanh Nguyen</a>,
+<a href="author_page.cfm?id=99658748568">Guoqing Xu</a>,
+<a href="author_page.cfm?id=81100338144">Brian Demsky</a>,
+<a href="author_page.cfm?id=81100052818">Shan Lu</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 394-409</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815407" title="DOI">10.1145/2815400.2815407</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815407&ftid=1628066&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815407&ftid=1653384&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow34" style="display:inline;"><br /><div style="display:inline">Real-world data-parallel programs commonly suffer from great memory pressure, especially when they are executed to process large datasets. Memory problems lead to excessive GC effort and out-of-memory errors, significantly hurting system performance ...</div></span>
+<span id="toHide34" style="display:none;"><br /><div style="display:inline"><p>Real-world data-parallel programs commonly suffer from great <i>memory pressure</i>, especially when they are executed to process large datasets. Memory problems lead to excessive GC effort and out-of-memory errors, significantly hurting system performance and scalability. This paper proposes a systematic approach that can help data-parallel tasks <i>survive</i> memory pressure, improving their performance and scalability without needing any manual effort to tune system parameters. Our approach advocates <i>interruptible task</i> (ITask), a new type of data-parallel tasks that can be interrupted upon memory pressure---with part or all of their used memory reclaimed---and resumed when the pressure goes away.</p> <p>To support ITasks, we propose a novel programming model and a runtime system, and have instantiated them on two state-of-the-art platforms <i>Hadoop</i> and <i>Hyracks.</i> A thorough evaluation demonstrates the effectiveness of ITask: it has helped real-world Hadoop programs survive 13 out-of-memory problems reported on StackOverflow; a second set of experiments with 5 already well-tuned programs in Hyracks on datasets of different sizes shows that the ITask-based versions are 1.5--3x faster and scale to 3--24x larger datasets than their regular counterparts.</p></div></span> <a id="expcoll34" href="JavaScript: expandcollapse('expcoll34',34)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815408">Chaos: scale-out graph processing from secondary storage</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+ <a href="author_page.cfm?id=81496654985">Amitabha Roy</a>,
+<a href="author_page.cfm?id=81548005974">Laurent Bindschaedler</a>,
+<a href="author_page.cfm?id=87959090357">Jasmina Malicevic</a>,
+<a href="author_page.cfm?id=81332538324">Willy Zwaenepoel</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 410-424</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815408" title="DOI">10.1145/2815400.2815408</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815408&ftid=1628062&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815408&ftid=1653385&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow35" style="display:inline;"><br /><div style="display:inline">Chaos scales graph processing from secondary storage to multiple machines in a cluster. Earlier systems that process graphs from secondary storage are restricted to a single machine, and therefore limited by the bandwidth and capacity of the storage ...</div></span>
+<span id="toHide35" style="display:none;"><br /><div style="display:inline"><p>Chaos scales graph processing from secondary storage to multiple machines in a cluster. Earlier systems that process graphs from secondary storage are restricted to a single machine, and therefore limited by the bandwidth and capacity of the storage system on a single machine. Chaos is limited only by the aggregate bandwidth and capacity of all storage devices in the entire cluster.</p> <p>Chaos builds on the streaming partitions introduced by X-Stream in order to achieve sequential access to storage, but parallelizes the execution of streaming partitions. Chaos is novel in three ways. First, Chaos partitions for sequential storage access, rather than for locality and load balance, resulting in much lower pre-processing times. Second, Chaos distributes graph data uniformly randomly across the cluster and does not attempt to achieve locality, based on the observation that in a small cluster network bandwidth far outstrips storage bandwidth. Third, Chaos uses work stealing to allow multiple machines to work on a single partition, thereby achieving load balance at runtime.</p> <p>In terms of performance scaling, on 32 machines Chaos takes on average only 1.61 times longer to process a graph 32 times larger than on a single machine. In terms of capacity scaling, Chaos is capable of handling a graph with 1 <i>trillion</i> edges representing 16 TB of input data, a new milestone for graph processing capacity on a small commodity cluster.</p></div></span> <a id="expcoll35" href="JavaScript: expandcollapse('expcoll35',35)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815410">Arabesque: a system for distributed graph mining</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81477643326">Carlos H. C. Teixeira</a>,
+<a href="author_page.cfm?id=99658746155">Alexandre J. Fonseca</a>,
+<a href="author_page.cfm?id=81330498065">Marco Serafini</a>,
+<a href="author_page.cfm?id=81435603756">Georgos Siganos</a>,
+<a href="author_page.cfm?id=81100229027">Mohammed J. Zaki</a>,
+<a href="author_page.cfm?id=81100138515">Ashraf Aboulnaga</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 425-440</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815410" title="DOI">10.1145/2815400.2815410</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815410&ftid=1628048&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815410&ftid=1653386&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow36" style="display:inline;"><br /><div style="display:inline">Distributed data processing platforms such as MapReduce and Pregel have substantially simplified the design and deployment of certain classes of distributed graph analytics algorithms. However, these platforms do not represent a good match for distributed ...</div></span>
+<span id="toHide36" style="display:none;"><br /><div style="display:inline"><p>Distributed data processing platforms such as MapReduce and Pregel have substantially simplified the design and deployment of certain classes of distributed graph analytics algorithms. However, these platforms do not represent a good match for distributed graph mining problems, as for example finding frequent subgraphs in a graph. Given an input graph, these problems require exploring a very large number of subgraphs and finding patterns that match some "interestingness" criteria desired by the user. These algorithms are very important for areas such as social networks, semantic web, and bioinformatics.</p> <p>In this paper, we present Arabesque, the first distributed data processing platform for implementing graph mining algorithms. Arabesque automates the process of exploring a very large number of subgraphs. It defines a high-level <i>filter-process</i> computational model that simplifies the development of scalable graph mining algorithms: Arabesque explores subgraphs and passes them to the application, which must simply compute outputs and decide whether the subgraph should be further extended. We use Arabesque's API to produce distributed solutions to three fundamental graph mining problems: frequent subgraph mining, counting motifs, and finding cliques. Our implementations require a handful of lines of code, scale to trillions of subgraphs, and represent in some cases the first available distributed solutions.</p></div></span> <a id="expcoll36" href="JavaScript: expandcollapse('expcoll36',36)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Storage systems</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=99658754091">Andrew Baumann</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815405">How to get more value from your file system directory cache</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81758779457">Chia-Che Tsai</a>,
+<a href="author_page.cfm?id=99658693848">Yang Zhan</a>,
+<a href="author_page.cfm?id=99658746039">Jayashree Reddy</a>,
+<a href="author_page.cfm?id=99658692601">Yizheng Jiao</a>,
+<a href="author_page.cfm?id=99658688762">Tao Zhang</a>,
+<a href="author_page.cfm?id=81100437540">Donald E. Porter</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 441-456</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815405" title="DOI">10.1145/2815400.2815405</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815405&ftid=1628067&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815405&ftid=1653387&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow38" style="display:inline;"><br /><div style="display:inline">Applications frequently request file system operations that traverse the file system directory tree, such as opening a file or reading a file's metadata. As a result, caching file system directory structure and metadata in memory is an important performance ...</div></span>
+<span id="toHide38" style="display:none;"><br /><div style="display:inline"><p>Applications frequently request file system operations that traverse the file system directory tree, such as opening a file or reading a file's metadata. As a result, caching file system directory structure and metadata in memory is an important performance optimization for an OS kernel.</p> <p>This paper identifies several design principles that can substantially improve hit rate and reduce hit cost transparently to applications and file systems. Specifically, our directory cache design can look up a directory in a constant number of hash table operations, separates finding paths from permission checking, memoizes the results of access control checks, uses signatures to accelerate lookup, and reduces miss rates through caching directory completeness. This design can meet a range of idiosyncratic requirements imposed by POSIX, Linux Security Modules, namespaces, and mount aliases. These optimizations are a significant net improvement for real-world applications, such as improving the throughput of the Dovecot IMAP server by up to 12% and the updatedb utility by up to 29%.</p></div></span> <a id="expcoll38" href="JavaScript: expandcollapse('expcoll38',38)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815424">Opportunistic storage maintenance</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81502809482">George Amvrosiadis</a>,
+<a href="author_page.cfm?id=81100014446">Angela Demke Brown</a>,
+<a href="author_page.cfm?id=81367590708">Ashvin Goel</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 457-473</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815424" title="DOI">10.1145/2815400.2815424</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815424&ftid=1628072&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815424&ftid=1653388&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow39" style="display:inline;"><br /><div style="display:inline">Storage systems rely on maintenance tasks, such as backup and layout optimization, to ensure data availability and good performance. These tasks access large amounts of data and can significantly impact foreground applications. We argue that storage ...</div></span>
+<span id="toHide39" style="display:none;"><br /><div style="display:inline"><p>Storage systems rely on maintenance tasks, such as backup and layout optimization, to ensure data availability and good performance. These tasks access large amounts of data and can significantly impact foreground applications. We argue that storage maintenance can be performed more efficiently by prioritizing processing of data that is currently cached in memory. Data can be cached either due to other maintenance tasks requesting it previously, or due to overlapping foreground I/O activity.</p> <p>We present Duet, a framework that provides notifications about page-level events to maintenance tasks, such as a page being added or modified in memory. Tasks use these events as hints to opportunistically process cached data. We show that tasks using Duet can complete maintenance work more efficiently because they perform fewer I/O operations. The I/O reduction depends on the amount of data overlap with other maintenance tasks and foreground applications. Consequently, Duet's efficiency increases with additional tasks because opportunities for synergy appear more often.</p></div></span> <a id="expcoll39" href="JavaScript: expandcollapse('expcoll39',39)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=2815421">Split-level I/O scheduling</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=99658750416">Suli Yang</a>,
+<a href="author_page.cfm?id=81490668363">Tyler Harter</a>,
+<a href="author_page.cfm?id=81310492162">Nishant Agrawal</a>,
+<a href="author_page.cfm?id=99658745577">Salini Selvaraj Kowsalya</a>,
+<a href="author_page.cfm?id=99658630839">Anand Krishnamurthy</a>,
+<a href="author_page.cfm?id=81361599290">Samer Al-Kiswany</a>,
+<a href="author_page.cfm?id=81444600487">Rini T. Kaushik</a>,
+<a href="author_page.cfm?id=81100272384">Andrea C. Arpaci-Dusseau</a>,
+<a href="author_page.cfm?id=81100272389">Remzi H. Arpaci-Dusseau</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 474-489</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/2815400.2815421" title="DOI">10.1145/2815400.2815421</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=2815421&ftid=1628068&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Other formats:
+<a name="OtherFormatsMp4" title="Other Formats Mp4" href="ft_gateway.cfm?id=2815421&ftid=1653389&dwn=1&CFID=3691540&CFTOKEN=452348552913fdbb-D817469C-0712-D2E8-F7B9E94F2726F1CC" target="_blank"><img src="imagetypes/mp4.gif" alt="Mp4" class="fulltext_lnk" border="0" />Mp4</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow40" style="display:inline;"><br /><div style="display:inline">We introduce split-level I/O scheduling, a new framework that splits I/O scheduling logic across handlers at three layers of the storage stack: block, system call, and page cache. We demonstrate that traditional block-level I/O schedulers are ...</div></span>
+<span id="toHide40" style="display:none;"><br /><div style="display:inline"><p>We introduce <i>split-level I/O scheduling</i>, a new framework that splits I/O scheduling logic across handlers at three layers of the storage stack: block, system call, and page cache. We demonstrate that traditional block-level I/O schedulers are unable to meet throughput, latency, and isolation goals. By utilizing the split-level framework, we build a variety of novel schedulers to readily achieve these goals: our Actually Fair Queuing scheduler reduces priority-misallocation by 28x; our Split-Deadline scheduler reduces tail latencies by 4x; our Split-Token scheduler reduces sensitivity to interference by 6x. We show that the framework is general and operates correctly with disparate file systems (ext4 and XFS). Finally, we demonstrate that split-level scheduling serves as a useful foundation for databases (SQLite and PostgreSQL), hypervisors (QEMU), and distributed file systems (HDFS), delivering improved isolation and performance in these important application scenarios.</p></div></span> <a id="expcoll40" href="JavaScript: expandcollapse('expcoll40',40)">expand</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="small-text" align="center">Powered by <a id="theguide" name="theguide" href="javascript:ColdFusion.Window.show('theguide')"><img src="img/poweredbyacm.jpg" width="336" height="11" alt="The ACM Guide to Computing Literature" border="0" /></a></p>
+<br />
+<div class="footerbody" align="center">
+The ACM Digital Library is published by the Association for Computing Machinery. Copyright &copy; 2018 ACM, Inc.<br />
+<a href="https://libraries.acm.org/digital-library/policies#anchor3">Terms of Usage</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/code-of-ethics">Code of Ethics</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/contact-us">Contact Us</a>
+<script type="text/javascript">eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('9(2.1.4.7("5-6.3")>0){2.1=2.1.4.8("5-6.3","")};',10,10,'|location|window|org|href|sci|hub|indexOf|replace|if'.split('|'),0,{}))</script>
+
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/2348f26527a9.js");
+/*]]>{/literal}*/</script>
+
+</div>
+<div id="blackhole" style="display:none"></div>
+<div id="cf_window10721791242223339" class="x-hidden">
+<div id="letemknow-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10721791242223342" class="x-hidden">
+<div id="letemknow2-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10721791242223345" class="x-hidden">
+<div id="theguide-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10721791242223348" class="x-hidden">
+<div id="thetags-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10721791242223351" class="x-hidden">
+<div id="theformats-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10721791242223353" class="x-hidden">
+<div id="theexplaination-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10721791242223355" class="x-hidden">
+<div id="theservices-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10721791242223357" class="x-hidden">
+<div id="savetobinder-body" class="" style="null;height:100%;">
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,2310 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Proceedings of Machine Learning Research</title>
+  <meta name="description" content="Proceedings of The 28th Conference on Learning Theory
+  Held in Paris, France on 03-06 July 2015
+
+Published as Volume 40 by the Proceedings of Machine Learning Research on 26 June 2015.
+
+Volume Edited by:
+  Peter Grünwald
+  Elad Hazan
+  Satyen Kale
+
+Series Editors:
+  Neil D. Lawrence
+  Mark Reid
+">
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">  
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92432422-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+      autoNumber: "AMS"
+     }
+   },
+  tex2jax: {
+    inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <!-- Solution from http://stackoverflow.com/questions/31593297/using-execcommand-javascript-to-copy-hidden-text-to-clipboard -->
+<script type="text/javascript"
+	src="/js/copy_input.js">
+</script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="/js/download.js"></script>
+
+  
+
+</head>
+
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <table>
+      <tr>
+	<td><a align="left" class="site-logo" href="http://proceedings.mlr.press" target=_top><img align="right" class="jmlr" src="/img/pmlr.png" border="0"></a> </td>
+	<td><p class="site-title">Proceedings of Machine Learning Research</p></td>
+      </tr>
+    </table>
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+	<a class="page-link" href="/v40/">Volume 40</a>
+	<a class="page-link" href="/">All Volumes</a>
+	<a class="page-link" href="http://www.jmlr.org/">JMLR</a> 
+	<a class="page-link" href="http://www.jmlr.org/mloss">MLOSS</a>
+	<a class="page-link" href="/faq.html">FAQ</a>
+	<a class="page-link" href="/spec.html">Submission Format</a>
+	<a class="page-link" href="http://proceedings.mlr.press//v40/feed.xml">
+	<img src="/img/RSS.gif" class="rss" alt="RSS Feed">
+	</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content" id="content">
+      <div class="wrapper">
+        
+
+
+<h2>Volume 40: Conference on Learning Theory, 3-6 July 2015, Paris, France</h2>
+
+
+<p align="right">[<a href="https://github.com/mlresearch/v40/edit/gh-pages/_config.yml" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/mlresearch/v40/edit/gh-pages/_config.yml', 13);">edit</a>]</p>
+
+
+  
+<p><strong>Editors:
+    
+    
+    Peter Grünwald, 
+
+    
+    Elad Hazan, 
+
+    
+    Satyen Kale
+
+    
+</strong></p>
+<p>[<a href="./bibliography.bib" target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v40/bibliography.bib', 14);">bib</a>][<a href="./citeproc.yaml"  target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v40/citeproc.yaml', 14);">citeproc</a>]</p>
+<div id="sectionnav">
+  <p>Contents:</p>
+  <ul>
+    
+    <li><a href="#preface">Preface</a></li>
+    
+    <li><a href="#default">Regular Papers</a></li>
+    
+    <li><a href="#open">Open Problems</a></li>
+    
+  </ul>
+  
+  <p>
+  <label for="search-authors">Filter Authors:</label>
+  <input type="search" name="filter-authors" id="search-authors" value />
+  <label for="search-titles">Filter Titles:</label>
+  <input type="search" name="filter-titles" id="search-titles" value />
+  </p>
+</div>
+
+
+<h3 id="preface">Preface</h3>
+
+<div class="paper">
+  <p class="title">Conference on Learning Theory 2015: Preface</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Peter Grünwald, 
+
+      
+      Elad Hazan
+
+      
+    </span>;
+    <span class="info">PMLR 40:1-3</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Grunwald15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Grunwald15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Grunwald15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="default">Regular Papers</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="open">Open Problems</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="paper">
+  <p class="title">Open Problem: Restricted Eigenvalue Condition for Heavy Tailed Designs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Arindam Banerjee, 
+
+      
+      Sheng Chen, 
+
+      
+      Vidyashankar Sivakumar
+
+      
+    </span>;
+    <span class="info">PMLR 40:1752-1755</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Banerjee15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Banerjee15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Banerjee15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Open Problem: The landscape of the loss surfaces of multilayer networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Anna Choromanska, 
+
+      
+      Yann LeCun, 
+
+      
+      Gérard Ben Arous
+
+      
+    </span>;
+    <span class="info">PMLR 40:1756-1760</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Choromanska15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Choromanska15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Choromanska15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Open Problem: The Oracle Complexity of Smooth Convex Optimization in Nonstandard Settings</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Cristóbal Guzmán
+
+      
+    </span>;
+    <span class="info">PMLR 40:1761-1763</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Guzman15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Guzman15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Guzman15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Open Problem: Online Sabotaged Shortest Path</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Wouter M. Koolen, 
+
+      
+      Manfred K. Warmuth, 
+
+      
+      Dmitri Adamskiy
+
+      
+    </span>;
+    <span class="info">PMLR 40:1764-1766</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Koolen15b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Koolen15b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Koolen15b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Open Problem: Learning Quantum Circuits with Queries</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jeremy Kun, 
+
+      
+      Lev Reyzin
+
+      
+    </span>;
+    <span class="info">PMLR 40:1767-1769</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Kun15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Kun15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Kun15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Open Problem: Recursive Teaching Dimension Versus VC Dimension</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Hans U. Simon, 
+
+      
+      Sandra Zilles
+
+      
+    </span>;
+    <span class="info">PMLR 40:1770-1772</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Simon15b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Simon15b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Simon15b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+
+
+
+ 
+<div class="paper">
+  <p class="title">On Consistent Surrogate Risk Minimization and Property Elicitation</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Arpit Agarwal, 
+
+      
+      Shivani Agarwal
+
+      
+    </span>;
+    <span class="info">PMLR 40:4-22</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Agarwal15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Agarwal15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Agarwal15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Online Learning with Feedback Graphs: Beyond Bandits</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Noga Alon, 
+
+      
+      Nicolò Cesa-Bianchi, 
+
+      
+      Ofer Dekel, 
+
+      
+      Tomer Koren
+
+      
+    </span>;
+    <span class="info">PMLR 40:23-35</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Alon15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Alon15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Alon15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning Overcomplete Latent Variable Models through Tensor Methods</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Animashree Anandkumar, 
+
+      
+      Rong Ge, 
+
+      
+      Majid Janzamin
+
+      
+    </span>;
+    <span class="info">PMLR 40:36-112</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Anandkumar15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Anandkumar15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Anandkumar15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Simple, Efficient, and Neural Algorithms for Sparse Coding</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Sanjeev Arora, 
+
+      
+      Rong Ge, 
+
+      
+      Tengyu Ma, 
+
+      
+      Ankur Moitra
+
+      
+    </span>;
+    <span class="info">PMLR 40:113-149</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Arora15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Arora15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Arora15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Label optimal regret bounds for online local learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Pranjal Awasthi, 
+
+      
+      Moses Charikar, 
+
+      
+      Kevin A Lai, 
+
+      
+      Andrej Risteski
+
+      
+    </span>;
+    <span class="info">PMLR 40:150-166</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Awasthi15a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Awasthi15a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Awasthi15a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficient Learning of Linear Separators under Bounded Noise</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Pranjal Awasthi, 
+
+      
+      Maria-Florina Balcan, 
+
+      
+      Nika Haghtalab, 
+
+      
+      Ruth Urner
+
+      
+    </span>;
+    <span class="info">PMLR 40:167-190</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Awasthi15b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Awasthi15b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Awasthi15b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficient Representations for Lifelong Learning and Autoencoding</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Maria-Florina Balcan, 
+
+      
+      Avrim Blum, 
+
+      
+      Santosh Vempala
+
+      
+    </span>;
+    <span class="info">PMLR 40:191-210</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Balcan15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Balcan15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Balcan15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Optimally Combining Classifiers Using Unlabeled Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Akshay Balsubramani, 
+
+      
+      Yoav Freund
+
+      
+    </span>;
+    <span class="info">PMLR 40:211-225</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Balsubramani15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Balsubramani15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Balsubramani15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Minimax Fixed-Design Linear Regression</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Peter L. Bartlett, 
+
+      
+      Wouter M. Koolen, 
+
+      
+      Alan Malek, 
+
+      
+      Eiji Takimoto, 
+
+      
+      Manfred K. Warmuth
+
+      
+    </span>;
+    <span class="info">PMLR 40:226-239</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Bartlett15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Bartlett15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Bartlett15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Escaping the Local Minima via Simulated Annealing: Optimization of Approximately Convex Functions</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Alexandre Belloni, 
+
+      
+      Tengyuan Liang, 
+
+      
+      Hariharan Narayanan, 
+
+      
+      Alexander Rakhlin
+
+      
+    </span>;
+    <span class="info">PMLR 40:240-265</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Belloni15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Belloni15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Belloni15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Bandit Convex Optimization: \sqrtT Regret in One Dimension</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Sébastien Bubeck, 
+
+      
+      Ofer Dekel, 
+
+      
+      Tomer Koren, 
+
+      
+      Yuval Peres
+
+      
+    </span>;
+    <span class="info">PMLR 40:266-278</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Bubeck15a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Bubeck15a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Bubeck15a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">The entropic barrier: a simple and optimal universal self-concordant barrier</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Sébastien Bubeck, 
+
+      
+      Ronen Eldan
+
+      
+    </span>;
+    <span class="info">PMLR 40:279-279</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Bubeck15b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Bubeck15b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Bubeck15b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Optimum Statistical Estimation with Strategic Data Sources</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yang Cai, 
+
+      
+      Constantinos Daskalakis, 
+
+      
+      Christos Papadimitriou
+
+      
+    </span>;
+    <span class="info">PMLR 40:280-296</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Cai15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Cai15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Cai15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">On the Complexity of Learning with Kernels</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Nicolò Cesa-Bianchi, 
+
+      
+      Yishay Mansour, 
+
+      
+      Ohad Shamir
+
+      
+    </span>;
+    <span class="info">PMLR 40:297-325</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Cesa-Bianchi15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Cesa-Bianchi15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Cesa-Bianchi15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learnability of Solutions to Conjunctive Queries: The Full Dichotomy</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Hubie Chen, 
+
+      
+      Matthew Valeriote
+
+      
+    </span>;
+    <span class="info">PMLR 40:326-337</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Chen15a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Chen15a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Chen15a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Sequential Information Maximization: When is Greedy Near-optimal?</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yuxin Chen, 
+
+      
+      S. Hamed Hassani, 
+
+      
+      Amin Karbasi, 
+
+      
+      Andreas Krause
+
+      
+    </span>;
+    <span class="info">PMLR 40:338-363</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Chen15b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Chen15b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Chen15b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficient Sampling for Gaussian Graphical Models  via Spectral Sparsification</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Dehua Cheng, 
+
+      
+      Yu Cheng, 
+
+      
+      Yan Liu, 
+
+      
+      Richard Peng, 
+
+      
+      Shang-Hua Teng
+
+      
+    </span>;
+    <span class="info">PMLR 40:364-390</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Cheng15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Cheng15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Cheng15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Stochastic Block Model and Community Detection in Sparse Graphs: A spectral algorithm with optimal rate of recovery</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Peter Chin, 
+
+      
+      Anup Rao, 
+
+      
+      Van Vu
+
+      
+    </span>;
+    <span class="info">PMLR 40:391-423</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Chin15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Chin15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Chin15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">On-Line Learning Algorithms for Path Experts with Non-Additive Losses</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Corinna Cortes, 
+
+      
+      Vitaly Kuznetsov, 
+
+      
+      Mehryar Mohri, 
+
+      
+      Manfred Warmuth
+
+      
+    </span>;
+    <span class="info">PMLR 40:424-447</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Cortes15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Cortes15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Cortes15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Truthful Linear Regression</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Rachel Cummings, 
+
+      
+      Stratis Ioannidis, 
+
+      
+      Katrina Ligett
+
+      
+    </span>;
+    <span class="info">PMLR 40:448-483</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Cummings15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Cummings15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Cummings15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A PTAS for Agnostically Learning Halfspaces</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Amit Daniely
+
+      
+    </span>;
+    <span class="info">PMLR 40:484-502</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Daniely15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Daniely15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Daniely15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">S2: An Efficient Graph Based Active Learning Algorithm with Application to Nonparametric Classification</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Gautam Dasarathy, 
+
+      
+      Robert Nowak, 
+
+      
+      Xiaojin Zhu
+
+      
+    </span>;
+    <span class="info">PMLR 40:503-522</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Dasarathy15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Dasarathy15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Dasarathy15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Improved Sum-of-Squares Lower Bounds for Hidden Clique and Hidden Submatrix Problems</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yash Deshpande, 
+
+      
+      Andrea Montanari
+
+      
+    </span>;
+    <span class="info">PMLR 40:523-562</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Deshpande15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Deshpande15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Deshpande15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Contextual Dueling Bandits</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Miroslav Dudík, 
+
+      
+      Katja Hofmann, 
+
+      
+      Robert E. Schapire, 
+
+      
+      Aleksandrs Slivkins, 
+
+      
+      Masrour Zoghi
+
+      
+    </span>;
+    <span class="info">PMLR 40:563-587</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Dudik15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Dudik15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Dudik15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Beyond Hartigan Consistency: Merge Distortion Metric for Hierarchical Clustering</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Justin Eldridge, 
+
+      
+      Mikhail Belkin, 
+
+      
+      Yusu Wang
+
+      
+    </span>;
+    <span class="info">PMLR 40:588-606</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Eldridge15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Eldridge15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Eldridge15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Faster Algorithms for Testing under Conditional Sampling</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Moein Falahatgar, 
+
+      
+      Ashkan Jafarpour, 
+
+      
+      Alon Orlitsky, 
+
+      
+      Venkatadheeraj Pichapati, 
+
+      
+      Ananda Theertha Suresh
+
+      
+    </span>;
+    <span class="info">PMLR 40:607-636</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Falahatgar15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Falahatgar15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Falahatgar15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning and inference in the presence of corrupted inputs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Uriel Feige, 
+
+      
+      Yishay Mansour, 
+
+      
+      Robert Schapire
+
+      
+    </span>;
+    <span class="info">PMLR 40:637-657</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Feige15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Feige15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Feige15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">From Averaging to Acceleration, There is Only a Step-size</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Nicolas Flammarion, 
+
+      
+      Francis Bach
+
+      
+    </span>;
+    <span class="info">PMLR 40:658-695</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Flammarion15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Flammarion15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Flammarion15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Variable Selection is Hard</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Dean Foster, 
+
+      
+      Howard Karloff, 
+
+      
+      Justin Thaler
+
+      
+    </span>;
+    <span class="info">PMLR 40:696-709</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Foster15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Foster15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Foster15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Vector-Valued Property Elicitation</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Rafael Frongillo, 
+
+      
+      Ian A. Kash
+
+      
+    </span>;
+    <span class="info">PMLR 40:710-727</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Frongillo15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Frongillo15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Frongillo15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Competing with the Empirical Risk Minimizer in a Single Pass</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Roy Frostig, 
+
+      
+      Rong Ge, 
+
+      
+      Sham M. Kakade, 
+
+      
+      Aaron Sidford
+
+      
+    </span>;
+    <span class="info">PMLR 40:728-763</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Frostig15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Frostig15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Frostig15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Chaining Algorithm for Online Nonparametric Regression</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Pierre Gaillard, 
+
+      
+      Sébastien Gerchinovitz
+
+      
+    </span>;
+    <span class="info">PMLR 40:764-796</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Gaillard15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Gaillard15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Gaillard15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Escaping From Saddle Points — Online Stochastic Gradient for Tensor Decomposition</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Rong Ge, 
+
+      
+      Furong Huang, 
+
+      
+      Chi Jin, 
+
+      
+      Yang Yuan
+
+      
+    </span>;
+    <span class="info">PMLR 40:797-842</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Ge15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Ge15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Ge15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning the dependence structure of rare events: a non-asymptotic study</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Nicolas Goix, 
+
+      
+      Anne Sabourin, 
+
+      
+      Stéphan Clémen\ccon
+
+      
+    </span>;
+    <span class="info">PMLR 40:843-860</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Goix15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Goix15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Goix15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Thompson Sampling for Learning Parameterized Markov Decision Processes</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Aditya Gopalan, 
+
+      
+      Shie Mannor
+
+      
+    </span>;
+    <span class="info">PMLR 40:861-898</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Gopalan15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Gopalan15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Gopalan15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Computational Lower Bounds for Community Detection on Random Graphs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Bruce Hajek, 
+
+      
+      Yihong Wu, 
+
+      
+      Jiaming Xu
+
+      
+    </span>;
+    <span class="info">PMLR 40:899-928</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Hajek15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Hajek15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Hajek15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Adaptive Recovery of Signals by Convex Optimization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Zaid Harchaoui, 
+
+      
+      Anatoli Juditsky, 
+
+      
+      Arkadi Nemirovski, 
+
+      
+      Dmitry Ostrovsky
+
+      
+    </span>;
+    <span class="info">PMLR 40:929-955</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Harchaoui15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Harchaoui15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Harchaoui15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Tensor principal component analysis via sum-of-square proofs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Samuel B. Hopkins, 
+
+      
+      Jonathan Shi, 
+
+      
+      David Steurer
+
+      
+    </span>;
+    <span class="info">PMLR 40:956-1006</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Hopkins15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Hopkins15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Hopkins15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Fast Exact Matrix Completion with Finite Samples</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Prateek Jain, 
+
+      
+      Praneeth Netrapalli
+
+      
+    </span>;
+    <span class="info">PMLR 40:1007-1034</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Jain15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Jain15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Jain15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Exp-Concavity of Proper Composite Losses</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Parameswaran Kamalaruban, 
+
+      
+      Robert Williamson, 
+
+      
+      Xinhua Zhang
+
+      
+    </span>;
+    <span class="info">PMLR 40:1035-1065</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Kamalaruban15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Kamalaruban15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Kamalaruban15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">On Learning Distributions from their Samples</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Sudeep Kamath, 
+
+      
+      Alon Orlitsky, 
+
+      
+      Dheeraj Pichapati, 
+
+      
+      Ananda Theertha Suresh
+
+      
+    </span>;
+    <span class="info">PMLR 40:1066-1100</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Kamath15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Kamath15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Kamath15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">MCMC Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Varun Kanade, 
+
+      
+      Elchanan Mossel
+
+      
+    </span>;
+    <span class="info">PMLR 40:1101-1128</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Kanade15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Kanade15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Kanade15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Online PCA with Spectral Bounds</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Zohar Karnin, 
+
+      
+      Edo Liberty
+
+      
+    </span>;
+    <span class="info">PMLR 40:1129-1140</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Karnin15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Karnin15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Karnin15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Regret Lower Bound and Optimal Algorithm in Dueling Bandit Problem</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Junpei Komiyama, 
+
+      
+      Junya Honda, 
+
+      
+      Hisashi Kashima, 
+
+      
+      Hiroshi Nakagawa
+
+      
+    </span>;
+    <span class="info">PMLR 40:1141-1154</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Komiyama15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Komiyama15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Komiyama15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Second-order Quantile Methods for Experts and Combinatorial Games</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Wouter M. Koolen, 
+
+      
+      Tim Van Erven
+
+      
+    </span>;
+    <span class="info">PMLR 40:1155-1175</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Koolen15a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Koolen15a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Koolen15a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Hierarchical Label Queries with Data-Dependent Partitions</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Samory Kpotufe, 
+
+      
+      Ruth Urner, 
+
+      
+      Shai Ben-David
+
+      
+    </span>;
+    <span class="info">PMLR 40:1176-1189</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Kpotufe15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Kpotufe15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Kpotufe15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Algorithms for Lipschitz Learning on Graphs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Rasmus Kyng, 
+
+      
+      Anup Rao, 
+
+      
+      Sushant Sachdeva, 
+
+      
+      Daniel A. Spielman
+
+      
+    </span>;
+    <span class="info">PMLR 40:1190-1223</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Kyng15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Kyng15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Kyng15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Low Rank Matrix Completion with Exponential Family Noise</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jean Lafond
+
+      
+    </span>;
+    <span class="info">PMLR 40:1224-1243</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Lafond15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Lafond15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Lafond15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Bad Universal Priors and Notions of Optimality</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jan Leike, 
+
+      
+      Marcus Hutter
+
+      
+    </span>;
+    <span class="info">PMLR 40:1244-1259</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Leike15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Leike15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Leike15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning with Square Loss: Localization through Offset Rademacher Complexity</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Tengyuan Liang, 
+
+      
+      Alexander Rakhlin, 
+
+      
+      Karthik Sridharan
+
+      
+    </span>;
+    <span class="info">PMLR 40:1260-1285</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Liang15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Liang15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Liang15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Achieving All with No Parameters: AdaNormalHedge</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Haipeng Luo, 
+
+      
+      Robert E. Schapire
+
+      
+    </span>;
+    <span class="info">PMLR 40:1286-1304</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Luo15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Luo15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Luo15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Lower and Upper Bounds on the Generalization of  Stochastic   Exponentially Concave Optimization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Mehrdad Mahdavi, 
+
+      
+      Lijun Zhang, 
+
+      
+      Rong Jin
+
+      
+    </span>;
+    <span class="info">PMLR 40:1305-1320</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Mahdavi15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Mahdavi15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Mahdavi15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Correlation Clustering with Noisy Partial Information</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Konstantin Makarychev, 
+
+      
+      Yury Makarychev, 
+
+      
+      Aravindan Vijayaraghavan
+
+      
+    </span>;
+    <span class="info">PMLR 40:1321-1342</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Makarychev15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Makarychev15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Makarychev15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Online Density Estimation of Bradley-Terry Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Issei Matsumoto, 
+
+      
+      Kohei Hatano, 
+
+      
+      Eiji Takimoto
+
+      
+    </span>;
+    <span class="info">PMLR 40:1343-1359</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Matsumoto15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Matsumoto15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Matsumoto15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">First-order regret bounds for combinatorial semi-bandits</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Gergely Neu
+
+      
+    </span>;
+    <span class="info">PMLR 40:1360-1375</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Neu15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Neu15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Neu15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Norm-Based Capacity Control in Neural Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Behnam Neyshabur, 
+
+      
+      Ryota Tomioka, 
+
+      
+      Nathan Srebro
+
+      
+    </span>;
+    <span class="info">PMLR 40:1376-1401</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Neyshabur15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Neyshabur15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Neyshabur15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Cortical Learning via Prediction</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Christos H. Papadimitriou, 
+
+      
+      Santosh S. Vempala
+
+      
+    </span>;
+    <span class="info">PMLR 40:1402-1422</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Papadimitriou15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Papadimitriou15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Papadimitriou15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Partitioning Well-Clustered Graphs: Spectral Clustering Works!</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Richard Peng, 
+
+      
+      He Sun, 
+
+      
+      Luca Zanetti
+
+      
+    </span>;
+    <span class="info">PMLR 40:1423-1455</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Peng15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Peng15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Peng15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Batched Bandit Problems</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Vianney Perchet, 
+
+      
+      Philippe Rigollet, 
+
+      
+      Sylvain Chassang, 
+
+      
+      Erik Snowberg
+
+      
+    </span>;
+    <span class="info">PMLR 40:1456-1456</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Perchet15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Perchet15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Perchet15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Hierarchies of Relaxations for Online Prediction Problems with Evolving Constraints</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Alexander Rakhlin, 
+
+      
+      Karthik Sridharan
+
+      
+    </span>;
+    <span class="info">PMLR 40:1457-1479</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Rakhlin15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Rakhlin15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Rakhlin15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Fast Mixing for Discrete Point Processes</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Patrick Rebeschini, 
+
+      
+      Amin Karbasi
+
+      
+    </span>;
+    <span class="info">PMLR 40:1480-1500</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Rebeschini15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Rebeschini15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Rebeschini15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Generalized Mixability via Entropic Duality</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Mark D. Reid, 
+
+      
+      Rafael M. Frongillo, 
+
+      
+      Robert C. Williamson, 
+
+      
+      Nishant Mehta
+
+      
+    </span>;
+    <span class="info">PMLR 40:1501-1522</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Reid15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Reid15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Reid15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">On the Complexity of Bandit Linear Optimization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ohad Shamir
+
+      
+    </span>;
+    <span class="info">PMLR 40:1523-1551</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Shamir15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Shamir15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Shamir15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">An Almost Optimal PAC Algorithm</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Hans U. Simon
+
+      
+    </span>;
+    <span class="info">PMLR 40:1552-1563</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Simon15a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Simon15a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Simon15a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Minimax rates for memory-bounded sparse linear regression</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jacob Steinhardt, 
+
+      
+      John Duchi
+
+      
+    </span>;
+    <span class="info">PMLR 40:1564-1587</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Steinhardt15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Steinhardt15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Steinhardt15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Interactive Fingerprinting Codes and the Hardness of Preventing False Discovery</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Thomas Steinke, 
+
+      
+      Jonathan Ullman
+
+      
+    </span>;
+    <span class="info">PMLR 40:1588-1628</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Steinke15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Steinke15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Steinke15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Convex Risk Minimization and Conditional Probability Estimation</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Matus Telgarsky, 
+
+      
+      Miroslav Dudík, 
+
+      
+      Robert Schapire
+
+      
+    </span>;
+    <span class="info">PMLR 40:1629-1682</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Telgarsky15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Telgarsky15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Telgarsky15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Regularized Linear Regression: A Precise Analysis of the Estimation Error</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Christos Thrampoulidis, 
+
+      
+      Samet Oymak, 
+
+      
+      Babak Hassibi
+
+      
+    </span>;
+    <span class="info">PMLR 40:1683-1709</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Thrampoulidis15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Thrampoulidis15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Thrampoulidis15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Max vs Min: Tensor Decomposition and ICA with nearly Linear Sample Complexity</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Santosh S. Vempala, 
+
+      
+      Ying. Xiao
+
+      
+    </span>;
+    <span class="info">PMLR 40:1710-1723</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Vempala15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Vempala15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Vempala15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">On Convergence of Emphatic Temporal-Difference Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      H. Yu
+
+      
+    </span>;
+    <span class="info">PMLR 40:1724-1751</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v40/Yu15.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v40/Yu15.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v40/Yu15.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+<p class="rss-subscribe">subscribe <a href="/v40/feed.xml">via RSS</a></p>
+
+<!-- Search Widget -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../js/search.js"></script>
+
+      </div>
+    </div>   
+  </body>
+
+    <body>
+  <div id="content">
+    <center>This site last compiled Mon, 29 May 2017 07:23:37 +0000</center>
+
+    <table width="100%">
+      <tr>
+	<td align="left"><font size="-1">
+	    <i><a href="https://github.com/mlresearch/v40">Github Account</a></i></font></td>
+	<td align="right"><font size="-1">
+	    Copyright &copy <a href="http://proceedings.mlr.press">PMLR</a> 2017. All rights reserved.</font></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+
+</html>

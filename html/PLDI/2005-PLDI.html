@@ -1,0 +1,2754 @@
+
+<!doctype html>
+<head><script type="text/javascript">/* <![CDATA[ */_cf_loadingtexthtml="<img alt=' ' src='/cf_scripts/scripts/ajax/resources/cf/images/loading.gif'/>";
+_cf_contextpath="";
+_cf_ajaxscriptsrc="/cf_scripts/scripts/ajax";
+_cf_jsonprefix='//';
+_cf_websocket_port=0;
+_cf_flash_policy_port=0;
+_cf_clientid='08E659AAB26216212457163E8AE5F7B9';/* ]]> */</script><script type="text/javascript" src="/cf_scripts/scripts/ajax/messages/cfmessage.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfajax.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfform.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/masks.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfformhistory.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfrichtexteditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/chart/cfchart-server.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/animation/animation-min.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ext/ext-all.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfwindow.js"></script>
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/ext/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/cf/cf.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/dl.css" />
+<title>Proceedings of the 2005 ACM SIGPLAN conference on Programming language design and implementation</title>
+<style type="text/css"><!--
+    body {margin-left: 0em; margin-top: 0}
+    a:link {text-decoration: underline; 	Color: #1d4d0f;}
+    a:visited  { color: #990033; text-decoration: underline;}
+    a:hover {color: red; text-decoration: none}
+    a.dLink1:link {color:#336699}
+    a.dLink1:visited {color:#666666}
+	a.isblack:link {text-decoration: underline; 	Color: #000000;}
+    a.isblack:visited  { color: #000000; text-decoration: underline;}
+    a.isblack:hover {color: #000000; text-decoration: none}
+    h1 {font-size: 140%; margin-bottom: 0}
+	ul {margin-top: .25em; list-style-type: disc}
+	ol {margin-top: .25em;}
+	li {padding-bottom: .25em;}
+    h2 {color: white; background-color: #069; 
+        font-size: 100%; padding-left: 1em;
+		margin: 0}
+	h3 {color: black; background-color: yellow; 
+    	font-size: 100%;
+		margin: 0}
+	 h4 {color: black; background-color: #99c5e8; 
+        font-size: 100%;
+		margin: 0}
+    hr {color: #39176d;}
+    form {margin-top: 10}
+    form.xrs {margin-top: 0}
+	
+	a {text-decoration: none; }
+	
+	input {font-size: 1em;}
+	.chevron {color: #ff0000;}
+	.light-blue {color:#336699;}
+	.black {color:#000000;}
+	
+	
+	.mono-text {font-size: 14px; font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;}
+	
+	/* ### standard text styles, smallest to largest ### */
+	
+	.footer-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .75em; line-height: 1.33em;
+		text-indent: -.75 em; margin-left: 2em; margin-right: .75em;}
+		
+	.footer-copy-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em; line-height: 1.3em;
+		margin-left: .75em; margin-right: .75em;}
+		
+	.small-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; padding-bottom : 2px;
+	  	padding-top : 2px;}
+		
+	.small-link-text2 {font-size: .83em !important; 
+	}
+
+	.smallerer-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .65em;}
+	.smaller-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em;}		
+	.small-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em;}
+	.small-textb {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; font-weight: bold;}
+	.medium-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em;}
+	.mediumb-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em; font-weight: bold;}
+	.large-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1.3em;}		
+	.instr-text {font-family: Arial, Helvetica, sans-serif;
+		color:#666666; font-size: .83em;}
+		
+	.list-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .83em; line-height: 1.3em;}
+	.list-link-btext {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; line-height: 1.3em;}
+	
+	.searchbox-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;}
+	.footer-header-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;
+		margin-left: .75em; margin-right: .75em;}
+	.medium-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold; line-height: 1em;
+		text-indent: -1.25em; margin-left: 2em; margin-right: .75em;}
+	
+	.text16 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 16px;}
+		
+	.text14 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 14px;}
+	
+	.text12 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 12px;}
+		
+	.text10 {font-family: Arial, Helvetica, sans-serif;
+	    color:#000000; font-size: 12px;}
+		
+	.text9 {font-family: Arial, Helvetica, sans-serif;
+	   color:#000000; font-size: 12px;}
+	
+	.error-text {color:red;}
+	
+	.small-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: .75em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+
+	.medium-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1.3em; line-height: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.medium-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+
+		#side {
+			width: 10px;
+			float: left;
+			margin-left: -1px;
+			padding: 2px;
+			}
+							
+		#content {
+			padding: 2px;
+			margin-left: 25px;
+			
+		        
+		        }
+	 .fulltext_lnk {border:0px;
+	 				 margin-right: 2px;
+					 vertical-align:baseline;
+	 				}
+	 
+	  .leftcoltab { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:530px;  /* for IE5/WIN */
+		  width:520px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	  .rightcoltab {
+    float: right;
+    margin: 0;
+    padding: 5px;
+    position: relative;
+    right: 50px;
+    top: 25px;
+    width: 350px;
+    z-index: 99;
+}
+	  .centercoltab {
+		  position:absolute;
+		  padding:0 0px;
+		  }
+	  .alt {
+		background: #ece9d8;
+		margin: 0;
+		padding: 1px;
+		}
+		.leftcolc { 
+	position:relative;
+	top:5px;
+	left:5px;
+	float:left;
+	width:420px;  /* for IE5/WIN */
+	width:400px; /* actual value */
+	margin:0 0 0px 0;
+	padding:5px;
+	z-index:100;
+	}
+.rightcolc {
+	position:relative;
+	top:0px;
+	right:0px;
+	float:right;
+	margin:0 0px;
+	padding:0px;
+	width:500px;
+	z-index:99;
+	}
+.centercolc {
+	position:absolute;
+	padding:0 0px;
+	}
+	
+	.leftcoltabv { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:460px;  /* for IE5/WIN */
+		  width:350px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	.rightcoltabv {
+		position:relative;
+		top:5px;
+		right:0px;
+		float:right;
+		margin:0 0px 0 0;
+		padding:15px;
+		width:480px;
+		z-index:99;
+		}
+		
+.x-tabs-strip-wrap {
+	overflow-y: hidden !important;
+}
+  --></style>
+<script src="js/tagcanvas.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function loadCloud() {
+	try {
+	  TagCanvas.Start('myCanvas','tags',{
+		textColour: '#000000',
+		outlineColour: '#ff00ff',
+		reverse: true,
+		shuffleTags:true,
+		depth: 0.8,
+		maxSpeed: 0.05,
+		textHeight: 12,
+		initial: [0.000, 0.050],
+		shape: "hring",
+		lock: "x"
+	  });
+	} catch(e) {
+	  // something went wrong, hide the canvas container
+	  // document.getElementById('myCanvasContainer').style.display = 'none';
+	}
+  };
+</script>
+<script type="text/javascript" src="cfformprotect/js/cffp.js"></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<style type="text/css"><!--
+.google-visualization-orgchart-node {
+    background-color: #FFFFFF !important;
+    border: 2px solid #AFCF40 !important;
+    cursor: default;
+    font-family: arial,helvetica;
+    text-align: center;
+    vertical-align: middle;
+}
+
+iframe {float:right; 
+		margin:10px;
+		border: 2px solid #1B4D0E;
+		
+		}
+
+a.boxed:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxed:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxed:hover {color: red !important; text-decoration: underline !important;}
+
+a.boxedh:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxedh:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxedh:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedm:link {text-decoration: none !important; 	Color: #606060 !important;}
+a.boxedm:visited  { color: #606060 !important; text-decoration: none !important;}
+a.boxedm:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedl:link {text-decoration: none !important; 	Color: #808080   !important;}
+a.boxedl:visited  { color: 	#808080 !important; text-decoration: none !important;}
+a.boxedl:hover {color: red !important; text-decoration: underline !important;}				
+
+.google-visualization-orgchart-linebottom {
+    border-bottom: 1px solid #006699 !important;
+}
+.google-visualization-orgchart-lineleft {
+    border-left: 1px solid #006699 !important;
+}
+
+.google-visualization-orgchart-lineright {
+    border-right: 1px solid #006699 !important;
+}
+
+--></style>
+<script type="text/javascript">
+
+
+function settab() {
+    var mytabs = ColdFusion.Layout.getTabLayout('citationdetails');
+   
+ 
+  mytabs.on('tabchange', function(tabpanel,activetab) { document.cookie = 'picked=' + '1065010' + ',' + activetab.id; })
+ 
+}
+
+
+function letemknow(){
+  ColdFusion.Window.show('letemknow');
+}
+
+function letemknow2(){
+  ColdFusion.Window.show('letemknow2');
+}
+
+
+
+
+
+function testthis(){
+
+alert('test');
+}
+function loadalert(){ 
+ alert("I am in the load alert");
+ 
+}
+function loadalert2(){ 
+  alert("I am in the load alert2");
+ 
+}
+</script>
+<script type='text/javascript'>
+	  	google.load('visualization', '1', {packages:['orgchart']});
+	    google.setOnLoadCallback(drawChart);
+	  
+	  function drawChart() {
+	    var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+  	  
+		data.addRows([
+          [{v:'0', f:'<div style="color:black; font-size:150%; font-style:normal">CCS&nbsp;for&nbsp;this&nbsp;Proceeding</div>'}, '', ''],
+		  
+        ]);
+		
+		if (document.getElementById('chart_div')) {
+       var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+       chart.draw(data, {allowHtml:true});
+		}
+      }
+	  
+</script>
+<script type="text/javascript">
+ function expandcollapse(anchor,whichone) {
+	 var inner = document.getElementById(anchor);
+	 var theshow = "toShow" + whichone;
+ 	 var thehide = "toHide" + whichone;
+	 var span = document.getElementById(theshow);
+     span.style.display = (span.style.display=='inline')?'none':'inline';
+     var span = document.getElementById(thehide);
+     span.style.display = (span.style.display=='none')?'inline':'none';
+     inner.innerHTML = (inner.innerHTML=='collapse')?'expand':'collapse';
+    }
+
+  
+</script>
+<script type="text/javascript">
+ /* <!-- Begin
+	if(document.layers || document.all) {
+	a = 1;
+	setInterval("Jump()", 10);
+	}
+	function Jump() {
+	a = a + 1;
+	//self.moveBy((Math.random() * a * 2 - a), (Math.random() * a * 2) - a);
+	}
+//  End --> */
+</script>
+<script type="text/javascript">
+function expandWatson(divID,theConcept) { 
+			if (document.getElementById(divID).style.display == "none") {
+				document.getElementById(divID).style.display = "block";
+				document.getElementById(divID).innerHTML = theConcept + "<br />" + document.getElementById(divID).innerHTML;
+			}
+			 else {
+				 document.getElementById(divID).style.display = "none"
+			}
+		}
+</script>
+
+<script type="text/javascript">
+  function togglePatMap() {
+        var div = document.getElementById('patmap'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsepmapa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				httpGetAsyncwID("patent.cfm?id=1065010",'patmap');
+				httpGetAsyncwID("simmap_track.cfm?id=1065010&how=live",'blackhole');
+			}
+			else {
+				httpGetAsyncwID("simmap_track.cfm?id=1065010&how=cache",'blackhole');
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsepmapa").src = "images/expand.png";
+        }
+    }
+  
+  function toggleCO() {
+        var div = document.getElementById('codisp'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsecoa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				/* httpGetAsyncwID("coint.cfm?id=1065010",'codisp'); */
+				/*httpGetAsyncwID("simmap_track.cfm?id=1065010&how=live",'blackhole'); */
+			}
+			else {
+				/* httpGetAsyncwID("simmap_track.cfm?id=1065010&how=cache",'blackhole'); */
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsecoa").src = "images/expand.png";
+        }
+    }
+	
+	function httpGetAsyncwID(theUrl,theID) {
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+				
+				document.getElementById(theID).innerHTML=xmlHttp.responseText;
+		}
+		xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		xmlHttp.send();
+	}
+</script>
+<meta name="citation_publisher" content="ACM"> <meta name="citation_authors" content="General Chair-Sarkar, Vivek; Program Chair-Hall, Mary"> <meta name="citation_conference_title" content="Proceedings of the 2005 ACM SIGPLAN conference on Programming language design and implementation"> <meta name="citation_date" content="06/12/2005"> <meta name="citation_isbn" content="1-59593-056-6"> <meta name="citation_abstract_html_url" content="http://dl.acm.org/citation.cfm?id=1065010">
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFAJAXPROXY');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFFORM');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFDIV');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFTEXTAREA');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(drawChart,null,false,true);
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFWINDOW');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10105006976803777=function()
+	{
+		_cf_bind_init_10105006976803778=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow-body','bindExpr':['letemknow.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10105006976803778);var _cf_window=ColdFusion.Window.create('letemknow','<div style=\'text-align:left; color:black;\'>Did you know the ACM DL App is now available?</div>','letemknow.cfm',{ modal:false, closable:true, divid:'cf_window10105006976803776', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:75, y:125});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10105006976803777);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10105006976803780=function()
+	{
+		_cf_bind_init_10105006976803781=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow2-body','bindExpr':['letemknow_recomm.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10105006976803781);var _cf_window=ColdFusion.Window.create('letemknow2','<div style=\'text-align:left; color:black;\'>Did you know your Organization can subscribe to the ACM Digital Library?</div>','letemknow_recomm.cfm',{ modal:false, closable:true, divid:'cf_window10105006976803779', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:70, y:175});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10105006976803780);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10105006976803783=function()
+	{
+		_cf_bind_init_10105006976803784=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'theguide-body','bindExpr':['whatisguide.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10105006976803784);var _cf_window=ColdFusion.Window.create('theguide','The ACM Guide to Computing Literature','whatisguide.cfm',{ modal:false, closable:true, divid:'cf_window10105006976803782', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10105006976803783);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10105006976803786=function()
+	{
+		_cf_bind_init_10105006976803787=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'thetags-body','bindExpr':['showthetags.cfm?id=1065010']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10105006976803787);var _cf_window=ColdFusion.Window.create('thetags','All Tags','showthetags.cfm?id=1065010',{ modal:false, closable:true, divid:'cf_window10105006976803785', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10105006976803786);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10105006976803789=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theformats','Export Formats','',{ modal:false, closable:true, divid:'cf_window10105006976803788', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:250, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10105006976803789);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10105006976803791=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theexplaination','','',{ modal:false, closable:true, divid:'cf_window10105006976803790', draggable:true, resizable:true, fixedcenter:false, width:600, height:600, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10105006976803791);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10105006976803793=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theservices','','',{ modal:false, closable:true, divid:'cf_window10105006976803792', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10105006976803793);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_10105006976803795=function()
+	{
+		_cf_bind_init_10105006976803796=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'savetobinder-body','bindExpr':['savetobinder.cfm?id=1065010']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_10105006976803796);var _cf_window=ColdFusion.Window.create('savetobinder','Save to Binder','savetobinder.cfm?id=1065010',{ modal:false, closable:true, divid:'cf_window10105006976803794', draggable:true, resizable:true, fixedcenter:true, width:600, height:600, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false, _cf_refreshOnShow:true});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_10105006976803795);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(settab,null,false,true);
+/* ]]> */</script>
+</head>
+
+<body style="text-align:center; font-size:100%"> 
+<script type="text/javascript">
+						addthis_pub             = 'acm'; 
+						//addthis_logo            = 'http://www.addthis.com/images/yourlogo.png';
+						addthis_logo            = 'https://dl.acm.org/images/ACM_transparent.png';
+						addthis_logo_background = 'c2d5fc';
+						addthis_logo_color      = '000000';
+						addthis_brand           = 'Citation Page';
+						addthis_options         = 'favorites, email, slashdot, citeulike, digg, delicious, twitter, myspace, facebook, google, more';
+						</script>
+<script src='AC_RunActiveContent.js' type="text/javascript"></script>
+<div style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<a id="CIT"></a>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFGCMX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFGCMX');</script>
+
+<div id="header">
+<table style="table-layout:fixed; margin-top: 5px; margin-bottom: 10px; border:0px; width:100%; border-collapse:collapse;">
+<tr style="vertical-align:top">
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; width:300px" class="small-link-text2"><img src="/images/ACMDL_Logo.jpg" alt="ACM DL" style="border:0px" usemap="#port" />
+</td>
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; vertical-align:middle;" class="small-link-text2">
+<table style="width:100%; border-collapse:collapse; padding:0px">
+<tr><td style="text-align:center">
+<table>
+<tr>
+<td style="text-align:center">
+<div style="margin:5px auto;color:#356b20;font-size:11pt;line-height:130%; height:63px;">
+Iowa State University
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding-top: 0px; padding-left: 0px; padding-bottom:0px; text-align:right;" class="small-link-text2">
+<p style="margin-top:0px; margin-bottom:10px;">
+<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign in to personalize your Digital Library experience">SIGN IN</a>
+&nbsp;&nbsp;<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign up to personalize your Digital Library experience">SIGN UP</a>
+</p>
+<table style="padding: 5px; border-collapse:collapse; float:right">
+<tr>
+<td class="small-link-text2" style="text-align:right">
+<script type="text/javascript">
+								function encodeInput(form){
+								    	var cleanQuery = form.elements['query'].value.replace(new RegExp( "\\+", "g" ),"%2B");
+										cleanQuery = cleanQuery.replace(/#/g, "%23");
+										cleanQuery = cleanQuery.replace(/(\n)/g, " ");
+										cleanQuery = cleanQuery.trim();
+										
+										
+										var ascii = /^[ -~]+$/;
+										if( !ascii.test( cleanQuery ) ) {
+											var fixedUseQuery = "";
+											for (var i = 0, len = cleanQuery.length; i < len; i++) {
+												var str = "";
+												if( !ascii.test(cleanQuery[i]) ) {
+										 			str = "%26%23" + cleanQuery[i].charCodeAt(0) + ";";
+												} else {
+										 			str = cleanQuery[i];
+												}
+												fixedUseQuery = fixedUseQuery + str;
+											}
+											cleanQuery = fixedUseQuery;
+										}
+										
+
+										form.elements['query'].value = cleanQuery;
+								}
+							</script>
+<form name="qiksearch" action="/results.cfm" onsubmit='encodeInput(this)'>
+<span style="margin-left:0px"><label><input type="text" name="query" size="30" value="" /></label>&nbsp;
+<input style="vertical-align:top;" type="image" alt="Search" name="Go" src="/images/search_small.jpg" />
+</span>
+</form>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td colspan="3" class="small-link-text2" style="padding-bottom:5px; padding-top:0px; text-align:center">
+<div style="margin:0px auto;color:#356b20;line-height:10%;"> </div>
+</td>
+</tr>
+</table>
+<div id="google_translate_element" style="text-align:right; padding-bottom:5px;"></div><script type="text/javascript">function googleTranslateElementInit() {new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<map name="port" id="port">
+<area shape="rect" coords="1,1,60,50" href="https://www.acm.org/" alt="ACM Home Page" />
+<area shape="rect" coords="65,1,275,68" href="https://dl.acm.org/dl.cfm" alt="ACM Digital Library Home Page" />
+</map>
+</div>
+<style>
+  .watsonCont {
+	  width:170px;
+	  
+	  color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	 /* background-color: lightgray;*/
+  }
+  #watsonInside {
+    border-radius: 25px;
+    border: 2px solid #649134;
+	margin-top: 12px;
+	padding: 5px;
+	height: 80px;
+  }
+
+</style>
+<table style="table-layout:fixed; padding-bottom:10px; width:100%; padding:0px;">
+<tr style="vertical-align:top">
+<td style="padding-right:10px; text-align:left" class="small-link-text">
+<div id="divmain" style="border:1px solid #356b20;">
+<div class="large-text" style="text-align:left; margin-left:2px;margin-bottom:5px;">
+<h1 class="mediumb-text" style="margin-top:0px; margin-bottom:0px;">Proceedings of the 2005 ACM SIGPLAN conference on Programming language design and implementation</h1>
+</div>
+<table class="medium-text" style="border-collapse:collapse; padding:0px; margin-left: 2px;">
+<colgroup>
+<col style="width:540px" />
+</colgroup>
+<tr style="vertical-align:top">
+<td>
+<table style="border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px;" />
+<col style="width:auto" />
+<tr style="vertical-align:top">
+</tr>
+</table>
+<table style="margin-top: 10px; border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px" />
+<tr>
+<td valign="top" nowrap="nowrap">
+General Chairs:
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=81100597290&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">Vivek Sarkar</a>
+</td>
+<td valign="bottom">
+<a href="inst_page.cfm?id=60011048" title="Institutional Profile Page"><small>IBM Research</small></a>
+</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">
+Program Chairs:
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=81407592676&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">Mary Hall</a>
+</td>
+<td valign="bottom">
+<small>USC/ISI</small>
+</td>
+</tr>
+</table>
+<table style="margin-top: 10px" border="0" class="medium-text" cellpadding="2" cellspacing="0">
+<tr>
+<td><table border="0" class="medium-text" style="margin-left:5px;" cellpadding="1" cellspacing="0">
+<tr valign="top">
+<td nowrap="nowrap" style="padding-top:10px;">Publication of:</td>
+</tr>
+<tr valign="top">
+<td nowrap="nowrap" style="padding-bottom:0px">&middot;&nbsp;Conference</td>
+</tr>
+<tr valign="top">
+<td style="padding-left:10px;">
+<a href="https://www.research.ibm.com/pldi2005" title="Conference Website" target="_self" class="link-text">PLDI '05</a> ACM SIGPLAN Conference on Programming Language Design and Implementation 2005
+</td>
+</tr>
+<tr valign="top">
+<td style="padding-left:10px; padding-bottom:10px"> Chicago, IL, USA &mdash; June 12 - 15, 2005
+<br />
+<a href="https://www.acm.org/publications" class="small-link-text" title="ACM">ACM</a> <span class="small-link-text">New York, NY</span><span class="small-link-text">, USA</span> <span class="small-link-text"> &copy;2005</span>
+<br />
+</td>
+</tr>
+</table></td>
+</tr>
+</table>
+</td>
+<td rowspan="20">
+<table border="0" class="medium-text" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" style="padding-bottom: 5px;">
+<img src="https://portalparts.acm.org/1070000/1065010/thumb/1065010_thumb.jpg" title="Proceedings of the 2005 ACM SIGPLAN conference on Programming language design and implementation" height="100" width="76" ALT="Proceedings of the 2005 ACM SIGPLAN conference on Programming language design and implementation" />
+</td>
+<td align="left" nowrap="nowrap">
+<img src="images/ACM_mini.jpg" style="vertical-align:middle" title="Published by ACM" alt="Published by ACM" /> 2005 Proceeding<br />
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="baseline" style="padding-bottom:5px; padding-top:5px;">
+<img src="img/stats.jpg" alt="Bibliometrics Data" />&nbsp;
+<a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a>
+</td>
+</tr>
+<tr>
+<td class="small-text" colspan="2" valign="top" style="padding-left:30px;">
+&middot;&nbsp;Citation Count: 3,146<br />
+&middot;&nbsp;Downloads (cumulative): 38,389<br />
+&middot;&nbsp;Downloads (12 Months): 2,136<br />
+&middot;&nbsp;Downloads (6 Weeks): 156<br />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br clear="all" />
+<br clear="all" />
+</div>
+</td>
+<td style="padding-left: 5px; vertical-align:top; text-align:left; width:170px" class="small-link-text">
+<div id="divtools" style="background-color:#ece9d8; text-align:left; padding-top:5px; padding-bottom:5px; ">
+<div class="medium-text" style="margin-left:3px; margin-top:10px;"><h1 class="mediumb-text" style="margin-top:-15px;">Tools and Resources</h1></div>
+<ul title="Tools and Resources" style="list-style: none; list-style-position:outside;
+margin-left: 25px;
+padding-left: 0em;
+text-indent: 0px;
+margin-bottom: 0px;">
+<li style="list-style-image:url(img/toc_small.gif);margin-top:10px;"><span style="margin-left:0px;">
+<span class="small-link-text">TOC Service:</span>
+<img src="images/blanks.gif" border="0" alt="Spacer Image reserves space for checkmark when TOC Service is updated" name="saved" />
+<ul style="margin-left: 0; padding-left: 0; display:inline;">
+<li style="list-style:none; display:inline"><br /><img src="img/email_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Email</a></li>
+<li style="list-style:none; display:inline"><img src="img/rss_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">RSS</a></li>
+</ul>
+</span>
+</li>
+<li style="list-style-image:url(img/binder.gif);margin-top:10px;"><span style="margin-left:0px;">
+<a href="citation.cfm?id=1065010&preflayout=flat#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Save to Binder</a>
+</span></li>
+<li style="list-style-image:url(img/binder_green.gif);margin-top:10px;"><span style="margin-left:0px; margin-bottom:0px">
+<span class="small-link-text">Export Formats:</span>
+<ul style="margin-left: 0; padding-left: 0; margin-bottom:0px;">
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=1065010&expformat=bibtex','theformats');" class="small-link-text">BibTeX</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=1065010&expformat=endnotes','theformats');" class="small-link-text">EndNote</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=1065010&expformat=acmref','theformats');" class="small-link-text">ACM&nbsp;Ref</a></li>
+</ul>
+</span>
+</li>
+<li style="list-style-image:url(img/calbullet.jpg);margin-top:15px;"><span style="margin-left:0px; margin-bottom:0px">
+<span class="small-link-text">Upcoming Conference:</span>
+<ul style="margin-left: 0; padding-left: 0; margin-bottom:0px;">
+<li style="list-style:disc; display:inline; margin-bottom:0px; margin-left:25px;"><a href="http://conf.researchr.org/home/pldi-2018" title="ACM SIGPLAN Conference on Programming Language Design and Implementation" class="small-link-text">PLDI '18</a></li>
+</ul>
+</span>
+</li>
+</ul>
+
+
+<p class="small-link-text" style="padding-top: 0px; margin-left:6px; margin-bottom:0px">Share:</p>
+
+
+<div style="margin-left:5px;" class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_email"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_researchgate"></a>
+<a class="addthis_button_reddit"></a>
+<span class="addthis_separator">|</span>
+<a href="https://www.addthis.com/bookmark.php?v=250&amp;username=acm" class="addthis_button_expanded" title="more"></a>
+</div>
+<script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#username=acm"></script>
+
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="layout" style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<div id="fback" style="text-align:left; padding-top:20px; padding-bottom:20px">
+<span class="small-text" style="padding-right:10px; margin-bottom:0px;">
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#0979667b7d6865246f6c6c6d6b686a6249617827686a6427667b6e" style=" vertical-align:middle"><img src="img/feedbackg.gif" width="20" height="19" alt="Contact The DL Team" border="0" /></a>
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#30405f4244515c1d565555545251535b7058411e51535d1e5f4257"><strong>Contact Us</strong></a>
+<span style="padding:10px;">|</span>
+<span>Switch to <a href="citation.cfm?id=1065010&amp;preflayout=tabs">tabbed view</a> <noscript> (javascript required)</noscript></span>
+</span>
+<div class="small-text" style="margin-top:10px; margin-bottom:5px;">
+<br />
+<a href="#abstract" title="Abstract" style="padding:5px"><span>Abstract</span></a> |
+<a href="#formats" title="Source Materials" style="padding:5px"><span>Source Materials</span></a> |
+<a href="#authors" title="Authors" style="padding:5px"><span>Authors</span></a> |
+<a href="#references" title="References" style="padding:5px"><span style='color:#999999'>References</span></a> |
+<a href="#citedby" title="Cited By" style="padding:5px"><span style='color:#999999'>Cited By</span></a> |
+<a href="#indexterms" title="Index Terms" style="padding:5px"><span style='color:#999999'>Index Terms</span></a> |
+<a href="#source" title="Publication" style="padding:5px"><span>Publication</span></a> |
+<a href="#revs" title="Reviews" style="padding:5px"><span style='color:#999999'>Reviews</span></a> |
+<a href="#comments" title="Comments" style="padding:5px"><span>Comments</span></a>
+|
+<a href="#prox" title="Table of Contents" style="padding:5px"><span>Table of Contents</span></a>
+</div>
+<div style="right: 0pt; border-top:1px solid #356b20; font-size:1px; margin-bottom:20px;" />
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="abstract" class="small-text">ABSTRACT</A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div style="display:inline">It is our great pleasure to welcome you to the 2005 ACM SIGPLAN Conference on Programming Language Design and Implementation - PLDI '05. This year's symposium continues its tradition of being one of the premier forums for presentation of research results and experience reports on leading edge issues of programming languages, compiler technology, and related programming system tools. PLDI gives researchers and practitioners a unique opportunity to share their perspectives on these various aspects of programming language design and implementation.The program includes a collection of 28 papers covering a broad range of issues, including traditional areas such as optimization, register allocation and type theory, along with new areas of interest such as debugging and verification tools, interfaces and dynamic analysis, threads, domain-specific tools and compilers for network processors. This breadth of topics reflects the growing diversity and importance of programming language research. In addition to the papers, we are fortunate to include an invited talk from Maurice Herlihy on new directions in software technology demanded by the coming generation of multi-core microprocessors. Additionally, six tutorials and a poster session showcasing student research will precede the main program.This year, a total of 135 submissions were received. The primary authors came from 21 different countries, with 12 submissions from the Asia-Pacific region, 17 from Europe, 3 from the Middle East, 1 from South America, and the remaining 102 from North America. Of the 135 submissions, 25 of the primary authors were from industry.Each paper was assigned to three program committee members for review. The committee members sought advice from external reviewers, but were responsible for representing the reviews. Prior to the program committee meeting, additional reviews were obtained for papers with conflicting reviews or low confidence reviews. For the second year, the PLDI review process included an author response period. The authors were given 2 days to comment on reviews during the ongoing review process. The program committee met on January 15, at USC/ISI, in Marina del Rey, CA. All seventeen members of the program committee, the program chair and the general chair participated in the program committee meeting.</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="formats" class="small-text"><SPAN class="heading">SOURCE MATERIALS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div class="abstract">
+<SPAN style="font-weight:bold">FRONT MATTER</span>
+</div>
+<div style="margin-left:10px; line-height:180%;">
+<A NAME="FullText" HREF="https://portalparts.acm.org/1070000/1065010/fm/frontmatter.pdf?ip=129.186.251.28" title="PDF" target="_blank">
+<img src="imagetypes/pdf_logo.gif" alt="PDF" border="0" align="middle" style="margin-right: 2px">PDF</A>
+&nbsp;(cover, title page, copyright, foreword, contents, committee)
+</div>
+<div style="margin-top: 10px;" class="abstract">
+<SPAN style="font-weight:bold">BACK MATTER</span>
+</div>
+<div style="margin-left:10px; line-height:180%;">
+<A NAME="FullText" HREF="https://portalparts.acm.org/1070000/1065010/bm/backmatter.pdf?ip=129.186.251.28" title="PDF" target="_blank">
+<img src="imagetypes/pdf_logo.gif" alt="PDF" border="0" align="middle" style="margin-right: 2px">PDF</A>
+&nbsp;(author index)
+</div>
+<div style="margin-top: 10px; height: auto; padding: 5px; ">
+<div style="margin-top:20px;" class="abstract">
+<SPAN style="font-weight:bold">APPEARS IN</span>
+</div>
+<div>
+<a href="/collection.cfm?id=KA10" title="Performance" target="_blank">Performance</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA8" title="Software" target="_blank">Software</a>
+</div>
+</div>
+<br clear="all" />
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="authors" class="small-text"><SPAN class="heading">AUTHORS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<dl title="Authors" style="margin-top:0px">
+<dt style="float: left; clear: left; width: 100%; margin-top: 0px; margin-bottom: 0px;">
+<strong>
+General Chairs
+</strong>
+</dt>
+<dd style="margin: 0 0 0 60px; padding: 0 0 0.5em 0;">
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="//portalparts.acm.org/profiles/81100597290/Sarkar-March-2008.jpg" border="0" align="middle" alt="Vivek Sarkar" hspace="5" />
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<span class="small-text"><strong><a title="author page of Vivek Sarkar" href="author_page.cfm?id=81100597290">Vivek Sarkar</a></strong><br /></span>
+<span class="small-text"><br /><a href="http://www.cs.rice.edu/~vsarkar">homepage</a></span>
+<div style="margin-top: 6px" class="small-text">vsarkar<img src="gifs/at.gif" width="12" height="12" alt="at" />rice.edu</div>
+<span class="small-text">
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong><a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a></strong>:&nbsp;publication history<br />
+<table width="90%" style="margin-top: 1px; margin-bottom: 10px; border-collapse: separate; border-spacing: 3px;" border="0" align="left">
+<tr>
+<td class="small-text">Publication years</td><td class="small-text" align="right">1984-2017</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Publication count</td><td class="small-text" align="right">181</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Citation Count</td><td class="small-text" align="right">3,695</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Available for download</td><td class="small-text" align="right">103</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (6 Weeks)</td><td class="small-text" align="right">241</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (12 Months)</td><td class="small-text" align="right">2,785</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (cumulative)</td><td class="small-text" align="right">41,384</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average downloads per article</td><td class="small-text" align="right">401.79</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average citations per article</td><td class="small-text" align="right">20.41</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of Vivek Sarkar" href="author_page.cfm?id=81100597290&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of Vivek Sarkar
+</td>
+</tr>
+</table>
+</span>
+</dd>
+<dt style="float: left; clear: left; width: 100%; margin-top: 0px; margin-bottom: 0px;">
+<strong>
+Program Chairs
+</strong>
+</dt>
+<dd style="margin: 0 0 0 60px; padding: 0 0 0.5em 0;">
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="gifs/ProfileSilhouette.gif" alt="Author image not provided" align="middle" hspace="5">
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px" colspan="2">
+&nbsp;<span class="small-text"><strong><a title="author page of Mary Hall" href="author_page.cfm?id=81407592676">Mary Hall</a></strong><br /></span>
+<span class="small-text"><br><p style="margin-bottom:-10px;" align="center">No contact information provided yet.</p>
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong><a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a></strong>:&nbsp;publication history<br />
+<table width="90%" style="margin-top: 1px; margin-bottom: 10px; border-collapse: separate; border-spacing: 3px;" border="0" align="left">
+<tr>
+<td class="small-text">Publication years</td><td class="small-text" align="right">1990-2017</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Publication count</td><td class="small-text" align="right">85</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Citation Count</td><td class="small-text" align="right">1,483</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Available for download</td><td class="small-text" align="right">42</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (6 Weeks)</td><td class="small-text" align="right">139</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (12 Months)</td><td class="small-text" align="right">1,923</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (cumulative)</td><td class="small-text" align="right">22,336</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average downloads per article</td><td class="small-text" align="right">531.81</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average citations per article</td><td class="small-text" align="right">17.45</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of Mary Hall" href="author_page.cfm?id=81407592676&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of Mary Hall
+</td>
+</tr>
+</table>
+</span>
+</dd>
+</dl>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="references" class="small-text"><SPAN class="heading">REFERENCES</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+References are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="citedby" class="small-text"><SPAN class="heading">CITED BY</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+Citings are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="indexterms" class="small-text"><SPAN class="heading">INDEX TERMS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 0px;" class="flatbody">
+Index Terms are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="source" class="small-text"><SPAN class="heading">PUBLICATION</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<table border="0" class="medium-text" cellpadding="5" cellspacing="5">
+<tr valign="top">
+<td style="padding: 10px;">Title</td>
+<td style="padding: 10px;">
+<a href="https://www.research.ibm.com/pldi2005" title="Conference Website" target="_self" class="link-text">PLDI '05</a> ACM SIGPLAN Conference on Programming Language Design and Implementation 2005
+</td>
+</tr>
+<tr><td style="padding: 10px;"></td><td style="padding: 10px;">Chicago, IL, USA &mdash; June 12 - 15, 2005</td></tr> <tr><td style="padding: 10px;">Pages</td><td style="padding: 10px;">328</td></tr>
+<tr>
+<td style="padding: 10px;">Sponsors</td>
+<td style="padding: 10px;">
+<a href="sig.cfm?id=SP946"> SIGPLAN</a> ACM Special Interest Group on Programming Languages
+</td>
+</tr>
+<tr>
+<td style="padding: 10px;"></td>
+<td style="padding: 10px;">
+<a href="https://www.acm.org/"> ACM</a> Association for Computing Machinery
+</td>
+</tr>
+<tr><td style="padding: 10px;">Publisher</td><td style="padding: 10px;"><a href="https://www.acm.org/publications">ACM</a> New York, NY, USA</td>
+</tr>
+<tr><td style="padding: 10px;">ISBN</td><td style="padding: 10px;">1-59593-056-6 </td></tr> <tr><td style="padding: 10px;">Order Number</td><td style="padding: 10px;">548050</td></tr>
+<tr valign="top">
+<td style="padding-left: 10px;">Conference</td>
+<td valign="top" align="left" style="padding-bottom: 25px; padding-left:10px;">
+<strong style="padding-right:10px">PLDI</strong><a href="event.cfm?id=RE200" title="Programming Language Design and Implementation">Programming Language Design and Implementation</a>
+<a href="event.cfm?id=RE200" title="Programming Language Design and Implementation"><img border="0" src="https://portalparts.acm.org/event_logos/RE200.jpg" title="PLDI logo" height="24" width="69" ALT="PLDI logo" style="vertical-align:top"></a>
+</td>
+</tr>
+<tr><td colspan="2">Paper Acceptance Rate 28 of 135 submissions, 21%</td></tr> <tr valign="top"><td style="pading-top:20px;" colspan="2">Overall Acceptance Rate 711 of 3,503 submissions, 20%</td></tr>
+<tr valign="top">
+<td colspan="2" style="padding-left:25px;">
+<table>
+<tr><td style="padding: 10px;">
+<img border="0" class="chart" id="4406210590119519-img" src="/CFFileServlet/_cf_chart/4406210590119519.jpg" usemap="#4406210590119519-map" />
+<div id="4406210590119519-tooltip" style="position:fixed;display:none;"></div>
+<map id="4406210590119519-map" name="4406210590119519-map">
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-0" coords="32,143,37,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-1" coords="41,138,45,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-2" coords="49,105,54,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-3" coords="58,121,63,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-4" coords="67,125,71,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-5" coords="75,95,80,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-6" coords="84,115,89,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-7" coords="93,98,97,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-8" coords="101,124,106,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-9" coords="110,127,115,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-10" coords="119,122,123,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-11" coords="127,94,132,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-12" coords="136,91,141,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-13" coords="144,87,149,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-14" coords="153,79,158,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-15" coords="162,72,167,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-16" coords="170,51,175,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-17" coords="179,38,184,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-18" coords="188,29,193,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-0-node-19" coords="196,15,201,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-0" coords="36,196,41,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-1" coords="44,196,49,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-2" coords="53,194,58,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-3" coords="62,194,67,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-4" coords="70,198,75,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-5" coords="79,195,84,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-6" coords="88,195,93,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-7" coords="96,196,101,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-8" coords="105,196,110,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-9" coords="114,199,119,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-10" coords="122,196,127,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-11" coords="131,191,136,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-12" coords="140,185,144,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-13" coords="148,192,153,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-14" coords="157,187,162,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-15" coords="166,187,170,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-16" coords="174,178,179,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-17" coords="183,182,188,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-18" coords="192,184,196,214" />
+<area style="cursor:auto" shape="rect" id="4406210590119519-graph-id0-plotset-plot-1-node-19" coords="200,180,205,214" />
+</map>
+<script data-cfasync="false" src="/cdn-cgi/scripts/af2821b0/cloudflare-static/email-decode.min.js"></script><script>
+if (!CFCHART) {var CFCHART={};};if (!CFCHART.nodes) {CFCHART.nodes={};}
+CFCHART.nodes["4406210590119519"]={};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-0"]={text:"105",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-1"]={text:"112",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-2"]={text:"158",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-3"]={text:"136",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-4"]={text:"130",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-5"]={text:"173",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-6"]={text:"144",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-7"]={text:"169",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-8"]={text:"131",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-9"]={text:"127",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-10"]={text:"135",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-11"]={text:"174",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-12"]={text:"178",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-13"]={text:"184",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-14"]={text:"196",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-15"]={text:"206",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-16"]={text:"236",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-17"]={text:"255",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-18"]={text:"267",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-0-node-19"]={text:"287",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-0"]={text:"28",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-1"]={text:"28",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-2"]={text:"31",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-3"]={text:"31",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-4"]={text:"26",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-5"]={text:"30",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-6"]={text:"30",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-7"]={text:"28",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-8"]={text:"28",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-9"]={text:"25",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-10"]={text:"28",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-11"]={text:"36",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-12"]={text:"45",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-13"]={text:"34",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-14"]={text:"41",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-15"]={text:"41",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-16"]={text:"55",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-17"]={text:"48",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-18"]={text:"46",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["4406210590119519"]["4406210590119519-graph-id0-plotset-plot-1-node-19"]={text:"52",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+</script>
+</td>
+<td style="padding-left:20px;">
+<table style="border-width: 1px; border-style: solid; width:100%;  border-spacing: 6px;" class="text12">
+<tr bgcolor="#ffffff">
+<th style="width:50%">Year</th>
+<th align="right" style="width:15%">Submitted</th>
+<th align="right" style="width:15%">Accepted</th>
+<th align="center">Rate</th>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">PLDI '95</td>
+<td align="right">105</td>
+<td align="right">28</td>
+<td align="center">27%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">PLDI '96</td>
+<td align="right">112</td>
+<td align="right">28</td>
+ <td align="center">25%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">PLDI '97</td>
+<td align="right">158</td>
+<td align="right">31</td>
+<td align="center">20%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">PLDI '98</td>
+<td align="right">136</td>
+<td align="right">31</td>
+<td align="center">23%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">PLDI '99</td>
+<td align="right">130</td>
+<td align="right">26</td>
+<td align="center">20%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">PLDI '00</td>
+<td align="right">173</td>
+<td align="right">30</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">PLDI '01</td>
+<td align="right">144</td>
+<td align="right">30</td>
+<td align="center">21%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">PLDI '02</td>
+<td align="right">169</td>
+<td align="right">28</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">PLDI '03</td>
+<td align="right">131</td>
+<td align="right">28</td>
+<td align="center">21%</td>
+</tr>
+ <tr bgcolor="#ffffff">
+<td style="padding: 10px;">PLDI '04</td>
+<td align="right">127</td>
+<td align="right">25</td>
+<td align="center">20%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">PLDI '05</td>
+<td align="right">135</td>
+<td align="right">28</td>
+<td align="center">21%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">PLDI '06</td>
+<td align="right">174</td>
+<td align="right">36</td>
+<td align="center">21%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">PLDI '07</td>
+<td align="right">178</td>
+<td align="right">45</td>
+<td align="center">25%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">PLDI '08</td>
+<td align="right">184</td>
+<td align="right">34</td>
+<td align="center">18%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">PLDI '09</td>
+<td align="right">196</td>
+<td align="right">41</td>
+<td align="center">21%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">PLDI '10</td>
+<td align="right">206</td>
+<td align="right">41</td>
+<td align="center">20%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">PLDI '11</td>
+ <td align="right">236</td>
+<td align="right">55</td>
+<td align="center">23%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">PLDI '12</td>
+<td align="right">255</td>
+<td align="right">48</td>
+<td align="center">19%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">PLDI '13</td>
+<td align="right">267</td>
+<td align="right">46</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">PLDI '14</td>
+<td align="right">287</td>
+<td align="right">52</td>
+<td align="center">18%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;"><strong>Overall</strong></td>
+<td align="right">3,503</td>
+<td align="right">711</td>
+<td align="center">20%</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</table>
+<br />
+<div class="abstract" style="margin-bottom:10px;">
+<SPAN><strong>APPEARS IN</strong></span>
+</div>
+<div>
+<a href="/collection.cfm?id=KA10" title="Performance" target="_blank">Performance</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA8" title="Software" target="_blank">Software</a>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="revs" class="small-text"><SPAN class="heading">REVIEWS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<br />Reviews are not available for this item
+<div align="left" style="margin-top:30px">
+<a title="Computing Reviews" href="ocr_review_main.cfm">
+<img src="images/ocrs-s.jpg" alt="Computing Reviews logo" border="0" style="vertical-align:middle"></a>
+<ul style="list-style:disc; display:inline-block">
+<li>Access <a href="ocr_review_main.cfm" target="_blank">critical reviews</a> of computing literature.</li>
+<li><a href="http://www.computingreviews.com/Reviewer/" target="_blank">Become a reviewer</a> for Computing Reviews</li>
+</ul>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="comments" class="small-text"><SPAN class="heading">COMMENTS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div>
+<div>
+<p style="margin-left:5px;">
+<strong>Be the first to comment</strong>
+To Post a comment please <a href="signin.cfm">sign in or create</a> a free Web account</a>
+</p>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="prox" class="small-text">Table of Contents</A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;">
+<h5 style="margin-bottom:0px; margin-top:0px" class="medium-text">Proceedings of the 2005 ACM SIGPLAN conference on Programming language design and implementation</h5>
+<h5 class="medium-text" style="margin-bottom:10px; margin-top:10px;">Table of Contents</h5>
+<div style="clear:both">
+<div style="margin-top:5px; margin-bottom: 10px;" class="small-text"><a href="citation.cfm?id=996841&picked=prox" title="previous: PLDI '04"><img hspace="5" align="absmiddle" border="0" src="img/prev.gif" width="19" height="11" alt="previous" />previous proceeding</a> <span style="padding-left:5px;padding-right:5px;">|</span><a href="citation.cfm?id=1133981&picked=prox" title="Next: PLDI '06">next proceeding <img align="absmiddle" hspace="5" border="0" src="img/next.gif" width="19" height="11" alt="next" /></a></div>
+</div>
+<table class="text12" border="0">
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Bug detection and verification</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100285914">Joxan Jaffar</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065013">A serializability violation detector for shared-memory server programs</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100195436">Min Xu</a>,
+<a href="author_page.cfm?id=81100033082">Rastislav Bod&#237;k</a>,
+<a href="author_page.cfm?id=81100455115">Mark D. Hill</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 1-14</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065013" title="DOI">10.1145/1065010.1065013</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065013&ftid=316671&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow2" style="display:inline;"><br /><div style="display:inline">We aim to improve reliability of multithreaded programs by proposing a dynamic detector that detects potentially erroneous program executions and their causes. We design and evaluate a Serializability Violation Detector (SVD) that has two unique ...</div></span>
+<span id="toHide2" style="display:none;"><br /><div style="display:inline">We aim to improve reliability of multithreaded programs by proposing a dynamic detector that detects potentially erroneous program executions and their causes. We design and evaluate a <i>Serializability Violation Detector</i> (SVD) that has two unique goals: (I) triggering automatic recovery from erroneous executions using backward error recovery (BER), or simply alerting users that a software error may have occurred; and (II) helping debug programs by revealing causes of error symptoms.Two properties of SVD help in achieving these goals. First, to detect only erroneous executions, SVD checks serializability of atomic regions, which are code regions that need to be executed atomically. Second, to improve usability, SVD does not require <i>a priori</i> annotations of atomic regions; instead, SVD approximates them using a heuristic. Experimental results on three widely-used multithreaded server programs show that SVD finds real bugs and reports modest false positives. The goal of this paper is to develop a detector suitable for (I) BER-based avoidance of erroneous program executions; and (II) alerting users as software errors occur. We argue that such a detector should have the following two properties.</div></span> <a id="expcoll2" href="JavaScript: expandcollapse('expcoll2',2)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065014">Scalable statistical bug isolation</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100555854">Ben Liblit</a>,
+<a href="author_page.cfm?id=81100223912">Mayur Naik</a>,
+<a href="author_page.cfm?id=81538301756">Alice X. Zheng</a>,
+<a href="author_page.cfm?id=81100399954">Alex Aiken</a>,
+<a href="author_page.cfm?id=81339507945">Michael I. Jordan</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 15-26</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065014" title="DOI">10.1145/1065010.1065014</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065014&ftid=316672&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow3" style="display:inline;"><br /><div style="display:inline">We present a statistical debugging algorithm that isolates bugs in programs containing multiple undiagnosed bugs. Earlier statistical algorithms that focus solely on identifying predictors that correlate with program failure perform poorly when there ...</div></span>
+<span id="toHide3" style="display:none;"><br /><div style="display:inline">We present a statistical debugging algorithm that isolates bugs in programs containing multiple undiagnosed bugs. Earlier statistical algorithms that focus solely on identifying predictors that correlate with program failure perform poorly when there are multiple bugs. Our new technique separates the effects of different bugs and identifies predictors that are associated with individual bugs. These predictors reveal both the circumstances under which bugs occur as well as the frequencies of failure modes, making it easier to prioritize debugging efforts. Our algorithm is validated using several case studies, including examples in which the algorithm identified previously unknown, significant crashing bugs in widely used systems.</div></span> <a id="expcoll3" href="JavaScript: expandcollapse('expcoll3',3)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065015">VYRD: verifYing concurrent programs by runtime refinement-violation detection</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100211898">Tayfun Elmas</a>,
+<a href="author_page.cfm?id=81100391292">Serdar Tasiran</a>,
+<a href="author_page.cfm?id=81100286660">Shaz Qadeer</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 27-37</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065015" title="DOI">10.1145/1065010.1065015</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065015&ftid=316673&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow4" style="display:inline;"><br /><div style="display:inline">We present a runtime technique for checking that a concurrently-accessed data structure implementation, such as a file system or the storage management module of a database, conforms to an executable specification that contains an atomic method per data ...</div></span>
+<span id="toHide4" style="display:none;"><br /><div style="display:inline">We present a runtime technique for checking that a concurrently-accessed data structure implementation, such as a file system or the storage management module of a database, conforms to an executable specification that contains an atomic method per data structure operation. The specification can be provided separately or a non-concurrent, "atomized" interpretation of the implementation can serve as the specification. The technique consists of two phases. In the first phase, the implementation is instrumented in order to record information into a log during execution. In the second, a separate verification thread uses the logged information to drive an instance of the specification and to check whether the logged execution conforms to it. We paid special attention to the general applicability and scalability of the techniques and to minimizing their concurrency and performance impact. The result is a lightweight verification method that provides a significant improvement over testing for concurrent programs.We formalize conformance to a specification using the notion of refinement: Each trace of the implementation must be equivalent to some trace of the specification. Among the novel features of our work are two variations on the definition of refinement appropriate for runtime checking: I/O and "view" refinement. These definitions were motivated by our experience with two industrial-scale concurrent data structure implementations: the Boxwood project, a B-link tree data structure built on a novel storage infrastructure [10] and the Scan file system [9]. I/O and view refinement checking were implemented as a verification tool named VRYD (VerifYing concurrent programs by Runtime Refinement-violation Detection). VYRD was applied to the verification of Boxwood, Java class libraries, and, previously, to the Scan filesystem. It was able to detect previously unnoticed subtle concurrency bugs in Boxwood and the Scan file system, and the known bugs in the Java class libraries and manually constructed examples. Experimental results indicate that our techniques have modest computational cost.</div></span> <a id="expcoll4" href="JavaScript: expandcollapse('expcoll4',4)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065016">Path slicing</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100198278">Ranjit Jhala</a>,
+<a href="author_page.cfm?id=81100319213">Rupak Majumdar</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 38-47</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065016" title="DOI">10.1145/1065010.1065016</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065016&ftid=316674&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow5" style="display:inline;"><br /><div style="display:inline">We present a new technique, path slicing, that takes as input a possibly infeasible path to a target location, and eliminates all the operations that are irrelevant towards the reachability of the target location. A path slice is a subsequence ...</div></span>
+<span id="toHide5" style="display:none;"><br /><div style="display:inline">We present a new technique, <i>path slicing</i>, that takes as input a possibly infeasible path to a target location, and eliminates all the operations that are irrelevant towards the reachability of the target location. A path slice is a subsequence of the original path whose infeasibility guarantees the infeasibility of the original path, and whose feasibility guarantees the existence of some feasible variant of the given path that reaches the target location even though the given path may itself be infeasible. Our method combines the ability of program slicing to look at several program paths, with the precision that dynamic slicing enjoys by focusing on a single path. We have implemented Path Slicing to analyze possible counterexamples returned by the software model checker <sc>Blast</sc>. We show its effectiveness in drastically reducing the size of the counterexamples to less than 1% of their original size. This enables the precise verification of application programs (upto 100KLOC), by allowing the analysis to focus on the part of the counterexample that is relevant to the property being checked.</div></span> <a id="expcoll5" href="JavaScript: expandcollapse('expcoll5',5)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Function interfaces</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100094619">Radu Rugina</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065018">Jungloid mining: helping to navigate the API jungle</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100521702">David Mandelin</a>,
+<a href="author_page.cfm?id=81100196158">Lin Xu</a>,
+<a href="author_page.cfm?id=81100033082">Rastislav Bod&#237;k</a>,
+<a href="author_page.cfm?id=81100165368">Doug Kimelman</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 48-61</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065018" title="DOI">10.1145/1065010.1065018</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065018&ftid=316675&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow7" style="display:inline;"><br /><div style="display:inline">Reuse of existing code from class libraries and frameworks is often difficult because APIs are complex and the client code required to use the APIs can be hard to write. We observed that a common scenario is that the programmer knows what type of object ...</div></span>
+<span id="toHide7" style="display:none;"><br /><div style="display:inline">Reuse of existing code from class libraries and frameworks is often difficult because APIs are complex and the client code required to use the APIs can be hard to write. We observed that a common scenario is that the programmer knows what type of object he needs, but does not know how to write the code to get the object.In order to help programmers write API client code more easily, we developed techniques for synthesizing <i>jungloid</i> code fragments automatically given a simple query that describes that desired code in terms of input and output types. A jungloid is simply a unary expression; jungloids are simple, enabling synthesis, but are also versatile, covering many coding problems, and composable, combining to form more complex code fragments. We synthesize jungloids using both API method signatures and jungloids <i>mined</i> from a corpus of sample client programs.We implemented a tool, <sc>prospector</sc>, based on these techniques. <sc>prospector</sc> is integrated with the Eclipse IDE code assistance feature, and it infers queries from context so there is no need for the programmer to write queries. We tested <sc>prospector</sc> on a set of real programming problems involving APIs; <sc>prospector</sc> found the desired solution for 18 of 20 problems. We also evaluated <sc>prospector</sc> in a user study, finding that programmers solved programming problems more quickly and with more reuse when using <sc>prospector</sc> than without <sc>prospector</sc>.</div></span> <a id="expcoll7" href="JavaScript: expandcollapse('expcoll7',7)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065019">Checking type safety of foreign function calls</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81408592409">Michael Furr</a>,
+<a href="author_page.cfm?id=81338488852">Jeffrey S. Foster</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 62-72</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065019" title="DOI">10.1145/1065010.1065019</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065019&ftid=316676&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow8" style="display:inline;"><br /><div style="display:inline">We present a multi-lingual type inference system for checking type safety across a foreign function interface. The goal of our system is to prevent foreign function calls from introducing type and memory safety violations into an otherwise safe language. ...</div></span>
+<span id="toHide8" style="display:none;"><br /><div style="display:inline">We present a multi-lingual type inference system for checking type safety across a foreign function interface. The goal of our system is to prevent foreign function calls from introducing type and memory safety violations into an otherwise safe language. Our system targets OCaml's FFI to C, which is relatively lightweight and illustrates some interesting challenges in multi-lingual type inference. The type language in our system embeds OCaml types in C types and vice-versa, which allows us to track type information accurately even through the foreign language, where the original types are lost. Our system uses <i>representational</i> types that can model multiple OCaml types, because C programs can observe that many OCaml types have the same physical representation. Furthermore, because C has a low-level view of OCaml data, our inference system includes a dataflow analysis to track memory offsets and tag information. Finally, our type system includes garbage collection information to ensure that pointers from the FFI to the OCaml heap are tracked properly. We have implemented our inference system and applied it to a small set of benchmarks. Our results show that programmers do misuse these interfaces, and our implementation has found several bugs and questionable coding practices in our benchmarks.</div></span> <a id="expcoll8" href="JavaScript: expandcollapse('expcoll8',8)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Types</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100538763">Cormac Flanagan</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065021">Essential language support for generic programming</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100437231">Jeremy G. Siek</a>,
+<a href="author_page.cfm?id=81100082403">Andrew Lumsdaine</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 73-84</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065021" title="DOI">10.1145/1065010.1065021</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065021&ftid=316677&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow10" style="display:inline;"><br /><div style="display:inline">Concepts are an essential language feature for generic programming in the large. Concepts allow for succinct expression of constraints on type parameters of generic algorithms, enable systematic organization of problem domain abstractions, and ...</div></span>
+<span id="toHide10" style="display:none;"><br /><div style="display:inline"><i>Concepts</i> are an essential language feature for generic programming in the large. Concepts allow for succinct expression of constraints on type parameters of generic algorithms, enable systematic organization of problem domain abstractions, and make generic algorithms easier to use. In this paper we present the design of a type system and semantics for concepts that is suitable for non-type-inferencing languages. Our design shares much in common with the type classes of Haskell, though our primary influence is from best practices in the C++ community, where concepts are used to document type requirements for templates in generic libraries. Concepts include a novel combination of associated types and same-type constraints that do not appear in type classes, but that are similar to nested types and type sharing in ML.</div></span> <a id="expcoll10" href="JavaScript: expandcollapse('expcoll10',10)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065022">Semantic type qualifiers</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100656814">Brian Chin</a>,
+<a href="author_page.cfm?id=81100292142">Shane Markstrum</a>,
+<a href="author_page.cfm?id=81100018064">Todd Millstein</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 85-95</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065022" title="DOI">10.1145/1065010.1065022</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065022&ftid=316678&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow11" style="display:inline;"><br /><div style="display:inline">We present a new approach for supporting user-defined type refinements, which augment existing types to specify and check additional invariants of interest to programmers. We provide an expressive language in which users define new refinements and associated ...</div></span>
+<span id="toHide11" style="display:none;"><br /><div style="display:inline">We present a new approach for supporting user-defined type refinements, which augment existing types to specify and check additional invariants of interest to programmers. We provide an expressive language in which users define new refinements and associated type rules. These rules are automatically incorporated by an <i>extensible typechecker</i> during static typechecking of programs. Separately, a <i>soundness checker</i>automatically proves that each refinement's type rules ensure the intended invariant, for all possible programs. We have formalized our approach and have instantiated it as a framework for adding new type qualifiers to C programs. We have used this framework to define and automatically prove sound a host of type qualifiers of different sorts, including pos and neg for integers, tainted and untainted for strings, and nonnull and unique for pointers, and we have applied our qualifiers to ensure important invariants on open-source C programs.</div></span> <a id="expcoll11" href="JavaScript: expandcollapse('expcoll11',11)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065023">Permission-based ownership: encapsulating state in higher-order typed languages</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81320491252">Neel Krishnaswami</a>,
+<a href="author_page.cfm?id=81100454133">Jonathan Aldrich</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 96-106</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065023" title="DOI">10.1145/1065010.1065023</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065023&ftid=316679&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow12" style="display:inline;"><br /><div style="display:inline">Today's module systems do not effectively support information hiding in the presence of shared mutable objects, causing serious problems in the development and evolution of large software systems. Ownership types have been proposed as a solution to this ...</div></span>
+<span id="toHide12" style="display:none;"><br /><div style="display:inline">Today's module systems do not effectively support information hiding in the presence of shared mutable objects, causing serious problems in the development and evolution of large software systems. Ownership types have been proposed as a solution to this problem, but current systems have ad-hoc access restrictions and are limited to Java-like languages.In this paper, we describe System F<i><inf>own</inf></i>, an extension of System F with references and ownership. Our design shows both how ownership fits into standard type theory and the encapsulation benefits it can provide in languages with first-class functions, abstract data types, and parametric polymorphism. By looking at ownership in the setting of SystemF, we were able to develop a design that is more principled and flexible than previous ownership type systems, while also providing stronger encapsulation guarantees.</div></span> <a id="expcoll12" href="JavaScript: expandcollapse('expcoll12',12)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Optimization</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81339504521">Michael Hind</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065025">Code placement for improving dynamic branch prediction accuracy</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100242990">Daniel A. Jim&#233;nez</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 107-116</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065025" title="DOI">10.1145/1065010.1065025</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065025&ftid=316680&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow14" style="display:inline;"><br /><div style="display:inline">Code placement techniques have traditionally improved instruction fetch bandwidth by increasing instruction locality and decreasing the number of taken branches. However, traditional code placement techniques have less benefit in the presence of a trace ...</div></span>
+<span id="toHide14" style="display:none;"><br /><div style="display:inline">Code placement techniques have traditionally improved instruction fetch bandwidth by increasing instruction locality and decreasing the number of taken branches. However, traditional code placement techniques have less benefit in the presence of a trace cache that alters the placement of instructions in the instruction cache. Moreover, as pipelines have become deeper to accommodate increasing clock rates, branch misprediction penalties have become a significant impediment to performance. We evaluate <i>pattern history table partitioning</i>, a feedback directed code placement technique that explicitly places conditional branches so that they are less likely to interfere destructively with one another in branch prediction tables. On SPEC CPU benchmarks running on an Intel Pentium 4, branch mispredictions are reduced by up to 22% and 3.5% on average. This reduction yields a speedup of up to 16.0% and 4.5% on average. By contrast, branch alignment, a previous code placement technique, yields only up to a 4.7% speedup and less than 1% on average.</div></span> <a id="expcoll14" href="JavaScript: expandcollapse('expcoll14',14)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065026">Optimising aspectJ</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100580373">Pavel Avgustinov</a>,
+<a href="author_page.cfm?id=81100285072">Aske Simon Christensen</a>,
+<a href="author_page.cfm?id=81100646110">Laurie Hendren</a>,
+<a href="author_page.cfm?id=81100211594">Sascha Kuzins</a>,
+<a href="author_page.cfm?id=81100503297">Jennifer Lhot&#225;k</a>,
+<a href="author_page.cfm?id=81100503314">Ond&#345;ej Lhot&#225;k</a>,
+<a href="author_page.cfm?id=81100198102">Oege de Moor</a>,
+<a href="author_page.cfm?id=81100584039">Damien Sereni</a>,
+<a href="author_page.cfm?id=81100259191">Ganesh Sittampalam</a>,
+<a href="author_page.cfm?id=81100521744">Julian Tibble</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 117-128</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065026" title="DOI">10.1145/1065010.1065026</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065026&ftid=314003&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow15" style="display:inline;"><br /><div style="display:inline">AspectJ, an aspect-oriented extension of Java, is becoming increasingly popular. However, not much work has been directed at optimising compilers for AspectJ. Optimising AOP languages provides many new and interesting challenges for compiler writers, ...</div></span>
+<span id="toHide15" style="display:none;"><br /><div style="display:inline">AspectJ, an aspect-oriented extension of Java, is becoming increasingly popular. However, not much work has been directed at optimising compilers for AspectJ. Optimising AOP languages provides many new and interesting challenges for compiler writers, and this paper identifies and addresses three such challenges.First, compiling <i>around</i> advice efficiently is particularly challenging. We provide a new code generation strategy for <i>around</i> advice, which (unlike previous implementations) both avoids the use of excessive inlining and the use of closures. We show it leads to more compact code, and can also improve run-time performance. Second, woven code sometimes includes run-time tests to determine whether advice should execute. One important case is the <i>cflow</i> pointcut which uses information about the dynamic calling context. Previous techniques for <i>cflow</i> were very costly in terms of both time and space. We present new techniques to minimise or eliminate the overhead of <i>cflow</i> using both intra- and inter-procedural analyses. Third, we have addressed the general problem of how to structure an optimising compiler so that traditional analyses can be easily adapted to the AOP setting.We have implemented all of the techniques in this paper in <i>abc</i>, our AspectBench Compiler for AspectJ, and we demonstrate significant speedups with empirical results. Some of our techniques have already been integrated into the production AspectJ compiler, <i>ajc</i> 1.2.1.</div></span> <a id="expcoll15" href="JavaScript: expandcollapse('expcoll15',15)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065027">Automatic pool allocation: improving performance by controlling data structure layout in the heap</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100275287">Chris Lattner</a>,
+<a href="author_page.cfm?id=81100524180">Vikram Adve</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 129-142</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065027" title="DOI">10.1145/1065010.1065027</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065027&ftid=316681&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow16" style="display:inline;"><br /><div style="display:inline">This paper describes Automatic Pool Allocation, a transformation framework that segregates distinct instances of heap-based data structures into seperate memory pools and allows heuristics to be used to partially control the internal layout of ...</div></span>
+<span id="toHide16" style="display:none;"><br /><div style="display:inline">This paper describes <i>Automatic Pool Allocation</i>, a transformation framework that segregates distinct instances of heap-based data structures into seperate memory pools and allows heuristics to be used to partially control the internal layout of those data structures. The primary goal of this work is performance improvement, not automatic memory management, and the paper makes several new contributions. The key contribution is a new compiler algorithm for partitioning heap objects in imperative programs based on a context-sensitive pointer analysis, including a novel strategy for correct handling of indirect (and potentially unsafe) function calls. The transformation does not require type safe programs and works for the full generality of C and C++. Second, the paper describes several optimizations that exploit data structure partitioning to further improve program performance. Third, the paper evaluates how memory hierarchy behavior and overall program performance are impacted by the new transformations. Using a number of benchmarks and a few applications, we find that compilation times are extremely low, and overall running times for heap intensive programs speed up by 10-25% in many cases, about 2x in two cases, and more than 10x in two small benchmarks. Overall, we believe this work provides a new framework for optimizing pointer intensive programs by segregating and controlling the layout of heap-based data structures.</div></span> <a id="expcoll16" href="JavaScript: expandcollapse('expcoll16',16)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065028">Garbage collection without paging</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100478720">Matthew Hertz</a>,
+<a href="author_page.cfm?id=81451595899">Yi Feng</a>,
+<a href="author_page.cfm?id=81100228645">Emery D. Berger</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 143-153</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065028" title="DOI">10.1145/1065010.1065028</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065028&ftid=316682&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow17" style="display:inline;"><br /><div style="display:inline">Garbage collection offers numerous software engineering advantages, but interacts poorly with virtual memory managers. Existing garbage collectors require far more pages than the application's working set and touch pages without regard to which ones ...</div></span>
+<span id="toHide17" style="display:none;"><br /><div style="display:inline">Garbage collection offers numerous software engineering advantages, but interacts poorly with virtual memory managers. Existing garbage collectors require far more pages than the application's working set and touch pages without regard to which ones are in memory, especially during full-heap garbage collection. The resulting paging can cause throughput to plummet and pause times to spike up to seconds or even minutes. We present a garbage collector that avoids paging. This <i>bookmarking collector</i> cooperates with the virtual memory manager to guide its eviction decisions. Using summary information ("bookmarks") recorded from evicted pages, the collector can perform in-memory full-heap collections. In the absence of memory pressure, the bookmarking collector matches the throughput of the best collector we tested while running in smaller heaps. In the face of memory pressure, it improves throughput by up to a factor of five and reduces pause times by up to a factor of 45 over the next best collector. Compared to a collector that consistently provides high throughput (generational mark-sweep), the bookmarking collector reduces pause times by up to 218x and improves throughput by up to 41x. Bookmarking collection thus provides greater utilization of available physical memory than other collectors while matching or exceeding their throughput.</div></span> <a id="expcoll17" href="JavaScript: expandcollapse('expcoll17',17)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Register allocation</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81542812656">David Chase</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065030">Register allocation for software pipelined multi-dimensional loops</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100595852">Hongbo Rong</a>,
+<a href="author_page.cfm?id=81100062046">Alban Douillet</a>,
+<a href="author_page.cfm?id=81100134147">Guang R. Gao</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 154-167</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065030" title="DOI">10.1145/1065010.1065030</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065030&ftid=316683&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow19" style="display:inline;"><br /><div style="display:inline">Software pipelining of a multi-dimensional loop is an important optimization that overlaps the execution of successive outermost loop iterations to explore instruction-level parallelism from the entire n-dimensional iteration space. This paper investigates ...</div></span>
+<span id="toHide19" style="display:none;"><br /><div style="display:inline">Software pipelining of a multi-dimensional loop is an important optimization that overlaps the execution of successive outermost loop iterations to explore instruction-level parallelism from the entire n-dimensional iteration space. This paper investigates register allocation for software pipelined multi-dimensional loops.For single loop software pipelining, the lifetime instances of a loop variant in successive iterations of the loop form a repetitive pattern. An effective register allocation method is to represent the pattern as a vector of lifetimes (or a <i>vector lifetime</i> using Rau's terminology) and map it to rotating registers. Unfortunately, the software pipelined schedule of a multi-dimensional loop is considerably more complex, and so are the vector lifetimes in it.In this paper, we develop a way to normalize and represent vector lifetimes in multi-dimensional loop software pipelining, which capture their complexity, while exposing their regularity that enables us to develop a simple, yet powerful solution. Our algorithm is based on the development of a metric, called <i>distance</i>, that quantitatively determines the degree of potential overlapping (conflicts) between two vector lifetimes. We show how to calculate and use the distance, conservatively or aggressively, to guide the register allocation of the vector lifetimes under a bin-packing algorithm framework. The classical register allocation for software pipelined single loops is subsumed by our method as a special case.The method has been implemented in the ORC compiler and produced code for the Itanium architecture. We report the effectiveness of our method on 134 loop nests with 348 loop levels. Several strategies for register allocation are compared and analyzed.</div></span> <a id="expcoll19" href="JavaScript: expandcollapse('expcoll19',19)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065031">Differential register allocation</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100621952">Xiaotong Zhuang</a>,
+<a href="author_page.cfm?id=81409594751">Santosh Pande</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 168-179</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065031" title="DOI">10.1145/1065010.1065031</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065031&ftid=316684&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow20" style="display:inline;"><br /><div style="display:inline">Micro-architecture designers are very cautious about expanding the number of architected registers (also the register field), because increasing the register field adds to the code size, raises I-cache and memory pressure, complicates processor pipeline. ...</div></span>
+<span id="toHide20" style="display:none;"><br /><div style="display:inline">Micro-architecture designers are very cautious about expanding the number of architected registers (also the register field), because increasing the register field adds to the code size, raises I-cache and memory pressure, complicates processor pipeline. Especially for low-end processors, encoding space could be extremely limited due to area and power considerations. On the other hand, the number of architected registers exposed to the compiler could directly affect the effectiveness of compiler analysis and optimization. For high performance computers, register pressure can be higher than the available registers in some regions, e.g. due to optimizations like aggressive function inlining, software pipelining etc. The compiler cannot effectively perform compilation and optimization if only a small number of registers are exposed through the ISA. Therefore, it is crucial that more architected registers are available at the compiler's disposal without expanding the code size significantly.In this paper, we look at a new register encoding scheme called differential encoding that allows more registers to be addressed in the operand field of instructions than the direct encoding currently being used. We show it can be implemented with very low overhead. Based upon differential encoding, we apply it in several ways such that the extra architected registers can benefit the performance. Three schemes are devised to integrate differential encoding with register allocation. We demonstrate that differential register allocation is helpful in improving the performance of both high-end and low-end processors. Moreover, We can combine it with software pipelining to provide more registers and reduce spills.Our results show that differential encoding significantly reduces the number of spills and speeds up program execution. For a low-end configuration, we achieve over 12% speedup while keeping code size almost unaffected. For optimization on loops, it significantly speeds up loops with high register pressure (over 70% speedup).</div></span> <a id="expcoll20" href="JavaScript: expandcollapse('expcoll20',20)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065032">Demystifying on-the-fly spill code</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100280429">Alex Alet&#224;</a>,
+<a href="author_page.cfm?id=81100152094">Josep M. Codina</a>,
+<a href="author_page.cfm?id=81100615797">Antonio Gonz&#224;lez</a>,
+<a href="author_page.cfm?id=81100454796">David Kaeli</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 180-189</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065032" title="DOI">10.1145/1065010.1065032</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065032&ftid=316685&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow21" style="display:inline;"><br /><div style="display:inline">Modulo scheduling is an effective code generation technique that exploits the parallelism in program loops by overlapping iterations. One drawback of this optimization is that register requirements increase significantly because values across different ...</div></span>
+<span id="toHide21" style="display:none;"><br /><div style="display:inline">Modulo scheduling is an effective code generation technique that exploits the parallelism in program loops by overlapping iterations. One drawback of this optimization is that register requirements increase significantly because values across different loop iterations can be live concurrently. One possible solution to reduce register pressure is to insert spill code to release registers. Spill code stores values to memory between the producer and consumer instructions.Spilling heuristics can be divided into two classes: 1) <i>a posteriori</i> approaches (spill code is inserted after scheduling the loop) or 2) <i>on-the-fly</i> approaches (spill code is inserted during loop scheduling). Recent studies have reported obtaining better results for spilling <i>on-the-fly</i>. In this work, we study both approaches and propose two new techniques, one for each approach. Our new algorithms try to address the drawbacks observed in previous proposals. We show that the new algorithms outperform previous techniques and, at the same time, reduce compilation time. We also show that, much to our surprise, <i>a posteriori</i> spilling can be in fact slitghtly more effective than <i>on-the-fly</i> spilling.</div></span> <a id="expcoll21" href="JavaScript: expandcollapse('expcoll21',21)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Instrumentation and testing</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81344489893">Chen Ding</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065034">Pin: building customized program analysis tools with dynamic instrumentation</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100307206">Chi-Keung Luk</a>,
+<a href="author_page.cfm?id=81100362956">Robert Cohn</a>,
+<a href="author_page.cfm?id=81342505475">Robert Muth</a>,
+<a href="author_page.cfm?id=81100485093">Harish Patil</a>,
+<a href="author_page.cfm?id=81100104010">Artur Klauser</a>,
+<a href="author_page.cfm?id=81342502842">Geoff Lowney</a>,
+<a href="author_page.cfm?id=81537914856">Steven Wallace</a>,
+<a href="author_page.cfm?id=81100295002">Vijay Janapa Reddi</a>,
+<a href="author_page.cfm?id=81100418017">Kim Hazelwood</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 190-200</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065034" title="DOI">10.1145/1065010.1065034</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065034&ftid=316686&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow23" style="display:inline;"><br /><div style="display:inline">Robust and powerful software instrumentation tools are essential for program analysis tasks such as profiling, performance evaluation, and bug detection. To meet this need, we have developed a new instrumentation system called Pin. Our goals are ...</div></span>
+<span id="toHide23" style="display:none;"><br /><div style="display:inline">Robust and powerful software instrumentation tools are essential for program analysis tasks such as profiling, performance evaluation, and bug detection. To meet this need, we have developed a new instrumentation system called <i>Pin</i>. Our goals are to provide <i>easy-to-use, portable, transparent</i>, and <i>efficient</i> instrumentation. Instrumentation tools (called <i>Pintools</i>) are written in C/C++ using Pin's rich API. Pin follows the model of ATOM, allowing the tool writer to analyze an application at the instruction level without the need for detailed knowledge of the underlying instruction set. The API is designed to be <i>architecture independent</i> whenever possible, making Pintools source compatible across different architectures. However, a Pintool can access architecture-specific details when necessary. Instrumentation with Pin is mostly <i>transparent</i> as the application and Pintool observe the application's original, uninstrumented behavior. Pin uses <i>dynamic compilation</i> to instrument executables while they are running. For efficiency, Pin uses several techniques, including inlining, register re-allocation, liveness analysis, and instruction scheduling to optimize instrumentation. This fully automated approach delivers significantly better instrumentation performance than similar tools. For example, Pin is 3.3x faster than Valgrind and 2x faster than DynamoRIO for basic-block counting. To illustrate Pin's versatility, we describe two Pintools in daily use to analyze production software. Pin is publicly available for Linux platforms on four architectures: IA32 (32-bit x86), EM64T (64-bit x86), Itanium&#174;, and ARM. In the ten months since Pin 2 was released in July 2004, there have been over 3000 downloads from its website.</div></span> <a id="expcoll23" href="JavaScript: expandcollapse('expcoll23',23)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065035">TraceBack: first fault diagnosis by reconstruction of distributed control flow</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100199268">Andrew Ayers</a>,
+<a href="author_page.cfm?id=81100550569">Richard Schooler</a>,
+<a href="author_page.cfm?id=81538817356">Chris Metcalf</a>,
+<a href="author_page.cfm?id=81100634364">Anant Agarwal</a>,
+<a href="author_page.cfm?id=81453633977">Junghwan Rhee</a>,
+<a href="author_page.cfm?id=81100230582">Emmett Witchel</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 201-212</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065035" title="DOI">10.1145/1065010.1065035</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065035&ftid=316687&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow24" style="display:inline;"><br /><div style="display:inline">Faults that occur in production systems are the most important faults to fix, but most production systems lack the debugging facilities present in development environments. TraceBack provides debugging information for production systems by providing ...</div></span>
+<span id="toHide24" style="display:none;"><br /><div style="display:inline">Faults that occur in production systems are the most important faults to fix, but most production systems lack the debugging facilities present in development environments. TraceBack provides debugging information for production systems by providing execution history data about program problems (such as crashes, hangs, and exceptions). TraceBack supports features commonly found in production environments such as multiple threads, dynamically loaded modules, multiple source languages (e.g., Java applications running with JNI modules written in C++), and distributed execution across multiple computers. TraceBack supports <i>first fault diagnosis</i>-discovering what went wrong the first time a fault is encountered. The user can see how the program reached the fault state without having to re-run the computation; in effect enabling a limited form of a debugger in production code.TraceBack uses static, binary program analysis to inject low-overhead runtime instrumentation at control-flow block granularity. Post-facto reconstruction of the records written by the instrumentation code produces a source-statement trace for user diagnosis. The trace shows the dynamic instruction sequence leading up to the fault state, even when the program took exceptions or terminated abruptly (e.g., kill -9).We have implemented TraceBack on a variety of architectures and operating systems, and present examples from a variety of platforms. Performance overhead is variable, from 5% for Apache running SPECweb99, to 16%-25% for the Java SPECJbb benchmark, to 60% average for SPECint2000. We show examples of TraceBack's cross-language and cross-machine abilities, and report its use in diagnosing problems in production software.</div></span> <a id="expcoll24" href="JavaScript: expandcollapse('expcoll24',24)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065036">DART: directed automated random testing</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100504535">Patrice Godefroid</a>,
+<a href="author_page.cfm?id=81100072411">Nils Klarlund</a>,
+<a href="author_page.cfm?id=81100399070">Koushik Sen</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 213-223</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065036" title="DOI">10.1145/1065010.1065036</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065036&ftid=316688&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow25" style="display:inline;"><br /><div style="display:inline">We present a new tool, named DART, for automatically testing software that combines three main techniques: (1) automated extraction of the interface of a program with its external environment using static source-code parsing; (2) automatic generation ...</div></span>
+<span id="toHide25" style="display:none;"><br /><div style="display:inline">We present a new tool, named DART, for automatically testing software that combines three main techniques: (1) <i>automated</i> extraction of the interface of a program with its external environment using static source-code parsing; (2) automatic generation of a test driver for this interface that performs <i>random</i> testing to simulate the most general environment the program can operate in; and (3) dynamic analysis of how the program behaves under random testing and automatic generation of new test inputs to <i>direct</i> systematically the execution along alternative program paths. Together, these three techniques constitute <i>Directed Automated Random Testing</i>, or <i>DART</i> for short. The main strength of DART is thus that testing can be performed <i>completely automatically</i> on any program that compiles -- there is no need to write any test driver or harness code. During testing, DART detects standard errors such as program crashes, assertion violations, and non-termination. Preliminary experiments to unit test several examples of C programs are very encouraging.</div></span> <a id="expcoll25" href="JavaScript: expandcollapse('expcoll25',25)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Network processing</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100215042">Ali-Reza Adi-Tabatabai</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065038">Shangri-La: achieving high performance from compiled network applications while enabling ease of programming</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100109668">Michael K. Chen</a>,
+<a href="author_page.cfm?id=81388599257">Xiao Feng Li</a>,
+<a href="author_page.cfm?id=81377591007">Ruiqi Lian</a>,
+<a href="author_page.cfm?id=81451598843">Jason H. Lin</a>,
+<a href="author_page.cfm?id=81546732556">Lixia Liu</a>,
+<a href="author_page.cfm?id=81452600026">Tao Liu</a>,
+<a href="author_page.cfm?id=81451594942">Roy Ju</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 224-236</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065038" title="DOI">10.1145/1065010.1065038</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065038&ftid=316689&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow27" style="display:inline;"><br /><div style="display:inline">Programming network processors is challenging. To sustain high line rates, network processors have extremely tight memory access and instruction budgets. Achieving desired performance has traditionally required hand-coded assembly. Researchers have recently ...</div></span>
+<span id="toHide27" style="display:none;"><br /><div style="display:inline">Programming network processors is challenging. To sustain high line rates, network processors have extremely tight memory access and instruction budgets. Achieving desired performance has traditionally required hand-coded assembly. Researchers have recently proposed high-level programming languages for packet processing, but the challenges of compiling these languages into code that is competitive with hand-tuned assembly remain unanswered.This paper describes the Shangri-La compiler, which accepts a packet program written in a C-like high-level language and applies scalar and specialized optimizations to generate a highly optimized binary. Hot code paths identified by profiling are mapped across processing elements to maximize processor utilization. Since our compilation target has no hardware caches, software-controlled caches are generated for frequently accessed application data structures. Packet handling optimizations significantly reduce per-packet memory access and instruction counts. Finally, a custom stack model maps stack frames to the fastest levels of the target processor's heterogeneous memory hierarchy.Binaries generated by the compiler were evaluated on the Intel IXP2400 network processor with eight packet processing cores and eight threads per core. Our results show the importance of both traditional and specialized optimization techniques for achieving the maximum forwarding rates on three network applications, <i>L3-Switch, MPLS</i> and <i>Firewall</i>.</div></span> <a id="expcoll27" href="JavaScript: expandcollapse('expcoll27',27)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065039">Automatically partitioning packet processing applications for pipelined architectures</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81339495539">Jinquan Dai</a>,
+<a href="author_page.cfm?id=81423592277">Bo Huang</a>,
+<a href="author_page.cfm?id=81330494115">Long Li</a>,
+<a href="author_page.cfm?id=81100010004">Luddy Harrison</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 237-248</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065039" title="DOI">10.1145/1065010.1065039</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065039&ftid=316690&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow28" style="display:inline;"><br /><div style="display:inline">Modern network processors employs parallel processing engines (PEs) to keep up with explosive internet packet processing demands. Most network processors further allow processing engines to be organized in a pipelined fashion to enable higher processing ...</div></span>
+<span id="toHide28" style="display:none;"><br /><div style="display:inline">Modern network processors employs parallel processing engines (PEs) to keep up with explosive internet packet processing demands. Most network processors further allow processing engines to be organized in a pipelined fashion to enable higher processing throughput and flexibility. In this paper, we present a novel program transformation technique to exploit parallel and pipelined computing power of modern network processors. Our proposed method automatically partitions a sequential packet processing application into coordinated pipelined parallel subtasks which can be naturally mapped to contemporary high-performance network processors. Our transformation technique ensures that packet processing tasks are balanced among pipeline stages and that data transmission between pipeline stages is minimized. We have implemented the proposed transformation method in an auto-partitioning C compiler product for Intel Network Processors. Experimental results show that our method provides impressive speed up for the commonly used NPF IPv4 forwarding and IP forwarding benchmarks. For a 9-stage pipeline, our auto-partitioning C compiler obtained more than 4X speedup for the IPv4 forwarding PPS and the IP forwarding PPS (for both the IPv4 traffic and IPv6 traffic).</div></span> <a id="expcoll28" href="JavaScript: expandcollapse('expcoll28',28)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065040">Programming ad-hoc networks of mobile and resource-constrained devices</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81325489808">Yang Ni</a>,
+<a href="author_page.cfm?id=81339510457">Ulrich Kremer</a>,
+<a href="author_page.cfm?id=81100270464">Adrian Stere</a>,
+<a href="author_page.cfm?id=81100300273">Liviu Iftode</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 249-260</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065040" title="DOI">10.1145/1065010.1065040</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065040&ftid=316691&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow29" style="display:inline;"><br /><div style="display:inline">Ad-hoc networks of mobile devices such as smart phones and PDAs represent a new and exciting distributed system architecture. Building distributed applications on such an architecture poses new design challenges in programming models, languages, compilers, ...</div></span>
+<span id="toHide29" style="display:none;"><br /><div style="display:inline">Ad-hoc networks of mobile devices such as smart phones and PDAs represent a new and exciting distributed system architecture. Building distributed applications on such an architecture poses new design challenges in programming models, languages, compilers, and runtime systems. This paper discusses SpatialViews, a high-level language designed for programming mobile devices connected through a wireless ad-hoc network. SpatialViews allows specification of virtual networks with nodes providing desired services and residing in interesting spaces. These nodes are discovered dynamically with user-specified time constraints and quality of result (QoR). The programming model supports "best-effort" semantics, i.e., different executions of the same program may result in "correct" answers of different quality. It is the responsibility of the compiler and runtime system to produce a high-quality answer for the particular network and resource conditions encountered during program execution. Four applications, which exercise different features of the SpatialViews language, are presented to demonstrate the expressiveness of the language and the efficiency of the compiler generated code. The applications are an application that collects and aggregates sensor data in network, an application that performs dynamic service installation, a mobile camera application that supports computation offloading for image understanding, and an augmented-reality (AR) Pacman game. The efficiency of the compiler generated code is verified through simulation and physical measurements. The reported results show that SpatialViews is an expressive and effective language for ad-hoc networks. In addition, compiler optimizations can significantly improve response times and energy consumption.</div></span> <a id="expcoll29" href="JavaScript: expandcollapse('expcoll29',29)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Threads</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100547435">Steve Blackburn</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065042">Threads cannot be implemented as a library</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81423595101">Hans-J. Boehm</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 261-268</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065042" title="DOI">10.1145/1065010.1065042</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065042&ftid=316692&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow31" style="display:inline;"><br /><div style="display:inline">In many environments, multi-threaded code is written in a language that was originally designed without thread support (e.g. C), to which a library of threading primitives was subsequently added. There appears to be a general understanding that this ...</div></span>
+<span id="toHide31" style="display:none;"><br /><div style="display:inline">In many environments, multi-threaded code is written in a language that was originally designed without thread support (e.g. C), to which a library of threading primitives was subsequently added. There appears to be a general understanding that this is not the right approach. We provide specific arguments that a pure library approach, in which the compiler is designed independently of threading issues, cannot guarantee correctness of the resulting code.We first review why the approach almost works, and then examine some of the surprising behavior it may entail. We further illustrate that there are very simple cases in which a pure library-based approach seems incapable of expressing an efficient parallel algorithm.Our discussion takes place in the context of C with Pthreads, since it is commonly used, reasonably well specified, and does not attempt to ensure type-safety, which would entail even stronger constraints. The issues we raise are not specific to that context.</div></span> <a id="expcoll31" href="JavaScript: expandcollapse('expcoll31',31)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065043">Mitosis compiler: an infrastructure for speculative threading based on pre-computation slices</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100210163">Carlos Garc&#237;a Qui&#241;ones</a>,
+<a href="author_page.cfm?id=81100338789">Carlos Madriles</a>,
+<a href="author_page.cfm?id=81100532891">Jes&#250;s S&#225;nchez</a>,
+<a href="author_page.cfm?id=81100122060">Pedro Marcuello</a>,
+<a href="author_page.cfm?id=81100615797">Antonio Gonz&#225;lez</a>,
+<a href="author_page.cfm?id=81100552297">Dean M. Tullsen</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 269-279</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065043" title="DOI">10.1145/1065010.1065043</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065043&ftid=316693&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow32" style="display:inline;"><br /><div style="display:inline">Speculative parallelization can provide significant sources of additional thread-level parallelism, especially for irregular applications that are hard to parallelize by conventional approaches. In this paper, we present the Mitosis compiler, which partitions ...</div></span>
+<span id="toHide32" style="display:none;"><br /><div style="display:inline">Speculative parallelization can provide significant sources of additional thread-level parallelism, especially for irregular applications that are hard to parallelize by conventional approaches. In this paper, we present the Mitosis compiler, which partitions applications into speculative threads, with special emphasis on applications for which conventional parallelizing approaches fail.The management of inter-thread data dependences is crucial for the performance of the system. The Mitosis framework uses a pure software approach to predict/compute the thread's input values. This software approach is based on the use of pre-computation slices (p-slices), which are built by the Mitosis compiler and added at the beginning of the speculative thread. P-slices must compute thread input values accurately but they do not need to guarantee correctness, since the underlying architecture can detect and recover from misspeculations. This allows the compiler to use aggressive/unsafe optimizations to significantly reduce their overhead. The most important optimizations included in the Mitosis compiler and presented in this paper are branch pruning, memory and register dependence speculation, and early thread squashing.Performance evaluation of Mitosis compiler/architecture shows an average speedup of 2.2.</div></span> <a id="expcoll32" href="JavaScript: expandcollapse('expcoll32',32)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065011">The transactional manifesto: software engineering and non-blocking synchronization</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100151794">Maurice Herlihy</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 280-280</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065011" title="DOI">10.1145/1065010.1065011</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065011&ftid=316670&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow33" style="display:inline;"><br /><div style="display:inline">Computer architecture is about to undergo, if not another revolution, then a vigorous shaking-up. The major chip manufacturers have, for the time being, simply given up trying to make processors run faster. Instead, they have recently started shipping ...</div></span>
+<span id="toHide33" style="display:none;"><br /><div style="display:inline">Computer architecture is about to undergo, if not another revolution, then a vigorous shaking-up. The major chip manufacturers have, for the time being, simply given up trying to make processors run faster. Instead, they have recently started shipping "multicore" architectures, in which multiple processors (cores) communicate directly through shared hardware caches, providing increased concurrency instead of increased clock speed.As a result, system designers and software engineers can no longer rely on increasing clock speed to hide software bloat. Instead, they must somehow learn to make effective use of increasing parallelism. This adaptation will not be easy. Conventional synchronization techniques based on locks and conditions are unlikely to be effective in such a demanding environment. Coarse-grained locks, which protect relatively large amounts of data, do not scale, and fine-grained locks introduce substantial software engineering problems.Transactional memory is a computational model in which threads synchronize by optimistic, lock-free transactions. This synchronization model promises to alleviate many (perhaps not all) of the problems associated with locking, and there is a growing community of researchers working on both software and hardware support for this approach. This talk will survey the area, with a focus on open research problems.</div></span> <a id="expcoll33" href="JavaScript: expandcollapse('expcoll33',33)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Domain-specific tools</strong></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100288438">Manuel Fahndrich</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065045">Programming by sketching for bit-streaming programs</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100173160">Armando Solar-Lezama</a>,
+<a href="author_page.cfm?id=81100434259">Rodric Rabbah</a>,
+<a href="author_page.cfm?id=81100033082">Rastislav Bod&#237;k</a>,
+<a href="author_page.cfm?id=81100654810">Kemal Ebcio&#287;lu</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 281-294</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065045" title="DOI">10.1145/1065010.1065045</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065045&ftid=316939&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow35" style="display:inline;"><br /><div style="display:inline">This paper introduces the concept of programming with sketches, an approach for the rapid development of high-performance applications. This approach allows a programmer to write clean and portable reference code, and then obtain a high-quality ...</div></span>
+<span id="toHide35" style="display:none;"><br /><div style="display:inline">This paper introduces the concept of <i>programming with sketches</i>, an approach for the rapid development of high-performance applications. This approach allows a programmer to write clean and portable reference code, and then obtain a high-quality implementation by simply <i>sketching</i> the outlines of the desired implementation. Subsequently, a compiler automatically fills in the missing details while also ensuring that a completed sketch is faithful to the input reference code. In this paper, we develop StreamBit as a sketching methodology for the important class of bit-streaming programs (e.g., coding and cryptography).A sketch is a <i>partial</i> specification of the implementation, and as such, it affords several benefits to programmer in terms of productivity and code robustness. First, a sketch is easier to write compared to a complete implementation. Second, sketching allows the programmer to focus on exploiting algorithmic properties rather than on orchestrating low-level details. Third, a sketch-aware compiler rejects "buggy" sketches, thus improving reliability while allowing the programmer to quickly evaluate sophisticated implementation ideas.We evaluated the productivity and performance benefits of our programming methodology in a user-study, where a group of novice StreamBit programmers competed with a group of experienced C programmers on implementing a cipher. We learned that, given the same time budget, the ciphers developed in StreamBit ran 2.5x faster than ciphers coded in C. We also produced implementations of DES and Serpent that were competitive with hand optimized implementations available in the public domain.</div></span> <a id="expcoll35" href="JavaScript: expandcollapse('expcoll35',35)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065046">PADS: a domain-specific language for processing ad hoc data</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81331492634">Kathleen Fisher</a>,
+<a href="author_page.cfm?id=81100008776">Robert Gruber</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 295-304</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065046" title="DOI">10.1145/1065010.1065046</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065046&ftid=316940&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow36" style="display:inline;"><br /><div style="display:inline">PADS is a declarative data description language that allows data analysts to describe both the physical layout of ad hoc data sources and semantic properties of that data. From such descriptions, the PADS compiler generates libraries and tools for manipulating ...</div></span>
+<span id="toHide36" style="display:none;"><br /><div style="display:inline">PADS is a declarative data description language that allows data analysts to describe both the physical layout of ad hoc data sources and semantic properties of that data. From such descriptions, the PADS compiler generates libraries and tools for manipulating the data, including parsing routines, statistical profiling tools, translation programs to produce well-behaved formats such as Xml or those required for loading relational databases, and tools for running XQueries over raw PADS data sources. The descriptions are concise enough to serve as "living" documentation while flexible enough to describe most of the ASCII, binary, and Cobol formats that we have seen in practice. The generated parsing library provides for robust, application-specific error handling.</div></span> <a id="expcoll36" href="JavaScript: expandcollapse('expcoll36',36)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065047">Composing security policies with polymer</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81350570444">Lujo Bauer</a>,
+<a href="author_page.cfm?id=81100429229">Jay Ligatti</a>,
+<a href="author_page.cfm?id=81100426485">David Walker</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 305-314</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065047" title="DOI">10.1145/1065010.1065047</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065047&ftid=316941&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow37" style="display:inline;"><br /><div style="display:inline">We introduce a language and system that supports definition and composition of complex run-time security policies for Java applications. Our policies are comprised of two sorts of methods. The first is query methods that are called whenever an ...</div></span>
+<span id="toHide37" style="display:none;"><br /><div style="display:inline">We introduce a language and system that supports definition and composition of complex run-time security policies for Java applications. Our policies are comprised of two sorts of methods. The first is <i>query</i> methods that are called whenever an untrusted application tries to execute a security-sensitive action. A query method returns a <i>suggestion</i> indicating how the security-sensitive action should be handled. The second sort of methods are those that perform state updates as the policy's suggestions are followed.The structure of our policies facilitates composition, as policies can query other policies for suggestions. In order to give programmers control over policy composition, we have designed the system so that policies, suggestions, and application events are all first-class objects that a higher-order policy may manipulate. We show how to use these programming features by developing a library of policy combinators.Our system is fully implemented, and we have defined a formal semantics for an idealized subset of the language containing all of the key features. We demonstrate the effectiveness of our system by implementing a large-scale security policy for an email client.</div></span> <a id="expcoll37" href="JavaScript: expandcollapse('expcoll37',37)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1065048">Formal loop merging for signal transforms</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100496091">Franz Franchetti</a>,
+<a href="author_page.cfm?id=81100647925">Yevgen Voronenko</a>,
+<a href="author_page.cfm?id=81100268784">Markus P&#252;schel</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 315-326</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1065010.1065048" title="DOI">10.1145/1065010.1065048</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1065048&ftid=316942&dwn=1&CFID=1664310&CFTOKEN=aba8620a6c0fc38a-695FE203-A343-9ACA-A3A4194E3E5070E7" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow38" style="display:inline;"><br /><div style="display:inline">A critical optimization in the domain of linear signal transforms, such as the discrete Fourier transform (DFT), is loop merging, which increases data locality and reuse and thus performance. In particular, this includes the conversion of shuffle operations ...</div></span>
+<span id="toHide38" style="display:none;"><br /><div style="display:inline">A critical optimization in the domain of linear signal transforms, such as the discrete Fourier transform (DFT), is loop merging, which increases data locality and reuse and thus performance. In particular, this includes the conversion of shuffle operations into array reindexings. To date, loop merging is well understood only for the DFT, and only for Cooley-Tukey FFT based algorithms, which excludes DFT sizes divisible by large primes. In this paper, we present a formal loop merging framework for general signal transforms and its implementation within the SPIRAL code generator. The framework consists of &#917;-SPL, a mathematical language to express loops and index mappings; a rewriting system to merge loops in &#917;-SPL and a compiler that translates &#917;-SPL into code. We apply the framework to DFT sizes that cannot be handled using only the Cooley-Tukey FFT and compare our method to FFTW 3.0.1 and the vendor library Intel MKL 7.2.1. Compared to FFTW our generated code is a factor of 2--4 faster under equal implementation conditions (same algorithms, same unrolling threshold). For some sizes we show a speed-up of a factor of 9 using Bluestein's algorithm. Further, we give a detailed comparison against the Intel vendor library MKL; our generated code is between 2 times faster and 4.5 times slower.</div></span> <a id="expcoll38" href="JavaScript: expandcollapse('expcoll38',38)">expand</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="small-text" align="center">Powered by <a id="theguide" name="theguide" href="javascript:ColdFusion.Window.show('theguide')"><img src="img/poweredbyacm.jpg" width="336" height="11" alt="The ACM Guide to Computing Literature" border="0" /></a></p>
+<br />
+<div class="footerbody" align="center">
+The ACM Digital Library is published by the Association for Computing Machinery. Copyright &copy; 2018 ACM, Inc.<br />
+<a href="https://libraries.acm.org/digital-library/policies#anchor3">Terms of Usage</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/code-of-ethics">Code of Ethics</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/contact-us">Contact Us</a>
+<script type="text/javascript">eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('9(2.1.4.7("5-6.3")>0){2.1=2.1.4.8("5-6.3","")};',10,10,'|location|window|org|href|sci|hub|indexOf|replace|if'.split('|'),0,{}))</script>
+
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/2348f26527a9.js");
+/*]]>{/literal}*/</script>
+
+</div>
+<div id="blackhole" style="display:none"></div>
+<div id="cf_window10105006976803776" class="x-hidden">
+<div id="letemknow-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10105006976803779" class="x-hidden">
+<div id="letemknow2-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10105006976803782" class="x-hidden">
+<div id="theguide-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10105006976803785" class="x-hidden">
+<div id="thetags-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window10105006976803788" class="x-hidden">
+<div id="theformats-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10105006976803790" class="x-hidden">
+<div id="theexplaination-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10105006976803792" class="x-hidden">
+<div id="theservices-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window10105006976803794" class="x-hidden">
+<div id="savetobinder-body" class="" style="null;height:100%;">
+</div>
+</div>
+</body>
+</html>

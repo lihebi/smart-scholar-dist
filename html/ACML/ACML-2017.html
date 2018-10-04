@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Proceedings of Machine Learning Research</title>
+  <meta name="description" content="Proceedings of the Ninth Asian Conference on Machine Learning on 15-17 November 2017
+
+Published as Volume 77 by the Proceedings of Machine Learning Research on 11 November 2017.
+
+Volume Edited by:
+  Min-Ling Zhang
+  Yung-Kyun Noh
+
+Series Editors:
+  Neil D. Lawrence
+  Mark Reid
+">
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+  
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92432422-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+      autoNumber: "AMS"
+     }
+   },
+  tex2jax: {
+    inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <!-- Solution from http://stackoverflow.com/questions/31593297/using-execcommand-javascript-to-copy-hidden-text-to-clipboard -->
+<script type="text/javascript"
+	src="/js/copy_input.js">
+</script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="/js/download.js"></script>
+
+  
+
+</head>
+
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <table>
+      <tr>
+	<td><a align="left" class="site-logo" href="http://proceedings.mlr.press" target=_top><img align="right" class="jmlr" src="/img/pmlr.png" border="0"></a> </td>
+	<td><p class="site-title">Proceedings of Machine Learning Research</p></td>
+      </tr>
+    </table>
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+	<a class="page-link" href="/v77/">Volume 77</a>
+	<a class="page-link" href="/">All Volumes</a>
+	<a class="page-link" href="http://www.jmlr.org/">JMLR</a> 
+	<a class="page-link" href="http://www.jmlr.org/mloss">MLOSS</a>
+	<a class="page-link" href="/faq.html">FAQ</a>
+	<a class="page-link" href="/spec.html">Submission Format</a>
+	<a class="page-link" href="http://proceedings.mlr.press//v77/feed.xml">
+	<img src="/img/RSS.gif" class="rss" alt="RSS Feed">
+	</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content" id="content">
+      <div class="wrapper">
+        
+
+
+<h2>Volume 77: Asian Conference on Machine Learning, 15-17 November 2017, </h2>
+
+
+<p align="right">[<a href="https://github.com/mlresearch/v77/edit/gh-pages/_config.yml" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/mlresearch/v77/edit/gh-pages/_config.yml', 13);">edit</a>]</p>
+
+
+  
+<p><strong>Editors:
+    
+    
+    Min-Ling Zhang, 
+
+    
+    Yung-Kyun Noh
+
+    
+</strong></p>
+<p>[<a href="./bibliography.bib" target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v77/bibliography.bib', 14);">bib</a>][<a href="./citeproc.yaml"  target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v77/citeproc.yaml', 14);">citeproc</a>]</p>
+<div id="sectionnav">
+  <p>Contents:</p>
+  <ul>
+    
+    <li><a href="#Preface">Preface</a></li>
+    
+    <li><a href="#Accepted Papers">Accepted Papers</a></li>
+    
+  </ul>
+  
+  <p>
+  <label for="search-authors">Filter Authors:</label>
+  <input type="search" name="filter-authors" id="search-authors" value />
+  <label for="search-titles">Filter Titles:</label>
+  <input type="search" name="filter-titles" id="search-titles" value />
+  </p>
+</div>
+
+
+<h3 id="Preface">Preface</h3>
+
+<div class="paper">
+  <p class="title">Preface</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Min-Ling Zhang, 
+
+      
+      Yung-Kyun Noh
+
+      
+    </span>;
+    <span class="info">PMLR 77:i-xv</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/zhang17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/zhang17a/zhang17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/zhang17a/zhang17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="Accepted Papers">Accepted Papers</h3>
+
+
+<div class="paper">
+  <p class="title">Learning Convolutional Neural Networks using Hybrid Orthogonal Projection and Estimation</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Hengyue Pan, 
+
+      
+      Hui Jiang
+
+      
+    </span>;
+    <span class="info">PMLR 77:1-16</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/pan17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/pan17a/pan17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/pan17a/pan17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Limits of End-to-End Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Tobias Glasmachers
+
+      
+    </span>;
+    <span class="info">PMLR 77:17-32</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/glasmachers17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/glasmachers17a/glasmachers17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/glasmachers17a/glasmachers17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/glasmachers17a/glasmachers17a-supp.zip" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary ZIP', 12);">Supplementary ZIP</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">A Study on Trust Region Update Rules in Newton Methods for Large-scale Linear Classification</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Chih-Yang Hsia, 
+
+      
+      Ya Zhu, 
+
+      
+      Chih-Jen Lin
+
+      
+    </span>;
+    <span class="info">PMLR 77:33-48</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/hsia17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/hsia17a/hsia17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/hsia17a/hsia17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/hsia17a/hsia17a-supp.tar" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary TAR', 12);">Supplementary TAR</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Mini-batch Block-coordinate based Stochastic Average Adjusted Gradient Methods to Solve Big Data Problems</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Vinod Kumar Chauhan, 
+
+      
+      Kalpana Dahiya, 
+
+      
+      Anuj Sharma
+
+      
+    </span>;
+    <span class="info">PMLR 77:49-64</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/chauhan17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/chauhan17a/chauhan17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/chauhan17a/chauhan17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/chauhan17a/chauhan17a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Instance Specific Discriminative Modal Pursuit: A Serialized Approach</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yang Yang, 
+
+      
+      De-Chuan Zhan, 
+
+      
+      Ying Fan, 
+
+      
+      Yuan Jiang
+
+      
+    </span>;
+    <span class="info">PMLR 77:65-80</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/yang17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/yang17a/yang17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/yang17a/yang17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">A Quantum-Inspired Ensemble Method and Quantum-Inspired Forest Regressors</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Zeke Xie, 
+
+      
+      Issei Sato
+
+      
+    </span>;
+    <span class="info">PMLR 77:81-96</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/xie17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/xie17a/xie17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/xie17a/xie17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Distributionally Robust Groupwise Regularization Estimator</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jose Blanchet, 
+
+      
+      Yang Kang
+
+      
+    </span>;
+    <span class="info">PMLR 77:97-112</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/blanchet17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/blanchet17a/blanchet17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/blanchet17a/blanchet17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/blanchet17a/blanchet17a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Multi-view Clustering with Adaptively Learned Graph</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Hong Tao, 
+
+      
+      Chenping Hou, 
+
+      
+      Jubo Zhu, 
+
+      
+      Dongyun Yi
+
+      
+    </span>;
+    <span class="info">PMLR 77:113-128</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/tao17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/tao17a/tao17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/tao17a/tao17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Select-and-Evaluate: A Learning Framework for Large-Scale Knowledge Graph Search</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      F A Rezaur Rahman Chowdhury, 
+
+      
+      Chao Ma, 
+
+      
+      Md Rakibul Islam, 
+
+      
+      Mohammad Hossein Namaki, 
+
+      
+      Mohammad Omar Faruk, 
+
+      
+      Janardhan Rao Doppa
+
+      
+    </span>;
+    <span class="info">PMLR 77:129-144</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/chowdhury17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/chowdhury17a/chowdhury17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/chowdhury17a/chowdhury17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Probability Calibration Trees</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Tim Leathart, 
+
+      
+      Eibe Frank, 
+
+      
+      Geoffrey Holmes, 
+
+      
+      Bernhard Pfahringer
+
+      
+    </span>;
+    <span class="info">PMLR 77:145-160</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/leathart17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/leathart17a/leathart17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/leathart17a/leathart17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Learning Predictive Leading Indicators for Forecasting Time Series Systems with Unknown Clusters of Forecast Tasks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Magda Gregorová, 
+
+      
+      Alexandros Kalousis, 
+
+      
+      Stéphane Marchand-Maillet
+
+      
+    </span>;
+    <span class="info">PMLR 77:161-176</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/gregorova17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/gregorova17a/gregorova17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/gregorova17a/gregorova17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/gregorova17a/gregorova17a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Locally Smoothed Neural Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Liang Pang, 
+
+      
+      Yanyan Lan, 
+
+      
+      Jun Xu, 
+
+      
+      Jiafeng Guo, 
+
+      
+      Xueqi Cheng
+
+      
+    </span>;
+    <span class="info">PMLR 77:177-191</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/pang17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/pang17a/pang17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/pang17a/pang17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Data sparse nonparametric regression with $ε$-insensitive losses</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Maxime Sangnier, 
+
+      
+      Olivier Fercoq, 
+
+      
+      Florence d’Alché-Buc
+
+      
+    </span>;
+    <span class="info">PMLR 77:192-207</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/sangnier17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/sangnier17a/sangnier17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/sangnier17a/sangnier17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/sangnier17a/sangnier17a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Rate Optimal Estimation for High Dimensional Spatial Covariance Matrices</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yi Li, 
+
+      
+      Aidong Adam Ding, 
+
+      
+      Jennifer Dy
+
+      
+    </span>;
+    <span class="info">PMLR 77:208-223</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/li17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/li17a/li17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/li17a/li17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/li17a/li17a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">PHD: A Probabilistic Model of Hybrid Deep Collaborative Filtering for Recommender Systems</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jie Liu, 
+
+      
+      Dong Wang, 
+
+      
+      Yue Ding
+
+      
+    </span>;
+    <span class="info">PMLR 77:224-239</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/liu17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/liu17a/liu17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/liu17a/liu17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Adaptive Sampling Scheme for Learning in Severely Imbalanced Large Scale Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Wei Zhang, 
+
+      
+      Said Kobeissi, 
+
+      
+      Scott Tomko, 
+
+      
+      Chris Challis
+
+      
+    </span>;
+    <span class="info">PMLR 77:240-247</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/zhang17b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/zhang17b/zhang17b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/zhang17b/zhang17b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">ST-GAN: Unsupervised Facial Image Semantic Transformation Using Generative Adversarial Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jichao Zhang, 
+
+      
+      Fan Zhong, 
+
+      
+      Gongze Cao, 
+
+      
+      Xueying Qin
+
+      
+    </span>;
+    <span class="info">PMLR 77:248-263</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/zhang17c.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/zhang17c/zhang17c.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/zhang17c/zhang17c.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/zhang17c/zhang17c-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Deep Competitive Pathway Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jia-Ren Chang, 
+
+      
+      Yong-Sheng Chen
+
+      
+    </span>;
+    <span class="info">PMLR 77:264-278</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/chang17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/chang17a/chang17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/chang17a/chang17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Regret for Expected Improvement over the Best-Observed Value and Stopping Condition</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Vu Nguyen, 
+
+      
+      Sunil Gupta, 
+
+      
+      Santu Rana, 
+
+      
+      Cheng Li, 
+
+      
+      Svetha Venkatesh
+
+      
+    </span>;
+    <span class="info">PMLR 77:279-294</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/nguyen17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/nguyen17a/nguyen17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/nguyen17a/nguyen17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Scale-Invariant Recognition by Weight-Shared CNNs in Parallel</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ryo Takahashi, 
+
+      
+      Takashi Matsubara, 
+
+      
+      Kuniaki Uehara
+
+      
+    </span>;
+    <span class="info">PMLR 77:295-310</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/takahashi17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/takahashi17a/takahashi17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/takahashi17a/takahashi17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Using Deep Neural Networks to Automate Large Scale Statistical Analysis for Big Data Applications</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Rongrong Zhang, 
+
+      
+      Wei Deng, 
+
+      
+      Michael Yu Zhu
+
+      
+    </span>;
+    <span class="info">PMLR 77:311-326</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/zhang17d.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/zhang17d/zhang17d.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/zhang17d/zhang17d.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/zhang17d/zhang17d-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Recognizing Art Style Automatically in Painting with Deep Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Adrian Lecoutre, 
+
+      
+      Benjamin Negrevergne, 
+
+      
+      Florian Yger
+
+      
+    </span>;
+    <span class="info">PMLR 77:327-342</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/lecoutre17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/lecoutre17a/lecoutre17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/lecoutre17a/lecoutre17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">One Class Splitting Criteria for Random Forests</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Nicolas Goix, 
+
+      
+      Nicolas Drougard, 
+
+      
+      Romain Brault, 
+
+      
+      Mael Chiapino
+
+      
+    </span>;
+    <span class="info">PMLR 77:343-358</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/goix17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/goix17a/goix17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/goix17a/goix17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/goix17a/goix17a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Computer Assisted Composition with Recurrent Neural Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Christian Walder, 
+
+      
+      Dongwoo Kim
+
+      
+    </span>;
+    <span class="info">PMLR 77:359-374</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/walder17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/walder17a/walder17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/walder17a/walder17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Whitening-Free Least-Squares Non-Gaussian Component Analysis</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Hiroaki Shiino, 
+
+      
+      Hiroaki Sasaki, 
+
+      
+      Gang Niu, 
+
+      
+      Masashi Sugiyama
+
+      
+    </span>;
+    <span class="info">PMLR 77:375-390</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/shiino17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/shiino17a/shiino17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/shiino17a/shiino17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/shiino17a/shiino17a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Semi-supervised Convolutional Neural Networks for Identifying Wi-Fi Interference Sources</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Krista Longi, 
+
+      
+      Teemu Pulkkinen, 
+
+      
+      Arto Klami
+
+      
+    </span>;
+    <span class="info">PMLR 77:391-406</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/longi17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/longi17a/longi17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/longi17a/longi17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Magnitude-Preserving Ranking for Structured Outputs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Céline Brouard, 
+
+      
+      Eric Bach, 
+
+      
+      Sebastian Böcker, 
+
+      
+      Juho Rousu
+
+      
+    </span>;
+    <span class="info">PMLR 77:407-422</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/brouard17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/brouard17a/brouard17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/brouard17a/brouard17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/brouard17a/brouard17a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">A Word Embeddings Informed Focused Topic Model</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      He Zhao, 
+
+      
+      Lan Du, 
+
+      
+      Wray Buntine
+
+      
+    </span>;
+    <span class="info">PMLR 77:423-438</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/zhao17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/zhao17a/zhao17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/zhao17a/zhao17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Accumulated Gradient Normalization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Joeri R. Hermans, 
+
+      
+      Gerasimos Spanakis, 
+
+      
+      Rico Möckel
+
+      
+    </span>;
+    <span class="info">PMLR 77:439-454</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/hermans17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/hermans17a/hermans17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/hermans17a/hermans17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/hermans17a/hermans17a-supp.zip" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary ZIP', 12);">Supplementary ZIP</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">A Mutually-Dependent Hadamard Kernel for Modelling Latent Variable Couplings</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Sami Remes, 
+
+      
+      Markus Heinonen, 
+
+      
+      Samuel Kaski
+
+      
+    </span>;
+    <span class="info">PMLR 77:455-470</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/remes17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/remes17a/remes17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/remes17a/remes17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/remes17a/remes17a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Learning Deep Semantic Embeddings for Cross-Modal Retrieval</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Cuicui Kang, 
+
+      
+      Shengcai Liao, 
+
+      
+      Zhen Li, 
+
+      
+      Zigang Cao, 
+
+      
+      Gang Xiong
+
+      
+    </span>;
+    <span class="info">PMLR 77:471-486</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/kang17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/kang17a/kang17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/kang17a/kang17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Pyramid Person Matching Network for Person Re-identification</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Chaojie Mao, 
+
+      
+      Yingming Li, 
+
+      
+      Zhongfei Zhang, 
+
+      
+      Yaqing Zhang, 
+
+      
+      Xi Li
+
+      
+    </span>;
+    <span class="info">PMLR 77:487-497</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/mao17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/mao17a/mao17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/mao17a/mao17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Learning RBM with a DC programming Approach</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Vidyadhar Upadhya, 
+
+      
+      P. S. Sastry
+
+      
+    </span>;
+    <span class="info">PMLR 77:498-513</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/upadhya17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/upadhya17a/upadhya17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/upadhya17a/upadhya17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Multi-Task Structured Prediction for Entity Analysis: Search-Based Learning Algorithms</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Chao Ma, 
+
+      
+      Janardhan Rao Doppa, 
+
+      
+      Prasad Tadepalli, 
+
+      
+      Hamed Shahbazi, 
+
+      
+      Xiaoli Fern
+
+      
+    </span>;
+    <span class="info">PMLR 77:514-529</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/ma17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/ma17a/ma17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/ma17a/ma17a.pdf, 10);">Download PDF</a>][<a href="http://proceedings.mlr.press/v77/ma17a/ma17a-supp.pdf" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', 'Supplementary PDF', 12);">Supplementary PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Nested LSTMs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Joel Ruben Antony Moniz, 
+
+      
+      David Krueger
+
+      
+    </span>;
+    <span class="info">PMLR 77:530-544</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/moniz17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/moniz17a/moniz17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/moniz17a/moniz17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">On the Flatness of Loss Surface for Two-layered ReLU Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jiezhang Cao, 
+
+      
+      Qingyao Wu, 
+
+      
+      Yuguang Yan, 
+
+      
+      Li Wang, 
+
+      
+      Mingkui Tan
+
+      
+    </span>;
+    <span class="info">PMLR 77:545-560</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/cao17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/cao17a/cao17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/cao17a/cao17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Radical-level Ideograph Encoder for RNN-based Sentiment Analysis of Chinese and Japanese</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yuanzhi Ke, 
+
+      
+      Masafumi Hagiwara
+
+      
+    </span>;
+    <span class="info">PMLR 77:561-573</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/ke17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/ke17a/ke17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/ke17a/ke17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Recovering Probability Distributions from Missing Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Jin Tian
+
+      
+    </span>;
+    <span class="info">PMLR 77:574-589</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/tian17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/tian17a/tian17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/tian17a/tian17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">Attentive Path Combination for Knowledge Graph Completion</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Xiaotian Jiang, 
+
+      
+      Quan Wang, 
+
+      
+      Baoyuan Qi, 
+
+      
+      Yongqin Qiu, 
+
+      
+      Peng Li, 
+
+      
+      Bin Wang
+
+      
+    </span>;
+    <span class="info">PMLR 77:590-605</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/jiang17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/jiang17a/jiang17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/jiang17a/jiang17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">A Covariance Matrix Adaptation Evolution Strategy for Direct Policy Search in Reproducing Kernel Hilbert Space</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ngo Anh Vien, 
+
+      
+      Viet-Hung Dang, 
+
+      
+      TaeChoong Chung
+
+      
+    </span>;
+    <span class="info">PMLR 77:606-621</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/vien17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/vien17a/vien17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/vien17a/vien17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+<div class="paper">
+  <p class="title">NeuralPower: Predict and Deploy Energy-Efficient Convolutional Neural Networks</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ermao Cai, 
+
+      
+      Da-Cheng Juan, 
+
+      
+      Dimitrios Stamoulis, 
+
+      
+      Diana Marculescu
+
+      
+    </span>;
+    <span class="info">PMLR 77:622-637</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v77/cai17a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v77/cai17a/cai17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v77/cai17a/cai17a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class="rss-subscribe">subscribe <a href="/v77/feed.xml">via RSS</a></p>
+
+<!-- Search Widget -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../js/search.js"></script>
+
+      </div>
+    </div>   
+  </body>
+
+    <body>
+  <div id="content">
+    <center>This site last compiled Thu, 21 Dec 2017 11:03:55 +0000</center>
+
+    <table width="100%">
+      <tr>
+	<td align="left"><font size="-1">
+	    <i><a href="https://github.com/mlresearch/v77">Github Account</a></i></font></td>
+	<td align="right"><font size="-1">
+	    Copyright &copy <a href="http://proceedings.mlr.press">PMLR</a> 2017. All rights reserved.</font></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+
+</html>

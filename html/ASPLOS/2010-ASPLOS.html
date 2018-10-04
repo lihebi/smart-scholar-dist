@@ -1,0 +1,2852 @@
+
+<!doctype html>
+<head><script type="text/javascript">/* <![CDATA[ */_cf_loadingtexthtml="<img alt=' ' src='/cf_scripts/scripts/ajax/resources/cf/images/loading.gif'/>";
+_cf_contextpath="";
+_cf_ajaxscriptsrc="/cf_scripts/scripts/ajax";
+_cf_jsonprefix='//';
+_cf_websocket_port=0;
+_cf_flash_policy_port=0;
+_cf_clientid='219A5AC441D97BBF4CF7D2824408CBFF';/* ]]> */</script><script type="text/javascript" src="/cf_scripts/scripts/ajax/messages/cfmessage.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfajax.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfform.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/masks.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfformhistory.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfrichtexteditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/chart/cfchart-server.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/animation/animation-min.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ext/ext-all.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfwindow.js"></script>
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/ext/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/cf/cf.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/dl.css" />
+<title>Proceedings of the fifteenth edition of ASPLOS on Architectural support for programming languages and operating systems</title>
+<style type="text/css"><!--
+    body {margin-left: 0em; margin-top: 0}
+    a:link {text-decoration: underline; 	Color: #1d4d0f;}
+    a:visited  { color: #990033; text-decoration: underline;}
+    a:hover {color: red; text-decoration: none}
+    a.dLink1:link {color:#336699}
+    a.dLink1:visited {color:#666666}
+	a.isblack:link {text-decoration: underline; 	Color: #000000;}
+    a.isblack:visited  { color: #000000; text-decoration: underline;}
+    a.isblack:hover {color: #000000; text-decoration: none}
+    h1 {font-size: 140%; margin-bottom: 0}
+	ul {margin-top: .25em; list-style-type: disc}
+	ol {margin-top: .25em;}
+	li {padding-bottom: .25em;}
+    h2 {color: white; background-color: #069; 
+        font-size: 100%; padding-left: 1em;
+		margin: 0}
+	h3 {color: black; background-color: yellow; 
+    	font-size: 100%;
+		margin: 0}
+	 h4 {color: black; background-color: #99c5e8; 
+        font-size: 100%;
+		margin: 0}
+    hr {color: #39176d;}
+    form {margin-top: 10}
+    form.xrs {margin-top: 0}
+	
+	a {text-decoration: none; }
+	
+	input {font-size: 1em;}
+	.chevron {color: #ff0000;}
+	.light-blue {color:#336699;}
+	.black {color:#000000;}
+	
+	
+	.mono-text {font-size: 14px; font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;}
+	
+	/* ### standard text styles, smallest to largest ### */
+	
+	.footer-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .75em; line-height: 1.33em;
+		text-indent: -.75 em; margin-left: 2em; margin-right: .75em;}
+		
+	.footer-copy-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em; line-height: 1.3em;
+		margin-left: .75em; margin-right: .75em;}
+		
+	.small-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; padding-bottom : 2px;
+	  	padding-top : 2px;}
+		
+	.small-link-text2 {font-size: .83em !important; 
+	}
+
+	.smallerer-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .65em;}
+	.smaller-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em;}		
+	.small-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em;}
+	.small-textb {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; font-weight: bold;}
+	.medium-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em;}
+	.mediumb-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em; font-weight: bold;}
+	.large-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1.3em;}		
+	.instr-text {font-family: Arial, Helvetica, sans-serif;
+		color:#666666; font-size: .83em;}
+		
+	.list-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .83em; line-height: 1.3em;}
+	.list-link-btext {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; line-height: 1.3em;}
+	
+	.searchbox-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;}
+	.footer-header-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;
+		margin-left: .75em; margin-right: .75em;}
+	.medium-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold; line-height: 1em;
+		text-indent: -1.25em; margin-left: 2em; margin-right: .75em;}
+	
+	.text16 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 16px;}
+		
+	.text14 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 14px;}
+	
+	.text12 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 12px;}
+		
+	.text10 {font-family: Arial, Helvetica, sans-serif;
+	    color:#000000; font-size: 12px;}
+		
+	.text9 {font-family: Arial, Helvetica, sans-serif;
+	   color:#000000; font-size: 12px;}
+	
+	.error-text {color:red;}
+	
+	.small-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: .75em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+
+	.medium-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1.3em; line-height: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.medium-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+
+		#side {
+			width: 10px;
+			float: left;
+			margin-left: -1px;
+			padding: 2px;
+			}
+							
+		#content {
+			padding: 2px;
+			margin-left: 25px;
+			
+		        
+		        }
+	 .fulltext_lnk {border:0px;
+	 				 margin-right: 2px;
+					 vertical-align:baseline;
+	 				}
+	 
+	  .leftcoltab { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:530px;  /* for IE5/WIN */
+		  width:520px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	  .rightcoltab {
+    float: right;
+    margin: 0;
+    padding: 5px;
+    position: relative;
+    right: 50px;
+    top: 25px;
+    width: 350px;
+    z-index: 99;
+}
+	  .centercoltab {
+		  position:absolute;
+		  padding:0 0px;
+		  }
+	  .alt {
+		background: #ece9d8;
+		margin: 0;
+		padding: 1px;
+		}
+		.leftcolc { 
+	position:relative;
+	top:5px;
+	left:5px;
+	float:left;
+	width:420px;  /* for IE5/WIN */
+	width:400px; /* actual value */
+	margin:0 0 0px 0;
+	padding:5px;
+	z-index:100;
+	}
+.rightcolc {
+	position:relative;
+	top:0px;
+	right:0px;
+	float:right;
+	margin:0 0px;
+	padding:0px;
+	width:500px;
+	z-index:99;
+	}
+.centercolc {
+	position:absolute;
+	padding:0 0px;
+	}
+	
+	.leftcoltabv { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:460px;  /* for IE5/WIN */
+		  width:350px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	.rightcoltabv {
+		position:relative;
+		top:5px;
+		right:0px;
+		float:right;
+		margin:0 0px 0 0;
+		padding:15px;
+		width:480px;
+		z-index:99;
+		}
+		
+.x-tabs-strip-wrap {
+	overflow-y: hidden !important;
+}
+  --></style>
+<script src="js/tagcanvas.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function loadCloud() {
+	try {
+	  TagCanvas.Start('myCanvas','tags',{
+		textColour: '#000000',
+		outlineColour: '#ff00ff',
+		reverse: true,
+		shuffleTags:true,
+		depth: 0.8,
+		maxSpeed: 0.05,
+		textHeight: 12,
+		initial: [0.000, 0.050],
+		shape: "hring",
+		lock: "x"
+	  });
+	} catch(e) {
+	  // something went wrong, hide the canvas container
+	  // document.getElementById('myCanvasContainer').style.display = 'none';
+	}
+  };
+</script>
+<script type="text/javascript" src="cfformprotect/js/cffp.js"></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<style type="text/css"><!--
+.google-visualization-orgchart-node {
+    background-color: #FFFFFF !important;
+    border: 2px solid #AFCF40 !important;
+    cursor: default;
+    font-family: arial,helvetica;
+    text-align: center;
+    vertical-align: middle;
+}
+
+iframe {float:right; 
+		margin:10px;
+		border: 2px solid #1B4D0E;
+		
+		}
+
+a.boxed:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxed:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxed:hover {color: red !important; text-decoration: underline !important;}
+
+a.boxedh:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxedh:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxedh:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedm:link {text-decoration: none !important; 	Color: #606060 !important;}
+a.boxedm:visited  { color: #606060 !important; text-decoration: none !important;}
+a.boxedm:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedl:link {text-decoration: none !important; 	Color: #808080   !important;}
+a.boxedl:visited  { color: 	#808080 !important; text-decoration: none !important;}
+a.boxedl:hover {color: red !important; text-decoration: underline !important;}				
+
+.google-visualization-orgchart-linebottom {
+    border-bottom: 1px solid #006699 !important;
+}
+.google-visualization-orgchart-lineleft {
+    border-left: 1px solid #006699 !important;
+}
+
+.google-visualization-orgchart-lineright {
+    border-right: 1px solid #006699 !important;
+}
+
+--></style>
+<script type="text/javascript">
+
+
+function settab() {
+    var mytabs = ColdFusion.Layout.getTabLayout('citationdetails');
+   
+ 
+  mytabs.on('tabchange', function(tabpanel,activetab) { document.cookie = 'picked=' + '1736020' + ',' + activetab.id; })
+ 
+}
+
+
+function letemknow(){
+  ColdFusion.Window.show('letemknow');
+}
+
+function letemknow2(){
+  ColdFusion.Window.show('letemknow2');
+}
+
+
+
+
+
+function testthis(){
+
+alert('test');
+}
+function loadalert(){ 
+ alert("I am in the load alert");
+ 
+}
+function loadalert2(){ 
+  alert("I am in the load alert2");
+ 
+}
+</script>
+<script type='text/javascript'>
+	  	google.load('visualization', '1', {packages:['orgchart']});
+	    google.setOnLoadCallback(drawChart);
+	  
+	  function drawChart() {
+	    var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+  	  
+		data.addRows([
+          [{v:'0', f:'<div style="color:black; font-size:150%; font-style:normal">CCS&nbsp;for&nbsp;this&nbsp;Proceeding</div>'}, '', ''],
+		  
+        ]);
+		
+		if (document.getElementById('chart_div')) {
+       var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+       chart.draw(data, {allowHtml:true});
+		}
+      }
+	  
+</script>
+<script type="text/javascript">
+ function expandcollapse(anchor,whichone) {
+	 var inner = document.getElementById(anchor);
+	 var theshow = "toShow" + whichone;
+ 	 var thehide = "toHide" + whichone;
+	 var span = document.getElementById(theshow);
+     span.style.display = (span.style.display=='inline')?'none':'inline';
+     var span = document.getElementById(thehide);
+     span.style.display = (span.style.display=='none')?'inline':'none';
+     inner.innerHTML = (inner.innerHTML=='collapse')?'expand':'collapse';
+    }
+
+  
+</script>
+<script type="text/javascript">
+ /* <!-- Begin
+	if(document.layers || document.all) {
+	a = 1;
+	setInterval("Jump()", 10);
+	}
+	function Jump() {
+	a = a + 1;
+	//self.moveBy((Math.random() * a * 2 - a), (Math.random() * a * 2) - a);
+	}
+//  End --> */
+</script>
+<script type="text/javascript">
+function expandWatson(divID,theConcept) { 
+			if (document.getElementById(divID).style.display == "none") {
+				document.getElementById(divID).style.display = "block";
+				document.getElementById(divID).innerHTML = theConcept + "<br />" + document.getElementById(divID).innerHTML;
+			}
+			 else {
+				 document.getElementById(divID).style.display = "none"
+			}
+		}
+</script>
+
+<script type="text/javascript">
+  function togglePatMap() {
+        var div = document.getElementById('patmap'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsepmapa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				httpGetAsyncwID("patent.cfm?id=1736020",'patmap');
+				httpGetAsyncwID("simmap_track.cfm?id=1736020&how=live",'blackhole');
+			}
+			else {
+				httpGetAsyncwID("simmap_track.cfm?id=1736020&how=cache",'blackhole');
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsepmapa").src = "images/expand.png";
+        }
+    }
+  
+  function toggleCO() {
+        var div = document.getElementById('codisp'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsecoa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				/* httpGetAsyncwID("coint.cfm?id=1736020",'codisp'); */
+				/*httpGetAsyncwID("simmap_track.cfm?id=1736020&how=live",'blackhole'); */
+			}
+			else {
+				/* httpGetAsyncwID("simmap_track.cfm?id=1736020&how=cache",'blackhole'); */
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsecoa").src = "images/expand.png";
+        }
+    }
+	
+	function httpGetAsyncwID(theUrl,theID) {
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+				
+				document.getElementById(theID).innerHTML=xmlHttp.responseText;
+		}
+		xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		xmlHttp.send();
+	}
+</script>
+<meta name="citation_publisher" content="ACM"> <meta name="citation_authors" content="General Chair-Hoe, James C.; Program Chair-Adve, Vikram S."> <meta name="citation_conference_title" content="Proceedings of the fifteenth edition of ASPLOS on Architectural support for programming languages and operating systems"> <meta name="citation_date" content="03/13/2010"> <meta name="citation_isbn" content="978-1-60558-839-1"> <meta name="citation_abstract_html_url" content="http://dl.acm.org/citation.cfm?id=1736020">
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFAJAXPROXY');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFFORM');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFDIV');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFTEXTAREA');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(drawChart,null,false,true);
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFWINDOW');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_11422156988165641=function()
+	{
+		_cf_bind_init_11422156988165642=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow-body','bindExpr':['letemknow.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_11422156988165642);var _cf_window=ColdFusion.Window.create('letemknow','<div style=\'text-align:left; color:black;\'>Did you know the ACM DL App is now available?</div>','letemknow.cfm',{ modal:false, closable:true, divid:'cf_window11422156988165640', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:75, y:125});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_11422156988165641);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_11422156988165644=function()
+	{
+		_cf_bind_init_11422156988165645=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow2-body','bindExpr':['letemknow_recomm.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_11422156988165645);var _cf_window=ColdFusion.Window.create('letemknow2','<div style=\'text-align:left; color:black;\'>Did you know your Organization can subscribe to the ACM Digital Library?</div>','letemknow_recomm.cfm',{ modal:false, closable:true, divid:'cf_window11422156988165643', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:70, y:175});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_11422156988165644);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_11422156988165647=function()
+	{
+		_cf_bind_init_11422156988165648=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'theguide-body','bindExpr':['whatisguide.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_11422156988165648);var _cf_window=ColdFusion.Window.create('theguide','The ACM Guide to Computing Literature','whatisguide.cfm',{ modal:false, closable:true, divid:'cf_window11422156988165646', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_11422156988165647);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_11422156988165650=function()
+	{
+		_cf_bind_init_11422156988165651=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'thetags-body','bindExpr':['showthetags.cfm?id=1736020']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_11422156988165651);var _cf_window=ColdFusion.Window.create('thetags','All Tags','showthetags.cfm?id=1736020',{ modal:false, closable:true, divid:'cf_window11422156988165649', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_11422156988165650);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_11422156988165653=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theformats','Export Formats','',{ modal:false, closable:true, divid:'cf_window11422156988165652', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:250, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_11422156988165653);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_11422156988165655=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theexplaination','','',{ modal:false, closable:true, divid:'cf_window11422156988165654', draggable:true, resizable:true, fixedcenter:false, width:600, height:600, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_11422156988165655);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_11422156988165657=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theservices','','',{ modal:false, closable:true, divid:'cf_window11422156988165656', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_11422156988165657);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_11422156988165659=function()
+	{
+		_cf_bind_init_11422156988165660=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'savetobinder-body','bindExpr':['savetobinder.cfm?id=1736020']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_11422156988165660);var _cf_window=ColdFusion.Window.create('savetobinder','Save to Binder','savetobinder.cfm?id=1736020',{ modal:false, closable:true, divid:'cf_window11422156988165658', draggable:true, resizable:true, fixedcenter:true, width:600, height:600, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false, _cf_refreshOnShow:true});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_11422156988165659);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(settab,null,false,true);
+/* ]]> */</script>
+</head>
+
+<body style="text-align:center; font-size:100%"> 
+<script type="text/javascript">
+						addthis_pub             = 'acm'; 
+						//addthis_logo            = 'http://www.addthis.com/images/yourlogo.png';
+						addthis_logo            = 'https://dl.acm.org/images/ACM_transparent.png';
+						addthis_logo_background = 'c2d5fc';
+						addthis_logo_color      = '000000';
+						addthis_brand           = 'Citation Page';
+						addthis_options         = 'favorites, email, slashdot, citeulike, digg, delicious, twitter, myspace, facebook, google, more';
+						</script>
+<script src='AC_RunActiveContent.js' type="text/javascript"></script>
+<div style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<a id="CIT"></a>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFGCMX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFGCMX');</script>
+
+<div id="header">
+<table style="table-layout:fixed; margin-top: 5px; margin-bottom: 10px; border:0px; width:100%; border-collapse:collapse;">
+<tr style="vertical-align:top">
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; width:300px" class="small-link-text2"><img src="/images/ACMDL_Logo.jpg" alt="ACM DL" style="border:0px" usemap="#port" />
+</td>
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; vertical-align:middle;" class="small-link-text2">
+<table style="width:100%; border-collapse:collapse; padding:0px">
+<tr><td style="text-align:center">
+<table>
+<tr>
+<td style="text-align:center">
+<div style="margin:5px auto;color:#356b20;font-size:11pt;line-height:130%; height:63px;">
+Iowa State University
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding-top: 0px; padding-left: 0px; padding-bottom:0px; text-align:right;" class="small-link-text2">
+<p style="margin-top:0px; margin-bottom:10px;">
+<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign in to personalize your Digital Library experience">SIGN IN</a>
+&nbsp;&nbsp;<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign up to personalize your Digital Library experience">SIGN UP</a>
+</p>
+<table style="padding: 5px; border-collapse:collapse; float:right">
+<tr>
+<td class="small-link-text2" style="text-align:right">
+<script type="text/javascript">
+								function encodeInput(form){
+								    	var cleanQuery = form.elements['query'].value.replace(new RegExp( "\\+", "g" ),"%2B");
+										cleanQuery = cleanQuery.replace(/#/g, "%23");
+										cleanQuery = cleanQuery.replace(/(\n)/g, " ");
+										cleanQuery = cleanQuery.trim();
+										
+										
+										var ascii = /^[ -~]+$/;
+										if( !ascii.test( cleanQuery ) ) {
+											var fixedUseQuery = "";
+											for (var i = 0, len = cleanQuery.length; i < len; i++) {
+												var str = "";
+												if( !ascii.test(cleanQuery[i]) ) {
+										 			str = "%26%23" + cleanQuery[i].charCodeAt(0) + ";";
+												} else {
+										 			str = cleanQuery[i];
+												}
+												fixedUseQuery = fixedUseQuery + str;
+											}
+											cleanQuery = fixedUseQuery;
+										}
+										
+
+										form.elements['query'].value = cleanQuery;
+								}
+							</script>
+<form name="qiksearch" action="/results.cfm" onsubmit='encodeInput(this)'>
+<span style="margin-left:0px"><label><input type="text" name="query" size="30" value="" /></label>&nbsp;
+<input style="vertical-align:top;" type="image" alt="Search" name="Go" src="/images/search_small.jpg" />
+</span>
+</form>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td colspan="3" class="small-link-text2" style="padding-bottom:5px; padding-top:0px; text-align:center">
+<div style="margin:0px auto;color:#356b20;line-height:10%;"> </div>
+</td>
+</tr>
+</table>
+<div id="google_translate_element" style="text-align:right; padding-bottom:5px;"></div><script type="text/javascript">function googleTranslateElementInit() {new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<map name="port" id="port">
+<area shape="rect" coords="1,1,60,50" href="https://www.acm.org/" alt="ACM Home Page" />
+<area shape="rect" coords="65,1,275,68" href="https://dl.acm.org/dl.cfm" alt="ACM Digital Library Home Page" />
+</map>
+</div>
+<style>
+  .watsonCont {
+	  width:170px;
+	  
+	  color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	 /* background-color: lightgray;*/
+  }
+  #watsonInside {
+    border-radius: 25px;
+    border: 2px solid #649134;
+	margin-top: 12px;
+	padding: 5px;
+	height: 80px;
+  }
+
+</style>
+<table style="table-layout:fixed; padding-bottom:10px; width:100%; padding:0px;">
+<tr style="vertical-align:top">
+<td style="padding-right:10px; text-align:left" class="small-link-text">
+<div id="divmain" style="border:1px solid #356b20;">
+<div class="large-text" style="text-align:left; margin-left:2px;margin-bottom:5px;">
+<h1 class="mediumb-text" style="margin-top:0px; margin-bottom:0px;">Proceedings of the fifteenth edition of ASPLOS on Architectural support for programming languages and operating systems</h1>
+</div>
+<table class="medium-text" style="border-collapse:collapse; padding:0px; margin-left: 2px;">
+<colgroup>
+<col style="width:540px" />
+</colgroup>
+<tr style="vertical-align:top">
+<td>
+<table style="border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px;" />
+<col style="width:auto" />
+<tr style="vertical-align:top">
+</tr>
+</table>
+<table style="margin-top: 10px; border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px" />
+<tr>
+<td valign="top" nowrap="nowrap">
+General Chairs:
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=81100064986&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">James C. Hoe</a>
+</td>
+<td valign="bottom">
+<a href="inst_page.cfm?id=60027950" title="Institutional Profile Page"><small>Carnegie Mellon University, USA</small></a>
+</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">
+Program Chairs:
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=81100524180&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">Vikram S. Adve</a>
+</td>
+<td valign="bottom">
+<a href="inst_page.cfm?id=60000745" title="Institutional Profile Page"><small>University of Illinois at Urbana-Champaign, USA</small></a>
+</td>
+</tr>
+</table>
+<table style="margin-top: 10px" border="0" class="medium-text" cellpadding="2" cellspacing="0">
+<tr>
+<td><table border="0" class="medium-text" style="margin-left:5px;" cellpadding="1" cellspacing="0">
+<tr valign="top">
+<td nowrap="nowrap" style="padding-top:10px;">Publication of:</td>
+</tr>
+<tr valign="top">
+<td nowrap="nowrap" style="padding-bottom:0px">&middot;&nbsp;Conference</td>
+</tr>
+<tr valign="top">
+<td style="padding-left:10px;">
+<a href="https://www.ece.cmu.edu/CALCM/asplos10" title="Conference Website" target="_self" class="link-text">ASPLOS '10</a> Architectural Support for Programming Languages and Operating Systems
+</td>
+</tr>
+<tr valign="top">
+<td style="padding-left:10px; padding-bottom:10px"> Pittsburgh, PA, USA &mdash; March 13 - 17, 2010
+<br />
+<a href="https://www.acm.org/publications" class="small-link-text" title="ACM">ACM</a> <span class="small-link-text">New York, NY</span><span class="small-link-text">, USA</span> <span class="small-link-text"> &copy;2010</span>
+<br />
+</td>
+</tr>
+</table></td>
+</tr>
+</table>
+</td>
+<td rowspan="20">
+<table border="0" class="medium-text" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" style="padding-bottom: 5px;">
+<img src="https://portalparts.acm.org/1740000/1736020/thumb/cover_thumb.jpg" title="Proceedings of the fifteenth edition of ASPLOS on Architectural support for programming languages and operating systems" height="100" width="76" ALT="Proceedings of the fifteenth edition of ASPLOS on Architectural support for programming languages and operating systems" />
+</td>
+<td align="left" nowrap="nowrap">
+<img src="images/ACM_mini.jpg" style="vertical-align:middle" title="Published by ACM" alt="Published by ACM" /> 2010 Proceeding<br />
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="baseline" style="padding-bottom:5px; padding-top:5px;">
+<img src="img/stats.jpg" alt="Bibliometrics Data" />&nbsp;
+<a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a>
+</td>
+</tr>
+<tr>
+<td class="small-text" colspan="2" valign="top" style="padding-left:30px;">
+&middot;&nbsp;Citation Count: 1,336<br />
+&middot;&nbsp;Downloads (cumulative): 30,540<br />
+&middot;&nbsp;Downloads (12 Months): 1,760<br />
+&middot;&nbsp;Downloads (6 Weeks): 141<br />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br clear="all" />
+<br clear="all" />
+</div>
+</td>
+<td style="padding-left: 5px; vertical-align:top; text-align:left; width:170px" class="small-link-text">
+<div id="divtools" style="background-color:#ece9d8; text-align:left; padding-top:5px; padding-bottom:5px; ">
+<div class="medium-text" style="margin-left:3px; margin-top:10px;"><h1 class="mediumb-text" style="margin-top:-15px;">Tools and Resources</h1></div>
+<ul title="Tools and Resources" style="list-style: none; list-style-position:outside;
+margin-left: 25px;
+padding-left: 0em;
+text-indent: 0px;
+margin-bottom: 0px;">
+<li style="list-style-image:url(img/toc_small.gif);margin-top:10px;"><span style="margin-left:0px;">
+<span class="small-link-text">TOC Service:</span>
+<img src="images/blanks.gif" border="0" alt="Spacer Image reserves space for checkmark when TOC Service is updated" name="saved" />
+<ul style="margin-left: 0; padding-left: 0; display:inline;">
+<li style="list-style:none; display:inline"><br /><img src="img/email_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Email</a></li>
+<li style="list-style:none; display:inline"><img src="img/rss_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">RSS</a></li>
+</ul>
+</span>
+</li>
+<li style="list-style-image:url(img/binder.gif);margin-top:10px;"><span style="margin-left:0px;">
+<a href="citation.cfm?id=1736020&preflayout=flat#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Save to Binder</a>
+</span></li>
+<li style="list-style-image:url(img/binder_green.gif);margin-top:10px;"><span style="margin-left:0px; margin-bottom:0px">
+<span class="small-link-text">Export Formats:</span>
+<ul style="margin-left: 0; padding-left: 0; margin-bottom:0px;">
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=1736020&expformat=bibtex','theformats');" class="small-link-text">BibTeX</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=1736020&expformat=endnotes','theformats');" class="small-link-text">EndNote</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=1736020&expformat=acmref','theformats');" class="small-link-text">ACM&nbsp;Ref</a></li>
+</ul>
+</span>
+</li>
+<li style="list-style-image:url(img/calbullet.jpg);margin-top:15px;"><span style="margin-left:0px; margin-bottom:0px">
+<span class="small-link-text">Upcoming Conference:</span>
+<ul style="margin-left: 0; padding-left: 0; margin-bottom:0px;">
+<li style="list-style:disc; display:inline; margin-bottom:0px; margin-left:25px;"><a href="https://www.asplos2018.org/" title="Architectural Support for Programming Languages and Operating Systems" class="small-link-text">ASPLOS '18</a></li>
+</ul>
+</span>
+</li>
+</ul>
+
+
+<p class="small-link-text" style="padding-top: 0px; margin-left:6px; margin-bottom:0px">Share:</p>
+
+
+<div style="margin-left:5px;" class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_email"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_researchgate"></a>
+<a class="addthis_button_reddit"></a>
+<span class="addthis_separator">|</span>
+<a href="https://www.addthis.com/bookmark.php?v=250&amp;username=acm" class="addthis_button_expanded" title="more"></a>
+</div>
+<script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#username=acm"></script>
+
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="layout" style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<div id="fback" style="text-align:left; padding-top:20px; padding-bottom:20px">
+<span class="small-text" style="padding-right:10px; margin-bottom:0px;">
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#40302f3234212c6d262525242221232b0028316e21232d6e2f3227" style=" vertical-align:middle"><img src="img/feedbackg.gif" width="20" height="19" alt="Contact The DL Team" border="0" /></a>
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#0878677a7c6964256e6d6d6c6a696b6348607926696b6526677a6f"><strong>Contact Us</strong></a>
+<span style="padding:10px;">|</span>
+<span>Switch to <a href="citation.cfm?id=1736020&amp;preflayout=tabs">tabbed view</a> <noscript> (javascript required)</noscript></span>
+</span>
+<div class="small-text" style="margin-top:10px; margin-bottom:5px;">
+<br />
+<a href="#abstract" title="Abstract" style="padding:5px"><span>Abstract</span></a> |
+<a href="#formats" title="Source Materials" style="padding:5px"><span>Source Materials</span></a> |
+<a href="#authors" title="Authors" style="padding:5px"><span>Authors</span></a> |
+<a href="#references" title="References" style="padding:5px"><span style='color:#999999'>References</span></a> |
+<a href="#citedby" title="Cited By" style="padding:5px"><span style='color:#999999'>Cited By</span></a> |
+<a href="#indexterms" title="Index Terms" style="padding:5px"><span style='color:#999999'>Index Terms</span></a> |
+<a href="#source" title="Publication" style="padding:5px"><span>Publication</span></a> |
+<a href="#revs" title="Reviews" style="padding:5px"><span style='color:#999999'>Reviews</span></a> |
+<a href="#comments" title="Comments" style="padding:5px"><span>Comments</span></a>
+|
+<a href="#prox" title="Table of Contents" style="padding:5px"><span>Table of Contents</span></a>
+</div>
+<div style="right: 0pt; border-top:1px solid #356b20; font-size:1px; margin-bottom:20px;" />
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="abstract" class="small-text">ABSTRACT</A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div style="display:inline"><p>It is our pleasure to introduce the technical program for the fifteenth edition of ASPLOS. The conference this year continues and reinforces the ASPLOS tradition of publishing innovative research spanning the boundaries of hardware, computer architecture, compilers, programming languages, operating systems, and distributed computing.</p> <p>We received 181 submissions this year, which was a record and a significant reversal of a trend from the last 3 years (158, 127 and 113 in 2006, 2008 and 2009, respectively). 19 submissions had PC members as co-authors. The most dominant theme, by far, was parallel processing: over half of the submissions were directly related to this topic, most of which mentioned multicore, manycore, SIMD, or heterogeneous architectures as a target.</p> <p>There were two key changes in the ASPLOS paper reviewing process this year, both of which have been used in other systems conferences: two rounds of reviews, and the use of an External Review Committee preselected by the Program Chair. Each paper was initially reviewed by two PC members and one ERC member. Based on these reviews, 91 papers were selected for a second round of reviews; see the Program Chair's Report on the ASPLOS Web site for the details on how these were selected. These papers received one or two more PC reviews plus one more ERC review. Together, these two changes held the average reviewing load per PC member to under 18 papers, while allowing them to spend more time on papers with a significant chance of being accepted.</p> <p>The PC met in person at the Chicago O'Hare Hilton for a one-day meeting on Oct. 30, 2009. 73 papers were discussed at the meeting. The PC chose 32 papers to be presented at the conference, for an overall acceptance rate of 17.7%. 6 of the 32 have PC members as co-authors. In another departure from previous years, all papers were assigned a shepherd to ensure that the final papers adequately addressed the concerns of the reviewers. The PC also awarded a Best Paper Award and nominated three papers for the CACM Research Highlights.</p> <p>If ASPLOS XV is successful, as we hope, numerous people should share the credit. Most of all, the technical program directly reflects the high quality of the submitted papers; we thank all the authors of the submissions for their effort. The members of the PC and ERC put in a very substantial effort for reviewing and shepherding, and for selecting the award papers. Mike Hind (IBM Research), in particular, also handled the review process and discussions for papers where the PC chair had conflicts, and provided valuable advice during the reviewing process. Seth Goldstein (CMU) once again organized and put his inimitable stamp on the ASPLOS Wild and Crazy Ideas session. We owe them all a debt of gratitude.</p> <p>The extensive logistics behind organizing this conference have been handled by the tireless effort of a large team of Pittsburgh volunteers: Shimin Chen (Intel), Allen Cheng (Pitt), Sangyeun Cho (Pitt), Franz Franchetti (CMU), Ken Mai (CMU), Todd Mowry (CMU), Onur Mutlu (CMU), Jun Yang (Pitt) and Youtao Zhang (Pitt). Each member of this team played an important role in making ASPLOS in Pittsburgh a success. In addition, the ASPLOS Steering Committee gave us timely and valuable guidance over the last year. We want to thank all members of the organizing committee and the steering committee for the time and attention they have invested in this conference.</p></div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="formats" class="small-text"><SPAN class="heading">SOURCE MATERIALS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div class="abstract">
+<SPAN style="font-weight:bold">FRONT MATTER</span>
+</div>
+<div style="margin-left:10px; line-height:180%;">
+<A NAME="FullText" HREF="https://portalparts.acm.org/1740000/1736020/fm/frontmatter.pdf?ip=129.186.252.23" title="PDF" target="_blank">
+<img src="imagetypes/pdf_logo.gif" alt="PDF" border="0" align="middle" style="margin-right: 2px">PDF</A>
+&nbsp;(title page, copyright, welcome, contents, organization, reviewers, sponsors)
+</div>
+<div style="margin-top: 10px;" class="abstract">
+<SPAN style="font-weight:bold">BACK MATTER</span>
+</div>
+<div style="margin-left:10px; line-height:180%;">
+<A NAME="FullText" HREF="https://portalparts.acm.org/1740000/1736020/bm/backmatter.pdf?ip=129.186.252.23" title="PDF" target="_blank">
+<img src="imagetypes/pdf_logo.gif" alt="PDF" border="0" align="middle" style="margin-right: 2px">PDF</A>
+&nbsp;(author index)
+</div>
+<div style="margin-top: 10px; height: auto; padding: 5px; ">
+<div style="margin-top:20px;" class="abstract">
+<SPAN style="font-weight:bold">APPEARS IN</span>
+</div>
+<div>
+<a href="/collection.cfm?id=KA8" title="Software" target="_blank">Software</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA7" title="Networking" target="_blank">Networking</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA10" title="Performance" target="_blank">Performance</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA5" title="Hardware Design" target="_blank">Hardware Design</a>
+</div>
+</div>
+<br clear="all" />
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="authors" class="small-text"><SPAN class="heading">AUTHORS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<dl title="Authors" style="margin-top:0px">
+<dt style="float: left; clear: left; width: 100%; margin-top: 0px; margin-bottom: 0px;">
+<strong>
+General Chairs
+</strong>
+</dt>
+<dd style="margin: 0 0 0 60px; padding: 0 0 0.5em 0;">
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="gifs/ProfileSilhouette.gif" alt="Author image not provided" align="middle" hspace="5">
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px" colspan="2">
+&nbsp;<span class="small-text"><strong><a title="author page of James C. Hoe" href="author_page.cfm?id=81100064986">James C. Hoe</a></strong><br /></span>
+<span class="small-text"><br><p style="margin-bottom:-10px;" align="center">No contact information provided yet.</p>
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong><a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a></strong>:&nbsp;publication history<br />
+<table width="90%" style="margin-top: 1px; margin-bottom: 10px; border-collapse: separate; border-spacing: 3px;" border="0" align="left">
+<tr>
+<td class="small-text">Publication years</td><td class="small-text" align="right">1999-2017</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Publication count</td><td class="small-text" align="right">70</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Citation Count</td><td class="small-text" align="right">971</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Available for download</td><td class="small-text" align="right">39</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (6 Weeks)</td><td class="small-text" align="right">146</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (12 Months)</td><td class="small-text" align="right">1,323</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (cumulative)</td><td class="small-text" align="right">17,138</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average downloads per article</td><td class="small-text" align="right">439.44</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average citations per article</td><td class="small-text" align="right">13.87</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of James C. Hoe" href="author_page.cfm?id=81100064986&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of James C. Hoe
+</td>
+</tr>
+</table>
+</span>
+</dd>
+<dt style="float: left; clear: left; width: 100%; margin-top: 0px; margin-bottom: 0px;">
+<strong>
+Program Chairs
+</strong>
+</dt>
+<dd style="margin: 0 0 0 60px; padding: 0 0 0.5em 0;">
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="gifs/ProfileSilhouette.gif" alt="Author image not provided" align="middle" hspace="5">
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px" colspan="2">
+&nbsp;<span class="small-text"><strong><a title="author page of Vikram S. Adve" href="author_page.cfm?id=81100524180">Vikram S. Adve</a></strong><br /></span>
+<span class="small-text"><br><p style="margin-bottom:-10px;" align="center">No contact information provided yet.</p>
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong><a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a></strong>:&nbsp;publication history<br />
+<table width="90%" style="margin-top: 1px; margin-bottom: 10px; border-collapse: separate; border-spacing: 3px;" border="0" align="left">
+<tr>
+<td class="small-text">Publication years</td><td class="small-text" align="right">1991-2016</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Publication count</td><td class="small-text" align="right">74</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Citation Count</td><td class="small-text" align="right">2,410</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Available for download</td><td class="small-text" align="right">38</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (6 Weeks)</td><td class="small-text" align="right">215</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (12 Months)</td><td class="small-text" align="right">2,092</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (cumulative)</td><td class="small-text" align="right">28,252</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average downloads per article</td><td class="small-text" align="right">743.47</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average citations per article</td><td class="small-text" align="right">32.57</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of Vikram S. Adve" href="author_page.cfm?id=81100524180&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of Vikram S. Adve
+</td>
+</tr>
+</table>
+</span>
+</dd>
+</dl>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="references" class="small-text"><SPAN class="heading">REFERENCES</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+References are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="citedby" class="small-text"><SPAN class="heading">CITED BY</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+Citings are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="indexterms" class="small-text"><SPAN class="heading">INDEX TERMS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 0px;" class="flatbody">
+Index Terms are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="source" class="small-text"><SPAN class="heading">PUBLICATION</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<table border="0" class="medium-text" cellpadding="5" cellspacing="5">
+<tr valign="top">
+<td style="padding: 10px;">Title</td>
+<td style="padding: 10px;">
+<a href="https://www.ece.cmu.edu/CALCM/asplos10" title="Conference Website" target="_self" class="link-text">ASPLOS '10</a> Architectural Support for Programming Languages and Operating Systems
+</td>
+</tr>
+<tr><td style="padding: 10px;"></td><td style="padding: 10px;">Pittsburgh, PA, USA &mdash; March 13 - 17, 2010</td></tr> <tr><td style="padding: 10px;">Pages</td><td style="padding: 10px;">410</td></tr>
+<tr>
+<td style="padding: 10px;">Sponsors</td>
+<td style="padding: 10px;">
+<a href="sig.cfm?id=SP917"> SIGARCH</a> ACM Special Interest Group on Computer Architecture
+</td>
+</tr>
+<tr>
+<td style="padding: 10px;"></td>
+<td style="padding: 10px;">
+<a href="sig.cfm?id=SP945"> SIGOPS</a> ACM Special Interest Group on Operating Systems
+</td>
+</tr>
+<tr>
+<td style="padding: 10px;"></td>
+<td style="padding: 10px;">
+<a href="sig.cfm?id=SP946"> SIGPLAN</a> ACM Special Interest Group on Programming Languages
+</td>
+</tr>
+<tr><td style="padding: 10px;">Publisher</td><td style="padding: 10px;"><a href="https://www.acm.org/publications">ACM</a> New York, NY, USA</td>
+</tr>
+<tr><td style="padding: 10px;">ISBN</td><td style="padding: 10px;"> 978-1-60558-839-1</td></tr> <tr><td style="padding: 10px;">Order Number</td><td style="padding: 10px;">415105</td></tr>
+<tr valign="top">
+<td style="padding-left: 10px;">Conference</td>
+<td valign="top" align="left" style="padding-bottom: 25px; padding-left:10px;">
+<strong style="padding-right:10px">ASPLOS</strong><a href="event.cfm?id=RE178" title="Architectural Support for Programming Languages and Operating Systems">Architectural Support for Programming Languages and Operating Systems</a>
+<a href="event.cfm?id=RE178" title="Architectural Support for Programming Languages and Operating Systems"><img border="0" src="https://portalparts.acm.org/event_logos/RE178.jpg" title="ASPLOS logo" height="28" width="100" ALT="ASPLOS logo" style="vertical-align:top"></a>
+</td>
+</tr>
+<tr><td colspan="2">Paper Acceptance Rate 32 of 181 submissions, 18%</td></tr> <tr valign="top"><td style="pading-top:20px;" colspan="2">Overall Acceptance Rate 556 of 2,795 submissions, 20%</td></tr>
+<tr valign="top">
+<td colspan="2" style="padding-left:25px;">
+<table>
+<tr><td style="padding: 10px;">
+<img border="0" class="chart" id="5314281530102686-img" src="/CFFileServlet/_cf_chart/5314281530102686.jpg" usemap="#5314281530102686-map" />
+<div id="5314281530102686-tooltip" style="position:fixed;display:none;"></div>
+<map id="5314281530102686-map" name="5314281530102686-map">
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-0" coords="34,139,36,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-1" coords="45,159,47,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-2" coords="56,151,58,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-3" coords="66,156,68,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-4" coords="77,124,79,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-5" coords="88,127,90,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-6" coords="99,133,101,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-7" coords="110,149,112,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-8" coords="121,157,122,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-9" coords="131,121,133,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-10" coords="142,136,144,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-11" coords="153,126,155,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-12" coords="164,102,166,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-13" coords="175,65,176,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-14" coords="185,94,187,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-0-node-15" coords="196,48,198,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-0" coords="39,201,41,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-1" coords="50,203,52,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-2" coords="61,201,62,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-3" coords="71,203,73,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-4" coords="82,203,84,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-5" coords="93,203,95,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-6" coords="104,196,106,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-7" coords="115,200,117,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-8" coords="125,201,127,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-9" coords="136,199,138,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-10" coords="147,199,149,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-11" coords="158,197,160,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-12" coords="169,190,171,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-13" coords="179,191,181,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-14" coords="190,188,192,214" />
+<area style="cursor:auto" shape="rect" id="5314281530102686-graph-id0-plotset-plot-1-node-15" coords="201,188,203,214" />
+</map>
+<script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script>
+if (!CFCHART) {var CFCHART={};};if (!CFCHART.nodes) {CFCHART.nodes={};}
+CFCHART.nodes["5314281530102686"]={};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-0"]={text:"146",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-1"]={text:"109",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-2"]={text:"123",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-3"]={text:"114",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-4"]={text:"175",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-5"]={text:"169",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-6"]={text:"158",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-7"]={text:"127",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-8"]={text:"113",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-9"]={text:"181",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-10"]={text:"152",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-11"]={text:"172",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-12"]={text:"217",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-13"]={text:"287",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-14"]={text:"232",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-0-node-15"]={text:"320",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-0"]={text:"29",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-1"]={text:"25",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-2"]={text:"28",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-3"]={text:"24",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-4"]={text:"24",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-5"]={text:"24",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-6"]={text:"38",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-7"]={text:"31",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-8"]={text:"29",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-9"]={text:"32",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-10"]={text:"32",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-11"]={text:"37",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-12"]={text:"49",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-13"]={text:"48",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-14"]={text:"53",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["5314281530102686"]["5314281530102686-graph-id0-plotset-plot-1-node-15"]={text:"53",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+</script>
+</td>
+<td style="padding-left:20px;">
+<table style="border-width: 1px; border-style: solid; width:100%;  border-spacing: 6px;" class="text12">
+<tr bgcolor="#ffffff">
+<th style="width:50%">Year</th>
+<th align="right" style="width:15%">Submitted</th>
+<th align="right" style="width:15%">Accepted</th>
+<th align="center">Rate</th>
+ </tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">ASPLOS VI</td>
+<td align="right">146</td>
+<td align="right">29</td>
+<td align="center">20%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">ASPLOS VII</td>
+<td align="right">109</td>
+<td align="right">25</td>
+<td align="center">23%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">ASPLOS VIII</td>
+<td align="right">123</td>
+<td align="right">28</td>
+<td align="center">23%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">ASPLOS IX</td>
+<td align="right">114</td>
+<td align="right">24</td>
+<td align="center">21%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">ASPLOS X</td>
+<td align="right">175</td>
+<td align="right">24</td>
+<td align="center">14%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">ASPLOS XI</td>
+<td align="right">169</td>
+<td align="right">24</td>
+<td align="center">14%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">ASPLOS XII</td>
+<td align="right">158</td>
+<td align="right">38</td>
+<td align="center">24%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">ASPLOS XIII</td>
+<td align="right">127</td>
+<td align="right">31</td>
+<td align="center">24%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">ASPLOS XIV</td>
+<td align="right">113</td>
+<td align="right">29</td>
+<td align="center">26%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">ASPLOS XV</td>
+<td align="right">181</td>
+<td align="right">32</td>
+<td align="center">18%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">ASPLOS XVI</td>
+<td align="right">152</td>
+<td align="right">32</td>
+<td align="center">21%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">ASPLOS XVII</td>
+<td align="right">172</td>
+<td align="right">37</td>
+<td align="center">22%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">ASPLOS '14</td>
+<td align="right">217</td>
+<td align="right">49</td>
+<td align="center">23%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">ASPLOS '15</td>
+<td align="right">287</td>
+<td align="right">48</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">ASPLOS '16</td>
+ <td align="right">232</td>
+<td align="right">53</td>
+<td align="center">23%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">ASPLOS '17</td>
+<td align="right">320</td>
+<td align="right">53</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;"><strong>Overall</strong></td>
+<td align="right">2,795</td>
+<td align="right">556</td>
+<td align="center">20%</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</table>
+<br />
+<div class="abstract" style="margin-bottom:10px;">
+<SPAN><strong>APPEARS IN</strong></span>
+</div>
+<div>
+<a href="/collection.cfm?id=KA8" title="Software" target="_blank">Software</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA7" title="Networking" target="_blank">Networking</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA10" title="Performance" target="_blank">Performance</a>
+</div>
+<div>
+<a href="/collection.cfm?id=KA5" title="Hardware Design" target="_blank">Hardware Design</a>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="revs" class="small-text"><SPAN class="heading">REVIEWS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<br />Reviews are not available for this item
+<div align="left" style="margin-top:30px">
+<a title="Computing Reviews" href="ocr_review_main.cfm">
+<img src="images/ocrs-s.jpg" alt="Computing Reviews logo" border="0" style="vertical-align:middle"></a>
+<ul style="list-style:disc; display:inline-block">
+<li>Access <a href="ocr_review_main.cfm" target="_blank">critical reviews</a> of computing literature.</li>
+<li><a href="http://www.computingreviews.com/Reviewer/" target="_blank">Become a reviewer</a> for Computing Reviews</li>
+</ul>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="comments" class="small-text"><SPAN class="heading">COMMENTS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div>
+<div>
+<p style="margin-left:5px;">
+<strong>Be the first to comment</strong>
+To Post a comment please <a href="signin.cfm">sign in or create</a> a free Web account</a>
+</p>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="prox" class="small-text">Table of Contents</A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;">
+<h5 style="margin-bottom:0px; margin-top:0px" class="medium-text">Proceedings of the fifteenth edition of ASPLOS on Architectural support for programming languages and operating systems</h5>
+<h5 class="medium-text" style="margin-bottom:10px; margin-top:10px;">Table of Contents</h5>
+<div style="clear:both">
+<div style="margin-top:5px; margin-bottom: 10px;" class="small-text"><a href="citation.cfm?id=1508244&picked=prox" title="previous: ASPLOS XIV"><img hspace="5" align="absmiddle" border="0" src="img/prev.gif" width="19" height="11" alt="previous" />previous proceeding</a> <span style="padding-left:5px;padding-right:5px;">|</span><a href="citation.cfm?id=1950365&picked=prox" title="Next: ASPLOS XVI">next proceeding <img align="absmiddle" hspace="5" border="0" src="img/next.gif" width="19" height="11" alt="next" /></a></div>
+</div>
+<table class="text12" border="0">
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=1736021">Technology for developing regions: Moore's law is not enough</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100357712">Eric A. Brewer</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 1-2</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/1736020.1736021" title="DOI">10.1145/1736020.1736021</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:0">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736021&ftid=763965&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow1" style="display:inline;"><br /><div style="display:inline">The historic focus of development has rightfully been on macroeconomics and good governance, but technology has an increasingly large role to play. In this talk, I review several novel technologies that we have deployed in India and Africa, and discuss ...</div></span>
+<span id="toHide1" style="display:none;"><br /><div style="display:inline"><p>The historic focus of development has rightfully been on macroeconomics and good governance, but technology has an increasingly large role to play. In this talk, I review several novel technologies that we have deployed in India and Africa, and discuss the challenges and opportunities of this new subfield of EECS research. Working with the Aravind Eye Hospital, we are currently supporting doctor / patient videoconferencing in 30+ rural villages; more than 25,000 people have had their blindness cured due to these exams.</p> <p>Although Moore's Law has led to great cost reductions and thus enabled new technologies, we have reached essentially the low point for cost: the computing is essentially free compared to the rest of the system. The premium is thus on a combination of 1) deeper integration (fewer compo-nents), 2) shared usage models (even phones are shared), and 3) lower operating costs in terms of power and connectivity.</p></div></span> <a id="expcoll1" href="JavaScript: expandcollapse('expcoll1',1)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Novel architectures</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736023">Dynamically replicated memory: building reliable systems from nanoscale resistive memories</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81330492352">Engin Ipek</a>,
+<a href="author_page.cfm?id=81100200251">Jeremy Condit</a>,
+<a href="author_page.cfm?id=81100272413">Edmund B. Nightingale</a>,
+<a href="author_page.cfm?id=81100577220">Doug Burger</a>,
+<a href="author_page.cfm?id=81100496993">Thomas Moscibroda</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 3-14</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736023" title="DOI">10.1145/1736020.1736023</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736023&ftid=763966&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow3" style="display:inline;"><br /><div style="display:inline">DRAM is facing severe scalability challenges in sub-45nm tech- nology nodes due to precise charge placement and sensing hur- dles in deep-submicron geometries. Resistive memories, such as phase-change memory (PCM), already scale well beyond DRAM and ...</div></span>
+<span id="toHide3" style="display:none;"><br /><div style="display:inline"><p>DRAM is facing severe scalability challenges in sub-45nm tech- nology nodes due to precise charge placement and sensing hur- dles in deep-submicron geometries. Resistive memories, such as phase-change memory (PCM), already scale well beyond DRAM and are a promising DRAM replacement. Unfortunately, PCM is write-limited, and current approaches to managing writes must de- commission pages of PCM when the first bit fails.</p> <p>This paper presents <i>dynamically replicated memory</i> (DRM), the first hardware and operating system interface designed for PCM that allows <i>continued operation through graceful degradation</i> when hard faults occur. DRM reuses memory pages that con- tain hard faults by dynamically forming pairs of complementary pages that act as a single page of storage. No changes are required to the processor cores, the cache hierarchy, or the operating sys- tem's page tables. By changing the memory controller, the TLBs, and the operating system to be DRM-aware, we can improve the lifetime of PCM by up to 40x over conventional error-detection techniques.</p></div></span> <a id="expcoll3" href="JavaScript: expandcollapse('expcoll3',3)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736024">A power-efficient all-optical on-chip interconnect using wavelength-based oblivious routing</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100407663">Nevin Kirman</a>,
+<a href="author_page.cfm?id=81436598957">Jos&#233; F. Mart&#237;nez</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 15-28</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736024" title="DOI">10.1145/1736020.1736024</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736024&ftid=763967&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow4" style="display:inline;"><br /><div style="display:inline">We present an all-optical approach to constructing data networks on chip that combines the following key features: (1) Wavelength-based routing, where the route followed by a packet depends solely on the wavelength of its carrier signal, and not on information ...</div></span>
+<span id="toHide4" style="display:none;"><br /><div style="display:inline"><p>We present an all-optical approach to constructing data networks on chip that combines the following key features: (1) Wavelength-based routing, where the route followed by a packet depends solely on the wavelength of its carrier signal, and not on information either contained in the packet or traveling along with it. (2) Oblivious routing, by which the wavelength (and thus the route) employed to connect a source-destination pair is invariant for that pair, and does not depend on ongoing transmissions by other nodes, thereby simplifying design and operation. And (3) passive optical wavelength routers, whose routing pattern is set at design time, which allows for area and power optimizations not generally available to solutions that use dynamic routing. Compared to prior proposals, our evaluation shows that our solution is significantly more power efficient at a similar level of performance.</p></div></span> <a id="expcoll4" href="JavaScript: expandcollapse('expcoll4',4)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Compilers and run-time systems</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736026">A real system evaluation of hardware atomicity for software speculation</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100523539">Naveen Neelakantam</a>,
+<a href="author_page.cfm?id=81100122738">David R. Ditzel</a>,
+<a href="author_page.cfm?id=81100490198">Craig Zilles</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 29-38</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736026" title="DOI">10.1145/1736020.1736026</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736026&ftid=763968&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow6" style="display:inline;"><br /><div style="display:inline">In this paper we evaluate the atomic region compiler abstraction by incorporating it into a commercial system. We find that atomic regions are simple and intuitive to integrate into an x86 binary-translation system. Furthermore, doing so trivially enables ...</div></span>
+<span id="toHide6" style="display:none;"><br /><div style="display:inline"><p>In this paper we evaluate the atomic region compiler abstraction by incorporating it into a commercial system. We find that atomic regions are simple and intuitive to integrate into an x86 binary-translation system. Furthermore, doing so trivially enables additional optimization opportunities beyond that achievable by a high-performance dynamic optimizer, which already implements superblocks.</p> <p>We show that atomic regions can suffer from severe performance penalties if misspeculations are left uncontrolled, but that a simple software control mechanism is sufficient to reign in all detrimental side-effects. We evaluate using full reference runs of the SPEC CPU2000 integer benchmarks and find that atomic regions enable up to a 9% (3% on average) improvement beyond the performance of a tuned product.</p> <p>These performance improvements are achieved without any negative side effects. Performance side effects such as code bloat are absent with atomic regions; in fact, static code size is reduced. The hardware necessary is synergistic with other needs and was already available on the commercial product used in our evaluation. Finally, the software complexity is minimal as a single developer was able to incorporate atomic regions into a sophisticated 300,000 line code base in three months, despite never having seen the translator source code beforehand.</p></div></span> <a id="expcoll6" href="JavaScript: expandcollapse('expcoll6',6)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736027">Dynamic filtering: multi-purpose architecture support for language runtime systems</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81406593835">Tim Harris</a>,
+<a href="author_page.cfm?id=81430607147">Sa&#353;a Tomic</a>,
+<a href="author_page.cfm?id=81100022526">Adri&#225;n Cristal</a>,
+<a href="author_page.cfm?id=81339533579">Osman Unsal</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 39-52</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736027" title="DOI">10.1145/1736020.1736027</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736027&ftid=763963&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow7" style="display:inline;"><br /><div style="display:inline">This paper introduces a new abstraction to accelerate the read-barriers and write-barriers used by language runtime systems. We exploit the fact that, dynamically, many barrier executions perform checks but no real work -- e.g., in generational garbage ...</div></span>
+<span id="toHide7" style="display:none;"><br /><div style="display:inline"><p>This paper introduces a new abstraction to accelerate the read-barriers and write-barriers used by language runtime systems. We exploit the fact that, dynamically, many barrier executions perform checks but no real work -- e.g., in generational garbage collection (GC), frequent checks are needed to detect the creation of inter-generational references, even though such references occur rarely in many workloads. We introduce a form of dynamic filtering that identifies redundant checks by (i) recording checks that have recently been executed, and (ii) detecting when a barrier is repeating one of these checks. We show how this technique can be applied to a variety of algorithms for GC, transactional memory, and language-based security. By supporting dynamic filtering in the instruction set, we show that the fast-paths of these barriers can be streamlined, reducing the impact on the quality of surrounding code. We show how we accelerate the barriers used for generational GC and transactional memory in the Bartok research compiler. With a 2048-entry filter, dynamic filtering eliminates almost all the overhead of the GC write-barriers. Dynamic filtering eliminates around half the overhead of STM over a non-synchronized baseline -- even when used with an STM that is already designed for low overhead, and which employs static analyses to avoid redundant operations.</p></div></span> <a id="expcoll7" href="JavaScript: expandcollapse('expcoll7',7)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Parallel programming 1</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736029">CoreDet: a compiler and runtime system for deterministic multithreaded execution</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81350584960">Tom Bergan</a>,
+<a href="author_page.cfm?id=81458651142">Owen Anderson</a>,
+<a href="author_page.cfm?id=81331491280">Joseph Devietti</a>,
+<a href="author_page.cfm?id=81100112680">Luis Ceze</a>,
+<a href="author_page.cfm?id=81405594870">Dan Grossman</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 53-64</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736029" title="DOI">10.1145/1736020.1736029</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736029&ftid=763964&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow9" style="display:inline;"><br /><div style="display:inline">The behavior of a multithreaded program does not depend only on its inputs. Scheduling, memory reordering, timing, and low-level hardware effects all introduce nondeterminism in the execution of multithreaded programs. This severely complicates many ...</div></span>
+<span id="toHide9" style="display:none;"><br /><div style="display:inline"><p>The behavior of a multithreaded program does not depend only on its inputs. Scheduling, memory reordering, timing, and low-level hardware effects all introduce nondeterminism in the execution of multithreaded programs. This severely complicates many tasks, including debugging, testing, and automatic replication. In this work, we avoid these complications by eliminating their root cause: we develop a compiler and runtime system that runs arbitrary multithreaded C/C++ POSIX Threads programs deterministically.</p> <p>A trivial non-performant approach to providing determinism is simply deterministically serializing execution. Instead, we present a compiler and runtime infrastructure that ensures determinism but resorts to serialization rarely, for handling interthread communication and synchronization. We develop two basic approaches, both of which are largely dynamic with performance improved by some static compiler optimizations. First, an ownership-based approach detects interthread communication via an evolving table that tracks ownership of memory regions by threads. Second, a buffering approach uses versioned memory and employs a deterministic commit protocol to make changes visible to other threads. While buffering has larger single-threaded overhead than ownership, it tends to scale better (serializing less often). A hybrid system sometimes performs and scales better than either approach individually.</p> <p>Our implementation is based on the LLVM compiler infrastructure. It needs neither programmer annotations nor special hardware. Our empirical evaluation uses the PARSEC and SPLASH2 benchmarks and shows that our approach scales comparably to nondeterministic execution.</p></div></span> <a id="expcoll9" href="JavaScript: expandcollapse('expcoll9',9)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736030">Speculative parallelization using software multi-threaded transactions</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100001392">Arun Raman</a>,
+<a href="author_page.cfm?id=81479653600">Hanjun Kim</a>,
+<a href="author_page.cfm?id=81458645293">Thomas R. Mason</a>,
+<a href="author_page.cfm?id=81343495702">Thomas B. Jablin</a>,
+<a href="author_page.cfm?id=81100388492">David I. August</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 65-76</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736030" title="DOI">10.1145/1736020.1736030</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736030&ftid=763969&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow10" style="display:inline;"><br /><div style="display:inline">With the right techniques, multicore architectures may be able to continue the exponential performance trend that elevated the performance of applications of all types for decades. While many scientific programs can be parallelized without speculative ...</div></span>
+<span id="toHide10" style="display:none;"><br /><div style="display:inline"><p>With the right techniques, multicore architectures may be able to continue the exponential performance trend that elevated the performance of applications of all types for decades. While many scientific programs can be parallelized without speculative techniques, speculative parallelism appears to be the key to continuing this trend for general-purpose applications. Recently-proposed code parallelization techniques, such as those by Bridges et al. and by Thies et al., demonstrate scalable performance on multiple cores by using speculation to divide code into atomic units (transactions) that span multiple threads in order to expose data parallelism. Unfortunately, most software and hardware Thread-Level Speculation (TLS) memory systems and transactional memories are not sufficient because they only support single-threaded atomic units. Multi-threaded Transactions (MTXs) address this problem, but they require expensive hardware support as currently proposed in the literature. This paper proposes a Software MTX (SMTX) system that captures the <i>applicability</i> and <i>performance</i> of hardware MTX, but on <i>existing multicore machines</i>. The SMTX system yields a harmonic mean speedup of 13.36x on native hardware with four 6-core processors (24 cores in total) running speculatively parallelized applications.</p></div></span> <a id="expcoll10" href="JavaScript: expandcollapse('expcoll10',10)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736031">Respec: efficient online multiprocessor replayvia speculation and external determinism</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81448592586">Dongyoon Lee</a>,
+<a href="author_page.cfm?id=81436593694">Benjamin Wester</a>,
+<a href="author_page.cfm?id=81332533410">Kaushik Veeraraghavan</a>,
+<a href="author_page.cfm?id=81100556410">Satish Narayanasamy</a>,
+<a href="author_page.cfm?id=81406595818">Peter M. Chen</a>,
+<a href="author_page.cfm?id=81100027306">Jason Flinn</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 77-90</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736031" title="DOI">10.1145/1736020.1736031</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736031&ftid=763970&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow11" style="display:inline;"><br /><div style="display:inline">Deterministic replay systems record and reproduce the execution of a hardware or software system. While it is well known how to replay uniprocessor systems, replaying shared memory multiprocessor systems at low overhead on commodity hardware is still ...</div></span>
+<span id="toHide11" style="display:none;"><br /><div style="display:inline"><p>Deterministic replay systems record and reproduce the execution of a hardware or software system. While it is well known how to replay uniprocessor systems, replaying shared memory multiprocessor systems at low overhead on commodity hardware is still an open problem. This paper presents Respec, a new way to support deterministic replay of shared memory multithreaded programs on commodity multiprocessor hardware. Respec targets online replay in which the recorded and replayed processes execute concurrently.</p> <p>Respec uses two strategies to reduce overhead while still ensuring correctness: speculative logging and externally deterministic replay. Speculative logging optimistically logs less information about shared memory dependencies than is needed to guarantee deterministic replay, then recovers and retries if the replayed process diverges from the recorded process. Externally deterministic replay relaxes the degree to which the two executions must match by requiring only their system output and final program states match. We show that the combination of these two techniques results in low recording and replay overhead for the common case of data-race-free execution intervals and still ensures correct replay for execution intervals that have data races.</p> <p>We modified the Linux kernel to implement our techniques. Our software system adds on average about 18% overhead to the execution time for recording and replaying programs with two threads and 55% overhead for programs with four threads.</p></div></span> <a id="expcoll11" href="JavaScript: expandcollapse('expcoll11',11)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Scheduling in parallel systems</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736033">Probabilistic job symbiosis modeling for SMT processor scheduling</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81313482306">Stijn Eyerman</a>,
+<a href="author_page.cfm?id=81330490198">Lieven Eeckhout</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 91-102</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736033" title="DOI">10.1145/1736020.1736033</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736033&ftid=763971&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow13" style="display:inline;"><br /><div style="display:inline">Symbiotic job scheduling boosts simultaneous multithreading (SMT) processor performance by co-scheduling jobs that have `compatible' demands on the processor's shared resources. Existing approaches however require a sampling phase, evaluate a limited ...</div></span>
+<span id="toHide13" style="display:none;"><br /><div style="display:inline"><p>Symbiotic job scheduling boosts simultaneous multithreading (SMT) processor performance by co-scheduling jobs that have `compatible' demands on the processor's shared resources. Existing approaches however require a sampling phase, evaluate a limited number of possible co-schedules, use heuristics to gauge symbiosis, are rigid in their optimization target, and do not preserve system-level priorities/shares.</p> <p>This paper proposes probabilistic job symbiosis modeling, which predicts whether jobs will create positive or negative symbiosis when co-scheduled without requiring the co-schedule to be evaluated. The model, which uses per-thread cycle stacks computed through a previously proposed cycle accounting architecture, is simple enough to be used in system software. Probabilistic job symbiosis modeling provides six key innovations over prior work in symbiotic job scheduling: (i) it does not require a sampling phase, (ii) it readjusts the job co-schedule continuously, (iii) it evaluates a large number of possible co-schedules at very low overhead, (iv) it is not driven by heuristics, (v) it can optimize a performance target of interest (e.g., system throughput or job turnaround time), and (vi) it preserves system-level priorities/shares. These innovations make symbiotic job scheduling both practical and effective.</p> <p>Our experimental evaluation, which assumes a realistic scenario in which jobs come and go, reports an average 16% (and up to 35%) reduction in job turnaround time compared to the previously proposed SOS (sample, optimize, symbios) approach for a two-thread SMT processor, and an average 19% (and up to 45%) reduction in job turnaround time for a four-thread SMT processor.</p></div></span> <a id="expcoll13" href="JavaScript: expandcollapse('expcoll13',13)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736034">Request behavior variations</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81408594912">Kai Shen</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 103-116</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736034" title="DOI">10.1145/1736020.1736034</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736034&ftid=763972&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow14" style="display:inline;"><br /><div style="display:inline">A large number of user requests execute (often concurrently) within a server system. A single request may exhibit fluctuating hardware characteristics (such as instruction completion rate and on-chip resource usage) over the course of its execution, ...</div></span>
+<span id="toHide14" style="display:none;"><br /><div style="display:inline"><p>A large number of user requests execute (often concurrently) within a server system. A single request may exhibit fluctuating hardware characteristics (such as instruction completion rate and on-chip resource usage) over the course of its execution, due to inherent variations in application execution semantics as well as dynamic resource competition on resource-sharing processors like multicores. Understanding such behavior variations can assist fine-grained request modeling and adaptive resource management.</p> <p>This paper presents operating system management to track request behavior variations online. In addition to metric sample collection during periodic interrupts, we exploit the frequent system calls in server applications to perform low-cost in-kernel sampling. We utilize identified behavior variations to support or enhance request modeling in request classification, anomaly analysis, and online request signature construction. A foundation of our request modeling is the ability to quantify the difference between two requests' time series behaviors. We evaluate several differencing measures and enhance the classic dynamic time warping technique with additional penalties for asynchronous warp steps. Finally, motivated by fluctuating request resource usage and the resulting contention, we implement contention-easing CPU scheduling on multicore platforms and demonstrate its effectiveness in improving the worst-case request performance.</p> <p>Experiments in this paper are based on five server applications -- Apache web server, TPCC, TPCH, RUBiS online auction benchmark, and a user-content-driven online teaching application called WeBWorK.</p></div></span> <a id="expcoll14" href="JavaScript: expandcollapse('expcoll14',14)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736035">Decoupling contention management from scheduling</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100448899">F. Ryan Johnson</a>,
+<a href="author_page.cfm?id=81442593945">Radu Stoica</a>,
+<a href="author_page.cfm?id=81100341726">Anastasia Ailamaki</a>,
+<a href="author_page.cfm?id=81100262786">Todd C. Mowry</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 117-128</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736035" title="DOI">10.1145/1736020.1736035</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736035&ftid=763973&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow15" style="display:inline;"><br /><div style="display:inline">Many parallel applications exhibit unpredictable communication between threads, leading to contention for shared objects. The choice of contention management strategy impacts strongly the performance and scalability of these applications: spinning provides ...</div></span>
+<span id="toHide15" style="display:none;"><br /><div style="display:inline"><p>Many parallel applications exhibit unpredictable communication between threads, leading to contention for shared objects. The choice of contention management strategy impacts strongly the performance and scalability of these applications: spinning provides maximum performance but wastes significant processor resources, while blocking-based approaches conserve processor resources but introduce high overheads on the critical path of computation. Under situations of high or changing load, the operating system complicates matters further with arbitrary scheduling decisions which often preempt lock holders, leading to long serialization delays until the preempted thread resumes execution.</p> <p>We observe that contention management is orthogonal to the problems of scheduling and load management and propose to decouple them so each may be solved independently and effectively. To this end, we propose a load control mechanism which manages the number of active threads in the system separately from any contention which may exist. By isolating contention management from damaging interactions with the OS scheduler, we combine the efficiency of spinning with the robustness of blocking. The proposed load control mechanism results in stable, high performance for both lightly and heavily loaded systems, requires no special privileges or modifications at the OS level, and can be implemented as a library which benefits existing code.</p></div></span> <a id="expcoll15" href="JavaScript: expandcollapse('expcoll15',15)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736036">Addressing shared resource contention in multicore processors via scheduling</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81453658831">Sergey Zhuravlev</a>,
+<a href="author_page.cfm?id=81418600432">Sergey Blagodurov</a>,
+<a href="author_page.cfm?id=81100440291">Alexandra Fedorova</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 129-142</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736036" title="DOI">10.1145/1736020.1736036</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736036&ftid=763974&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow16" style="display:inline;"><br /><div style="display:inline">Contention for shared resources on multicore processors remains an unsolved problem in existing systems despite significant research efforts dedicated to this problem in the past. Previous solutions focused primarily on hardware techniques and software ...</div></span>
+<span id="toHide16" style="display:none;"><br /><div style="display:inline"><p>Contention for shared resources on multicore processors remains an unsolved problem in existing systems despite significant research efforts dedicated to this problem in the past. Previous solutions focused primarily on hardware techniques and software page coloring to mitigate this problem. Our goal is to investigate how and to what extent contention for shared resource can be mitigated via thread scheduling. Scheduling is an attractive tool, because it does not require extra hardware and is relatively easy to integrate into the system. Our study is the first to provide a comprehensive analysis of contention-mitigating techniques that use only scheduling. The most difficult part of the problem is to find a classification scheme for threads, which would determine how they affect each other when competing for shared resources. We provide a comprehensive analysis of such classification schemes using a newly proposed methodology that enables to evaluate these schemes separately from the scheduling algorithm itself and to compare them to the optimal. As a result of this analysis we discovered a classification scheme that addresses not only contention for cache space, but contention for other shared resources, such as the memory controller, memory bus and prefetching hardware. To show the applicability of our analysis we design a new scheduling algorithm, which we prototype at user level, and demonstrate that it performs within 2\% of the optimal. We also conclude that the highest impact of contention-aware scheduling techniques is not in improving performance of a workload as a whole but in improving quality of service or performance isolation for individual applications.</p></div></span> <a id="expcoll16" href="JavaScript: expandcollapse('expcoll16',16)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Software reliability</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736038">SherLog: error diagnosis by connecting clues from run-time logs</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100116446">Ding Yuan</a>,
+<a href="author_page.cfm?id=81458649523">Haohui Mai</a>,
+<a href="author_page.cfm?id=81100313850">Weiwei Xiong</a>,
+<a href="author_page.cfm?id=81320495542">Lin Tan</a>,
+<a href="author_page.cfm?id=81451594551">Yuanyuan Zhou</a>,
+<a href="author_page.cfm?id=81310481800">Shankar Pasupathy</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 143-154</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736038" title="DOI">10.1145/1736020.1736038</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736038&ftid=763975&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow18" style="display:inline;"><br /><div style="display:inline">Computer systems often fail due to many factors such as software bugs or administrator errors. Diagnosing such production run failures is an important but challenging task since it is difficult to reproduce them in house due to various reasons: (1) unavailability ...</div></span>
+<span id="toHide18" style="display:none;"><br /><div style="display:inline"><p>Computer systems often fail due to many factors such as software bugs or administrator errors. Diagnosing such production run failures is an important but challenging task since it is difficult to reproduce them in house due to various reasons: (1) unavailability of users' inputs and file content due to privacy concerns; (2) difficulty in building the exact same execution environment; and (3) non-determinism of concurrent executions on multi-processors.</p> <p>Therefore, programmers often have to diagnose a production run failure based on logs collected back from customers and the corresponding source code. Such diagnosis requires expert knowledge and is also too time-consuming, tedious to narrow down root causes. To address this problem, we propose a tool, called SherLog, that analyzes source code by leveraging information provided by run-time logs to infer what must or may have happened during the failed production run. It requires neither re-execution of the program nor knowledge on the log's semantics. It infers both control and data value information regarding to the failed execution.</p> <p>We evaluate SherLog with 8 representative <i>real world</i> software failures (6 software bugs and 2 configuration errors) from 7 applications including 3 servers. Information inferred by SherLog are very useful for programmers to diagnose these evaluated failures. Our results also show that SherLog can analyze large server applications such as Apache with thousands of logging messages within only 40 minutes.</p></div></span> <a id="expcoll18" href="JavaScript: expandcollapse('expcoll18',18)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736039">Analyzing multicore dumps to facilitate concurrency bug reproduction</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81458659419">Dasarath Weeratunge</a>,
+<a href="author_page.cfm?id=81384614270">Xiangyu Zhang</a>,
+<a href="author_page.cfm?id=81100208907">Suresh Jagannathan</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 155-166</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736039" title="DOI">10.1145/1736020.1736039</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736039&ftid=763976&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow19" style="display:inline;"><br /><div style="display:inline">Debugging concurrent programs is difficult. This is primarily because the inherent non-determinism that arises because of scheduler interleavings makes it hard to easily reproduce bugs that may manifest only under certain interleavings. The problem is ...</div></span>
+<span id="toHide19" style="display:none;"><br /><div style="display:inline"><p>Debugging concurrent programs is difficult. This is primarily because the inherent non-determinism that arises because of scheduler interleavings makes it hard to easily reproduce bugs that may manifest only under certain interleavings. The problem is exacerbated in multi-core environments where there are multiple schedulers, one for each core. In this paper, we propose a reproduction technique for concurrent programs that execute on multi-core platforms. Our technique performs a lightweight analysis of a failing execution that occurs in a multi-core environment, and uses the result of the analysis to enable reproduction of the bug in a single-core system, under the control of a deterministic scheduler.</p> <p>More specifically, our approach automatically identifies the execution point in the re-execution that corresponds to the failure point. It does so by analyzing the failure core dump and leveraging a technique called <i>execution indexing</i> that identifies a related point in the re-execution. By generating a core dump at this point, and comparing the differences betwen the two dumps, we are able to guide a search algorithm to efficiently generate a failure inducing schedule. Our experiments show that our technique is highly effective and has reasonable overhead.</p></div></span> <a id="expcoll19" href="JavaScript: expandcollapse('expcoll19',19)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736040">A randomized scheduler with probabilistic guarantees of finding bugs</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81350574118">Sebastian Burckhardt</a>,
+<a href="author_page.cfm?id=99659180457">Pravesh Kothari</a>,
+<a href="author_page.cfm?id=81100333862">Madanlal Musuvathi</a>,
+<a href="author_page.cfm?id=81435608524">Santosh Nagarakatte</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 167-178</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736040" title="DOI">10.1145/1736020.1736040</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736040&ftid=763977&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow20" style="display:inline;"><br /><div style="display:inline">This paper presents a randomized scheduler for finding concurrency bugs. Like current stress-testing methods, it repeatedly runs a given test program with supplied inputs. However, it improves on stress-testing by finding buggy schedules more effectively ...</div></span>
+<span id="toHide20" style="display:none;"><br /><div style="display:inline"><p>This paper presents a randomized scheduler for finding concurrency bugs. Like current stress-testing methods, it repeatedly runs a given test program with supplied inputs. However, it improves on stress-testing by finding buggy schedules more effectively and by quantifying the probability of missing concurrency bugs. Key to its design is the characterization of the depth of a concurrency bug as the minimum number of scheduling constraints required to find it. In a single run of a program with <i>n</i> threads and <i>k</i> steps, our scheduler detects a concurrency bug of depth <i>d</i> with probability at least 1/<i>nk</i><sup>d-1</sup>. We hypothesize that in practice, many concurrency bugs (including well-known types such as ordering errors, atomicity violations, and deadlocks) have small bug-depths, and we confirm the efficiency of our schedule randomization by detecting previously unknown and known concurrency bugs in several production-scale concurrent programs.</p></div></span> <a id="expcoll20" href="JavaScript: expandcollapse('expcoll20',20)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736041">ConMem: detecting severe concurrency bugs through an effect-oriented approach</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81458642805">Wei Zhang</a>,
+ <a href="author_page.cfm?id=81458641903">Chong Sun</a>,
+<a href="author_page.cfm?id=81100052818">Shan Lu</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 179-192</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736041" title="DOI">10.1145/1736020.1736041</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736041&ftid=763978&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow21" style="display:inline;"><br /><div style="display:inline">Multicore technology is making concurrent programs increasingly pervasive. Unfortunately, it is difficult to deliver reliable concurrent programs, because of the huge and non-deterministic interleaving space. In reality, without the resources to thoroughly ...</div></span>
+<span id="toHide21" style="display:none;"><br /><div style="display:inline"><p>Multicore technology is making concurrent programs increasingly pervasive. Unfortunately, it is difficult to deliver reliable concurrent programs, because of the huge and non-deterministic interleaving space. In reality, without the resources to thoroughly check the interleaving space, critical concurrency bugs can slip into production runs and cause failures in the field. Approaches to making the best use of the limited resources and exposing severe concurrency bugs before software release would be desirable.</p> <p>Unlike previous work that focuses on bugs caused by specific interleavings (e.g., races and atomicity-violations), this paper targets concurrency bugs that result in one type of severe effects: program crashes. Our study of the error-propagation process of realworld concurrency bugs reveals a common pattern (50% in our non-deadlock concurrency bug set) that is highly correlated with program crashes. We call this pattern concurrency-memory bugs: buggy interleavings directly cause memory bugs (NULL-pointer-dereference, dangling-pointer, buffer-overflow, uninitialized-read) on shared memory objects.</p> <p>Guided by this study, we built ConMem to monitor program execution, analyze memory accesses and synchronizations, and predicatively detect these common and severe concurrency-memory bugs. We also built a validator ConMem-v to automatically prune false positives by enforcing potential bug-triggering interleavings.</p> <p>We evaluated ConMem using 7 open-source programs with 9 real-world severe concurrency bugs. ConMem detects more tested bugs (8 out of 9 bugs) than a lock-set-based race detector and an unserializable-interleaving detector that detect 4 and 5 bugs respectively, with a false positive rate about one tenth of the compared tools. ConMem-v further prunes out all the false positives. ConMem has reasonable overhead suitable for development usage.</p></div></span> <a id="expcoll21" href="JavaScript: expandcollapse('expcoll21',21)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Hardware power and energy</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736043">Characterizing processor thermal behavior</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81309509983">Francisco Javier Mesa-Martinez</a>,
+<a href="author_page.cfm?id=81458654244">Ehsan K. Ardestani</a>,
+<a href="author_page.cfm?id=81100563202">Jose Renau</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 193-204</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736043" title="DOI">10.1145/1736020.1736043</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736043&ftid=763979&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow23" style="display:inline;"><br /><div style="display:inline">Temperature is a dominant factor in the performance, reliability, and leakage power consumption of modern processors. As a result, increasing numbers of researchers evaluate thermal characteristics in their proposals. In this paper, we measure a real ...</div></span>
+<span id="toHide23" style="display:none;"><br /><div style="display:inline"><p>Temperature is a dominant factor in the performance, reliability, and leakage power consumption of modern processors. As a result, increasing numbers of researchers evaluate thermal characteristics in their proposals. In this paper, we measure a real processor focusing on its thermal characterization executing diverse workloads.</p> <p>Our results show that in real designs, thermal transients operate at larger scales than their performance and power counterparts. Conventional thermal simulation methodologies based on profile-based simulation or statistical sampling, such as Simpoint, tend to explore very limited execution spans. Short simulation times can lead to reduced matchings between performance and thermal phases. To illustrate these issues we characterize and classify from a thermal standpoint SPEC00 and SPEC06 applications, which are traditionally used in the evaluation of architectural proposals. This paper concludes with a list of recommendations regarding thermal modeling considerations based on our experimental insights.</p></div></span> <a id="expcoll23" href="JavaScript: expandcollapse('expcoll23',23)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736044">Conservation cores: reducing the energy of mature computations</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81319503167">Ganesh Venkatesh</a>,
+<a href="author_page.cfm?id=81309509473">Jack Sampson</a>,
+<a href="author_page.cfm?id=81458658597">Nathan Goulding</a>,
+<a href="author_page.cfm?id=81100378592">Saturnino Garcia</a>,
+<a href="author_page.cfm?id=81458655732">Vladyslav Bryksin</a>,
+<a href="author_page.cfm?id=81458657739">Jose Lugo-Martinez</a>,
+<a href="author_page.cfm?id=81100070924">Steven Swanson</a>,
+ <a href="author_page.cfm?id=81100517791">Michael Bedford Taylor</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 205-218</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736044" title="DOI">10.1145/1736020.1736044</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736044&ftid=763980&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow24" style="display:inline;"><br /><div style="display:inline">Growing transistor counts, limited power budgets, and the breakdown of voltage scaling are currently conspiring to create a utilization wall that limits the fraction of a chip that can run at full speed at one time. In this regime, specialized, ...</div></span>
+<span id="toHide24" style="display:none;"><br /><div style="display:inline"><p>Growing transistor counts, limited power budgets, and the breakdown of voltage scaling are currently conspiring to create a <i>utilization wall</i> that limits the fraction of a chip that can run at full speed at one time. In this regime, specialized, energy-efficient processors can increase parallelism by reducing the per-computation power requirements and allowing more computations to execute under the same power budget. To pursue this goal, this paper introduces <i>conservation cores</i>. Conservation cores, or <i>c-cores</i>, are specialized processors that focus on reducing energy and energy-delay instead of increasing performance. This focus on energy makes c-cores an excellent match for many applications that would be poor candidates for hardware acceleration (e.g., irregular integer codes). We present a toolchain for automatically synthesizing c-cores from application source code and demonstrate that they can significantly reduce energy and energy-delay for a wide range of applications. The c-cores support patching, a form of targeted reconfigurability, that allows them to adapt to new versions of the software they target. Our results show that conservation cores can reduce energy consumption by up to 16.0x for functions and by up to 2.1x for whole applications, while patching can extend the useful lifetime of individual c-cores to match that of conventional processors.</p></div></span> <a id="expcoll24" href="JavaScript: expandcollapse('expcoll24',24)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736045">Micro-pages: increasing DRAM efficiency with locality-aware data placement</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81458656079">Kshitij Sudan</a>,
+<a href="author_page.cfm?id=81458641303">Niladrish Chatterjee</a>,
+<a href="author_page.cfm?id=81418597769">David Nellans</a>,
+<a href="author_page.cfm?id=81381605698">Manu Awasthi</a>,
+<a href="author_page.cfm?id=81100209393">Rajeev Balasubramonian</a>,
+<a href="author_page.cfm?id=81100601917">Al Davis</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 219-230</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736045" title="DOI">10.1145/1736020.1736045</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736045&ftid=763981&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow25" style="display:inline;"><br /><div style="display:inline">Power consumption and DRAM latencies are serious concerns in modern chip-multiprocessor (CMP or multi-core) based compute systems. The management of the DRAM row buffer can significantly impact both power consumption and latency. Modern DRAM systems ...</div></span>
+<span id="toHide25" style="display:none;"><br /><div style="display:inline"><p>Power consumption and DRAM latencies are serious concerns in modern chip-multiprocessor (CMP or multi-core) based compute systems. The management of the DRAM row buffer can significantly impact both power consumption and latency. Modern DRAM systems read data from cell arrays and populate a row buffer as large as 8 KB on a memory request. But only a small fraction of these bits are ever returned back to the CPU. This ends up wasting energy and time to read (and subsequently write back) bits which are used rarely. Traditionally, an open-page policy has been used for uni-processor systems and it has worked well because of spatial and temporal locality in the access stream. In future multi-core processors, the possibly independent access streams of each core are interleaved, thus destroying the available locality and significantly under-utilizing the contents of the row buffer. In this work, we attempt to improve row-buffer utilization for future multi-core systems.</p> <p>The schemes presented here are motivated by our observations that a large number of accesses within heavily accessed OS pages are to small, contiguous "chunks" of cache blocks. Thus, the co-location of chunks (from different OS pages) in a row-buffer will improve the overall utilization of the row buffer contents, and consequently reduce memory energy consumption and access time. Such co-location can be achieved in many ways, notably involving a reduction in OS page size and software or hardware assisted migration of data within DRAM. We explore these mechanisms and discuss the trade-offs involved along with energy and performance improvements from each scheme. On average, for applications with room for improvement, our best performing scheme increases performance by 9% (max. 18%) and reduces memory energy consumption by 15% (max. 70%).</p></div></span> <a id="expcoll25" href="JavaScript: expandcollapse('expcoll25',25)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Data centers</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736047">Power routing: dynamic power provisioning in the data center</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81458657686">Steven Pelley</a>,
+<a href="author_page.cfm?id=81414600411">David Meisner</a>,
+<a href="author_page.cfm?id=81458656987">Pooya Zandevakili</a>,
+<a href="author_page.cfm?id=81100165954">Thomas F. Wenisch</a>,
+<a href="author_page.cfm?id=81458645974">Jack Underwood</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 231-242</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736047" title="DOI">10.1145/1736020.1736047</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736047&ftid=763982&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow27" style="display:inline;"><br /><div style="display:inline">Data center power infrastructure incurs massive capital costs, which typically exceed energy costs over the life of the facility. To squeeze maximum value from the infrastructure, researchers have proposed over-subscribing power circuits, relying on ...</div></span>
+<span id="toHide27" style="display:none;"><br /><div style="display:inline"><p>Data center power infrastructure incurs massive capital costs, which typically exceed energy costs over the life of the facility. To squeeze maximum value from the infrastructure, researchers have proposed over-subscribing power circuits, relying on the observation that peak loads are rare. To ensure availability, these proposals employ power capping, which throttles server performance during utilization spikes to enforce safe power budgets. However, because budgets must be enforced locally -- at each power distribution unit (PDU) -- local utilization spikes may force throttling even when power delivery capacity is available elsewhere. Moreover, the need to maintain reserve capacity for fault tolerance on power delivery paths magnifies the impact of utilization spikes.</p> <p>In this paper, we develop mechanisms to better utilize installed power infrastructure, reducing reserve capacity margins and avoiding performance throttling. Unlike conventional high-availability data centers, where collocated servers share identical primary and secondary power feeds, we reorganize power feeds to create shuffled power distribution topologies. Shuffled topologies spread secondary power feeds over numerous PDUs, reducing reserve capacity requirements to tolerate a single PDU failure. Second, we propose Power Routing, which schedules IT load dynamically across redundant power feeds to: (1) shift slack to servers with growing power demands, and (2) balance power draw across AC phases to reduce heating and improve electrical stability. We describe efficient heuristics for scheduling servers to PDUs (an NP-complete problem). Using data collected from nearly 1000 servers in three production facilities, we demonstrate that these mechanisms can reduce the required power infrastructure capacity relative to conventional high-availability data centers by 32% without performance degradation.</p></div></span> <a id="expcoll27" href="JavaScript: expandcollapse('expcoll27',27)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736048">Joint optimization of idle and cooling power in data centers while maintaining response time</a></span></td>
+</tr>
+<tr>
+<td> </td>
+ <td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81458646627">Faraz Ahmad</a>,
+<a href="author_page.cfm?id=81100528323">T. N. Vijaykumar</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 243-256</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736048" title="DOI">10.1145/1736020.1736048</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736048&ftid=763983&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow28" style="display:inline;"><br /><div style="display:inline">Server power and cooling power amount to a significant fraction of modern data centers' recurring costs. While data centers provision enough servers to guarantee response times under the maximum loading, data centers operate under much less loading most ...</div></span>
+<span id="toHide28" style="display:none;"><br /><div style="display:inline"><p>Server power and cooling power amount to a significant fraction of modern data centers' recurring costs. While data centers provision enough servers to guarantee response times under the maximum loading, data centers operate under much less loading most of the times (e.g., 30-70% of the maximum loading). Previous server-power proposals exploit this under-utilization to reduce the server idle power by keeping active only as many servers as necessary and putting the rest into low-power standby modes. However, these proposals incur higher cooling power due to hot spots created by concentrating the data center loading on fewer active servers, or degrade response times due to standby-to-active transition delays, or both. Other proposals optimize the cooling power but incur considerable idle power. To address the first issue of power, we propose <i>PowerTrade</i>, which trades-off idle power and cooling power for each other, thereby reducing the total power. To address the second issue of response time, we propose <i>SurgeGuard</i> to overprovision the number of active servers beyond that needed by the current loading so as to absorb future increases in the loading. SurgeGuard is a two-tier scheme which uses well-known over-provisioning at coarse time granularities (e.g., one hour) to absorb the common, smooth increases in the loading, and a novel fine-grain replenishment of the over-provisioned reserves at fine time granularities (e.g., five minutes) to handle the uncommon, abrupt loading surges. Using real-world traces, we show that combining PowerTrade and SurgeGuard reduces total power by 30% compared to previous low-power schemes while maintaining response times within 1.7%.</p></div></span> <a id="expcoll28" href="JavaScript: expandcollapse('expcoll28',28)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Hardware monitoring</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736050">Butterfly analysis: adapting dataflow analysis to dynamic parallel monitoring</a></span></td>
+</tr>
+<tr>
+ <td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81458658249">Michelle L. Goodstein</a>,
+<a href="author_page.cfm?id=81435597681">Evangelos Vlachos</a>,
+<a href="author_page.cfm?id=81350570119">Shimin Chen</a>,
+<a href="author_page.cfm?id=81339501335">Phillip B. Gibbons</a>,
+<a href="author_page.cfm?id=81100209870">Michael A. Kozuch</a>,
+<a href="author_page.cfm?id=81100262786">Todd C. Mowry</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 257-270</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736050" title="DOI">10.1145/1736020.1736050</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736050&ftid=763984&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow30" style="display:inline;"><br /><div style="display:inline">Online program monitoring is an effective technique for detecting bugs and security attacks in running applications. Extending these tools to monitor parallel programs is challenging because the tools must account for inter-thread dependences and relaxed ...</div></span>
+<span id="toHide30" style="display:none;"><br /><div style="display:inline"><p>Online program monitoring is an effective technique for detecting bugs and security attacks in running applications. Extending these tools to monitor parallel programs is challenging because the tools must account for inter-thread dependences and relaxed memory consistency models. Existing tools assume sequential consistency and often slow down the monitored program by orders of magnitude. In this paper, we present a novel approach that avoids these pitfalls by not relying on strong consistency models or detailed inter-thread dependence tracking. Instead, we only assume that events in the distant past on all threads have become visible; we make no assumptions on (and avoid the overheads of tracking) the relative ordering of more recent events on other threads. To overcome the potential state explosion of considering all the possible orderings among recent events, we adapt two techniques from static dataflow analysis, reaching definitions and reaching expressions, to this new domain of dynamic parallel monitoring. Significant modifications to these techniques are proposed to ensure the correctness and efficiency of our approach. We show how our adapted analysis can be used in two popular memory and security tools. We prove that our approach does not miss errors, and sacrifices precision only due to the lack of a relative ordering among recent events. Moreover, our simulation study on a collection of Splash-2 and Parsec 2.0 benchmarks running a memory-checking tool on a hardware-assisted logging platform demonstrates the potential benefits in trading off a very low false positive rate for (i) reduced overhead and (ii) the ability to run on relaxed consistency models.</p></div></span> <a id="expcoll30" href="JavaScript: expandcollapse('expcoll30',30)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736051">ParaLog: enabling and accelerating online parallel monitoring of multithreaded applications</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81435597681">Evangelos Vlachos</a>,
+<a href="author_page.cfm?id=81458658249">Michelle L. Goodstein</a>,
+<a href="author_page.cfm?id=81100209870">Michael A. Kozuch</a>,
+<a href="author_page.cfm?id=81350570119">Shimin Chen</a>,
+<a href="author_page.cfm?id=81100095399">Babak Falsafi</a>,
+<a href="author_page.cfm?id=81339501335">Phillip B. Gibbons</a>,
+<a href="author_page.cfm?id=81100262786">Todd C. Mowry</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 271-284</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736051" title="DOI">10.1145/1736020.1736051</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736051&ftid=763985&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow31" style="display:inline;"><br /><div style="display:inline">Instruction-grain lifeguards monitor the events of a running application at the level of individual instructions in order to identify and help mitigate application bugs and security exploits. Because such lifeguards impose a 10-100X slowdown on ...</div></span>
+<span id="toHide31" style="display:none;"><br /><div style="display:inline"><p><i>Instruction-grain lifeguards</i> monitor the events of a running application at the level of individual instructions in order to identify and help mitigate application bugs and security exploits. Because such lifeguards impose a 10-100X slowdown on existing platforms, previous studies have proposed hardware designs to accelerate lifeguard processing. However, these accelerators are either tailored to a specific class of lifeguards or suitable only for monitoring singlethreaded programs.</p> <p>We present ParaLog, the first design of a system enabling fast online parallel monitoring of multithreaded parallel applications. ParaLog supports a broad class of software-defined lifeguards. We show how three existing accelerators can be enhanced to support online multithreaded monitoring, dramatically reducing lifeguard overheads. We identify and solve several challenges in monitoring parallel applications and/or parallelizing these accelerators, including (i) enforcing inter-thread data dependences, (ii) dealing with inter-thread effects that are not reflected in coherence traffic, (iii) dealing with unmonitored operating system activity, and (iv) ensuring lifeguards can access shared metadata with negligible synchronization overheads. We present our system design for both Sequentially Consistent and Total Store Ordering processors. We implement and evaluate our design on a 16 core simulated CMP, using benchmarks from SPLASH-2 and PARSEC and two lifeguards: a data-flow tracking lifeguard and a memory-access checker lifeguard. Our results show that (i) our parallel accelerators improve performance by 2-9X and 1.13-3.4X for our two lifeguards, respectively, (ii) we are 5-126X faster than the time-slicing approach required by existing techniques, and (iii) our average overheads for applications with eight threads are 51% and 28% for the two lifeguards, respectively.</p></div></span> <a id="expcoll31" href="JavaScript: expandcollapse('expcoll31',31)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Parallel programming 2</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736053">MacroSS: macro-SIMDization of streaming applications</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81319493286">Amir H. Hormati</a>,
+<a href="author_page.cfm?id=81458651795">Yoonseo Choi</a>,
+<a href="author_page.cfm?id=81314486816">Mark Woh</a>,
+<a href="author_page.cfm?id=81100105059">Manjunath Kudlur</a>,
+<a href="author_page.cfm?id=81100434259">Rodric Rabbah</a>,
+<a href="author_page.cfm?id=81100571709">Trevor Mudge</a>,
+<a href="author_page.cfm?id=81100622742">Scott Mahlke</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 285-296</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736053" title="DOI">10.1145/1736020.1736053</a></span></td>
+</tr>
+<tr>
+<td></td>
+ <td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736053&ftid=763986&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow33" style="display:inline;"><br /><div style="display:inline">SIMD (Single Instruction, Multiple Data) engines are an essential part of the processors in various computing markets, from servers to the embedded domain. Although SIMD-enabled architectures have the capability of boosting the performance of many application ...</div></span>
+<span id="toHide33" style="display:none;"><br /><div style="display:inline"><p>SIMD (Single Instruction, Multiple Data) engines are an essential part of the processors in various computing markets, from servers to the embedded domain. Although SIMD-enabled architectures have the capability of boosting the performance of many application domains by exploiting data-level parallelism, it is very challenging for compilers and also programmers to identify and transform parts of a program that will benefit from a particular SIMD engine. The focus of this paper is on the problem of SIMDization for the growing application domain of streaming. Streaming applications are an ideal solution for targeting multi-core architectures, such as shared/distributed memory systems, tiled architectures, and single-core systems. Since these architectures, in most cases, provide SIMD acceleration units as well, it is highly beneficial to generate SIMD code from streaming programs. Specifically, we introduce MacroSS, which is capable of performing macro-SIMDization on high-level streaming graphs. Macro-SIMDization uses high-level information such as execution rates of actors and communication patterns between them to transform the graph structure, vectorize actors of a streaming program, and generate intermediate code. We also propose low-overhead architectural modifications that accelerate shuffling of data elements between the scalar and vectorized parts of a streaming program. Our experiments show that MacroSS is capable of generating code that, on average, outperforms scalar code compiled with the current state-of-art auto-vectorizing compilers by 54%. Using the low-overhead data shuffling hardware, performance is improved by an additional 8% with less than 1% area overhead.</p></div></span> <a id="expcoll33" href="JavaScript: expandcollapse('expcoll33',33)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736054">COMPASS: a programmable data prefetcher using idle GPU shaders</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81410593343">Dong Hyuk Woo</a>,
+<a href="author_page.cfm?id=81442610163">Hsien-Hsin S. Lee</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 297-310</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736054" title="DOI">10.1145/1736020.1736054</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736054&ftid=763987&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow34" style="display:inline;"><br /><div style="display:inline">A traditional fixed-function graphics accelerator has evolved into a programmable general-purpose graphics processing unit over the last few years. These powerful computing cores are mainly used for accelerating graphics applications or enabling low-cost ...</div></span>
+<span id="toHide34" style="display:none;"><br /><div style="display:inline"><p>A traditional fixed-function graphics accelerator has evolved into a programmable general-purpose graphics processing unit over the last few years. These powerful computing cores are mainly used for accelerating graphics applications or enabling low-cost scientific computing. To further reduce the cost and form factor, an emerging trend is to integrate GPU along with the memory controllers onto the same die with the processor cores. However, given such a system-on-chip, the GPU, while occupying a substantial part of the silicon, will sit idle and contribute nothing to the overall system performance when running non-graphics workloads or applications lack of data-level parallelism. In this paper, we propose COMPASS, a compute shader-assisted data prefetching scheme, to leverage the GPU resource for improving single-threaded performance on an integrated system. By harnessing the GPU shader cores with very lightweight architectural support, COMPASS can emulate the functionality of a hardware-based prefetcher using the idle GPU and successfully improve the memory performance of single-thread applications. Moreover, thanks to its flexibility and programmability, one can implement the best performing prefetch scheme to improve each specific application as demonstrated in this paper. With COMPASS, we envision that a future application vendor can provide a custom-designed COMPASS shader bundled with its software to be loaded at runtime to optimize the performance. Our simulation results show that COMPASS can improve the single-thread performance of memory-intensive applications by 68% on average.</p></div></span> <a id="expcoll34" href="JavaScript: expandcollapse('expcoll34',34)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736055">Flexible architectural support for fine-grain scheduling</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81100532319">Daniel Sanchez</a>,
+<a href="author_page.cfm?id=81336494080">Richard M. Yoo</a>,
+<a href="author_page.cfm?id=81350597257">Christos Kozyrakis</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 311-322</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736055" title="DOI">10.1145/1736020.1736055</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736055&ftid=763988&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow35" style="display:inline;"><br /><div style="display:inline">To make efficient use of CMPs with tens to hundreds of cores, it is often necessary to exploit fine-grain parallelism. However, managing tasks of a few thousand instructions is particularly challenging, as the runtime must ensure load balance without ...</div></span>
+<span id="toHide35" style="display:none;"><br /><div style="display:inline"><p>To make efficient use of CMPs with tens to hundreds of cores, it is often necessary to exploit fine-grain parallelism. However, managing tasks of a few thousand instructions is particularly challenging, as the runtime must ensure load balance without compromising locality and introducing small overheads. Software-only schedulers can implement various scheduling algorithms that match the characteristics of different applications and programming models, but suffer significant overheads as they synchronize and communicate task information over the deep cache hierarchy of a large-scale CMP. To reduce these costs, hardware-only schedulers like Carbon, which implement task queuing and scheduling in hardware, have been proposed. However, a hardware-only solution fixes the scheduling algorithm and leaves no room for other uses of the custom hardware.</p> <p>This paper presents a combined hardware-software approach to build fine-grain schedulers that retain the flexibility of software schedulers while being as fast and scalable as hardware ones. We propose asynchronous direct messages (ADM), a simple architectural extension that provides direct exchange of asynchronous, short messages between threads in the CMP without going through the memory hierarchy. ADM is sufficient to implement a family of novel, software-mostly schedulers that rely on low-overhead messaging to efficiently coordinate scheduling and transfer task information. These schedulers match and often exceed the performance and scalability of Carbon when using the same scheduling algorithm. When the ADM runtime tailors its scheduling algorithm to application characteristics, it outperforms Carbon by up to 70%.</p></div></span> <a id="expcoll35" href="JavaScript: expandcollapse('expcoll35',35)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Parallel memory systems</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736057">Specifying and dynamically verifying address translation-aware memory consistency</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81350573953">Bogdan F. Romanescu</a>,
+<a href="author_page.cfm?id=81100265767">Alvin R. Lebeck</a>,
+<a href="author_page.cfm?id=81100090850">Daniel J. Sorin</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 323-334</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736057" title="DOI">10.1145/1736020.1736057</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736057&ftid=763989&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+ </tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow37" style="display:inline;"><br /><div style="display:inline">Computer systems with virtual memory are susceptible to design bugs and runtime faults in their address translation (AT) systems. Detecting bugs and faults requires a clear specification of correct behavior. To address this need, we develop a framework ...</div></span>
+<span id="toHide37" style="display:none;"><br /><div style="display:inline"><p>Computer systems with virtual memory are susceptible to design bugs and runtime faults in their address translation (AT) systems. Detecting bugs and faults requires a clear specification of correct behavior. To address this need, we develop a framework for AT-aware memory consistency models. We expand and divide memory consistency into the physical address memory consistency (PAMC) model that defines the behavior of operations on physical addresses and the virtual address memory consistency (VAMC) model that defines the behavior of operations on virtual addresses. As part of this expansion, we show what AT features are required to bridge the gap between PAMC and VAMC. Based on our AT-aware memory consistency specifications, we design efficient dynamic verification hardware that can detect violations of VAMC and thus detect the effects of design bugs and runtime faults, including most AT related bugs in published errata.</p></div></span> <a id="expcoll37" href="JavaScript: expandcollapse('expcoll37',37)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736058">Fairness via source throttling: a configurable and high-performance fairness substrate for multi-core memory systems</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81448598616">Eiman Ebrahimi</a>,
+<a href="author_page.cfm?id=81416599395">Chang Joo Lee</a>,
+<a href="author_page.cfm?id=81300237901">Onur Mutlu</a>,
+<a href="author_page.cfm?id=81100112672">Yale N. Patt</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 335-346</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736058" title="DOI">10.1145/1736020.1736058</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736058&ftid=763990&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow38" style="display:inline;"><br /><div style="display:inline">Cores in a chip-multiprocessor (CMP) system share multiple hardware resources in the memory subsystem. If resource sharing is unfair, some applications can be delayed significantly while others are unfairly prioritized. Previous research proposed separate ...</div></span>
+<span id="toHide38" style="display:none;"><br /><div style="display:inline"><p>Cores in a chip-multiprocessor (CMP) system share multiple hardware resources in the memory subsystem. If resource sharing is unfair, some applications can be delayed significantly while others are unfairly prioritized. Previous research proposed separate fairness mechanisms in each individual resource. Such resource-based fairness mechanisms implemented independently in each resource can make contradictory decisions, leading to low fairness and loss of performance. Therefore, a coordinated mechanism that provides fairness in the entire shared memory system is desirable.</p> <p>This paper proposes a new approach that provides fairness in the <i>entire shared memory system</i>, thereby eliminating the need for and complexity of developing fairness mechanisms for each individual resource. Our technique, Fairness via Source Throttling (FST), estimates the unfairness in the entire shared memory system. If the estimated unfairness is above a threshold set by system software, FST throttles down cores causing unfairness by limiting the number of requests they can inject into the system and the frequency at which they do. As such, our <i>source-based</i> fairness control ensures fairness decisions are made in tandem in the entire memory system. FST also enforces thread priorities/weights, and enables system software to enforce different fairness objectives and fairness-performance tradeoffs in the memory system.</p> <p>Our evaluations show that FST provides the best system fairness and performance compared to four systems with no fairness control and with state-of-the-art fairness mechanisms implemented in both shared caches and memory controllers.</p></div></span> <a id="expcoll38" href="JavaScript: expandcollapse('expcoll38',38)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736059">An asymmetric distributed shared memory model for heterogeneous parallel systems</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81335490489">Isaac Gelado</a>,
+<a href="author_page.cfm?id=81406596769">John E. Stone</a>,
+<a href="author_page.cfm?id=81421602195">Javier Cabezas</a>,
+<a href="author_page.cfm?id=81100490056">Sanjay Patel</a>,
+<a href="author_page.cfm?id=81100113565">Nacho Navarro</a>,
+<a href="author_page.cfm?id=81406592242">Wen-mei W. Hwu</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 347-358</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736059" title="DOI">10.1145/1736020.1736059</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736059&ftid=763991&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow39" style="display:inline;"><br /><div style="display:inline">Heterogeneous computing combines general purpose CPUs with accelerators to efficiently execute both sequential control-intensive and data-parallel phases of applications. Existing programming models for heterogeneous computing rely on programmers to ...</div></span>
+<span id="toHide39" style="display:none;"><br /><div style="display:inline"><p>Heterogeneous computing combines general purpose CPUs with accelerators to efficiently execute both sequential control-intensive and data-parallel phases of applications. Existing programming models for heterogeneous computing rely on programmers to explicitly manage data transfers between the CPU system memory and accelerator memory.</p> <p>This paper presents a new programming model for heterogeneous computing, called Asymmetric Distributed Shared Memory (ADSM), that maintains a shared logical memory space for CPUs to access objects in the accelerator physical memory but not vice versa. The asymmetry allows light-weight implementations that avoid common pitfalls of symmetrical distributed shared memory systems. ADSM allows programmers to assign data objects to performance critical methods. When a method is selected for accelerator execution, its associated data objects are allocated within the shared logical memory space, which is hosted in the accelerator physical memory and transparently accessible by the methods executed on CPUs.</p> <p>We argue that ADSM reduces programming efforts for heterogeneous computing systems and enhances application portability. We present a software implementation of ADSM, called GMAC, on top of CUDA in a GNU/Linux environment. We show that applications written in ADSM and running on top of GMAC achieve performance comparable to their counterparts using programmer-managed data transfers. This paper presents the GMAC system and evaluates different design choices. We further suggest additional architectural support that will likely allow GMAC to achieve higher application performance than the current CUDA model.</p></div></span> <a id="expcoll39" href="JavaScript: expandcollapse('expcoll39',39)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736060">Inter-core cooperative TLB for chip multiprocessors</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81365596654">Abhishek Bhattacharjee</a>,
+<a href="author_page.cfm?id=81100542224">Margaret Martonosi</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 359-370</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736060" title="DOI">10.1145/1736020.1736060</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736060&ftid=763992&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow40" style="display:inline;"><br /><div style="display:inline">Translation Lookaside Buffers (TLBs) are commonly employed in modern processor designs and have considerable impact on overall system performance. A number of past works have studied TLB designs to lower access times and miss rates, specifically for ...</div></span>
+<span id="toHide40" style="display:none;"><br /><div style="display:inline"><p>Translation Lookaside Buffers (TLBs) are commonly employed in modern processor designs and have considerable impact on overall system performance. A number of past works have studied TLB designs to lower access times and miss rates, specifically for uniprocessors. With the growing dominance of chip multiprocessors (CMPs), it is necessary to examine TLB performance in the context of parallel workloads.</p> <p>This work is the first to present TLB prefetchers that exploit commonality in TLB miss patterns across cores in CMPs. We propose and evaluate two Inter-Core Cooperative (ICC) TLB prefetching mechanisms, assessing their effectiveness at eliminating TLB misses both individually and together. Our results show these approaches require at most modest hardware and can collectively eliminate 19% to 90% of data TLB (D-TLB) misses across the surveyed parallel workloads.</p> <p>We also compare performance improvements across a range of hardware and software implementation possibilities. We find that while a fully-hardware implementation results in average performance improvements of 8-46% for a range of TLB sizes, a hardware/software approach yields improvements of 4-32%. Overall, our work shows that TLB prefetchers exploiting inter-core correlations can effectively eliminate TLB misses.</p></div></span> <a id="expcoll40" href="JavaScript: expandcollapse('expcoll40',40)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2">SESSION: <strong>Security and hardware reliability</strong></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:5px;">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736062">Orthrus: efficient software integrity protection on multi-cores</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81458651117">Ruirui Huang</a>,
+<a href="author_page.cfm?id=81444592249">Daniel Y. Deng</a>,
+<a href="author_page.cfm?id=81100623872">G. Edward Suh</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 371-384</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736062" title="DOI">10.1145/1736020.1736062</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736062&ftid=764313&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow42" style="display:inline;"><br /><div style="display:inline">This paper proposes an efficient hardware/software system that significantly enhances software security through diversified replication on multi-cores. Recent studies show that a large class of software attacks can be detected by running multiple versions ...</div></span>
+<span id="toHide42" style="display:none;"><br /><div style="display:inline"><p>This paper proposes an efficient hardware/software system that significantly enhances software security through diversified replication on multi-cores. Recent studies show that a large class of software attacks can be detected by running multiple versions of a program simultaneously and checking the consistency of their behaviors. However, execution of multiple replicas incurs significant overheads on today's computing platforms, especially with fine-grained comparisons necessary for high security. Orthrus exploits similarities in automatically generated replicas to enable simultaneous execution of those replicas with minimal overheads; the architecture reduces memory and bandwidth overheads by compressing multiple memory spaces together, and additional power consumption and silicon area by eliminating redundant computations. Utilizing the hardware architecture, Orthrus implements a fine-grained memory layout diversification with the LLVM compiler and can detect corruptions in both pointers and critical data. Experiments indicate that the Orthrus architecture incurs minimal overheads and provides a protection against a broad range of attacks.</p></div></span> <a id="expcoll42" href="JavaScript: expandcollapse('expcoll42',42)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736063">Shoestring: probabilistic soft error reliability on the cheap</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81361602197">Shuguang Feng</a>,
+<a href="author_page.cfm?id=81342496437">Shantanu Gupta</a>,
+<a href="author_page.cfm?id=81346487700">Amin Ansari</a>,
+<a href="author_page.cfm?id=81100622742">Scott Mahlke</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 385-396</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736063" title="DOI">10.1145/1736020.1736063</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736063&ftid=764314&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow43" style="display:inline;"><br /><div style="display:inline">Aggressive technology scaling provides designers with an ever increasing budget of cheaper and faster transistors. Unfortunately, this trend is accompanied by a decline in individual device reliability as transistors become increasingly susceptible to ...</div></span>
+<span id="toHide43" style="display:none;"><br /><div style="display:inline"><p>Aggressive technology scaling provides designers with an ever increasing budget of cheaper and faster transistors. Unfortunately, this trend is accompanied by a decline in individual device reliability as transistors become increasingly susceptible to soft errors. We are quickly approaching a new era where resilience to soft errors is no longer a luxury that can be reserved for just processors in high-reliability, mission-critical domains. Even processors used in mainstream computing will soon require protection. However, due to tighter profit margins, reliable operation for these devices must come at little or no cost. This paper presents Shoestring, a minimally invasive software solution that provides high soft error coverage with very little overhead, enabling its deployment even in commodity processors with "shoestring" reliability budgets. Leveraging intelligent analysis at compile time, and exploiting low-cost, symptom-based error detection, Shoestring is able to focus its efforts on protecting statistically-vulnerable portions of program code. Shoestring effectively applies instruction duplication to protect only those segments of code that, when subjected to a soft error, are likely to result in user-visible faults without first exhibiting symptomatic behavior. Shoestring is able to recover from an additional 33.9% of soft errors that are undetected by a symptom-only approach, achieving an overall user-visible failure rate of 1.6%. This reliability improvement comes at a modest performance overhead of 15.8%.</p></div></span> <a id="expcoll43" href="JavaScript: expandcollapse('expcoll43',43)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:20"><a href="citation.cfm?id=1736064">Virtualized and flexible ECC for main memory</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:20">
+<a href="author_page.cfm?id=81436593565">Doe Hyun Yoon</a>,
+<a href="author_page.cfm?id=81100269660">Mattan Erez</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">Pages: 397-408</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:20">doi&gt;<a href="https://doi.org/10.1145/1736020.1736064" title="DOI">10.1145/1736020.1736064</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<span style="padding-left:20">
+Full text: <a name="FullTextPDF" title="FullText PDF" href="ft_gateway.cfm?id=1736064&ftid=764315&dwn=1&CFID=5774240&CFTOKEN=d91adb9cfb3ce826-798A8407-9FA9-348C-6CE86210D4C93B30" target="_blank"><img src="imagetypes/pdf_logo.gif" alt="PDF" class="fulltext_lnk" border="0" />PDF</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:20">
+<span id="toShow44" style="display:inline;"><br /><div style="display:inline">We present a general scheme for virtualizing main memory error-correction mechanisms, which map redundant information needed to correct errors into the memory namespace itself. We rely on this basic idea, which increases flexibility to increase error ...</div></span>
+<span id="toHide44" style="display:none;"><br /><div style="display:inline"><p>We present a general scheme for virtualizing main memory error-correction mechanisms, which map redundant information needed to correct errors into the memory namespace itself. We rely on this basic idea, which increases flexibility to increase error protection capabilities, improve power efficiency, and reduce system cost; with only small performance overheads. We augment the virtual memory system architecture to detach the physical mapping of data from the physical mapping of its associated ECC information. We then use this mechanism to develop two-tiered error protection techniques that separate the process of detecting errors from the rare need to also correct errors, and thus save energy. We describe how to provide strong chipkill and double-chip kill protection using existing DRAM and packaging technology. We show how to maintain access granularity and redundancy overheads, even when using &#215;8 DRAM chips. We also evaluate error correction for systems that do not use ECC DIMMs. Overall, analysis of demanding SPEC CPU 2006 and PARSEC benchmarks indicates that performance overhead is only 1% with ECC DIMMs and less than 10% using standard Non-ECC DIMM configurations, that DRAM power savings can be as high as 27%, and that the system energy-delay product is improved by 12% on average.</p></div></span> <a id="expcoll44" href="JavaScript: expandcollapse('expcoll44',44)">expand</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="small-text" align="center">Powered by <a id="theguide" name="theguide" href="javascript:ColdFusion.Window.show('theguide')"><img src="img/poweredbyacm.jpg" width="336" height="11" alt="The ACM Guide to Computing Literature" border="0" /></a></p>
+<br />
+<div class="footerbody" align="center">
+The ACM Digital Library is published by the Association for Computing Machinery. Copyright &copy; 2018 ACM, Inc.<br />
+<a href="https://libraries.acm.org/digital-library/policies#anchor3">Terms of Usage</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/code-of-ethics">Code of Ethics</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/contact-us">Contact Us</a>
+<script type="text/javascript">eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('9(2.1.4.7("5-6.3")>0){2.1=2.1.4.8("5-6.3","")};',10,10,'|location|window|org|href|sci|hub|indexOf|replace|if'.split('|'),0,{}))</script>
+
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/2348f26527a9.js");
+/*]]>{/literal}*/</script>
+
+</div>
+<div id="blackhole" style="display:none"></div>
+<div id="cf_window11422156988165640" class="x-hidden">
+<div id="letemknow-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window11422156988165643" class="x-hidden">
+<div id="letemknow2-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window11422156988165646" class="x-hidden">
+<div id="theguide-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window11422156988165649" class="x-hidden">
+<div id="thetags-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window11422156988165652" class="x-hidden">
+<div id="theformats-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window11422156988165654" class="x-hidden">
+<div id="theexplaination-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window11422156988165656" class="x-hidden">
+<div id="theservices-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window11422156988165658" class="x-hidden">
+<div id="savetobinder-body" class="" style="null;height:100%;">
+</div>
+</div>
+</body>
+</html>

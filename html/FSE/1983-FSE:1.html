@@ -1,0 +1,2395 @@
+
+<!doctype html>
+<head><script type="text/javascript">/* <![CDATA[ */_cf_loadingtexthtml="<img alt=' ' src='/cf_scripts/scripts/ajax/resources/cf/images/loading.gif'/>";
+_cf_contextpath="";
+_cf_ajaxscriptsrc="/cf_scripts/scripts/ajax";
+_cf_jsonprefix='//';
+_cf_websocket_port=0;
+_cf_flash_policy_port=0;
+_cf_clientid='28BBC78C08B021F39115686EFA02AC51';/* ]]> */</script><script type="text/javascript" src="/cf_scripts/scripts/ajax/messages/cfmessage.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfajax.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfform.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/masks.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/cfformhistory.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfrichtexteditor.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/chart/cfchart-server.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/yui/animation/animation-min.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/ext/ext-all.js"></script>
+<script type="text/javascript" src="/cf_scripts/scripts/ajax/package/cfwindow.js"></script>
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/ext/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/cf_scripts/scripts/ajax/resources/cf/cf.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/dl.css" />
+<title>Proceedings of the ACM SIGSOFT/SIGPLAN software engineering symposium on High-level debugging</title>
+<style type="text/css"><!--
+    body {margin-left: 0em; margin-top: 0}
+    a:link {text-decoration: underline; 	Color: #1d4d0f;}
+    a:visited  { color: #990033; text-decoration: underline;}
+    a:hover {color: red; text-decoration: none}
+    a.dLink1:link {color:#336699}
+    a.dLink1:visited {color:#666666}
+	a.isblack:link {text-decoration: underline; 	Color: #000000;}
+    a.isblack:visited  { color: #000000; text-decoration: underline;}
+    a.isblack:hover {color: #000000; text-decoration: none}
+    h1 {font-size: 140%; margin-bottom: 0}
+	ul {margin-top: .25em; list-style-type: disc}
+	ol {margin-top: .25em;}
+	li {padding-bottom: .25em;}
+    h2 {color: white; background-color: #069; 
+        font-size: 100%; padding-left: 1em;
+		margin: 0}
+	h3 {color: black; background-color: yellow; 
+    	font-size: 100%;
+		margin: 0}
+	 h4 {color: black; background-color: #99c5e8; 
+        font-size: 100%;
+		margin: 0}
+    hr {color: #39176d;}
+    form {margin-top: 10}
+    form.xrs {margin-top: 0}
+	
+	a {text-decoration: none; }
+	
+	input {font-size: 1em;}
+	.chevron {color: #ff0000;}
+	.light-blue {color:#336699;}
+	.black {color:#000000;}
+	
+	
+	.mono-text {font-size: 14px; font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;}
+	
+	/* ### standard text styles, smallest to largest ### */
+	
+	.footer-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .75em; line-height: 1.33em;
+		text-indent: -.75 em; margin-left: 2em; margin-right: .75em;}
+		
+	.footer-copy-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em; line-height: 1.3em;
+		margin-left: .75em; margin-right: .75em;}
+		
+	.small-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; padding-bottom : 2px;
+	  	padding-top : 2px;}
+		
+	.small-link-text2 {font-size: .83em !important; 
+	}
+
+	.smallerer-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .65em;}
+	.smaller-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em;}		
+	.small-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em;}
+	.small-textb {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; font-weight: bold;}
+	.medium-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em;}
+	.mediumb-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em; font-weight: bold;}
+	.large-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1.3em;}		
+	.instr-text {font-family: Arial, Helvetica, sans-serif;
+		color:#666666; font-size: .83em;}
+		
+	.list-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .83em; line-height: 1.3em;}
+	.list-link-btext {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; line-height: 1.3em;}
+	
+	.searchbox-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;}
+	.footer-header-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;
+		margin-left: .75em; margin-right: .75em;}
+	.medium-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold; line-height: 1em;
+		text-indent: -1.25em; margin-left: 2em; margin-right: .75em;}
+	
+	.text16 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 16px;}
+		
+	.text14 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 14px;}
+	
+	.text12 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 12px;}
+		
+	.text10 {font-family: Arial, Helvetica, sans-serif;
+	    color:#000000; font-size: 12px;}
+		
+	.text9 {font-family: Arial, Helvetica, sans-serif;
+	   color:#000000; font-size: 12px;}
+	
+	.error-text {color:red;}
+	
+	.small-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: .75em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+
+	.medium-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1.3em; line-height: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.medium-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+
+		#side {
+			width: 10px;
+			float: left;
+			margin-left: -1px;
+			padding: 2px;
+			}
+							
+		#content {
+			padding: 2px;
+			margin-left: 25px;
+			
+		        
+		        }
+	 .fulltext_lnk {border:0px;
+	 				 margin-right: 2px;
+					 vertical-align:baseline;
+	 				}
+	 
+	  .leftcoltab { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:530px;  /* for IE5/WIN */
+		  width:520px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	  .rightcoltab {
+    float: right;
+    margin: 0;
+    padding: 5px;
+    position: relative;
+    right: 50px;
+    top: 25px;
+    width: 350px;
+    z-index: 99;
+}
+	  .centercoltab {
+		  position:absolute;
+		  padding:0 0px;
+		  }
+	  .alt {
+		background: #ece9d8;
+		margin: 0;
+		padding: 1px;
+		}
+		.leftcolc { 
+	position:relative;
+	top:5px;
+	left:5px;
+	float:left;
+	width:420px;  /* for IE5/WIN */
+	width:400px; /* actual value */
+	margin:0 0 0px 0;
+	padding:5px;
+	z-index:100;
+	}
+.rightcolc {
+	position:relative;
+	top:0px;
+	right:0px;
+	float:right;
+	margin:0 0px;
+	padding:0px;
+	width:500px;
+	z-index:99;
+	}
+.centercolc {
+	position:absolute;
+	padding:0 0px;
+	}
+	
+	.leftcoltabv { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:460px;  /* for IE5/WIN */
+		  width:350px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	.rightcoltabv {
+		position:relative;
+		top:5px;
+		right:0px;
+		float:right;
+		margin:0 0px 0 0;
+		padding:15px;
+		width:480px;
+		z-index:99;
+		}
+		
+.x-tabs-strip-wrap {
+	overflow-y: hidden !important;
+}
+  --></style>
+<script src="js/tagcanvas.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function loadCloud() {
+	try {
+	  TagCanvas.Start('myCanvas','tags',{
+		textColour: '#000000',
+		outlineColour: '#ff00ff',
+		reverse: true,
+		shuffleTags:true,
+		depth: 0.8,
+		maxSpeed: 0.05,
+		textHeight: 12,
+		initial: [0.000, 0.050],
+		shape: "hring",
+		lock: "x"
+	  });
+	} catch(e) {
+	  // something went wrong, hide the canvas container
+	  // document.getElementById('myCanvasContainer').style.display = 'none';
+	}
+  };
+</script>
+<script type="text/javascript" src="cfformprotect/js/cffp.js"></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<style type="text/css"><!--
+.google-visualization-orgchart-node {
+    background-color: #FFFFFF !important;
+    border: 2px solid #AFCF40 !important;
+    cursor: default;
+    font-family: arial,helvetica;
+    text-align: center;
+    vertical-align: middle;
+}
+
+iframe {float:right; 
+		margin:10px;
+		border: 2px solid #1B4D0E;
+		
+		}
+
+a.boxed:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxed:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxed:hover {color: red !important; text-decoration: underline !important;}
+
+a.boxedh:link {text-decoration: none !important; 	Color: #000000 !important;}
+a.boxedh:visited  { color: #000000 !important; text-decoration: none !important;}
+a.boxedh:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedm:link {text-decoration: none !important; 	Color: #606060 !important;}
+a.boxedm:visited  { color: #606060 !important; text-decoration: none !important;}
+a.boxedm:hover {color: red !important; text-decoration: underline !important;}		
+
+a.boxedl:link {text-decoration: none !important; 	Color: #808080   !important;}
+a.boxedl:visited  { color: 	#808080 !important; text-decoration: none !important;}
+a.boxedl:hover {color: red !important; text-decoration: underline !important;}				
+
+.google-visualization-orgchart-linebottom {
+    border-bottom: 1px solid #006699 !important;
+}
+.google-visualization-orgchart-lineleft {
+    border-left: 1px solid #006699 !important;
+}
+
+.google-visualization-orgchart-lineright {
+    border-right: 1px solid #006699 !important;
+}
+
+--></style>
+<script type="text/javascript">
+
+
+function settab() {
+    var mytabs = ColdFusion.Layout.getTabLayout('citationdetails');
+   
+ 
+  mytabs.on('tabchange', function(tabpanel,activetab) { document.cookie = 'picked=' + '800007' + ',' + activetab.id; })
+ 
+}
+
+
+function letemknow(){
+  ColdFusion.Window.show('letemknow');
+}
+
+function letemknow2(){
+  ColdFusion.Window.show('letemknow2');
+}
+
+
+
+
+
+function testthis(){
+
+alert('test');
+}
+function loadalert(){ 
+ alert("I am in the load alert");
+ 
+}
+function loadalert2(){ 
+  alert("I am in the load alert2");
+ 
+}
+</script>
+<script type='text/javascript'>
+	  	google.load('visualization', '1', {packages:['orgchart']});
+	    google.setOnLoadCallback(drawChart);
+	  
+	  function drawChart() {
+	    var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+  	  
+		data.addRows([
+          [{v:'0', f:'<div style="color:black; font-size:150%; font-style:normal">CCS&nbsp;for&nbsp;this&nbsp;Proceeding</div>'}, '', ''],
+		  
+		  [{v:'10011007', f:'<div style=" font-size:150%; font-style:normal"><a class="boxedh" href="ccs/ccs.cfm?id=10011007&lid=0.10011007">Software and its engineering</a></div>'}, '0', ''], 
+		  [{v:'10011074', f:'<div style=" font-size:100%; font-style:normal"><a class="boxedl" href="ccs/ccs.cfm?id=10011074&lid=0.10011007.10011074">Software creation and management</a></div>'}, '10011007', ''], 
+		  [{v:'10011099', f:'<div style=" font-size:100%; font-style:normal"><a class="boxedl" href="ccs/ccs.cfm?id=10011099&lid=0.10011007.10011074.10011099">Software verification and validation</a></div>'}, '10011074', ''], 
+		  [{v:'10011102', f:'<div style=" font-size:100%; font-style:normal"><a class="boxedl" href="ccs/ccs.cfm?id=10011102&lid=0.10011007.10011074.10011099.10011102">Software defect analysis</a></div>'}, '10011099', ''], 
+		  [{v:'10011103', f:'<div style=" font-size:100%; font-style:normal"><a class="boxedl" href="ccs/ccs.cfm?id=10011103&lid=0.10011007.10011074.10011099.10011102.10011103">Software testing and debugging</a></div>'}, '10011102', ''] 
+        ]);
+		
+		if (document.getElementById('chart_div')) {
+       var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+       chart.draw(data, {allowHtml:true});
+		}
+      }
+	  
+</script>
+<script type="text/javascript">
+ function expandcollapse(anchor,whichone) {
+	 var inner = document.getElementById(anchor);
+	 var theshow = "toShow" + whichone;
+ 	 var thehide = "toHide" + whichone;
+	 var span = document.getElementById(theshow);
+     span.style.display = (span.style.display=='inline')?'none':'inline';
+     var span = document.getElementById(thehide);
+     span.style.display = (span.style.display=='none')?'inline':'none';
+     inner.innerHTML = (inner.innerHTML=='collapse')?'expand':'collapse';
+    }
+
+  
+</script>
+<script type="text/javascript">
+ /* <!-- Begin
+	if(document.layers || document.all) {
+	a = 1;
+	setInterval("Jump()", 10);
+	}
+	function Jump() {
+	a = a + 1;
+	//self.moveBy((Math.random() * a * 2 - a), (Math.random() * a * 2) - a);
+	}
+//  End --> */
+</script>
+<script type="text/javascript">
+function expandWatson(divID,theConcept) { 
+			if (document.getElementById(divID).style.display == "none") {
+				document.getElementById(divID).style.display = "block";
+				document.getElementById(divID).innerHTML = theConcept + "<br />" + document.getElementById(divID).innerHTML;
+			}
+			 else {
+				 document.getElementById(divID).style.display = "none"
+			}
+		}
+</script>
+
+<script type="text/javascript">
+  function togglePatMap() {
+        var div = document.getElementById('patmap'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsepmapa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				httpGetAsyncwID("patent.cfm?id=800007",'patmap');
+				httpGetAsyncwID("simmap_track.cfm?id=800007&how=live",'blackhole');
+			}
+			else {
+				httpGetAsyncwID("simmap_track.cfm?id=800007&how=cache",'blackhole');
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsepmapa").src = "images/expand.png";
+        }
+    }
+  
+  function toggleCO() {
+        var div = document.getElementById('codisp'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapsecoa").src = "images/collapse.png";
+			
+			if (div.innerHTML.length == 0){
+				/* httpGetAsyncwID("coint.cfm?id=800007",'codisp'); */
+				/*httpGetAsyncwID("simmap_track.cfm?id=800007&how=live",'blackhole'); */
+			}
+			else {
+				/* httpGetAsyncwID("simmap_track.cfm?id=800007&how=cache",'blackhole'); */
+			}
+			
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapsecoa").src = "images/expand.png";
+        }
+    }
+	
+	function httpGetAsyncwID(theUrl,theID) {
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+				
+				document.getElementById(theID).innerHTML=xmlHttp.responseText;
+		}
+		xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		xmlHttp.send();
+	}
+</script>
+<meta name="citation_publisher" content="ACM"> <meta name="citation_authors" content="Chairman-Fairley, Richard E.; Chairman-Johnson, Mark Scott"> <meta name="citation_conference_title" content="Proceedings of the ACM SIGSOFT/SIGPLAN software engineering symposium on High-level debugging"> <meta name="citation_date" content="01/01/1983"> <meta name="citation_isbn" content="0-89791-111-3"> <meta name="citation_abstract_html_url" content="http://dl.acm.org/citation.cfm?id=800007">
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFAJAXPROXY');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFFORM');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFDIV');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFTEXTAREA');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(drawChart,null,false,true);
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFWINDOW');
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_9777953539025808=function()
+	{
+		_cf_bind_init_9777953539025809=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow-body','bindExpr':['letemknow.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_9777953539025809);var _cf_window=ColdFusion.Window.create('letemknow','<div style=\'text-align:left; color:black;\'>Did you know the ACM DL App is now available?</div>','letemknow.cfm',{ modal:false, closable:true, divid:'cf_window9777953539025807', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:75, y:125});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_9777953539025808);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_9777953539025811=function()
+	{
+		_cf_bind_init_9777953539025812=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'letemknow2-body','bindExpr':['letemknow_recomm.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_9777953539025812);var _cf_window=ColdFusion.Window.create('letemknow2','<div style=\'text-align:left; color:black;\'>Did you know your Organization can subscribe to the ACM Digital Library?</div>','letemknow_recomm.cfm',{ modal:false, closable:true, divid:'cf_window9777953539025810', draggable:true, resizable:true, fixedcenter:false, width:600, height:275, shadow:true, callfromtag:true, minwidth:600, minheight:275, initshow:false, destroyonclose:false, x:70, y:175});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_9777953539025811);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_9777953539025814=function()
+	{
+		_cf_bind_init_9777953539025815=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'theguide-body','bindExpr':['whatisguide.cfm']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_9777953539025815);var _cf_window=ColdFusion.Window.create('theguide','The ACM Guide to Computing Literature','whatisguide.cfm',{ modal:false, closable:true, divid:'cf_window9777953539025813', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_9777953539025814);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_9777953539025817=function()
+	{
+		_cf_bind_init_9777953539025818=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'thetags-body','bindExpr':['showthetags.cfm?id=800007']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_9777953539025818);var _cf_window=ColdFusion.Window.create('thetags','All Tags','showthetags.cfm?id=800007',{ modal:false, closable:true, divid:'cf_window9777953539025816', draggable:true, resizable:true, fixedcenter:true, width:500, height:300, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_9777953539025817);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_9777953539025820=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theformats','Export Formats','',{ modal:false, closable:true, divid:'cf_window9777953539025819', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:250, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_9777953539025820);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_9777953539025822=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theexplaination','','',{ modal:false, closable:true, divid:'cf_window9777953539025821', draggable:true, resizable:true, fixedcenter:false, width:600, height:600, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_9777953539025822);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_9777953539025824=function()
+	{
+		var _cf_window=ColdFusion.Window.create('theservices','','',{ modal:false, closable:true, divid:'cf_window9777953539025823', draggable:true, resizable:true, fixedcenter:false, width:500, height:300, shadow:true, bodystyle:'text-align:left', callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_9777953539025824);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	Ext.onReady(function(){var _cf_window_init_9777953539025826=function()
+	{
+		_cf_bind_init_9777953539025827=function()
+		{
+			ColdFusion.Bind.register([],{'bindTo':'savetobinder-body','bindExpr':['savetobinder.cfm?id=800007']},ColdFusion.Bind.urlBindHandler,false);
+		};ColdFusion.Event.registerOnLoad(_cf_bind_init_9777953539025827);var _cf_window=ColdFusion.Window.create('savetobinder','Save to Binder','savetobinder.cfm?id=800007',{ modal:false, closable:true, divid:'cf_window9777953539025825', draggable:true, resizable:true, fixedcenter:true, width:600, height:600, shadow:true, callfromtag:true, minwidth:300, minheight:250, initshow:false, destroyonclose:false, _cf_refreshOnShow:true});
+	};ColdFusion.Event.registerOnLoad(_cf_window_init_9777953539025826);});
+/* ]]> */</script>
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Event.registerOnLoad(settab,null,false,true);
+/* ]]> */</script>
+</head>
+
+<body style="text-align:center; font-size:100%"> 
+<script type="text/javascript">
+						addthis_pub             = 'acm'; 
+						//addthis_logo            = 'http://www.addthis.com/images/yourlogo.png';
+						addthis_logo            = 'https://dl.acm.org/images/ACM_transparent.png';
+						addthis_logo_background = 'c2d5fc';
+						addthis_logo_color      = '000000';
+						addthis_brand           = 'Citation Page';
+						addthis_options         = 'favorites, email, slashdot, citeulike, digg, delicious, twitter, myspace, facebook, google, more';
+						</script>
+<script src='AC_RunActiveContent.js' type="text/javascript"></script>
+<div style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<a id="CIT"></a>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFGCMX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFGCMX');</script>
+
+<div id="header">
+<table style="table-layout:fixed; margin-top: 5px; margin-bottom: 10px; border:0px; width:100%; border-collapse:collapse;">
+<tr style="vertical-align:top">
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; width:300px" class="small-link-text2"><img src="/images/ACMDL_Logo.jpg" alt="ACM DL" style="border:0px" usemap="#port" />
+</td>
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; vertical-align:middle;" class="small-link-text2">
+<table style="width:100%; border-collapse:collapse; padding:0px">
+<tr><td style="text-align:center">
+<table>
+<tr>
+<td style="text-align:center">
+<div style="margin:5px auto;color:#356b20;font-size:11pt;line-height:130%; height:63px;">
+Iowa State University
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding-top: 0px; padding-left: 0px; padding-bottom:0px; text-align:right;" class="small-link-text2">
+<p style="margin-top:0px; margin-bottom:10px;">
+<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign in to personalize your Digital Library experience">SIGN IN</a>
+&nbsp;&nbsp;<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign up to personalize your Digital Library experience">SIGN UP</a>
+</p>
+<table style="padding: 5px; border-collapse:collapse; float:right">
+<tr>
+<td class="small-link-text2" style="text-align:right">
+<script type="text/javascript">
+								function encodeInput(form){
+								    	var cleanQuery = form.elements['query'].value.replace(new RegExp( "\\+", "g" ),"%2B");
+										cleanQuery = cleanQuery.replace(/#/g, "%23");
+										cleanQuery = cleanQuery.replace(/(\n)/g, " ");
+										cleanQuery = cleanQuery.trim();
+										
+										
+										var ascii = /^[ -~]+$/;
+										if( !ascii.test( cleanQuery ) ) {
+											var fixedUseQuery = "";
+											for (var i = 0, len = cleanQuery.length; i < len; i++) {
+												var str = "";
+												if( !ascii.test(cleanQuery[i]) ) {
+										 			str = "%26%23" + cleanQuery[i].charCodeAt(0) + ";";
+												} else {
+										 			str = cleanQuery[i];
+												}
+												fixedUseQuery = fixedUseQuery + str;
+											}
+											cleanQuery = fixedUseQuery;
+										}
+										
+
+										form.elements['query'].value = cleanQuery;
+								}
+							</script>
+<form name="qiksearch" action="/results.cfm" onsubmit='encodeInput(this)'>
+<span style="margin-left:0px"><label><input type="text" name="query" size="30" value="" /></label>&nbsp;
+<input style="vertical-align:top;" type="image" alt="Search" name="Go" src="/images/search_small.jpg" />
+</span>
+</form>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td colspan="3" class="small-link-text2" style="padding-bottom:5px; padding-top:0px; text-align:center">
+<div style="margin:0px auto;color:#356b20;line-height:10%;"> </div>
+</td>
+</tr>
+</table>
+<div id="google_translate_element" style="text-align:right; padding-bottom:5px;"></div><script type="text/javascript">function googleTranslateElementInit() {new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<map name="port" id="port">
+<area shape="rect" coords="1,1,60,50" href="https://www.acm.org/" alt="ACM Home Page" />
+<area shape="rect" coords="65,1,275,68" href="https://dl.acm.org/dl.cfm" alt="ACM Digital Library Home Page" />
+</map>
+</div>
+<style>
+  .watsonCont {
+	  width:170px;
+	  
+	  color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	 /* background-color: lightgray;*/
+  }
+  #watsonInside {
+    border-radius: 25px;
+    border: 2px solid #649134;
+	margin-top: 12px;
+	padding: 5px;
+	height: 80px;
+  }
+
+</style>
+<table style="table-layout:fixed; padding-bottom:10px; width:100%; padding:0px;">
+<tr style="vertical-align:top">
+<td style="padding-right:10px; text-align:left" class="small-link-text">
+<div id="divmain" style="border:1px solid #356b20;">
+<div class="large-text" style="text-align:left; margin-left:2px;margin-bottom:5px;">
+<h1 class="mediumb-text" style="margin-top:0px; margin-bottom:0px;">Proceedings of the ACM SIGSOFT/SIGPLAN software engineering symposium on High-level debugging</h1>
+</div>
+<table class="medium-text" style="border-collapse:collapse; padding:0px; margin-left: 2px;">
+<colgroup>
+<col style="width:540px" />
+</colgroup>
+<tr style="vertical-align:top">
+<td>
+<table style="border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px;" />
+<col style="width:auto" />
+<tr style="vertical-align:top">
+</tr>
+</table>
+<table style="margin-top: 10px; border-collapse:collapse; padding:2px;" class="medium-text">
+<col style="width:80px" />
+<tr>
+<td valign="top" nowrap="nowrap">
+Chairmen:
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=81100196238&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">Richard E. Fairley</a>
+</td>
+<td valign="bottom">
+</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">
+</td>
+<td style="padding-right:3px;" valign="top" nowrap="nowrap">
+<a href="author_page.cfm?id=81339507161&amp;coll=DL&amp;dl=ACM&amp;trk=0" title="Author Profile Page" target="_self">Mark Scott Johnson</a>
+</td>
+<td valign="bottom">
+</td>
+</tr>
+</table>
+<table style="margin-top: 10px" border="0" class="medium-text" cellpadding="2" cellspacing="0">
+<tr>
+<td><table border="0" class="medium-text" style="margin-left:5px;" cellpadding="1" cellspacing="0">
+<tr valign="top">
+<td nowrap="nowrap" style="padding-top:10px;">Publication:</td>
+</tr>
+<tr valign="top">
+<td nowrap="nowrap" style="padding-bottom:0px">&middot;&nbsp;Proceeding</td>
+<td colspan="2"></td>
+</tr>
+<tr valign="top">
+<td colspan="3" style="padding-left:10px">SIGSOFT '83 Proceedings of the ACM SIGSOFT/SIGPLAN software engineering symposium on High-level debugging
+</td>
+</tr>
+<tr valign="top">
+<td colspan="3" style="padding-left:10px"> <a href="https://www.acm.org/publications" class="small-link-text" title="ACM">ACM</a> <span class="small-link-text">New York, NY</span><span class="small-link-text">, USA</span> <span class="small-link-text"> &copy;1983</span>
+<br />
+<a href="citation.cfm?id=800007&amp;picked=prox" target="_self" class="small-link-text">table&nbsp;of&nbsp;contents</a>
+ISBN:0-89791-111-3
+</td>
+</tr>
+</table></td>
+</tr>
+</table>
+</td>
+<td rowspan="20">
+<table border="0" class="medium-text" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" style="padding-bottom: 5px;">
+</td>
+<td align="left" nowrap="nowrap">
+<img src="images/ACM_mini.jpg" style="vertical-align:middle" title="Published by ACM" alt="Published by ACM" /> 1983 Proceeding<br />
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="baseline" style="padding-bottom:5px; padding-top:5px;">
+<img src="img/stats.jpg" alt="Bibliometrics Data" />&nbsp;
+<a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a>
+</td>
+</tr>
+<tr>
+<td class="small-text" colspan="2" valign="top" style="padding-left:30px;">
+&middot;&nbsp;Citation Count: 118<br />
+&middot;&nbsp;Downloads (cumulative): n/a<br />
+&middot;&nbsp;Downloads (12 Months): n/a<br />
+&middot;&nbsp;Downloads (6 Weeks): n/a<br />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br clear="all" />
+<br clear="all" />
+</div>
+</td>
+<td style="padding-left: 5px; vertical-align:top; text-align:left; width:170px" class="small-link-text">
+<div id="divtools" style="background-color:#ece9d8; text-align:left; padding-top:5px; padding-bottom:5px; ">
+<div class="medium-text" style="margin-left:3px; margin-top:10px;"><h1 class="mediumb-text" style="margin-top:-15px;">Tools and Resources</h1></div>
+<ul title="Tools and Resources" style="list-style: none; list-style-position:outside;
+margin-left: 25px;
+padding-left: 0em;
+text-indent: 0px;
+margin-bottom: 0px;">
+<li style="list-style-image:url(img/toc_small.gif);margin-top:10px;"><span style="margin-left:0px;">
+<span class="small-link-text">TOC Service:</span>
+<img src="images/blanks.gif" border="0" alt="Spacer Image reserves space for checkmark when TOC Service is updated" name="saved" />
+<ul style="margin-left: 0; padding-left: 0; display:inline;">
+<li style="list-style:none; display:inline"><br /><img src="img/email_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Email</a></li>
+<li style="list-style:none; display:inline"><img src="img/rss_small.gif" alt="Toc Alert via Email" border="0" hspace="3" /><a href="#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">RSS</a></li>
+</ul>
+</span>
+</li>
+<li style="list-style-image:url(img/binder.gif);margin-top:10px;"><span style="margin-left:0px;">
+<a href="citation.cfm?id=800007&preflayout=flat#" onclick="window.alert('To use this Feature, you must login with your personal ACM Web Account.');" class="small-link-text">Save to Binder</a>
+</span></li>
+<li style="list-style-image:url(img/binder_green.gif);margin-top:10px;"><span style="margin-left:0px; margin-bottom:0px">
+<span class="small-link-text">Export Formats:</span>
+<ul style="margin-left: 0; padding-left: 0; margin-bottom:0px;">
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=800007&expformat=bibtex','theformats');" class="small-link-text">BibTeX</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=800007&expformat=endnotes','theformats');" class="small-link-text">EndNote</a></li>
+<li style="list-style:disc; display:inline; margin-bottom:0px;"><a href="javascript:ColdFusion.Window.show('theformats');ColdFusion.navigate('exportformats.cfm?id=800007&expformat=acmref','theformats');" class="small-link-text">ACM&nbsp;Ref</a></li>
+</ul>
+</span>
+</li>
+</ul>
+
+
+<p class="small-link-text" style="padding-top: 0px; margin-left:6px; margin-bottom:0px">Share:</p>
+
+
+<div style="margin-left:5px;" class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_email"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_researchgate"></a>
+<a class="addthis_button_reddit"></a>
+<span class="addthis_separator">|</span>
+<a href="https://www.addthis.com/bookmark.php?v=250&amp;username=acm" class="addthis_button_expanded" title="more"></a>
+</div>
+<script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#username=acm"></script>
+
+</div>
+<script type="text/javascript">
+ function toggleAuthorKeys() {
+        var div = document.getElementById('authortags'); 
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("expandcollapseauthortags").src = "images/collapse.png";
+        }
+        else {
+            div.style.display = "none";
+            document.getElementById("expandcollapseauthortags").src = "images/expand.png";
+        }
+    }
+</script>
+<div class="medium-text" style="padding-right:10px; margin-top:10px;">
+<a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=2','theexplaination');" title="Tags: explained">
+<strong>Author Tags</strong>
+</a>
+<a href="javascript: void(0);" onclick="toggleAuthorKeys();" title="Expand Author Tags"><img id="expandcollapseauthortags" class="expand-collapse" src="images/expand.png" width="40px" alt="Expand Author Tags" style="vertical-align:bottom;" /></a>
+</div>
+<div id="authortags" style="text-align:left; padding-top:10px; display:none;">
+<a href="results.cfm?query=keywords.author.keyword:%22software%20and%20its%20engineering%22 OR acmdlCCS:%22software%20and%20its%20engineering%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#356b20">software and its engineering</span></a>
+<a href="results.cfm?query=keywords.author.keyword:%22software%20testing%20and%20debugging%22 OR acmdlCCS:%22software%20testing%20and%20debugging%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#000000">software testing and debugging</span></a>
+<a href="results.cfm?query=keywords.author.keyword:%22theory%22 OR acmdlCCS:%22theory%22" target="_self"><span class="small-text" style="padding-right: 0px; color:#356b20">theory</span></a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="layout" style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+<div id="fback" style="text-align:left; padding-top:20px; padding-bottom:20px">
+<span class="small-text" style="padding-right:10px; margin-bottom:0px;">
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#5828372a2c3934753e3d3d3c3a393b3318302976393b3576372a3f" style=" vertical-align:middle"><img src="img/feedbackg.gif" width="20" height="19" alt="Contact The DL Team" border="0" /></a>
+<a title="Contact The DL Team" href="/cdn-cgi/l/email-protection#6b1b04191f0a07460d0e0e0f090a08002b031a450a08064504190c"><strong>Contact Us</strong></a>
+<span style="padding:10px;">|</span>
+<span>Switch to <a href="citation.cfm?id=800007&amp;preflayout=tabs">tabbed view</a> <noscript> (javascript required)</noscript></span>
+</span>
+<div class="small-text" style="margin-top:10px; margin-bottom:5px;">
+<br />
+<a href="#abstract" title="Abstract" style="padding:5px"><span style='color:#999999'>Abstract</span></a> |
+<a href="#authors" title="Authors" style="padding:5px"><span>Authors</span></a> |
+<a href="#references" title="References" style="padding:5px"><span style='color:#999999'>References</span></a> |
+<a href="#citedby" title="Cited By" style="padding:5px"><span style='color:#999999'>Cited By</span></a> |
+<a href="#indexterms" title="Index Terms" style="padding:5px"><span>Index Terms</span></a> |
+<a href="#source" title="Publication" style="padding:5px"><span>Publication</span></a> |
+<a href="#revs" title="Reviews" style="padding:5px"><span style='color:#999999'>Reviews</span></a> |
+<a href="#comments" title="Comments" style="padding:5px"><span>Comments</span></a>
+|
+<a href="#prox" title="Table of Contents" style="padding:5px"><span>Table of Contents</span></a>
+</div>
+<div style="right: 0pt; border-top:1px solid #356b20; font-size:1px; margin-bottom:20px;" />
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="abstract" class="small-text">ABSTRACT</A></h1>
+<div class="flatbody">
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;">
+An abstract is not available.
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="authors" class="small-text"><SPAN class="heading">AUTHORS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<dl title="Authors" style="margin-top:0px">
+<dt style="float: left; clear: left; width: 100%; margin-top: 0px; margin-bottom: 0px;">
+<strong>
+Chairmen
+</strong>
+</dt>
+<dd style="margin: 0 0 0 60px; padding: 0 0 0.5em 0;">
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="gifs/ProfileSilhouette.gif" alt="Author image not provided" align="middle" hspace="5">
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px" colspan="2">
+&nbsp;<span class="small-text"><strong><a title="author page of Richard E. Fairley" href="author_page.cfm?id=81100196238">Richard E. Fairley</a></strong><br /></span>
+<span class="small-text"><br><p style="margin-bottom:-10px;" align="center">No contact information provided yet.</p>
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong><a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a></strong>:&nbsp;publication history<br />
+<table width="90%" style="margin-top: 1px; margin-bottom: 10px; border-collapse: separate; border-spacing: 3px;" border="0" align="left">
+<tr>
+<td class="small-text">Publication years</td><td class="small-text" align="right">1974-2017</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Publication count</td><td class="small-text" align="right">45</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Citation Count</td><td class="small-text" align="right">216</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Available for download</td><td class="small-text" align="right">19</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (6 Weeks)</td><td class="small-text" align="right">13</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (12 Months)</td><td class="small-text" align="right">125</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (cumulative)</td><td class="small-text" align="right">6,242</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average downloads per article</td><td class="small-text" align="right">328.53</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average citations per article</td><td class="small-text" align="right">4.80</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of Richard E. Fairley" href="author_page.cfm?id=81100196238&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of Richard E. Fairley
+</td>
+</tr>
+</table>
+</span>
+<span>
+<br><br />
+<table border="0" cellspacing="10">
+<tr><td style="padding-right:20px"><table border="0" width="300" style="border-spacing:0px !important;" cellpadding="0" cellspacing="0">
+<col width="120">
+<col width="180">
+<tr valign="top">
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<img src="//portalparts.acm.org/profiles/81339507161/msj52S.jpg" border="0" align="middle" alt="Mark Scott Johnson" hspace="5" />
+</td>
+<td bgcolor="#cccccc" style="padding-bottom: 5px; padding-top: 5px">
+<span class="small-text"><strong><a title="author page of Mark Scott Johnson" href="author_page.cfm?id=81339507161">Mark Scott Johnson</a></strong><br /></span>
+<span class="small-text"><br /><a href="https://www.facebook.com/msj1951">Facebook profile</a></span>
+<div style="margin-top: 6px" class="small-text">msj<img src="gifs/at.gif" width="12" height="12" alt="at" />acm.org</div>
+<span class="small-text">
+</span>
+</td>
+</tr>
+</table></td>
+<td style="padding-right:20px"><table border="0" width="300" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong><a href="javascript:ColdFusion.Window.show('theexplaination');ColdFusion.navigate('explain.cfm?expid=1','theexplaination');" title="Bibliometrics: explained">Bibliometrics</a></strong>:&nbsp;publication history<br />
+<table width="90%" style="margin-top: 1px; margin-bottom: 10px; border-collapse: separate; border-spacing: 3px;" border="0" align="left">
+<tr>
+<td class="small-text">Publication years</td><td class="small-text" align="right">1977-1986</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Publication count</td><td class="small-text" align="right">9</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Citation Count</td><td class="small-text" align="right">57</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Available for download</td><td class="small-text" align="right">5</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (6 Weeks)</td><td class="small-text" align="right">7</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (12 Months)</td><td class="small-text" align="right">84</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text">Downloads (cumulative)</td><td class="small-text" align="right">1,557</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average downloads per article</td><td class="small-text" align="right">311.40</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+<tr>
+<td class="small-text" style="border-bottom: 2">Average citations per article</td><td class="small-text" align="right">6.33</td>
+</tr>
+<tr><td height="3" bgcolor="#808080" colspan="2"></td></tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr><td style="padding:0px">
+<a title="colleagues of Mark Scott Johnson" href="author_page.cfm?id=81339507161&amp;dsp=coll&amp;trk=1" target="_self">View colleagues</a> of Mark Scott Johnson
+</td>
+</tr>
+</table>
+</span>
+</dd>
+</dl>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="references" class="small-text"><SPAN class="heading">REFERENCES</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+References are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="citedby" class="small-text"><SPAN class="heading">CITED BY</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+Citings are not available
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="indexterms" class="small-text"><SPAN class="heading">INDEX TERMS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 0px;" class="flatbody">
+<p class="Categories">
+<A NAME="indexterms"></A>
+<span class="heading">The ACM Computing Classification System (<a href="ccs/ccs.cfm">CCS rev.2012</a>)</span>
+</p>
+<div id='chart_div' style="overflow: auto; overflow-y: hidden; -ms-overflow-y: hidden;"></div>
+<div style="margin-top:10px; text-align:center">Note: Larger/Darker text within each node indicates a higher relevance of the materials to the taxonomic classification.</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="source" class="small-text"><SPAN class="heading">PUBLICATION</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<table border="0" class="medium-text" cellpadding="5" cellspacing="5">
+<tr valign="top">
+<td style="padding: 10px;">Title</td>
+<td style="padding: 10px;">SIGSOFT '83 Proceedings of the ACM SIGSOFT/SIGPLAN software engineering symposium on High-level debugging
+<a href="citation.cfm?id=800007&picked=prox" target="_self" class="small-link-text">table&nbsp;of&nbsp;contents</a>
+</td>
+</tr>
+<tr><td style="padding: 10px;">Pages</td><td style="padding: 10px;">208</td></tr>
+<tr>
+<td style="padding: 10px;">Sponsor</td>
+<td style="padding: 10px;">
+<a href="sig.cfm?id=SP950"> SIGSOFT</a> ACM Special Interest Group on Software Engineering
+</td>
+</tr>
+<tr><td style="padding: 10px;">Publisher</td><td style="padding: 10px;"><a href="https://www.acm.org/publications">ACM</a> New York, NY, USA &copy;1983
+</td>
+</tr>
+<tr><td style="padding: 10px;">ISBN</td><td style="padding: 10px;">0-89791-111-3 </td></tr>
+<tr>
+<td style="padding: 10px;"></td>
+<td style="padding: 10px;">
+</td>
+</tr>
+<tr valign="top">
+<td>Conference</td>
+<td valign="top" align="left" style="padding-bottom: 25px;">
+<strong>FSE</strong><a href="event.cfm?id=RE201" title="Foundations of Software Engineering">Foundations of Software Engineering</a>
+<a href="event.cfm?id=RE201" title="Foundations of Software Engineering"><img border="0" src="https://portalparts.acm.org/event_logos/RE201.jpg" title="FSE logo" height="42" width="91" ALT="FSE logo" style="vertical-align:top"></a>
+</td>
+</tr>
+<tr valign="top"><td style="pading-top:20px;" colspan="2">Overall Acceptance Rate 201 of 1,149 submissions, 17%</td></tr>
+<tr valign="top">
+<td colspan="2" style="padding-left:25px;">
+<table>
+<tr><td style="padding: 10px;">
+<img border="0" class="chart" id="9088252970121687-img" src="/CFFileServlet/_cf_chart/9088252970121687.jpg" usemap="#9088252970121687-map" />
+<div id="9088252970121687-tooltip" style="position:fixed;display:none;"></div>
+<map id="9088252970121687-map" name="9088252970121687-map">
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-0-node-0" coords="35,126,42,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-0-node-1" coords="60,97,67,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-0-node-2" coords="84,129,92,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-0-node-3" coords="109,110,116,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-0-node-4" coords="134,97,141,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-0-node-5" coords="159,74,166,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-0-node-6" coords="183,75,191,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-1-node-0" coords="46,204,54,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-1-node-1" coords="71,199,78,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-1-node-2" coords="96,199,103,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-1-node-3" coords="121,194,128,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-1-node-4" coords="145,192,153,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-1-node-5" coords="170,192,177,214" />
+<area style="cursor:auto" shape="rect" id="9088252970121687-graph-id0-plotset-plot-1-node-6" coords="195,192,202,214" />
+</map>
+<script data-cfasync="false" src="/cdn-cgi/scripts/af2821b0/cloudflare-static/email-decode.min.js"></script><script>
+if (!CFCHART) {var CFCHART={};};if (!CFCHART.nodes) {CFCHART.nodes={};}
+CFCHART.nodes["9088252970121687"]={};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-0-node-0"]={text:"128",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-0-node-1"]={text:"170",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-0-node-2"]={text:"125",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-0-node-3"]={text:"152",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-0-node-4"]={text:"170",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-0-node-5"]={text:"203",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-0-node-6"]={text:"201",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-1-node-0"]={text:"17",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-1-node-1"]={text:"25",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-1-node-2"]={text:"25",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-1-node-3"]={text:"31",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-1-node-4"]={text:"34",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-1-node-5"]={text:"34",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+CFCHART.nodes["9088252970121687"]["9088252970121687-graph-id0-plotset-plot-1-node-6"]={text:"35",tooltipCss:"border:0px solid #000;borderRadius:0px 0px 0px 0px;boxShadow:3px 3px 2px #999;backgroundImage:url('');backgroundRepeat:repeat;backgroundPosition:50% 50%;textAlign:center;verticalAlign:middle;color:#333333;fontFamily:Helvetica;fontSize:12px;fontWeight:bold;fontStyle:normal;textDecoration:none;backgroundColor:#FFFFFF;paddingTop:5px;paddingRight:5px;paddingBottom:5px;paddingLeft:5px;opacity:1;marginTop:-20px;"};
+</script>
+</td>
+<td style="padding-left:20px;">
+<table style="border-width: 1px; border-style: solid; width:100%; border-spacing: 6px;" class="text12">
+<tr bgcolor="#ffffff">
+<th style="width:50%">Year</th>
+<th align="right" style="width:15%;">Submitted</th>
+<th align="right" style="width:15%">Accepted</th>
+<th align="center">Rate</th>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">SIGSOFT '02/FSE-10</td>
+<td align="right">128</td>
+<td align="right">17</td>
+<td align="center">13%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">SIGSOFT '04/FSE-12</td>
+<td align="right">170</td>
+<td align="right">25</td>
+<td align="center">15%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">SIGSOFT '06/FSE-14</td>
+<td align="right">125</td>
+<td align="right">25</td>
+<td align="center">20%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">SIGSOFT '08/FSE-16</td>
+<td align="right">152</td>
+<td align="right">31</td>
+<td align="center">20%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">FSE '10</td>
+ <td align="right">170</td>
+<td align="right">34</td>
+<td align="center">20%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;">SIGSOFT/FSE '11</td>
+<td align="right">203</td>
+<td align="right">34</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#f0f0f0">
+<td style="padding: 10px;">FSE '12</td>
+<td align="right">201</td>
+<td align="right">35</td>
+<td align="center">17%</td>
+</tr>
+<tr bgcolor="#ffffff">
+<td style="padding: 10px;"><strong>Overall</strong></td>
+<td align="right">1,149</td>
+<td align="right">201</td>
+<td align="center">17%</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br />
+<div class="abstract" style="margin-bottom:10px;">
+<SPAN><strong>APPEARS IN</strong></span>
+</div>
+<div>
+<a href="/collection.cfm?id=KA8" title="Software" target="_blank">Software</a>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="revs" class="small-text"><SPAN class="heading">REVIEWS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<br />Reviews are not available for this item
+<div align="left" style="margin-top:30px">
+<a title="Computing Reviews" href="ocr_review_main.cfm">
+<img src="images/ocrs-s.jpg" alt="Computing Reviews logo" border="0" style="vertical-align:middle"></a>
+<ul style="list-style:disc; display:inline-block">
+<li>Access <a href="ocr_review_main.cfm" target="_blank">critical reviews</a> of computing literature.</li>
+<li><a href="http://www.computingreviews.com/Reviewer/" target="_blank">Become a reviewer</a> for Computing Reviews</li>
+</ul>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="comments" class="small-text"><SPAN class="heading">COMMENTS</SPAN></A></h1>
+<div style="margin-left:10px; margin-top:0px; margin-right:10px; margin-bottom: 10px;" class="flatbody">
+<div>
+<div>
+<p style="margin-left:5px;">
+<strong>Be the first to comment</strong>
+To Post a comment please <a href="signin.cfm">sign in or create</a> a free Web account</a>
+</p>
+</div>
+</div>
+<h1 class="mediumb-text"><A HREF="#CIT"><img name="top" src="images/arrowu.gif" alt="top of page" hspace="10" border="0"></A><A NAME="prox" class="small-text">Table of Contents</A></h1>
+<div style="margin-left:10px; margin-top:10px; margin-right:10px; margin-bottom: 10px;">
+<h5 style="margin-bottom:0px; margin-top:0px" class="medium-text">Proceedings of the ACM SIGSOFT/SIGPLAN software engineering symposium on High-level debugging</h5>
+<h5 class="medium-text" style="margin-bottom:10px; margin-top:10px;">Table of Contents</h5>
+<div style="clear:both">
+<div style="margin-top:5px; margin-bottom: 10px;" class="small-text"><span class="link-text">no previous proceeding</span> <span style="padding-left:5px;padding-right:5px;">|</span><a href="citation.cfm?id=1006147&picked=prox" title="Next: SIGSOFT '83">next proceeding <img align="absmiddle" hspace="5" border="0" src="img/next.gif" width="19" height="11" alt="next" /></a></div>
+</div>
+<table class="text12" border="0">
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808000">Debugging methodology (Session Summary)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100131036">Wayne C. Gramlich</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 1-3</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808000" title="DOI">10.1145/800007.808000</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow1" style="display:inline;"><br /><div style="display:inline">Two sessions were held on the general topic of debugging methodology. Both were moderated by R. Stockton Gaines. During the first session five speakers presented short talks on their workshop submissions. Each talk was followed by a brief question and ...</div></span>
+<span id="toHide1" style="display:none;"><br /><div style="display:inline"><par>Two sessions were held on the general topic of debugging methodology. Both were moderated by R. Stockton Gaines. During the first session five speakers presented short talks on their workshop submissions. Each talk was followed by a brief question and answer period. The format of the second session was that of an open discussion. The talks presented in the first session have been briefly summarized. The remaining notes of these two sessions have been arranged topically rather than chronologically.</par></div></span> <a id="expcoll1" href="JavaScript: expandcollapse('expcoll1',1)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808001">Debugging &ldquo;level&rdquo;: Step-wise debugging</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100279158">Dick Hamlet</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 4-8</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808001" title="DOI">10.1145/800007.808001</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+ <span id="toShow2" style="display:inline;"><br /><div style="display:inline">Debugging techniques originated with low-level programming languages, where the memory dump and interactive word-by-word examination of memory were the primary tools. &ldquo;High-level&rdquo; debugging is often no more than low-level techniques adapted ...</div></span>
+<span id="toHide2" style="display:none;"><br /><div style="display:inline"><par>Debugging techniques originated with low-level programming languages, where the memory dump and interactive word-by-word examination of memory were the primary tools. &ldquo;High-level&rdquo; debugging is often no more than low-level techniques adapted to high-level languages. For example, to examine the execution of an operational specification one state at a time by setting breakpoints, is superior to doing the same thing to a machine-language program, but only because the language level has improved; the debugging remains primitive. This paper attempts a radical definition of debugging level, and illustrates it with a technique for ordering the execution of concurrent processes in a way that follows their design structure.</par> <par>Division of a program into a collection of cooperating processes is a means of controlling the complexity of each process. However, in execution the program-development structure is ignored, with the result that the advantages of decomposition are lost. What the designer has divided and conquered, the debugger sees as an overwhelming monolith. The technique proposed here causes the focus of execution to follow the design structure, in a way that does not require detailed user direction.</par></div></span> <a id="expcoll2" href="JavaScript: expandcollapse('expcoll2',2)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808002">Interactive Debug requirements</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100417198">Rich Seidner</a>,
+<a href="author_page.cfm?id=81100624034">Nick Tindall</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 9-22</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808002" title="DOI">10.1145/800007.808002</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow3" style="display:inline;"><br /><div style="display:inline">This is a market requirements statement for Interactive Debugging. It is the result of a collaboration between the GUIDE/SHARE Language Futures Task Force (LFTF) and IBM. The LFTF was formed at meetings of SHARE and GUIDE in 1979. The objective of the ...</div></span>
+<span id="toHide3" style="display:none;"><br /><div style="display:inline"><par>This is a market requirements statement for Interactive Debugging. It is the result of a collaboration between the GUIDE/SHARE Language Futures Task Force (LFTF) and IBM.</par> <par>The LFTF was formed at meetings of SHARE and GUIDE in 1979. The objective of the task force was to provide IBM with the views of the user community on the future of the application development environment. The Task force chose to limit its discussions primarily to &ldquo;enhancements to the procedural languages and the environments in which they operate.&rdquo;</par></div></span> <a id="expcoll3" href="JavaScript: expandcollapse('expcoll3',3)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808003">Knowledge-based debugging (Session Summary)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100025421">Mark A. Linton</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 23-24</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808003" title="DOI">10.1145/800007.808003</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow4" style="display:inline;"><br /><div style="display:inline">Robert Balzer began the session by presenting an overview of where debugging fits into knowledge-based programming systems. He distinguished between differences in paradigm (the traditional software engineering approach ...</div></span>
+<span id="toHide4" style="display:none;"><br /><div style="display:inline"><par><italic>Robert Balzer</italic> began the session by presenting an overview of where debugging fits into knowledge-based programming systems. He distinguished between differences in <italic>paradigm</italic> (the traditional software engineering approach in which the source code is the first formal representation vs. the operational specification approach in which the specification is both formal and <italic>executable</italic> and from which the implementation is formally derived) and differences in <italic>technology</italic> (traditional debuggers vs. knowledge-based tools), pointing out that it is possible to use traditional debugging techniques with the operational specification paradigm as well as use knowledge-based tools with the traditional software engineering paradigm.</par> <par>Balzer presented the operational specification paradigm for software development. The basic idea is that an implementation is derived from a specification through transformations chosen by the programmer and applied by the system. Assuming each transformation is correct, the resulting implementation will accurately reflect the intentions of the specification.</par></div></span> <a id="expcoll4" href="JavaScript: expandcollapse('expcoll4',4)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808004">Knowledge-based fault localization in debugging (Preliminary Draft)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100593887">Robert L. Sedlmeyer</a>,
+<a href="author_page.cfm?id=81452605626">William B. Thompson</a>,
+<a href="author_page.cfm?id=81100449447">Paul E. Johnson</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 25-31</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808004" title="DOI">10.1145/800007.808004</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow5" style="display:inline;"><br /><div style="display:inline">Fault localization in program debugging is the process of identifying program statements which cause anomalous behavior. We have developed a prototype, knowledge-based model of the fault localization process. Novel features of the model include multiple ...</div></span>
+<span id="toHide5" style="display:none;"><br /><div style="display:inline"><par>Fault localization in program debugging is the process of identifying program statements which cause anomalous behavior. We have developed a prototype, knowledge-based model of the fault localization process. Novel features of the model include multiple localization tactics and a recognition-based mechanism for program abstraction. An explicit division of knowledge from the applications, programming and language domains facilitate model tuning within as well as across applications domains. We describe model structure and performance for a class of faults associated with master file update programs. We foresee applications of the model as an initial cognitive theory of expertise in fault localization and as a partially automated debugging tool.</par></div></span> <a id="expcoll5" href="JavaScript: expandcollapse('expcoll5',5)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808005">Requirements/design debugging (Session Summary)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100271122">Peter Bates</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 32-33</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808005" title="DOI">10.1145/800007.808005</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow6" style="display:inline;"><br /><div style="display:inline">This session was essentially a continuation of the earlier session on Knowledge-Based systems. The discussion proceeded along two dimensions. One is the paradigm used to, in some sense, debug high-level specifications. This is further broken into the ...</div></span>
+<span id="toHide6" style="display:none;"><br /><div style="display:inline"><par>This session was essentially a continuation of the earlier session on Knowledge-Based systems. The discussion proceeded along two dimensions. One is the paradigm used to, in some sense, debug high-level specifications. This is further broken into the 'current' and the 'operational specifications' paradigms. The other dimension is one of techniques for implementing these views. This dimension also has only two aspects, current techniques and knowledge-based techniques.</par> <par>The plan for the session was to introduce the technologies that may or may not exist to support these capabilities followed by a debate on these methods. There are four areas to be discussed in terms of technology&mdash;symbolic evaluation, fault analysis, behavior expectations and natural language explanations.</par></div></span> <a id="expcoll6" href="JavaScript: expandcollapse('expcoll6',6)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808006">Generalized path expressions: A high level debugging mechanism (Preliminary Draft)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100313351">Bernd Bruegge</a>,
+<a href="author_page.cfm?id=81100493845">Peter Hibbard</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 34-44</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808006" title="DOI">10.1145/800007.808006</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow7" style="display:inline;"><br /><div style="display:inline">This paper introduces a modified version of path expressions called Path Rules which can be used as a debugging mechanism to monitor the dynamic behavior of a computation. Path rules have been implemented in a remote symbolic debugger ...</div></span>
+<span id="toHide7" style="display:none;"><br /><div style="display:inline"><par>This paper introduces a modified version of path expressions called <italic>Path Rules</italic> which can be used as a debugging mechanism to monitor the dynamic behavior of a computation. Path rules have been implemented in a remote symbolic debugger running on the Three Rivers Computer Corporation PERQ computer under the Accent operating system.</par></div></span> <a id="expcoll7" href="JavaScript: expandcollapse('expcoll7',7)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808007">The application of error-sensitive testing strategies to debugging</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100391811">Lori A. Clarke</a>,
+<a href="author_page.cfm?id=81100071282">Debra J. Richardson</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 45-52</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808007" title="DOI">10.1145/800007.808007</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow8" style="display:inline;"><br /><div style="display:inline">Program errors can be considered from two perspectives&mdash;cause and effect. The goal of program testing is to detect errors by discovering their effects, while the goal of debugging is to search for the associated cause. In this paper, explore ways ...</div></span>
+<span id="toHide8" style="display:none;"><br /><div style="display:inline"><par>Program errors can be considered from two perspectives&mdash;cause and effect. The goal of program testing is to detect errors by discovering their effects, while the goal of debugging is to search for the associated cause. In this paper, explore ways in which some of the results of testing research can be applied to the debugging process. In particular, computation testing and domain testing, which are two error-sensitive test data selection strategies, are described. Ways in which these selection strategies can be used as debugging aids are then discussed.</par></div></span> <a id="expcoll8" href="JavaScript: expandcollapse('expcoll8',8)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808008">An approach to testing specifications (Preliminary Draft)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100351225">C. Jard</a>,
+<a href="author_page.cfm?id=81100212210">G. V. Bochmann</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 53-59</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808008" title="DOI">10.1145/800007.808008</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow9" style="display:inline;"><br /><div style="display:inline">An approach to testing the consistency of specifications is explored, which is applicable to the design validation of communication protocols and other cases of step-wise refinement. In this approach, a testing module compares a trace of interactions ...</div></span>
+<span id="toHide9" style="display:none;"><br /><div style="display:inline"><par>An approach to testing the consistency of specifications is explored, which is applicable to the design validation of communication protocols and other cases of step-wise refinement. In this approach, a testing module compares a trace of interactions obtained from an execution of the refined specification (e. g. the protocol specification) with the reference specification (e. g. the communication service specification).</par> <par>Non-determinism in reference specifications presents certain problems. Using an extended finite state transition model for the specifications, a strategy for limiting the amount of non-determinacy is presented.</par> <par>An automated method for constructing a testing module for a given reference specification is discussed. Experience with the application of this testing approach to the design of a Transport protocol and a distributed mutual exclusion algorithm is described.</par></div></span> <a id="expcoll9" href="JavaScript: expandcollapse('expcoll9',9)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808009">Integrated environments</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100196238">R. E. Fairley</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 60-62</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808009" title="DOI">10.1145/800007.808009</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow10" style="display:inline;"><br /><div style="display:inline">The session on debugging in integrated environments started with Fairley's characterization of integrated environments as follows: (1) versatile collection of analysis, design, implementation, testing, and maintenance tools; (2) consistent user interface ...</div></span>
+<span id="toHide10" style="display:none;"><br /><div style="display:inline"><par>The session on debugging in integrated environments started with Fairley's characterization of integrated environments as follows: (1) versatile collection of analysis, design, implementation, testing, and maintenance tools; (2) consistent user interface among the tools; (3) common representation of information (e.g., Stoneman's database model, Unix pipe); (4) history/version control/configuration management capability; and (5) encouragement of good practice. He then asked the audience the following questions: (1) what is your view of environments? (2) what possibilities exist for debugging in integrated environments that do not exist in a mere collection of tools? (3) what is the difference between high-level debugging and low-level debugging with high-level tools?</par></div></span> <a id="expcoll10" href="JavaScript: expandcollapse('expcoll10',10)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808010">An experimental debugger in a limited programming environment (Extended Abstract)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100507384">Zen Kishimoto</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 63-66</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808010" title="DOI">10.1145/800007.808010</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow11" style="display:inline;"><br /><div style="display:inline">This paper describes a debugger feature of a system that supports a limited programming environment for program validation, revalidation and debugging. The debugger in this system is tightly coupled with other tools through a database which is used as ...</div></span>
+<span id="toHide11" style="display:none;"><br /><div style="display:inline"><par>This paper describes a debugger feature of a system that supports a limited programming environment for program validation, revalidation and debugging. The debugger in this system is tightly coupled with other tools through a database which is used as a central repository. The execution by this system is based on the hardware independent intermediate codes and, thus, the system has the potential to be multilingual. The debugger supports backward execution, provides both normal and symbolic execution results, and allows source-level debugging.</par></div></span> <a id="expcoll11" href="JavaScript: expandcollapse('expcoll11',11)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808011">A database model of debugging (Preliminary Draft)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81339522736">Michael L. Powell</a>,
+<a href="author_page.cfm?id=81100025421">Mark A. Linton</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 67-70</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808011" title="DOI">10.1145/800007.808011</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow12" style="display:inline;"><br /><div style="display:inline">Debugging a program can be viewed as performing queries and updates on a database that contains both program source and execution state information. This model of debugging simplifies a &ldquo;debugger&rdquo; to a database interface for runtime information ...</div></span>
+<span id="toHide12" style="display:none;"><br /><div style="display:inline"><par>Debugging a program can be viewed as performing queries and updates on a database that contains both program source and execution state information. This model of debugging simplifies a &ldquo;debugger&rdquo; to a database interface for runtime information and allows the debugger to be easily integrated into a programming environment.</par> <par>We are currently designing a programming environment in which all program information is stored in a relational database system. This system will include debugging capabilities to provide the programmer a simple yet powerful mechanism for describing debugging requests.</par></div></span> <a id="expcoll12" href="JavaScript: expandcollapse('expcoll12',12)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808012">Interactive program execution in Lispedit</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100290768">Martin Mikelsons</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 71-80</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808012" title="DOI">10.1145/800007.808012</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow13" style="display:inline;"><br /><div style="display:inline">We describe a powerful interactive debugger (Heval) embedded in a larger programming environment (Lispedit). In Lispedit, the programmer creates, edits and files Lisp functions from a uniform editor interface that makes use of the structure of Lisp expressions. ...</div></span>
+<span id="toHide13" style="display:none;"><br /><div style="display:inline"><par>We describe a powerful interactive debugger (Heval) embedded in a larger programming environment (Lispedit). In Lispedit, the programmer creates, edits and files Lisp functions from a uniform editor interface that makes use of the structure of Lisp expressions. With Heval, the programmer can execute Lisp expressions and functions in a very natural way through the editor interface. We describe the debugging interface and how it has evolved over several years of use.</par></div></span> <a id="expcoll13" href="JavaScript: expandcollapse('expcoll13',13)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808013">The role of debugging within software engineering environments</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100373607">Monika A.F. M&#252;llerburg</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 81-90</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808013" title="DOI">10.1145/800007.808013</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow14" style="display:inline;"><br /><div style="display:inline">Programming environments (PEs) support a single programmer developing small- to medium-scale programs, whereas software development support systems and software engineering environments (SE2s) support whole project teams, developing ...</div></span>
+<span id="toHide14" style="display:none;"><br /><div style="display:inline"><par>Programming environments (PEs) support a single programmer developing small- to medium-scale programs, whereas software development support systems and software engineering environments (SE<supscrpt>2</supscrpt>s) support whole project teams, developing large-scale software. There is no reason to believe that one and only one support system may exist. The usefulness of one or the other depends on the particular situation of software development.</par> <par>Debugging is distinguished from testing and defined not only for removing bugs from programs (dynamic debugging) but also from documents describing the programs (static debugging).</par> <par>The key problem of debugging is understanding the software. Debugging may be supported by static analysis tools and by interactive debugging systems which help both to understand the software better and to estimate the impacts of an intended change. Graphical representations are also very useful for better understanding system structures and for recognizing faults and clashes faster. Tools may furthermore be used to report errors and corrections, and to maintain these reports.</par> <par>In the context of PEs and SE<supscrpt>2</supscrpt>s the tools supporting debugging are connected. Tools can be based on a uniform internal representation, allowing a uniform user interface. Tasks and corresponding tools can be tailored to each other, avoiding duplication of work. One task knows what the others have already done. One knows if certain types of errors have been prevented or removed, i.e. if static analysis tools prevent data flow errors during runtime. Tools and results of other tasks may be used, i.e. cross reference lists and test path reports. Similarities and differences of debugging in PEs and in SE<supscrpt>2</supscrpt>s are discussed by some example systems. The discussion is concluded by demonstrating possible influences on future software development by personal computers, knowledge engineering, and predicative programming.</par></div></span> <a id="expcoll14" href="JavaScript: expandcollapse('expcoll14',14)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808014">An integrated LISP programming environment (Extended Abstract)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100144686">Harald Wertz</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 91-95</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808014" title="DOI">10.1145/800007.808014</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow15" style="display:inline;"><br /><div style="display:inline">We are currently implementing a system to help experienced programmers during the development, implementation and debugging of their programs. This system, built on top of a screen oriented structural editor, offers possibilities to attach descriptors ...</div></span>
+<span id="toHide15" style="display:none;"><br /><div style="display:inline"><par>We are currently implementing a system to help experienced programmers during the development, implementation and debugging of their programs. This system, built on top of a screen oriented structural editor, offers possibilities to attach descriptors to every portion of the program and to maintain - simultaneously - different versions of the program being written, including tentative hypothetical versions. It comprises a mechanism to maintain minimal consistency between modified parts of code, the non-modified parts of code and the attached descriptors, as well as an evaluation module functioning in different modes: <italic>normal evaluation, symbolic evaluation</italic> and <italic>checking evaluation</italic>.</par> <par>The Standard programming aids, such as indexors, pretty printers, trace packages, undo- and history -facilities are generalized to handle the descriptors and unfinished programs as well.</par></div></span> <a id="expcoll15" href="JavaScript: expandcollapse('expcoll15',15)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808015">Session summary: Distributed Debugging</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100260633">Thomas Gross</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 96-97</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808015" title="DOI">10.1145/800007.808015</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow16" style="display:inline;"><br /><div style="display:inline">Both sessions on Tuesday morning (March 22, 1983) were devoted to the discussion of Distributed Debugging. Three papers were presented during the first part; then there was a lively panel discussion on Multiprocess and Distributed ...</div></span>
+<span id="toHide16" style="display:none;"><br /><div style="display:inline"><par>Both sessions on Tuesday morning (March 22, 1983) were devoted to the discussion of <italic>Distributed Debugging</italic>. Three papers were presented during the first part; then there was a lively panel discussion on <italic>Multiprocess and Distributed Debugging</italic>. Both session were chaired by John R. White (Xerox PARC).</par></div></span> <a id="expcoll16" href="JavaScript: expandcollapse('expcoll16',16)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808016">Development of a debugger for a concurrent language</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100624699">F. Baiardi</a>,
+<a href="author_page.cfm?id=81100561117">N. De Francesco</a>,
+<a href="author_page.cfm?id=81100300025">E. Matteoli</a>,
+<a href="author_page.cfm?id=81100118021">S. Stefanini</a>,
+<a href="author_page.cfm?id=81408603219">G. Vaglini</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 98-106</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808016" title="DOI">10.1145/800007.808016</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow17" style="display:inline;"><br /><div style="display:inline">This work discusses some issues in the debugging of concurrent programs. A set of desirable characteristics of a debugger for concurrent languages is deduced from an examination of the differences between the debugging of concurrent programs and that ...</div></span>
+<span id="toHide17" style="display:none;"><br /><div style="display:inline"><par>This work discusses some issues in the debugging of concurrent programs. A set of desirable characteristics of a debugger for concurrent languages is deduced from an examination of the differences between the debugging of concurrent programs and that of sequential ones. A debugger for a concurrent language, derived from CSP, is then presented. It is based upon a semantic model of the supported language. The debugger enables to compare a description of the program behavior to the actual behavior as well as to valuate assertions on the process state. The description of the behavior is given by a formalism whose semantics is also specified. The formalism can specify program behaviors at various abstraction levels. Lastly some guidelines for the implementation of the debugger are shown and a detailed example of program description is analyzed.</par></div></span> <a id="expcoll17" href="JavaScript: expandcollapse('expcoll17',17)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808017">An approach to high-level debugging of distributed systems (Preliminary Draft)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100271122">Peter Bates</a>,
+<a href="author_page.cfm?id=81452605663">Jack C. Wileden</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 107-111</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808017" title="DOI">10.1145/800007.808017</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow18" style="display:inline;"><br /><div style="display:inline">As part of a study of methods and strategies for problem solving in a distributed environment [Less80], we have been investigating techniques suitable for use in debugging programs written for implementation on distributed processing networks. Traditional ...</div></span>
+<span id="toHide18" style="display:none;"><br /><div style="display:inline"><par>As part of a study of methods and strategies for problem solving in a distributed environment [Less80], we have been investigating techniques suitable for use in debugging programs written for implementation on distributed processing networks.</par> <par>Traditional debugging methods emphasize techniques that apply at the level of computation units and generally allow users to examine, and possibly alter, the state of a computation. Interactive debugging monitors are probably the most powerful implementations of the traditional method and usually permit a user to examine an entire snspshot of system state at any step of the computation. It is the job of the debugger (usually a person directing the error search) to determine what units are relevant to some problem, examine the units in whatever fashion is available, and then fit the results of these examinations into a model of how the computation works. Two elements essential to the successful completion of the debugging task are evident here: the ability to <underline>monitor</underline>, in some meaningful way, the relevant system activity so as to understand how system behavior differs from the debugger's model, and the ability to perform <underline>experiments</underline> based (implicitly or explicitly) on the information gathered. Through the interaction of these two elements a debugger attempts to gain an understanding of the causes of an error or at least to note where the implementation and the expected behavior differ.</par></div></span> <a id="expcoll18" href="JavaScript: expandcollapse('expcoll18',18)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808018">Interactive debugging of concurrent programs (Extended Abstract)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81410595276">Janice Cynthia Weber</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 112-113</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808018" title="DOI">10.1145/800007.808018</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow19" style="display:inline;"><br /><div style="display:inline">This paper summarizes techniques for designing and implementing source-level interactive debuggers for concurrent programs. Facilities common to source-level interactive debuggers have been adapted to meet the needs of a concurrent programming environment. ...</div></span>
+<span id="toHide19" style="display:none;"><br /><div style="display:inline"><par>This paper summarizes techniques for designing and implementing source-level interactive debuggers for concurrent programs. Facilities common to source-level interactive debuggers have been adapted to meet the needs of a concurrent programming environment. Of special interest are those debugging facilities which allow the programmer to monitor and influence the execution of concurrent processes.</par></div></span> <a id="expcoll19" href="JavaScript: expandcollapse('expcoll19',19)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808019">Implementation issues (Session Summary)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81410595276">Janice Cynthia Weber</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 114-116</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808019" title="DOI">10.1145/800007.808019</a></span></td>
+</tr>
+<tr>
+<td></td>
+ <td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow20" style="display:inline;"><br /><div style="display:inline">This session consisted of six speakers, presenting the significant ideas from their papers. A few questions were asked, but major discussions were postponed until the second 'Implementation' session.</div></span>
+<span id="toHide20" style="display:none;"><br /><div style="display:inline"><par>This session consisted of six speakers, presenting the significant ideas from their papers. A few questions were asked, but major discussions were postponed until the second 'Implementation' session.</par></div></span> <a id="expcoll20" href="JavaScript: expandcollapse('expcoll20',20)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808020">Implementation issues II (Session Summary)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100553038">Michael S. Kenniston</a>,
+<a href="author_page.cfm?id=81100357275">Jeanne Ferrante</a>,
+<a href="author_page.cfm?id=81100533236">Peter Fritzson</a>,
+<a href="author_page.cfm?id=81100452130">John D. Johnson</a>,
+<a href="author_page.cfm?id=81332509993">Steven Krane</a>,
+<a href="author_page.cfm?id=81100369516">Karl J. Ottenstein</a>,
+<a href="author_page.cfm?id=81100351035">Polle T. Zellweger</a> /
+<a href="author_page.cfm?id=81100309892">Russ Atkinson</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 117-120</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808020" title="DOI">10.1145/800007.808020</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow21" style="display:inline;"><br /><div style="display:inline">The panelists were asked to address three questions. The three sections below are summaries of the ideas discussed in response to each of these questions. 1. When debugging a program, what information about that program is important for presentation ...</div></span>
+<span id="toHide21" style="display:none;"><br /><div style="display:inline"><par>The panelists were asked to address three questions. The three sections below are summaries of the ideas discussed in response to each of these questions.</par> <par>1. When debugging a program, what information about that program is important for presentation to the user? What techniques can the debugger use to determine such information?</par> <par>While helping to develop a debugger, John Johnson had observed many programmers using it, and had noticed two distinct styles of information gathering:</par> <par>&bull; Many programmers began by getting fairly small amounts of information. They simply wanted an overview of the &ldquo;flow&rdquo; of the program, in order to get a general understanding of its behavior.</par> <par>&bull; After suspicion had been narrowed down to- a particular area within the program, the users wanted as much information as possible, formatted nicely.</par></div></span> <a id="expcoll21" href="JavaScript: expandcollapse('expcoll21',21)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808021">SIMOB- a portable toolbox for observation of SIMULA executions. (Extended Abstract)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100378819">Knut Barra</a>,
+<a href="author_page.cfm?id=81100186585">Hans Petter Dahle</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 121-122</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808021" title="DOI">10.1145/800007.808021</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow22" style="display:inline;"><br /><div style="display:inline">To reason correctly over what is happening during an execution is often hard just by looking at the program text. To assist programmers and others to understand what really is going on, a portable tool for observation of SIMULA executions has been designed ...</div></span>
+<span id="toHide22" style="display:none;"><br /><div style="display:inline"><par>To reason correctly over what is happening during an execution is often hard just by looking at the program text. To assist programmers and others to understand what really is going on, a portable tool for observation of SIMULA executions has been designed at the Norwegian Computing Center. In this article the S-PORT project and the main features of the tool are described.</par></div></span> <a id="expcoll22" href="JavaScript: expandcollapse('expcoll22',22)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808022">High level language debugging with a compiler (Preliminary Draft</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100357275">Jeanne Ferrante</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 123-129</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808022" title="DOI">10.1145/800007.808022</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow23" style="display:inline;"><br /><div style="display:inline">In this paper, we start from the basic premise of wanting an interactive high level language debugger, and we explore the possibilities of achieving this using a compiler. We outline the functional capabilities desired, and suggest means of achieving ...</div></span>
+<span id="toHide23" style="display:none;"><br /><div style="display:inline"><par>In this paper, we start from the basic premise of wanting an interactive high level language debugger, and we explore the possibilities of achieving this using a compiler. We outline the functional capabilities desired, and suggest means of achieving them using a compiler. Most of these entail requirements on the compiler, and our suggestions may be viewed as justification for modularizing compiler design.</par></div></span> <a id="expcoll23" href="JavaScript: expandcollapse('expcoll23',23)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808023">A systematic approach to advanced debugging through incremental compilation (Preliminary Draft)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100533236">Peter Fritzson</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 130-139</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808023" title="DOI">10.1145/800007.808023</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow24" style="display:inline;"><br /><div style="display:inline">This paper presents two topics: implementation of a debugger through use of an incremental compiler, and techniques for fine-grained incremental compilation. Both the debugger and the compiler are components of the highly integrated programming environment ...</div></span>
+<span id="toHide24" style="display:none;"><br /><div style="display:inline"><par>This paper presents two topics: implementation of a debugger through use of an incremental compiler, and techniques for fine-grained incremental compilation. Both the debugger and the compiler are components of the highly integrated programming environment DICE (Distributed Incremental Compiling Environment) which aims at providing programmer support in the case where the programming environment resides in a host computer and the program is running on a target computer that is connected to the host.</par> <par>Commands to the debugger command level includes all legitimate PASCAL statements. The debugger is machine-independent - it calls the incremental compiler which generates code for evaluation of commands, or modifies the machine code of the target program for insertion of breakpoints etc. Essentially all machine-dependences are isolated inside the code generator of the incremental compiler.</par></div></span> <a id="expcoll24" href="JavaScript: expandcollapse('expcoll24',24)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808024">Hardware assisted high level debugging (Preliminary Draft)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100592782">W. Morven Gentleman</a>,
+<a href="author_page.cfm?id=81100408232">Henry Hoeksma</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 140-144</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808024" title="DOI">10.1145/800007.808024</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow25" style="display:inline;"><br /><div style="display:inline">Hardware assistance has long been used for logic level and functional unit level hardware debugging, as well as for machine language level software debugging. Such hardware assistance includes probes to detect signals, comparators to identify matches ...</div></span>
+<span id="toHide25" style="display:none;"><br /><div style="display:inline"><par>Hardware assistance has long been used for logic level and functional unit level hardware debugging, as well as for machine language level software debugging. Such hardware assistance includes probes to detect signals, comparators to identify matches with expected patterns, buffers to record selected events, and independent logic and software to analyze and interpret the observed events. It can also include the ability to generate selected signals to stimulate the object being debugged and the ability to isolate it from normal changes so its state can be examined.</par> <par>Through knowledge of the data structures and algorithms used by the operating systems, and the runtime representation, register usage, and code bursts produced by compilers, it is possible to take advantage of such hardware assistance in high-level debugging. High level debugging here refers to debugging in terms of abstractions supported by the operating system and programming languages, as well as user defined abstractions built on top of these.</par></div></span> <a id="expcoll25" href="JavaScript: expandcollapse('expcoll25',25)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808025">A real-time microprocessor debugging technique</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100454474">Charles R. Hill</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 145-148</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808025" title="DOI">10.1145/800007.808025</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow26" style="display:inline;"><br /><div style="display:inline">This note describes RED, a remotely executed debugger capable of generating a real-time source level trace history of a high level language program executing on a microprocessor. The trace history consists of a display of the source statements of each ...</div></span>
+<span id="toHide26" style="display:none;"><br /><div style="display:inline"><par>This note describes RED, a remotely executed debugger capable of generating a real-time source level trace history of a high level language program executing on a microprocessor. The trace history consists of a display of the source statements of each basic block executed, annotated by the time at which execution of that block began. Basic blocks are traced rather than statements to reduce sampling bandwidth requirements while still retaining the ability to record the essential logical flow of programs. RED is intended to assist in debugging stand-alone high level language process control programs with real-time constraints.</par> <par>We outline two possible implementation schemes for generating the real-time trace history. In both, a &ldquo;debugging co-processor&rdquo; collects in a history buffer the values of the program counter (PC) and the corresponding value of a clock as each basic block begins execution. The debugger, which runs on the processor hosting the compiler and has access to the co-processor over a fast link, reconstructs a source level trace from the PC-time pairs in the history buffer. In one scheme, the language compiler emits an extra instruction at the beginning of each basic block in the program to output the value of the program counter to a parallel port connected to the debug processor. The second method makes use of an extended target memory space to provide tag bits denoting basic blocks. When an instruction is fetched, the debug processor detects the presence of the tag bits and buffers up the value of the corresponding program counter and time. The first method is simpler to implement, requiring only conventional, usually straightforward hardware additions to the target, but requires the execution overhead of the extra instructions. In both cases the debugger itself runs on the host processor and has access to tables generated during compile time of the source program.</par></div></span> <a id="expcoll26" href="JavaScript: expandcollapse('expcoll26',26)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808026">Implementation issues for a source level symbolic debugger (Extended Abstract)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100452130">John D. Johnson</a>,
+<a href="author_page.cfm?id=81100553063">Gary W. Kenney</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 149-151</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808026" title="DOI">10.1145/800007.808026</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow27" style="display:inline;"><br /><div style="display:inline">This paper deals with issues that have emerged as a result of a successful implementation of a source level symbolic debugger for HP-1000 computer systems. By analyzing a user's thought processes during a debugging session we created a powerful and easy ...</div></span>
+<span id="toHide27" style="display:none;"><br /><div style="display:inline"><par>This paper deals with issues that have emerged as a result of a successful implementation of a source level symbolic debugger for HP-1000 computer systems. By analyzing a user's thought processes during a debugging session we created a powerful and easy to use tool for program analysis.</par></div></span> <a id="expcoll27" href="JavaScript: expandcollapse('expcoll27',27)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808027">High-level debugging assistance via optimizing compiler technology (Extended Abstract)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100369516">Karl J. Ottenstein</a>,
+<a href="author_page.cfm?id=81100369496">Linda M. Ottenstein</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 152-154</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808027" title="DOI">10.1145/800007.808027</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow28" style="display:inline;"><br /><div style="display:inline">A primary benefit of most software tools is either the prevention or the detection of human error in the development process. Languages, such as Pascal and Ada, have been designed with features such as strong typing to increase the amount of error detection ...</div></span>
+<span id="toHide28" style="display:none;"><br /><div style="display:inline"><par>A primary benefit of most software tools is either the prevention or the detection of human error in the development process. Languages, such as Pascal and Ada, have been designed with features such as strong typing to increase the amount of error detection that can be done by the compiler. Syntax directed editors [11] also decrease the opportunity for the introduction of human error.</par> <par>Our paper describes some of the debugging assistance which can be provided to a user during the transformation of a program by an optimizing compiler. Our premise is that the additional information obtained during optimization could warrant the sole use of optimizing compilers during software development.</par></div></span> <a id="expcoll28" href="JavaScript: expandcollapse('expcoll28',28)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808028">Static analysis of programs as an aid to debugging</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100611244">Ron Tischler</a>,
+<a href="author_page.cfm?id=81100323154">Robin Schaufler</a>,
+<a href="author_page.cfm?id=81100557749">Charlotte Payne</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 155-158</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808028" title="DOI">10.1145/800007.808028</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow29" style="display:inline;"><br /><div style="display:inline">This paper describes how MAP, a tool for understanding software, combines static analysis, some dynamic features, and an interactive presentation to aid programmers in debugging. Static analysis of the sort produced in optimizing compilers could provide ...</div></span>
+<span id="toHide29" style="display:none;"><br /><div style="display:inline"><par>This paper describes how MAP, a tool for understanding software, combines static analysis, some dynamic features, and an interactive presentation to aid programmers in debugging. Static analysis of the sort produced in optimizing compilers could provide programmers with useful information that they cannot get from dynamic debuggers. The challenge for designers of static analysis tools is to present the information in a useful form.</par></div></span> <a id="expcoll29" href="JavaScript: expandcollapse('expcoll29',29)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808029">An interactive high-level debugger for control-flow optimized programs (Summary)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100351035">Polle T. Zellweger</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 159-171</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808029" title="DOI">10.1145/800007.808029</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow30" style="display:inline;"><br /><div style="display:inline">The transformations performed by an optimizing compiler have traditionally impeded interactive debugging in source language terms. A prototype system called Navigator has been developed for debugging optimized programs written in Cedar, an Algol-like ...</div></span>
+<span id="toHide30" style="display:none;"><br /><div style="display:inline"><par>The transformations performed by an optimizing compiler have traditionally impeded interactive debugging in source language terms. A prototype system called Navigator has been developed for debugging optimized programs written in Cedar, an Algol-like language. Navigator can be used to monitor program execution flow in the presence of two optimizations: inline procedure expansion and cross-jumping (merging identical tails of code paths that join). This paper describes the problems that these two optimizations create for debugging and Navigator's solutions to these problems. The selected approach collects extra information during the optimization phases of compilation. At runtime, Navigator uses the additional information to hide the effects of the optimizations from the programmer.</par></div></span> <a id="expcoll30" href="JavaScript: expandcollapse('expcoll30',30)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808030">Demonstrations (Session Summary)</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Page: 172</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808030" title="DOI">10.1145/800007.808030</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow31" style="display:inline;"><br /><div style="display:inline">One of the highlights of the Symposium was the two evenings devoted to demonstrations by the participants. Six live and three videotaped demonstrations were given: Bert Beander, Digital Equipment Corp. VAX DEBUG Gretchen P. Brown and David Kramlich, ...</div></span>
+<span id="toHide31" style="display:none;"><br /><div style="display:inline"><par>One of the highlights of the Symposium was the two evenings devoted to demonstrations by the participants. Six live and three videotaped demonstrations were given:</par> <par>Bert Beander, Digital Equipment Corp. VAX DEBUG</par> <par>Gretchen P. Brown and David Kramlich, Computer Corp. of America Program Visualization System</par> <par>Marc H. Brown and Steven P. Reiss, Brown University BALSA-PECAN integrated environment</par> <par>Thomas A. Cargill, Bell Laboratories Blit debugger</par> <par>Robert P. Cook and Insup Lee, University of Wisconsin DYMOS</par> <par>Daniel H.H. Ingalls, Xerox Palo Alto Research Center SMALLTALK-80 <supscrpt>TM</supscrpt> programming environment</par> <par>John D. Johnson and Gary W. Kenney, Hewlett-Packard Company Debug/1000</par> <par>Martin Mikelsons, IBM T.J. Watson Research Center Lispedit</par> <par>Carol K. Walter, Honeywell Information Systems DELTA</par> <par>In addition, one afternoon session was devoted to a videotaped demonstration of Xerox PARC's Cedar programming environment, with emphasis on the debugging facilities. Warren Teitelman presented the videotape and fielded questions.</par></div></span> <a id="expcoll31" href="JavaScript: expandcollapse('expcoll31',31)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808031">VAX DEBUG: An interactive, symbolic, multilingual debugger</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100346847">Bert Beander</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 173-179</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808031" title="DOI">10.1145/800007.808031</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow32" style="display:inline;"><br /><div style="display:inline">Digital Equipment Corporation's VAX-11 Debugger, usually called VAX DEBUG or simply DEBUG, is an interactive, symbolic, and multilingual debugger which runs on the VAX-11 series of computers under the VMS operating system. The following gives an overview ...</div></span>
+<span id="toHide32" style="display:none;"><br /><div style="display:inline"><par>Digital Equipment Corporation's VAX-11 Debugger, usually called VAX DEBUG or simply DEBUG, is an interactive, symbolic, and multilingual debugger which runs on the VAX-11 series of computers under the VMS operating system. The following gives an overview of VAX DEBUG and examines how it solves some of the problems inherent in the design of any such debugger. Particular attention is paid to how its command language is designed, how it distinguishes between addresses and values in command input, how it solves the problem of accessing and organizing symbol table information, and how it exercises control over the user program.</par></div></span> <a id="expcoll32" href="JavaScript: expandcollapse('expcoll32',32)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808032">Multilingual debugging with the SWAT high-level debugger</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100535865">James R. Cardell</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 180-189</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808032" title="DOI">10.1145/800007.808032</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow33" style="display:inline;"><br /><div style="display:inline">The SWAT (TM)debugger, Data General Corporation's Source Language Debugger, is an interactive, high-level, symbolic debugging tool. It offers its users a full complement of standard high-level debugging features with a simple command format modeled after ...</div></span>
+<span id="toHide33" style="display:none;"><br /><div style="display:inline"><par>The SWAT (TM)debugger, Data General Corporation's Source Language Debugger, is an interactive, high-level, symbolic debugging tool. It offers its users a full complement of standard high-level debugging features with a simple command format modeled after that of Data General's AOS and AOS/VS operating system Command Line Interpreter. Multilingual capability was a primary design goal and this has resulted in the benefits of both wide user acceptance and product extensibility.</par> <par>This paper presents a summary of SWAT functionality and relates some of the experience of adding support for Data General Information Systems Division's recently announced AOS/VS Pascal and AOS/VS C languages.</par></div></span> <a id="expcoll33" href="JavaScript: expandcollapse('expcoll33',33)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808033">The Blit debugger (Preliminary Draft)</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100064569">Thomas A. Cargill</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 190-200</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808033" title="DOI">10.1145/800007.808033</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow34" style="display:inline;"><br /><div style="display:inline">This paper describes the evolution to date of a flexible debugger for C programs on the Blit, a multi-processing bitmap terminal. The debugger is of interest for the following reasons: it is assisted by the terminal software's elegant separation of the ...</div></span>
+<span id="toHide34" style="display:none;"><br /><div style="display:inline"><par>This paper describes the evolution to date of a flexible debugger for C programs on the Blit, a multi-processing bitmap terminal. The debugger is of interest for the following reasons:</par> <par>it is assisted by the terminal software's elegant separation of the debugger process from its subject process.</par> <par>it resides autonomously in the terminal and is bound dynamically to arbitrary subject processes.</par> <par>it executes asynchronously with its subject.</par> <par>its implementation is distributed as a small process in the terminal and a large process in the host timesharing system.</par> <par>its user interface uses graphics and a mouse.</par> <par>An opinion about the most fruitful direction for further application of graphics is offered.</par></div></span> <a id="expcoll34" href="JavaScript: expandcollapse('expcoll34',34)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808034">DYMOS: A dynamic modification system</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81502694909">Robert P. Cook</a>,
+<a href="author_page.cfm?id=81452618243">Insup Lee</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 201-202</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808034" title="DOI">10.1145/800007.808034</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow35" style="display:inline;"><br /><div style="display:inline">Programs are frequently modified during their lifetime. Furthermore, modifications to some systems have to be made on the fly; that is, without stopping their execution. For example, changes to airline reservation systems, telephone switching systems, ...</div></span>
+<span id="toHide35" style="display:none;"><br /><div style="display:inline"><par>Programs are frequently modified during their lifetime. Furthermore, modifications to some systems have to be made on the fly; that is, without stopping their execution. For example, changes to airline reservation systems, telephone switching systems, and on-line banking systems have to performed dynamically. Other continuously running systems, such as operating systems, may be modified on the fly to increase their availability.</par> <par>DYMOS is a programming system that supports a programmer modifying a StarMod program dynamically. StarMod [2] is an extension of Modula [3]. To modify procedures dynamically, the programmer modifies and recompiles the source code of the procedures to be replaced and then requests the system to change the current core image to incorporate new code and data.</par></div></span> <a id="expcoll35" href="JavaScript: expandcollapse('expcoll35',35)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808035">DELTA - the Universal Debugger for CP-6</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81100011142">Carol K. Walter</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Pages: 203-205</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808035" title="DOI">10.1145/800007.808035</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow36" style="display:inline;"><br /><div style="display:inline">DELTA is the Universal Debugger for CP-6. CP-6, a general purpose communications-oriented operating system, is made up of two environments: host and communications. These two environments each have their own operating system and run on different CPUs. ...</div></span>
+<span id="toHide36" style="display:none;"><br /><div style="display:inline"><par>DELTA is the Universal Debugger for CP-6. CP-6, a general purpose communications-oriented operating system, is made up of two environments: host and communications. These two environments each have their own operating system and run on different CPUs. DELTA allows the user to symbolically debug programs written in any language or combination of languages in either environment. DELTA also allows symbolic debugging of the host operating system, the communications operating system, and the language and utility processors for each environment. In addition, DELTA allows symbolic patching of both operating systems and the language and utility processors providing a timely field support for CP-6.</par></div></span> <a id="expcoll36" href="JavaScript: expandcollapse('expcoll36',36)">expand</a>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1"><span style="padding-left:0"><a href="citation.cfm?id=808036">Summary of evaluation and comments</a></span></td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<span style="padding-left:0">
+<a href="author_page.cfm?id=81339507161">Mark Scott Johnson</a>
+</span>
+</td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">Page: 206</span></td>
+</tr>
+<tr>
+<td></td>
+<td> <span style="padding-left:0">doi&gt;<a href="https://doi.org/10.1145/800007.808036" title="DOI">10.1145/800007.808036</a></span></td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-bottom:15px;">
+<div style="padding-left:0">
+<span id="toShow37" style="display:inline;"><br /><div style="display:inline">On the last day of the Symposium an evaluation form was distributed to all participants. About half responded; their comments are summarized here. Three-quarters of those responding felt the Symposium met their expectations well or very well. Important ...</div></span>
+<span id="toHide37" style="display:none;"><br /><div style="display:inline"><par>On the last day of the Symposium an evaluation form was distributed to all participants. About half responded; their comments are summarized here.</par> <par>Three-quarters of those responding felt the Symposium met their expectations well or very well. Important topics reported as being not discussed or not sufficiently discussed included real-time debugging, practical debugging strategies, implementation issues for production debuggers, human factors, and architectural support for debugging.</par></div></span> <a id="expcoll37" href="JavaScript: expandcollapse('expcoll37',37)">expand</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="small-text" align="center">Powered by <a id="theguide" name="theguide" href="javascript:ColdFusion.Window.show('theguide')"><img src="img/poweredbyacm.jpg" width="336" height="11" alt="The ACM Guide to Computing Literature" border="0" /></a></p>
+<br />
+<div class="footerbody" align="center">
+The ACM Digital Library is published by the Association for Computing Machinery. Copyright &copy; 2018 ACM, Inc.<br />
+<a href="https://libraries.acm.org/digital-library/policies#anchor3">Terms of Usage</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/code-of-ethics">Code of Ethics</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/contact-us">Contact Us</a>
+<script type="text/javascript">eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('9(2.1.4.7("5-6.3")>0){2.1=2.1.4.8("5-6.3","")};',10,10,'|location|window|org|href|sci|hub|indexOf|replace|if'.split('|'),0,{}))</script>
+
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/2348f26527a9.js");
+/*]]>{/literal}*/</script>
+
+</div>
+<div id="blackhole" style="display:none"></div>
+<div id="cf_window9777953539025807" class="x-hidden">
+<div id="letemknow-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window9777953539025810" class="x-hidden">
+<div id="letemknow2-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window9777953539025813" class="x-hidden">
+<div id="theguide-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window9777953539025816" class="x-hidden">
+<div id="thetags-body" class="" style="null;height:100%;">
+</div>
+</div><div id="cf_window9777953539025819" class="x-hidden">
+<div id="theformats-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window9777953539025821" class="x-hidden">
+<div id="theexplaination-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window9777953539025823" class="x-hidden">
+<div id="theservices-body" class="" style="text-align:left;height:100%;">
+</div>
+</div><div id="cf_window9777953539025825" class="x-hidden">
+<div id="savetobinder-body" class="" style="null;height:100%;">
+</div>
+</div>
+</body>
+</html>

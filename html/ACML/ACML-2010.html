@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Proceedings of Machine Learning Research</title>
+  <meta name="description" content="Proceedings of 2nd Asian Conference on Machine Learning
+  Held in Tokyo, Japan on 08-10 November 2010
+
+Published as Volume 13 by the Proceedings of Machine Learning Research on 31 October 2010.
+
+Volume Edited by:
+  Masashi Sugiyama
+  Qiang Yang
+
+Series Editors:
+  Neil D. Lawrence
+">
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">  
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92432422-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+      autoNumber: "AMS"
+     }
+   },
+  tex2jax: {
+    inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <!-- Solution from http://stackoverflow.com/questions/31593297/using-execcommand-javascript-to-copy-hidden-text-to-clipboard -->
+<script type="text/javascript"
+	src="/js/copy_input.js">
+</script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="/js/download.js"></script>
+
+  
+
+</head>
+
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <table>
+      <tr>
+	<td><a align="left" class="site-logo" href="http://proceedings.mlr.press" target=_top><img align="right" class="jmlr" src="/img/pmlr.png" border="0"></a> </td>
+	<td><p class="site-title">Proceedings of Machine Learning Research</p></td>
+      </tr>
+    </table>
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+	<a class="page-link" href="/v13/">Volume 13</a>
+	<a class="page-link" href="/">All Volumes</a>
+	<a class="page-link" href="http://www.jmlr.org/">JMLR</a> 
+	<a class="page-link" href="http://www.jmlr.org/mloss">MLOSS</a>
+	<a class="page-link" href="/faq.html">FAQ</a>
+	<a class="page-link" href="/spec.html">Submission Format</a>
+	<a class="page-link" href="http://proceedings.mlr.press//v13/feed.xml">
+	<img src="/img/RSS.gif" class="rss" alt="RSS Feed">
+	</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content" id="content">
+      <div class="wrapper">
+        
+
+
+<h2>Volume 13: Proceedings of 2nd Asian Conference on Machine Learning, 8-10 November 2010, Tokyo, Japan</h2>
+
+
+<p align="right">[<a href="https://github.com/mlresearch/v13/edit/gh-pages/_config.yml" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/mlresearch/v13/edit/gh-pages/_config.yml', 13);">edit</a>]</p>
+
+
+  
+<p><strong>Editors:
+    
+    
+    Masashi Sugiyama, 
+
+    
+    Qiang Yang
+
+    
+</strong></p>
+<p>[<a href="./bibliography.bib" target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v13/bibliography.bib', 14);">bib</a>][<a href="./citeproc.yaml"  target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v13/citeproc.yaml', 14);">citeproc</a>]</p>
+<div id="sectionnav">
+  <p>Contents:</p>
+  <ul>
+    
+    <li><a href="#preface">Preface</a></li>
+    
+    <li><a href="#default">Accepted Papers</a></li>
+    
+  </ul>
+  
+  <p>
+  <label for="search-authors">Filter Authors:</label>
+  <input type="search" name="filter-authors" id="search-authors" value />
+  <label for="search-titles">Filter Titles:</label>
+  <input type="search" name="filter-titles" id="search-titles" value />
+  </p>
+</div>
+
+
+<h3 id="preface">Preface</h3>
+
+<div class="paper">
+  <p class="title">Preface</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Masashi Sugiyama, 
+
+      
+      Qiang Yang
+
+      
+    </span>;
+    <span class="info">PMLR 13:i-xiv</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/sugiyama10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/sugiyama10a/sugiyama10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/sugiyama10a/sugiyama10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="default">Accepted Papers</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="paper">
+  <p class="title">Pairwise Measures of Causal Direction in Linear Non-Gaussian Acyclic Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Aapo Hyvarinen
+
+      
+    </span>;
+    <span class="info">PMLR 13:1-16</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/hyvarinen10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/hyvarinen10a/hyvarinen10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/hyvarinen10a/hyvarinen10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning Polyhedral Classifiers Using Logistic Function</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Naresh Manwani, 
+
+      
+      P. S. Sastry
+
+      
+    </span>;
+    <span class="info">PMLR 13:17-30</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/manwani10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/manwani10a/manwani10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/manwani10a/manwani10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Ellipsoidal Support Vector Machines</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Michinari Momma, 
+
+      
+      Kohei Hatano, 
+
+      
+      Hiroki Nakayama
+
+      
+    </span>;
+    <span class="info">PMLR 13:31-46</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/momma10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/momma10a/momma10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/momma10a/momma10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Minimum Conditional Entropy Clustering: A Discriminative Framework for Clustering</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Bo Dai, 
+
+      
+      Baogang Hu
+
+      
+    </span>;
+    <span class="info">PMLR 13:47-62</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/dai10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/dai10a/dai10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/dai10a/dai10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Efficient Collapsed Gibbs Sampling for Latent Dirichlet Allocation</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Han Xiao (Technical University Munich), 
+
+      
+      Thomas Stibor (Technical University Munich)
+
+      
+    </span>;
+    <span class="info">PMLR 13:63-78</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/xiao10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/xiao10a/xiao10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/xiao10a/xiao10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Variational Relevance Vector Machine for Tabular Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Dmitry Kropotov, 
+
+      
+      Dmitry Vetrov, 
+
+      
+      Lior Wolf, 
+
+      
+      Tal Hassner
+
+      
+    </span>;
+    <span class="info">PMLR 13:79-94</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/kropotov10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/kropotov10a/kropotov10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/kropotov10a/kropotov10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Hierarchical Gaussian Process Regression</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Sunho Park, 
+
+      
+      Seungjin Choi
+
+      
+    </span>;
+    <span class="info">PMLR 13:95-110</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/park10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/park10a/park10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/park10a/park10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Content-based Image Retrieval with Multinomial Relevance Feedback</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Dorota Glowacka, 
+
+      
+      John Shawe-Taylor
+
+      
+    </span>;
+    <span class="info">PMLR 13:111-125</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/glowacka10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/glowacka10a/glowacka10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/glowacka10a/glowacka10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">The Coding Divergence for Measuring the Complexity of Separating Two Sets</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Mahito Sugiyama (Kyoto University), 
+
+      
+      Akihiro Yamamoto (Kyoto University)
+
+      
+    </span>;
+    <span class="info">PMLR 13:127-143</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/sugiyama10b.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/sugiyama10b/sugiyama10b.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/sugiyama10b/sugiyama10b.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Single versus Multiple Sorting in All Pairs Similarity Search</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yasuo Tabei JST Minato ERATO Project, 
+
+      
+      Takeaki Uno National Institute Japan, 
+
+      
+      Masashi Sugiyama Tokyo Institute Technology, 
+
+      
+      Koji Tsuda National Institute Advanced Industrial Science Technology
+
+      
+    </span>;
+    <span class="info">PMLR 13:145-160</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/tabei10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/tabei10a/tabei10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/tabei10a/tabei10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">An EM Algorithm on BDDs with Order Encoding for Logic-based Probabilistic Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Masakazu Ishihata, 
+
+      
+      Yoshitaka Kameya, 
+
+      
+      Taisuke Sato, 
+
+      
+      Shin-ichi Minato
+
+      
+    </span>;
+    <span class="info">PMLR 13:161-176</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/ishihata10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/ishihata10a/ishihata10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/ishihata10a/ishihata10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Exploiting the High Predictive Power of Multi-class Subgroups</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Tarek Abudawood, 
+
+      
+      Peter Flach
+
+      
+    </span>;
+    <span class="info">PMLR 13:177-192</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/abudawood10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/abudawood10a/abudawood10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/abudawood10a/abudawood10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Generative Models of Information Diffusion with Asynchronous Timedelay</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Kazumi Saito, 
+
+      
+      Masahiro Kimura, 
+
+      
+      Kouzou Ohara, 
+
+      
+      Hiroshi Motoda
+
+      
+    </span>;
+    <span class="info">PMLR 13:193-208</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/saito10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/saito10a/saito10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/saito10a/saito10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Decision Tree for Dynamic and Uncertain Data Streams</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Chunquan Liang, 
+
+      
+      Yang Zhang, 
+
+      
+      Qun Song
+
+      
+    </span>;
+    <span class="info">PMLR 13:209-224</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/liang10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/liang10a/liang10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/liang10a/liang10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Accurate Ensembles for Data Streams: Combining Restricted Hoeffding Trees using Stacking</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Albert Bifet, 
+
+      
+      Eibe Frank, 
+
+      
+      Geoffrey Holmes, 
+
+      
+      Bernhard Pfahringer
+
+      
+    </span>;
+    <span class="info">PMLR 13:225-240</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/bifet10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/bifet10a/bifet10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/bifet10a/bifet10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Mining Recurring Concept Drifts with Limited Labeled Streaming Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Peipei Li, 
+
+      
+      Xindong Wu, 
+
+      
+      Xuegang Hu
+
+      
+    </span>;
+    <span class="info">PMLR 13:241-252</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/li10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/li10a/li10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/li10a/li10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Hierarchical Convex NMF for Clustering Massive Data</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Kristian Kersting, 
+
+      
+      Mirwaes Wahabzada, 
+
+      
+      Christian Thurau, 
+
+      
+      Christian Bauckhage
+
+      
+    </span>;
+    <span class="info">PMLR 13:253-268</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/kersting10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/kersting10a/kersting10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/kersting10a/kersting10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Multi-task Learning for Recommender System</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Xia Ning, 
+
+      
+      George Karypis
+
+      
+    </span>;
+    <span class="info">PMLR 13:269-284</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/ning10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/ning10a/ning10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/ning10a/ning10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Adaptive Step-size Policy Gradients with Average Reward Metric</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Takamitsu Matsubara, 
+
+      
+      Tetsuro Morimura, 
+
+      
+      Jun Morimoto
+
+      
+    </span>;
+    <span class="info">PMLR 13:285-298</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/matsubara10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/matsubara10a/matsubara10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/matsubara10a/matsubara10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Finite-sample Analysis of Bellman Residual Minimization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Odalric-Ambrym Maillard, 
+
+      
+      Remi Munos, 
+
+      
+      Alessandro Lazaric, 
+
+      
+      Mohammad Ghavamzadeh
+
+      
+    </span>;
+    <span class="info">PMLR 13:299-314</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/maillard10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/maillard10a/maillard10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/maillard10a/maillard10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Study of Approximate Inference in Probabilistic Relational Models</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Fabian Kaelin, 
+
+      
+      Doina Precup
+
+      
+    </span>;
+    <span class="info">PMLR 13:315-330</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/kaelin10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/kaelin10a/kaelin10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/kaelin10a/kaelin10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Conceptual Imitation Learning: An Application to Human-robot Interaction</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Hossein Hajimirsadeghi, 
+
+      
+      Majid Nili Ahmadabadi, 
+
+      
+      Mostafa Ajallooeian, 
+
+      
+      Babak Araabi, 
+
+      
+      Hadi Moradi
+
+      
+    </span>;
+    <span class="info">PMLR 13:331-346</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v13/hajimirsadeghi10a.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v13/hajimirsadeghi10a/hajimirsadeghi10a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v13/hajimirsadeghi10a/hajimirsadeghi10a.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+<p class="rss-subscribe">subscribe <a href="/v13/feed.xml">via RSS</a></p>
+
+<!-- Search Widget -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../js/search.js"></script>
+
+      </div>
+    </div>   
+  </body>
+
+    <body>
+  <div id="content">
+    <center>This site last compiled Mon, 29 May 2017 07:17:02 +0000</center>
+
+    <table width="100%">
+      <tr>
+	<td align="left"><font size="-1">
+	    <i><a href="https://github.com/mlresearch/v13">Github Account</a></i></font></td>
+	<td align="right"><font size="-1">
+	    Copyright &copy <a href="http://proceedings.mlr.press">PMLR</a> 2017. All rights reserved.</font></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+
+</html>

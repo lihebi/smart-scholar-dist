@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Proceedings of Machine Learning Research</title>
+  <meta name="description" content="Proceedings of The 8th Asian Conference on Machine Learning
+  Held in The University of Waikato, Hamilton, New Zealand on 16-18 November 2016
+
+Published as Volume 63 by the Proceedings of Machine Learning Research on 20 November 2016.
+
+Volume Edited by:
+  Robert J. Durrant
+  Kee-Eung Kim
+
+Series Editors:
+  Neil D. Lawrence
+  Mark Reid
+">
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">  
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92432422-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+      autoNumber: "AMS"
+     }
+   },
+  tex2jax: {
+    inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <!-- Solution from http://stackoverflow.com/questions/31593297/using-execcommand-javascript-to-copy-hidden-text-to-clipboard -->
+<script type="text/javascript"
+	src="/js/copy_input.js">
+</script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="/js/download.js"></script>
+
+  
+
+</head>
+
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <table>
+      <tr>
+	<td><a align="left" class="site-logo" href="http://proceedings.mlr.press" target=_top><img align="right" class="jmlr" src="/img/pmlr.png" border="0"></a> </td>
+	<td><p class="site-title">Proceedings of Machine Learning Research</p></td>
+      </tr>
+    </table>
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+	<a class="page-link" href="/v63/">Volume 63</a>
+	<a class="page-link" href="/">All Volumes</a>
+	<a class="page-link" href="http://www.jmlr.org/">JMLR</a> 
+	<a class="page-link" href="http://www.jmlr.org/mloss">MLOSS</a>
+	<a class="page-link" href="/faq.html">FAQ</a>
+	<a class="page-link" href="/spec.html">Submission Format</a>
+	<a class="page-link" href="http://proceedings.mlr.press//v63/feed.xml">
+	<img src="/img/RSS.gif" class="rss" alt="RSS Feed">
+	</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content" id="content">
+      <div class="wrapper">
+        
+
+
+<h2>Volume 63: Asian Conference on Machine Learning, 16-18 November 2016, The University of Waikato, Hamilton, New Zealand</h2>
+
+
+<p align="right">[<a href="https://github.com/mlresearch/v63/edit/gh-pages/_config.yml" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/mlresearch/v63/edit/gh-pages/_config.yml', 13);">edit</a>]</p>
+
+
+  
+<p><strong>Editors:
+    
+    
+    Robert J. Durrant, 
+
+    
+    Kee-Eung Kim
+
+    
+</strong></p>
+<p>[<a href="./bibliography.bib" target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v63/bibliography.bib', 14);">bib</a>][<a href="./citeproc.yaml"  target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', 'http://proceedings.mlr.press//v63/citeproc.yaml', 14);">citeproc</a>]</p>
+<div id="sectionnav">
+  <p>Contents:</p>
+  <ul>
+    
+    <li><a href="#preface">Front Matter</a></li>
+    
+    <li><a href="#default">Accepted Papers</a></li>
+    
+  </ul>
+  
+  <p>
+  <label for="search-authors">Filter Authors:</label>
+  <input type="search" name="filter-authors" id="search-authors" value />
+  <label for="search-titles">Filter Titles:</label>
+  <input type="search" name="filter-titles" id="search-titles" value />
+  </p>
+</div>
+
+
+<h3 id="preface">Front Matter</h3>
+
+<div class="paper">
+  <p class="title">Preface</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Robert J. Durrant, 
+
+      
+      Kee-Eung Kim
+
+      
+    </span>;
+    <span class="info">PMLR 63:i-xiv</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/preface.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/preface.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/preface.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="default">Accepted Papers</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="paper">
+  <p class="title">Non-Linear Smoothed Transductive Network Embedding with Text Information</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Weizheng Chen, 
+
+      
+      Xia Zhang, 
+
+      
+      Jinpeng Wang, 
+
+      
+      Yan Zhang, 
+
+      
+      Hongfei Yan, 
+
+      
+      Xiaoming Li
+
+      
+    </span>;
+    <span class="info">PMLR 63:1-16</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/chen115.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/chen115.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/chen115.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Long Short-term Memory Network over Rhetorical Structure Theory for Sentence-level Sentiment Analysis</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Xianghua Fu, 
+
+      
+      Wangwang Liu, 
+
+      
+      Yingying Xu, 
+
+      
+      Chong Yu, 
+
+      
+      Ting Wang
+
+      
+    </span>;
+    <span class="info">PMLR 63:17-32</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/Fu62.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/Fu62.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/Fu62.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Enhancing Topic Modeling on Short Texts with Crowdsourcing</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Xiaoyan Yang, 
+
+      
+      Shanshan Ying, 
+
+      
+      Wenzhe Yu, 
+
+      
+      Rong Zhang, 
+
+      
+      Zhenjie Zhang
+
+      
+    </span>;
+    <span class="info">PMLR 63:33-48</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/yang54.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/yang54.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/yang54.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Multiple Kernel Learning with Data Augmentation</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Khanh Nguyen, 
+
+      
+      Trung Le, 
+
+      
+      Vu Nguyen, 
+
+      
+      Tu Nguyen, 
+
+      
+      Dinh Phung
+
+      
+    </span>;
+    <span class="info">PMLR 63:49-64</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/nguyen19.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/nguyen19.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/nguyen19.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Cost Sensitive Online Multiple Kernel Classification</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Doyen Sahoo, 
+
+      
+      Steven Hoi, 
+
+      
+      Peilin Zhao
+
+      
+    </span>;
+    <span class="info">PMLR 63:65-80</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/sahoo56.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/sahoo56.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/sahoo56.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Localized Multiple Kernel Learning—A Convex Approach</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yunwen Lei, 
+
+      
+      Alexander Binder, 
+
+      
+      Urun Dogan, 
+
+      
+      Marius Kloft
+
+      
+    </span>;
+    <span class="info">PMLR 63:81-96</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/lei63.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/lei63.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/lei63.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Linearized Alternating Direction Method of Multipliers for Constrained Nonconvex Regularized Optimization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Linbo Qiao, 
+
+      
+      Bofeng Zhang, 
+
+      
+      Jinshu Su, 
+
+      
+      Xicheng Lu
+
+      
+    </span>;
+    <span class="info">PMLR 63:97-109</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/qiao37.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/qiao37.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/qiao37.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Random Fourier Features For Operator-Valued Kernels</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Romain Brault, 
+
+      
+      Markus Heinonen, 
+
+      
+      Florence Buc
+
+      
+    </span>;
+    <span class="info">PMLR 63:110-125</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/Brault39.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/Brault39.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/Brault39.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Secure Approximation Guarantee for Cryptographically Private Empirical Risk Minimization</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Toshiyuki Takada, 
+
+      
+      Hiroyuki Hanada, 
+
+      
+      Yoshiji Yamada, 
+
+      
+      Jun Sakuma, 
+
+      
+      Ichiro Takeuchi
+
+      
+    </span>;
+    <span class="info">PMLR 63:126-141</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/takada48.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/takada48.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/takada48.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning from Survey Training Samples: Rate Bounds for Horvitz-Thompson Risk Minimizers</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Stephan Clemencon, 
+
+      
+      Patrice Bertail, 
+
+      
+      Guillaume Papa
+
+      
+    </span>;
+    <span class="info">PMLR 63:142-157</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/clemencon64.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/clemencon64.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/clemencon64.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learnability of Non-I.I.D.</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Wei Gao, 
+
+      
+      Xin-Yi Niu, 
+
+      
+      Zhi-Hua Zhou
+
+      
+    </span>;
+    <span class="info">PMLR 63:158-173</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/Gao09.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/Gao09.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/Gao09.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Modelling Symbolic Music: Beyond the Piano Roll</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Christian Walder
+
+      
+    </span>;
+    <span class="info">PMLR 63:174-189</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/walder88.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/walder88.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/walder88.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Improving Distributed Word Representation and Topic Model by Word-Topic Mixture Model</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Xianghua Fu, 
+
+      
+      Ting Wang, 
+
+      
+      Jing Li, 
+
+      
+      Chong Yu, 
+
+      
+      Wangwang Liu
+
+      
+    </span>;
+    <span class="info">PMLR 63:190-205</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/Fu60.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/Fu60.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/Fu60.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Fast Collaborative Filtering from Implicit Feedback with Provable Guarantees</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Sayantan Dasgupta
+
+      
+    </span>;
+    <span class="info">PMLR 63:206-221</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/Dasgupta79.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/Dasgupta79.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/Dasgupta79.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Unifying Topic, Sentiment & Preference in an HDP-Based Rating Regression Model for Online Reviews</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Zheng Chen, 
+
+      
+      Yong Zhang, 
+
+      
+      Yue Shang, 
+
+      
+      Xiaohua Hu
+
+      
+    </span>;
+    <span class="info">PMLR 63:222-237</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/chen33.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/chen33.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/chen33.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Simulation and Calibration of a Fully Bayesian Marked Multidimensional Hawkes Process with Dissimilar Decays</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Kar Wai Lim, 
+
+      
+      Young Lee, 
+
+      
+      Leif Hanlen, 
+
+      
+      Hongbiao Zhao
+
+      
+    </span>;
+    <span class="info">PMLR 63:238-253</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/lim83.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/lim83.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/lim83.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">A Bayesian Nonparametric Approach for Multi-label Classification</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Vu Nguyen, 
+
+      
+      Sunil Gupta, 
+
+      
+      Santu Rana, 
+
+      
+      Cheng Li, 
+
+      
+      Svetha Venkatesh
+
+      
+    </span>;
+    <span class="info">PMLR 63:254-269</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/nguyen93.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/nguyen93.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/nguyen93.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Hierarchical Probabilistic Matrix Factorization with Network Topology for Multi-relational Social Network</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Haoli Bai, 
+
+      
+      Zenglin Xu, 
+
+      
+      Bin Liu, 
+
+      
+      Yingming Li
+
+      
+    </span>;
+    <span class="info">PMLR 63:270-285</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/bai103.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/bai103.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/bai103.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning Feature Aware Metric</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Han-Jia Ye, 
+
+      
+      De-Chuan Zhan, 
+
+      
+      Xue-Min Si, 
+
+      
+      Yuan Jiang
+
+      
+    </span>;
+    <span class="info">PMLR 63:286-301</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/ye4.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/ye4.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/ye4.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Multitask Principal Component Analysis</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Ikko Yamane, 
+
+      
+      Florian Yger, 
+
+      
+      Maxime Berar, 
+
+      
+      Masashi Sugiyama
+
+      
+    </span>;
+    <span class="info">PMLR 63:302-317</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/yamane65.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/yamane65.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/yamane65.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Learning Distance Metrics for Multi-Label Classification</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Henry Gouk, 
+
+      
+      Bernhard Pfahringer, 
+
+      
+      Michael Cree
+
+      
+    </span>;
+    <span class="info">PMLR 63:318-333</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/Gouk8.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/Gouk8.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/Gouk8.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Bank of Weight Filters for Deep CNNs</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Suresh Kirthi Kumaraswamy, 
+
+      
+      PS Sastry, 
+
+      
+      Kalpathi Ramakrishnan
+
+      
+    </span>;
+    <span class="info">PMLR 63:334-349</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/kumaraswamy29.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/kumaraswamy29.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/kumaraswamy29.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Deep Gate Recurrent Neural Network</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Yuan Gao, 
+
+      
+      Dorota Glowacka
+
+      
+    </span>;
+    <span class="info">PMLR 63:350-365</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/gao30.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/gao30.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/gao30.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Collaborative Recurrent Neural Networks for Dynamic Recommender Systems</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Young-Jun Ko, 
+
+      
+      Lucas Maystre, 
+
+      
+      Matthias Grossglauser
+
+      
+    </span>;
+    <span class="info">PMLR 63:366-381</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/ko101.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/ko101.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/ko101.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Echo State Hoeffding Tree Learning</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Diego Marron, 
+
+      
+      Jesse Read, 
+
+      
+      Albert Bifet, 
+
+      
+      Talel Abdessalem, 
+
+      
+      Eduard Ayguade, 
+
+      
+      José Herrero
+
+      
+    </span>;
+    <span class="info">PMLR 63:382-397</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/Marron87.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/Marron87.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/Marron87.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Proper Inner Product with Mean Displacement for Gaussian Noise Invariant ICA</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Liyan Song, 
+
+      
+      Haiping Lu
+
+      
+    </span>;
+    <span class="info">PMLR 63:398-413</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/Song106.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/Song106.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/Song106.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">An Efficient Approach for Multi-Sentence Compression</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Elaheh ShafieiBavani, 
+
+      
+      Mohammad Ebrahimi, 
+
+      
+      Raymond K. Wong, 
+
+      
+      Fang Chen
+
+      
+    </span>;
+    <span class="info">PMLR 63:414-429</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/ShafieiBavani24.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/ShafieiBavani24.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/ShafieiBavani24.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">Geometry-aware stationary subspace analysis</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Inbal Horev, 
+
+      
+      Florian Yger, 
+
+      
+      Masashi Sugiyama
+
+      
+    </span>;
+    <span class="info">PMLR 63:430-444</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/Horev84.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/Horev84.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/Horev84.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+ 
+<div class="paper">
+  <p class="title">EcoICA: Skewness-based ICA via Eigenvectors of Cumulant Operator</p>
+  <p class="details">
+    <span class="authors">
+      
+      
+      Liyan Song, 
+
+      
+      Haiping Lu
+
+      
+    </span>;
+    <span class="info">PMLR 63:445-460</span>
+  </p>
+  <p class="links">
+    [<a href="http://proceedings.mlr.press/v63/Song94.html">abs</a>]
+    [<a href="http://proceedings.mlr.press/v63/Song94.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', http://proceedings.mlr.press/v63/Song94.pdf, 10);">Download PDF</a>]
+  </p>
+</div>
+
+
+
+<p class="rss-subscribe">subscribe <a href="/v63/feed.xml">via RSS</a></p>
+
+<!-- Search Widget -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../js/search.js"></script>
+
+      </div>
+    </div>   
+  </body>
+
+    <body>
+  <div id="content">
+    <center>This site last compiled Mon, 29 May 2017 07:40:01 +0000</center>
+
+    <table width="100%">
+      <tr>
+	<td align="left"><font size="-1">
+	    <i><a href="https://github.com/mlresearch/v63">Github Account</a></i></font></td>
+	<td align="right"><font size="-1">
+	    Copyright &copy <a href="http://proceedings.mlr.press">PMLR</a> 2017. All rights reserved.</font></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+
+</html>

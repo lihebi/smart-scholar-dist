@@ -1,0 +1,950 @@
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 2.0//EN" "http://www.w3.org/TR/xhtml2/DTD/xhtml2.dtd">
+
+<html xmlns="http://www.w3.org/2002/06/xhtml2">
+
+<head>
+	<title>UAI - Uncertainty in Artificial Intelligence</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="css/general.css" type="text/css"/>
+	<link rel="stylesheet" href="css/classes.css" type="text/css"/>
+	<link rel="stylesheet" href="classes.css" type="text/css"/>
+</head>
+
+<script language="JavaScript" tyle="text/javascript">
+<!--
+	function imgSwap(oImg, sImgPath) {
+		oImg.src = sImgPath;
+	}
+//-->
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+	function processLogin(type) {
+		bError = false;
+		
+		// First Name:
+		if(type < 2)
+                {
+                    if (document.formQuickLogin.first_name.value == "") 
+                    {
+                            alert("Please enter First Name");
+                            bError = true;
+                    }
+
+                    // Last Name:
+                    if (document.formQuickLogin.last_name.value == "") 
+                    {
+                            alert("Please enter Last Name");
+                            bError = true;
+                    }
+                    
+                    if(type == 0)
+                    {
+                        document.formQuickLogin.type.value = "login";
+                        // Password:
+                        if (document.formQuickLogin.password.value == "") {
+                            alert("Please enter Password");
+                            bError = true;
+                        }
+                    }    
+                    else
+                    {
+                        document.formQuickLogin.type.value = "password";
+                    }
+        
+                    if (!bError) document.formQuickLogin.submit();
+                }
+                else
+                {
+                    if (document.formSlowLogin.first_name.value == "") 
+                    {
+                            alert("Please enter First Name");
+                            bError = true;
+                    }
+
+                    // Last Name:
+                    if (document.formSlowLogin.last_name.value == "") 
+                    {
+                            alert("Please enter Last Name");
+                            bError = true;
+                    }
+                    if(type == 2) 
+                    {
+                        document.formSlowLogin.type.value = "login";
+                        // Password:
+                        if (document.formSlowLogin.password.value == "") 
+                        {
+                                alert("Please enter Password");
+                                bError = true;
+                        }
+                    }
+                    else
+                    {
+                        document.formSlowLogin.type.value = "password";
+                    }    
+                    if (!bError) document.formSlowLogin.submit();
+                }
+	}
+// -->
+</script>
+
+
+<body class="cBodyIndex">
+
+<div align="center">
+<table width="760" cellspacing="0" cellpadding="0" border="0" class="cMainFrame">
+
+<!-- Title belt -->
+<tr>
+	<td>
+		<table width="100%" height="73" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td width="282"><img src="gfx/title_belt_01.jpg" width="282" height="73" border="0" usemap="#mapLogo" alt="Uncertainty in Artificial Intelligence"/></td>
+			<td width="478" height="73" align="right" valign="top" background="gfx/title_belt_02.jpg">
+				<table cellspacing="0" cellpadding="4" border="0">
+				<tr>
+					<!-- User name -->
+					<td>
+             <div align="right">
+
+						<form name="formQuickLogin" id="formQuickLogin" action="loginUser.jsp?mmnu=0&smnu=0" method="post">
+							<input type="hidden" name="type" id="type" value="login"/>
+              <span class="cQuickLogin">First Name</span>
+							<input type="text" name="first_name" id="first_name" value="" class="cQuickLogin cFormS"/>&nbsp;
+							<span class="cQuickLogin">Last Name</span>
+							<input type="text" name="last_name" id="last_name" value="" class="cQuickLogin cFormS"/>&nbsp;
+							<span class="cQuickLogin">Password</span>
+							<input type="password" name="password" id="password" maxlength="12" class="cQuickLogin cFormS"/>&nbsp;
+							<a href="#top" class="cQuickLogin" onclick="processLogin(1); return true;">Forgot Password</a>&nbsp;&nbsp;
+              <a href="#top" class="cQuickLogin" onclick="processLogin(0); return true;">Log in!</a>
+						</form>
+
+            </div>            
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+
+<!-- Main menu -->
+<tr>
+	<td>
+		<table width="100%" cellspacing="0" cellpadding="2" border="0" class="cMainMenu">
+		<tr>
+
+			<td width="1" class="cMenu1">
+				<nobr>
+					&nbsp;&nbsp;
+					&nbsp;<a href="proceedings.jsp?mmnu=1&smnu=0" class="cMenu_0">Proceedings</a>&nbsp;
+					<span class="cMenuBullet">&bull;</span>
+					&nbsp;<a href="displayArticles.jsp?mmnu=1&smnu=1&proceeding_id=22" class="cMenu_1">Proceeding details</a>&nbsp;
+					&nbsp;&nbsp;
+				</nobr>
+			</td>
+
+
+        <!-- Authors -->
+        <td width="1" class="cMenu2">
+                <nobr>
+                        &nbsp;&nbsp;
+                        &nbsp;<a href="authors.jsp?mmnu=2&smnu=0" class="cMenu_0">Authors</a>&nbsp;
+                        &nbsp;&nbsp;
+                </nobr>
+        </td>
+
+        <!-- Search -->
+        <td width="1" class="cMenu3">
+                <nobr>
+                        &nbsp;&nbsp;
+                        &nbsp;<a href="search.jsp?mmnu=3&smnu=0" class="cMenu_0">Search</a>&nbsp;
+                        &nbsp;&nbsp;
+                </nobr>
+        </td>
+
+			<!-- Distancer -->
+			<td width="*" class="cMenu4">
+			</td>
+
+
+		</tr>
+		</table>
+	</td>
+</tr>
+<!-- Work area -->
+<tr>
+	<td>
+		<table width="100%" cellspacing="0" cellpadding="8" border="0">
+		<tr>
+			<td>
+
+
+
+
+
+
+        <span class="cPageTitle">Proceedings of the Twenty-Second Conference Conference on Uncertainty in Artificial Intelligence ( 2006 )</span><br/>
+        <span class="cPageSubtitle">July 13- 16 2006, Cambridge, MA, USA 
+        <br /><br />
+        Edited By:</span>
+<a class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=142&proceeding_id=22">Rina Dechter</a>, <a class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=197&proceeding_id=22">Thomas Richardson</a>
+        <br />
+        <span class="cPageSubtitle">Published By:</span>&nbsp;AUAI Press, Arlington, Virginia<br />
+        <span class="cPageSubtitle">ISBN:</span>&nbsp;0-9749039-2-2<br />
+        <hr/>
+
+	<table width="100%" cellpadding="4" cellspacing="0" class="cLstTable">
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1250&proceeding_id=22">A Bayesian Probability Calculus for Density Matrices</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=325&proceeding_id=22">Manfred Warmuth</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1280&proceeding_id=22">Dima Kuzmin</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1251&proceeding_id=22">A compact, hierarchical Q-function decomposition</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=855&proceeding_id=22">Bhaskara Marthi</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=37&proceeding_id=22">Stuart Russell</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=238&proceeding_id=22">David Andre</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1252&proceeding_id=22">A concentration theorem for projections</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=29&proceeding_id=22">Sanjoy Dasgupta</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1281&proceeding_id=22">Daniel Hsu</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1282&proceeding_id=22">Nakul Verma</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1253&proceeding_id=22">A new axiomatization for likelihood gambles</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=43&proceeding_id=22">Phan Giang</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1254&proceeding_id=22">A Non-Parametric Bayesian Method for Inferring Hidden Causes</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1283&proceeding_id=22">Frank Wood</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1131&proceeding_id=22">Thomas Griffiths</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=901&proceeding_id=22">Zoubin Ghahramani</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1255&proceeding_id=22">A Self-Supervised Terrain Roughness Estimator for Off-Road Autonomous Driving</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1284&proceeding_id=22">David Stavens</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=217&proceeding_id=22">Sebastian Thrun</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1256&proceeding_id=22">A simple approach for finding the globally optimal Bayesian network structure</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=307&proceeding_id=22">Tomi Silander</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=186&proceeding_id=22">Petri Myllymaki</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1257&proceeding_id=22">A theoretical study of Y structures for causal discovery</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1285&proceeding_id=22">Subramani Mani</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=210&proceeding_id=22">Peter Spirtes</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=25&proceeding_id=22">Gregory Cooper</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1258&proceeding_id=22">A Variational Approach for Approximating Bayesian Networks by Edge Deletion</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1177&proceeding_id=22">Arthur Choi</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=28&proceeding_id=22">Adnan Darwiche</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1259&proceeding_id=22">Adjacency-Faithfulness and Conservative Causal Inference</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1286&proceeding_id=22">Joseph Ramsey</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1002&proceeding_id=22">Jiji Zhang</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=210&proceeding_id=22">Peter Spirtes</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1260&proceeding_id=22">Advances in exact Bayesian structure discovery in Bayesian networks</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1288&proceeding_id=22">Mikko Koivisto</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1261&proceeding_id=22">An Efficient Optimal-Equilibrium Algorithm for Two-player Game Trees</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=173&proceeding_id=22">Michael Littman</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1289&proceeding_id=22">Nishkam Ravi</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1290&proceeding_id=22">Arjun Talwar</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1291&proceeding_id=22">Martin Zinkevich</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1262&proceeding_id=22">An Efficient Triplet-based Algorithm for Evidential Reasoning</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1292&proceeding_id=22">Yaxin Bi</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=658&proceeding_id=22">Jiwen Guan</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1263&proceeding_id=22">An Empirical Comparison of Algorithms for Aggregating Expert Predictions</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1293&proceeding_id=22">Varsha Dani</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=854&proceeding_id=22">Omid Madani</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=95&proceeding_id=22">David Pennock</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1294&proceeding_id=22">Sumit Sanghai</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1295&proceeding_id=22">Brian Galebach</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1264&proceeding_id=22">Approximate Separability for Weak Interaction in Dynamic Systems</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=192&proceeding_id=22">Avi Pfeffer</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1265&proceeding_id=22">Asymmetric separation for local independence graphs</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1303&proceeding_id=22">Vanessa Didelez</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1266&proceeding_id=22">Axiomatic Foundations for a Class of Generalized Expected Utility: Algebraic Expected Utility</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1251&proceeding_id=22">Paul Weng</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1267&proceeding_id=22">Bayesian Inference for Gaussian Mixed Graph Models</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=983&proceeding_id=22">Ricardo Silva</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=901&proceeding_id=22">Zoubin Ghahramani</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1268&proceeding_id=22">Bayesian Multicategory Support Vector Machines</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1297&proceeding_id=22">Zhihua Zhang</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=82&proceeding_id=22">Michael Jordan</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1269&proceeding_id=22">Bayesian Random Fields: The Bethe-Laplace Approximation</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=229&proceeding_id=22">Max Welling</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1298&proceeding_id=22">Sridevi Parise</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1270&proceeding_id=22">Belief Update in CLG Bayesian Networks With Lazy Propagation</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=175&proceeding_id=22">Anders Madsen</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1271&proceeding_id=22">Chi-square Tests Driven Method for Learning the Structure of Factored MDPs</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1299&proceeding_id=22">Thomas Degris</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1300&proceeding_id=22">Olivier Sigaud</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=85&proceeding_id=22">Pierre-Henri Wuillemin</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1272&proceeding_id=22">Continuous Time Markov Networks</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=144&proceeding_id=22">Tal El-Hay</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=40&proceeding_id=22">Nir Friedman</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=17&proceeding_id=22">Daphne Koller</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1301&proceeding_id=22">Raz Kupferman</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1273&proceeding_id=22">Convex Structure Learning for Bayesian Networks: Polynomial Feature Selection and Approximate Ordering</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1174&proceeding_id=22">Yuhong Guo</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=104&proceeding_id=22">Dale Schuurmans</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1274&proceeding_id=22">Cutset Sampling with Likelihood Weighting</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=910&proceeding_id=22">Bozhena Bidyuk</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=142&proceeding_id=22">Rina Dechter</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1275&proceeding_id=22">Dimension Reduction in Singularly Perturbed Continuous-Time Bayesian Networks</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=40&proceeding_id=22">Nir Friedman</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1301&proceeding_id=22">Raz Kupferman</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1276&proceeding_id=22">Direct and Indirect Effects of Sequential Treatments</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1303&proceeding_id=22">Vanessa Didelez</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1304&proceeding_id=22">Philip Dawid</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1305&proceeding_id=22">Sara Geneletti</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1277&proceeding_id=22">Discriminative Learning via Semidefinite Probabilistic Models</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1306&proceeding_id=22">Koby Crammer</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=935&proceeding_id=22">Amir Globerson</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1278&proceeding_id=22">Efficient Selection of Disambiguating Actions for Stereo Vision</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1307&proceeding_id=22">Monika Schaeffer</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=68&proceeding_id=22">Ron Parr</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1279&proceeding_id=22">Faster Gaussian Summation: Theory and Experiment</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1308&proceeding_id=22">Dongryeol Lee</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1309&proceeding_id=22">Alexander Gray</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1280&proceeding_id=22">Fitting Graphical Interaction Models to Multivariate Time Series</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1310&proceeding_id=22">Michael Eichler</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1281&proceeding_id=22">From influence diagrams to multi-operator cluster DAGs</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1311&proceeding_id=22">Cedric Pralet</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=571&proceeding_id=22">Thomas Schiex</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1312&proceeding_id=22">Gerard Verfaillie</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1282&proceeding_id=22">Gene Expression Time Course Clustering with Countably Infinite Hidden Markov Models</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1313&proceeding_id=22">Matthew Beal</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1314&proceeding_id=22">Praveen Krishnamurthy</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1283&proceeding_id=22">General-Purpose MCMC Inference over Relational Structures</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=80&proceeding_id=22">Brian Milch</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=37&proceeding_id=22">Stuart Russell</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1284&proceeding_id=22">Gibbs Sampling for (Coupled) Infinite Mixture Models in the Stick Breaking Representation</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1315&proceeding_id=22">Ian Porteous</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1534&proceeding_id=22">Alexander Ihler</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=94&proceeding_id=22">Padhraic Smyth</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=229&proceeding_id=22">Max Welling</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1285&proceeding_id=22">Graphical Condition for Identification in recursive SEM</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=833&proceeding_id=22">Carlos Brito</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=114&proceeding_id=22">Judea Pearl</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1286&proceeding_id=22">Identification of Conditional Interventional Distributions</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1317&proceeding_id=22">Ilya Shpitser</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=114&proceeding_id=22">Judea Pearl</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1287&proceeding_id=22">Identifying the Relevant Nodes Without Learning the Model</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=73&proceeding_id=22">Jose Pena</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1318&proceeding_id=22">Roland Nilsson</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1319&proceeding_id=22">Johan Björkegren</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1320&proceeding_id=22">Jesper Tegnér</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1288&proceeding_id=22">Incremental Model-based Learners With Formal Learning-Time Guarantees</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1321&proceeding_id=22">Alexander Strehl</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1322&proceeding_id=22">Lihong Li</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=173&proceeding_id=22">Michael Littman</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1289&proceeding_id=22">Inequality Constraints in Causal Models with Hidden Variables</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1204&proceeding_id=22">Changsung Kang</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=113&proceeding_id=22">Jin Tian</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1290&proceeding_id=22">Inference in Hybrid Bayesian Networks Using Mixtures of Gaussians</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=44&proceeding_id=22">Prakash Shenoy</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1291&proceeding_id=22">Infinite Hidden Relational Models</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1323&proceeding_id=22">Zhao Xu</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=322&proceeding_id=22">Volker Tresp</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=997&proceeding_id=22">Kai Yu</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1324&proceeding_id=22">Hans-Peter Kriegel</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1292&proceeding_id=22">Linear Algebra Approach to Separable Bayesian Networks</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1325&proceeding_id=22">Chalee Asavathiratham</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1293&proceeding_id=22">MAIES: A Tool for DNA Mixture Analysis</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=139&proceeding_id=22">Robert Cowell</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=87&proceeding_id=22">Steffen Lauritzen</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1326&proceeding_id=22">Julia Mortera</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1294&proceeding_id=22">Matrix Tile Analysis</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1327&proceeding_id=22">Inmar Givoni</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1328&proceeding_id=22">Vincent Cheung</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=38&proceeding_id=22">Brendan Frey</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1295&proceeding_id=22">MCMC for doubly-intractable distributions</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1122&proceeding_id=22">Iain Murray</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=901&proceeding_id=22">Zoubin Ghahramani</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1329&proceeding_id=22">David MacKay</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1296&proceeding_id=22">Methods for computing state similarity in Markov Decision Processes</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1083&proceeding_id=22">Norman Ferns</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1331&proceeding_id=22">Pablo Castro</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1085&proceeding_id=22">Doina Precup</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1084&proceeding_id=22">Prakash Panangaden</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1297&proceeding_id=22">Non-Minimal Triangulations for Mixed Stochastic/Deterministic Graphical Models</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=909&proceeding_id=22">Chris Bartels</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=12&proceeding_id=22">Jeff Bilmes</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1298&proceeding_id=22">On the Number of Samples Needed to Learn the Correct Structure of a Bayesian Network</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1333&proceeding_id=22">Or Zuk</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1334&proceeding_id=22">Shiri Margel</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1335&proceeding_id=22">Eytan Domany</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1299&proceeding_id=22">On the Robustness of Most Probable Explanations</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=137&proceeding_id=22">Hei Chan</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=28&proceeding_id=22">Adnan Darwiche</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1300&proceeding_id=22">Optimal Coordinated Planning Amongst Self-Interested Agents with Private State</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1336&proceeding_id=22">Ruggiero Cavallo</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1279&proceeding_id=22">David Parkes</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=65&proceeding_id=22">Satinder Singh</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1301&proceeding_id=22">Pearl's Calculus of Intervention Is Complete</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1337&proceeding_id=22">Yimin Huang</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=379&proceeding_id=22">Marco Valtorta</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1302&proceeding_id=22">Practical Linear Value-approximation Techniques for First-order MDPs</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=899&proceeding_id=22">Scott Sanner</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=15&proceeding_id=22">Craig Boutilier</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1303&proceeding_id=22">Predicting Conditional Quantiles via Reduction to Classification</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1338&proceeding_id=22">John Langford</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1339&proceeding_id=22">Roberto Oliveira</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1340&proceeding_id=22">Bianca Zadrozny</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1304&proceeding_id=22">Propagation of Delays in the National Airspace System</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=170&proceeding_id=22">Kathryn Laskey</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1341&proceeding_id=22">Ning Xu</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1342&proceeding_id=22">Chun-Hung Chen</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1305&proceeding_id=22">Ranking by Dependence - A Fair Criteria</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=109&proceeding_id=22">Harald Steck</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1306&proceeding_id=22">Reasoning about Uncertainty in Metric Spaces</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1343&proceeding_id=22">Seunghwan Lee</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1307&proceeding_id=22">Recognizing Activities and Spatial Context Using Wearable Sensors</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1344&proceeding_id=22">Amarnag Subramanya</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1345&proceeding_id=22">Alvin Raj</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=12&proceeding_id=22">Jeff Bilmes</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=929&proceeding_id=22">Dieter Fox</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1308&proceeding_id=22">Residual Belief Propagation: Informed Scheduling for Asynchronous Message Passing</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=145&proceeding_id=22">Gal Elidan</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1346&proceeding_id=22">Ian McGraw</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=17&proceeding_id=22">Daphne Koller</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1309&proceeding_id=22">Robust Learning Equilibrium</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1259&proceeding_id=22">Itai Ashlagi</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1260&proceeding_id=22">Dov Monderer</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=480&proceeding_id=22">Moshe Tennenholtz</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1310&proceeding_id=22">Sensitivity Analysis for Threshold Decision Making with Dynamic Networks</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1347&proceeding_id=22">Theodore Charitos</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=67&proceeding_id=22">Linda van der Gaag</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1311&proceeding_id=22">Sequential Document Representations and Simplicial Curves</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=948&proceeding_id=22">Guy Lebanon</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1312&proceeding_id=22">Stochastic Optimal Control in Continuous Space-Time Multi-Agent Systems</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=119&proceeding_id=22">Wim Wiegerinck</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1349&proceeding_id=22">Bart van den Broek</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=847&proceeding_id=22">Hilbert Kappen</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1313&proceeding_id=22">Stratified Analysis of `Probabilities of Causation'</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1114&proceeding_id=22">Manabu Kuroki</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1115&proceeding_id=22">Zhihong Cai</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1314&proceeding_id=22">Structured Priors for Structure Learning</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1351&proceeding_id=22">Vikash Mansinghka</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1352&proceeding_id=22">Charles Kemp</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1131&proceeding_id=22">Thomas Griffiths</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1353&proceeding_id=22">Joshua Tenenbaum</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1315&proceeding_id=22">The AI&M Procedure for Learning from Incomplete Data</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=399&proceeding_id=22">Manfred Jaeger</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1316&proceeding_id=22">Variable noise and dimensionality reduction for sparse Gaussian processes</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1354&proceeding_id=22">Edward Snelson</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=901&proceeding_id=22">Zoubin Ghahramani</A>
+</td>
+</tr>
+<tr><td rowspan="2" class="cArticlesLstImg"><img src="gfx/icon_article.gif" border="0"></td>
+<td class="cArticlesLstTitle">
+<A HREF="displayArticleDetails.jsp?mmnu=1&smnu=2&article_id=1317&proceeding_id=22">Visualization of Collaborative Data</A></td>
+</tr>
+<tr>
+<td class="cArticlesLstAuthors">
+<A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=1355&proceeding_id=22">Guobiao Mei</A>
+, <A class="cArticleAuthor" HREF="displayAuthor.jsp?mmnu=1&smnu=3&author_id=206&proceeding_id=22">Christian Shelton</A>
+</td>
+</tr>
+</table>
+
+                            </td>
+                        </tr>         
+		</table>
+	</td>
+</tr>
+<tr>
+	<td class="cFooter">
+		<br/>
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" class="cFooterBelt">
+		<tr>
+			<td>
+				<!-- ... -->
+			</td>
+			
+			<td>
+				<td align="right" class="cCopyrights">
+                                hosted by <a href="https://dslpitt.org/dsl/" class="cCopyrights">DSL</a>
+				&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+				<a href="siteInfo.jsp?mmnu=0&smnu=0" class="cCopyrights">site info</a>
+				&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+				<a href="help.jsp?mmnu=0&smnu=0" class="cCopyrights">help</a>
+				&nbsp;&nbsp;
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+</div>
+
+<map name="mapLogo" id="mapLogo">
+	<area shape="rect" coords="6,4,270,64" href="home.jsp?mmnu=0&smnu=0"/>
+</map>
+
+</body>
+
+</html>
+
